@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-TW" prefix="og: http://ogp.me/ns#">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=1112px,  maximum-scale=1.0, user-scalable=0" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <link rel="stylesheet" type="text/css" href="css/reset.min.css">
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+
+	<script src="js/jquery-2.2.2.min.js" type="text/javascript"></script>
+	<title>登入</title>
+</head>
+<body class="" page="login">
+	<header>
+		<img src="img/login/logo.png">
+	</header>
+	<main>
+		<div class="border">
+			<div class="step_1"><!-- 輸入工號 -->
+				<div class="blank clearfix">
+					<!--<form class="formlogin" action="getLoginInfo.php" method="post">-->
+						<div class="title floatL">服務人員工號</div>
+						<div class="content floatL"><input id="bcid" type="text" placeholder="請輸入服務人員工號" name="BCID" value=""></div>
+					<!--</form>-->
+				</div>
+			</div>
+
+			<div class="step_2"><!-- 選擇櫃點 -->
+				<div class="blank clearfix">
+					<div class="title floatL">服務人員工號</div>
+					<div class="content floatL"><span class="bcid"></span></div>
+				</div>
+
+				<div class="blank clearfix">
+					<div class="title floatL">服務人員姓名</div>
+					<div class="content floatL"><span class="bcnm"></span></div>
+				</div>
+
+				<div class="blank clearfix">
+					<div class="title w4 floatL ">服務櫃點</div>
+					<div class="content floatL">
+						<select id="locOption" name="CMABNM">
+							<option value="" selected >請選擇櫃點</option>
+						</select>
+					</div>
+				</div>
+			</div>	
+
+			<div class="step_3"><!-- 輸入顧客姓名、生日 -->
+				<div class="blank clearfix">
+					<div class="title floatL">服務人員工號</div>
+					<div class="content floatL"><span class="bcid"></span></div>
+				</div>
+
+				<div class="blank clearfix">
+					<div class="title floatL">服務人員姓名</div>
+					<div class="content floatL"><span id="bcnm" class="bcnm"></span></div>
+				</div>
+
+				<div class="blank clearfix">
+					<div class="title w4 floatL ">服務櫃點</div>
+					<div class="content floatL"><span  class="locInfo"></span></div>
+				</div>
+
+				<div class="blank clearfix">
+					<div class="title w4 floatL ">顧客姓名</div>
+					<div class="content floatL"><input id="vipnm" type="text" placeholder="請輸入顧客姓名"></div>
+				</div>
+
+				<div class="blank clearfix">
+					<div class="title w4 floatL ">顧客生日</div>
+					<div class="content floatL"><input id="sbirth" class="date" type="date" placeholder="西元(年/月/日)" value=""></div>
+				</div>
+				<div style="">
+					<input type="hidden" id="custno" value=''>
+				</div>
+			</div>	
+
+			<div class="step_4"><!-- 取得顧客資料並更新 -->
+				<div class="blank clearfix">
+					<div class="title floatL">服務人員工號</div>
+					<div class="content floatL"><span class="bcid"></span></div>
+				</div>
+
+				<div class="blank clearfix">
+					<div class="title floatL">服務人員姓名</div>
+					<div class="content floatL"><span class="bcnm"></span></div>
+				</div>
+
+				<div class="blank clearfix">
+					<div class="title w4 floatL ">服務櫃點</div>
+					<div class="content floatL"><span class="locInfo"></span></div>
+				</div>
+
+				<div class="blank clearfix">
+					<div class="title w4 floatL ">顧客姓名</div>
+					<div class="content floatL"><span class="vipnmInfo"></span></div>
+				</div>
+
+				<div class="blank clearfix">
+					<div class="title w4 floatL ">顧客生日</div>
+					<div class="content floatL"><span class="sbrithInfo"></span></div>
+				</div>
+
+				<div class="blank clearfix">
+					<div class="title w4 floatL ">顧客手機</div>					
+					<div class="content floatR">
+						<select id="telmOption">
+							<option value="" data-row="" selected >請選擇手機</option>
+						</select>
+					</div>
+					<div class="content floatR" style="margin-top: 10px;">
+						<input id="newTelm" type="tel" placeholder="手機號碼如有更新，請於此輸入新號碼" maxlength="10">
+					</div>
+				</div>
+
+				<div class="blank clearfix">
+					<div class="title w4 floatL ">顧客信箱</div>
+					<div class="content floatL">
+						<input type="hidden" id="oldMail" value="">
+						<input id="newMail" class="mail" value=""></div>
+				</div>
+
+				<div class="blank clearfix">
+					<div class="title w4 floatL ">檢測項目</div>
+					<div class="content floatL clearfix">
+						<div class="goto floatL" data="maintain"><span><span></span></span>保養處方箋</div>
+						<div class="goto floatR" data="makeup"><span><span></span></span>彩妝處方箋</div>
+					</div>
+				</div>
+				<div style="display: none;">
+					<input type="hidden" id="vipids" value="">
+				</div>
+			</div>
+
+
+			<div class="step_5"><!-- new -->
+				<div class="blank clearfix">
+					<div class="title floatL">服務人員工號</div>
+					<div class="content floatL"><span class="bcid"></span></div>
+				</div>
+
+				<div class="blank clearfix">
+					<div class="title floatL">服務人員姓名</div>
+					<div class="content floatL"><span class="bcnm"></span></div>
+				</div>
+
+				<div class="blank clearfix">
+					<div class="title w4 floatL ">服務櫃點</div>
+					<div class="content floatL"><span class="locInfo"></span></div>
+				</div>
+
+				<div class="blank clearfix">
+					<div class="title w4 floatL ">顧客姓名</div>
+					<div class="content floatL"><span class="vipnmInfo" id="signName"></span></div>
+				</div>
+
+				<div class="blank clearfix">
+					<div class="title w4 floatL ">顧客生日</div>
+					<div class="content floatL"><span class="sbrithInfo" id="signBirth"></span></div>
+				</div>
+
+				<div class="blank clearfix">
+					<div class="title w4 floatL ">顧客手機</div>					
+					
+					<div class="content floatR">
+						<input id="signTelm" type="tel" placeholder="請輸入顧客手機號碼" maxlength="10" >
+					</div>
+				</div>
+
+				<div class="blank clearfix">
+					<div class="title w4 floatL ">顧客信箱</div>
+					<div class="content floatL"><input id="signMail" type="email" placeholder="請輸入顧客電子信箱"></div>
+				</div>
+
+				<div class="blank clearfix">
+					<div class="title w4 floatL ">檢測項目</div>
+					<div class="content floatL clearfix">
+						<div class="goto floatL" data="maintain"><span><span></span></span>保養處方箋</div>
+						<div class="goto floatR" data="makeup"><span><span></span></span>彩妝處方箋</div>
+					</div>
+				</div>
+			</div>	
+		</div>
+
+		
+	</main>
+	
+
+	<footer class="clearfix">
+		<div class="login bt">登入</div>
+		<div class="prev bt floatL">上一步</div>
+		<div class="next bt floatR">下一步</div>			
+	</footer>
+
+	<script src="js/login.js" type="text/javascript"></script>
+	<script src="js/loginCmd.js" type="text/javascript"></script>
+</body>
+</html>

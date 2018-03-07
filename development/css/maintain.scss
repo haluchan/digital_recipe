@@ -1,0 +1,718 @@
+select{
+    border: 0;
+    border-bottom: 1px solid #666;
+    appearance:none;
+    background: url('../img/arrow.svg') right center no-repeat;
+    background-size: 15px;
+}
+
+body[page=maintain_01] {
+    .maintain .border {
+
+        .L {
+            width: 370px;
+            height: inherit;
+            padding: 15px;
+
+            .title:after {
+
+                font-size: 0.7em;
+                color: #c1272d;
+                position: absolute;
+                right: 10px;
+            }
+
+            ul {
+                margin-top: 15px;
+                li {
+                    height: 38px;
+                    line-height: 38px;
+                    input[type="checkbox"] {
+                        width: 20px;
+                        height: 20px;
+                        vertical-align: sub;
+                        margin-right: 15px;
+                        display: none;
+                    }
+                    input[type="checkbox"]+label {
+                        color: #333;
+                        height: 38px;
+                        line-height: 38px;
+                    }
+
+                    input[type="checkbox"]+label span {
+                        display: inline-block;
+                        width: 20px;
+                        height: 20px;
+                        margin: -2px 10px 0 0;
+                        vertical-align: middle; //background:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/check_radio_sheet.png) left top no-repeat;
+                        cursor: pointer;
+                        border: 1px solid #333;
+                    }
+
+                    input[type="checkbox"]:checked+label span {
+                        background: url('../img/check.png') 1px 3px no-repeat;
+                        background-size: 16px;
+                    }
+                }
+            }
+        }
+
+        .R {
+            width: 472px;
+            height: inherit;
+
+
+            .btn-brow {}
+        }
+    }
+}
+
+
+body[page=maintain_02] {
+    #content .maintain .border{
+        background: url('../img/maintain/02/bg.png') center top no-repeat;
+        background-size: 100%;
+
+        .L{         
+            width: 460px;
+            height: inherit;
+            padding: 15px;
+
+            .title{
+                width: 430px;
+            }
+
+            .title:after{
+                content:'*多選，至少選一項';
+                font-size: 0.7em;
+                color:#c1272d;
+                position: absolute;
+                right:10px;
+            }
+
+            ul{
+                margin: 7px 0 15px;
+                li{
+                    height: 38px;
+                    line-height: 38px;
+                    input[type="checkbox"]{
+                        width: 20px;
+                        height: 20px;
+                        vertical-align: sub;
+                        margin-right: 15px;
+                        display: none;
+                    }
+                    input[type="checkbox"] + label {
+                        color:#333;
+                        height: 38px;
+                        line-height: 38px;
+                    }
+
+                    input[type="checkbox"] + label span {
+                        display:inline-block;
+                        width:20px;
+                        height:20px;
+                        margin:-2px 10px 0 0;
+                        vertical-align:middle;
+                        //background:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/check_radio_sheet.png) left top no-repeat;
+                        cursor:pointer;
+                        border:1px solid #333;
+                    }
+
+                    input[type="checkbox"]:checked + label span {
+                        background:url('../img/check.png') 1px 3px no-repeat;
+                        background-size: 16px;
+                    }
+
+                    input[type="text"] {
+                        display: none;
+                        float:right;
+                        width: 100px;
+                    }
+                }
+            }
+            
+
+        }
+
+        
+    }
+}
+
+
+
+
+body[page=maintain_03] {
+    #content .maintain .border{
+
+        .L{         
+            width: 360px;
+            height: inherit;
+            padding: 15px;
+
+            .title{
+                width: 330px;
+            }
+
+            .title:after{
+                content:'*多選，至少選一項';
+                font-size: 0.7em;
+                color:#c1272d;
+                position: absolute;
+                right:10px;
+            }
+
+            ul{
+                margin-top: 15px;
+                li{
+                    height: 38px;
+                    line-height: 38px;
+                    input[type="checkbox"]{
+                        width: 20px;
+                        height: 20px;
+                        vertical-align: sub;
+                        margin-right: 15px;
+                        display: none;
+                    }
+                    input[type="checkbox"] + label {
+                        color:#333;
+                        height: 38px;
+                        line-height: 38px;
+                    }
+
+                    input[type="checkbox"] + label span {
+                        display:inline-block;
+                        width:20px;
+                        height:20px;
+                        margin:-2px 10px 0 0;
+                        vertical-align:middle;
+                        //background:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/check_radio_sheet.png) left top no-repeat;
+                        cursor:pointer;
+                        border:1px solid #333;
+                    }
+
+                    input[type="checkbox"]:checked + label span {
+                        background:url('../img/check.png') 1px 3px no-repeat;
+                        background-size: 16px;
+                    }
+
+
+                }
+            }
+            
+
+        }
+
+        .R {
+            width: 405px;
+            height: inherit;
+            padding: 15px;
+
+            .title{
+                position: relative;
+                width: 375px;
+                height: 30px;
+                height: 30px;
+                line-height: 30px;
+                border:1px solid #333;
+                padding: 0 10px;
+                margin-top: 7px;
+            }
+            .title:after{
+                content:'*多選，至少選一項';
+                font-size: 0.7em;
+                color:#c1272d;
+                position: absolute;
+                right:10px;
+            }
+
+            .title2{
+                position: relative;
+                width: 375px;
+                height: 30px;
+                height: 30px;
+                line-height: 30px;
+                border:1px solid #333;
+                padding: 0 10px;
+                margin-top: 7px;
+            }
+
+            select{
+                width: 100%;
+                height: 38px;
+                line-height: 38px;
+                padding: 0 7px;
+            }
+
+            ul{
+                margin-top: 7px;
+                li{
+                    height: 38px;
+                    line-height: 38px;
+                    input[type="checkbox"]{
+                        width: 20px;
+                        height: 20px;
+                        vertical-align: sub;
+                        margin-right: 15px;
+                        display: none;
+                    }
+                    input[type="checkbox"] + label {
+                        color:#333;
+                        height: 38px;
+                        line-height: 38px;
+                    }
+
+                    input[type="checkbox"] + label span {
+                        display:inline-block;
+                        width:20px;
+                        height:20px;
+                        margin:-2px 10px 0 0;
+                        vertical-align:middle;
+                        //background:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/check_radio_sheet.png) left top no-repeat;
+                        cursor:pointer;
+                        border:1px solid #333;
+                    }
+
+                    input[type="checkbox"]:checked + label span {
+                        background:url('../img/check.png') 1px 3px no-repeat;
+                        background-size: 16px;
+                    }
+
+                    input[type=text]{
+                        width: 270px;
+                        height: 38px;
+                        line-height: 38px;
+                        float:right;
+                        outline: 0;
+                        border:0;
+                        border-bottom: 1px solid #666;
+                        padding: 0 7px;
+                        display: none;
+
+                        &::-webkit-input-placeholder { /* WebKit browsers */
+                            color: #ccc;
+                        }                       
+                    }
+
+
+
+
+                }
+            }
+        }
+    }
+}
+
+
+
+body[page="maintain_04"] {
+    #content .maintain .border {
+        .L {
+            width: 380px;
+            /*edited by robert*/
+            height: 499px;
+
+            .title {
+                margin: 15px 15px 0 15px;
+                width: 330px;
+            }
+        }
+
+        .R {
+            width: 432px;
+            height: 499px;
+            padding: 60px 15px 0px 0;
+
+            .title {
+                width: 411px;
+                height: 34px;
+                line-height: 34px;
+                margin: 0 auto 15px;
+                font-size: 1em;
+                font-weight: bold;
+                input {
+                    height: 34px;
+                    line-height: 33px;
+                    border: 0;
+                    border-bottom: 1px solid #666;
+                    margin-left: 10px;
+                    vertical-align: top;
+                }
+                select {
+                    height: 34px;
+                    line-height: 34px;
+                    border: 0;
+                    border-bottom: 1px solid #666;
+                    margin-left: 15px;
+                    appearance: none;
+                    background: url('../img/arrow.svg') right center no-repeat;
+                    background-size: 15px;
+                }
+            }
+
+            .blank {
+                table {
+                    margin: 0 auto 15px;
+                    width: 411px;
+
+                    tr {
+
+                        td {
+                            border: 1px solid #666;
+                            height: 35px;
+                            line-height: 35px;
+                            padding: 0 7px;
+
+                            &:nth-child(3n-2) {
+                                font-weight: bold;
+                            }
+                            &:nth-child(3) {
+                                border: 0;
+                                width: 10px;
+                                padding: 0;
+                            }
+
+                            input {
+                                height: 35px;
+                                line-height: 30px;
+                                border: 0; //vertical-align: top;
+                            }
+
+                            select {
+                                line-height: 35px;
+                                border: 0;
+                                appearance: none;
+                                background: url('../img/arrow.svg') right center no-repeat;
+                                background-size: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            table.form {
+                margin: 14px auto;
+                width: 411px;
+                text-align: center;
+                colgroup {
+                    col:nth-child(1) {
+                        width: 105px;
+                    }
+                    col:nth-child(2) {
+                        width: 48px;
+                    }
+                    col:nth-child(3) {
+                        width: 129px;
+                    }
+                    col:nth-child(4) {
+                        width: 129px;
+                    }
+                }
+
+                tr {
+                    height: 35px;
+                    line-height: 35px;
+
+                    &.title {
+                        font-weight: bold;
+                    }
+
+                    td {
+                        border: 1px solid #333;
+                        padding: 0 7px;
+                        vertical-align: middle;
+                        &:first-child {
+                            font-weight: bold;
+                            text-align: left;
+                        }
+
+                        input {
+                            text-align: center;
+                            font-size: 1em;
+                            font-weight: 100;
+                            outline: none;
+                            border: 0;
+                            padding: 0;
+                        }
+
+                        select {
+                            background-color: #fff;
+                            appearance: none;
+                            background: url('../img/arrow.svg') right center no-repeat;
+                            background-size: 15px;
+                        }
+                    }
+                }
+
+                .water {
+                    input {
+                        text-align: center;
+                        width: 46%;
+                        margin-left: 0px;
+                        height: 35px;
+                        line-height: 35px;
+                    }
+                }
+
+                .tension {
+                    td:nth-child(3),
+                    td:nth-child(4) {
+                        font-size: 16px;
+                        padding: 0;
+                        >div:first-child {
+                            width: 32px;
+                            height: 35px;
+                            border-right: 1px solid #333;
+                            float: left;
+                            input {
+                                width: 100%;
+                            }
+                        }
+                        >div:nth-child(2) {
+                            width: 95px;
+                            height: 35px;
+                            float: left;
+
+                            & :nth-child(1) {
+                                //select
+                                width: 40px;
+                                height: 35px;
+                                line-height: 35px;
+                                border: 0;
+                                vertical-align: top;
+                                font-size: 1em;
+                            }
+                            & :nth-child(2) {
+                                //input
+                                margin-left: -2px;
+                                width: 57px;
+                                height: 35px;
+                                letter-spacing: 1px;
+                                input,
+                                span {
+                                    width: 40px;
+                                    margin-left: -1px;
+                                    padding: 0;
+                                    display: inline-block;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .opacity {
+                    td:nth-child(3),
+                    td:nth-child(4) {
+                        padding: 0;
+                        >div:first-child {
+                            //width: 34px;
+                            height: 19px; //border-right: 1px solid #333;
+                            line-height: 19px;      
+                            vertical-align: middle; 
+                            //float: left;
+                            input {
+                                width: 100%;
+                                height: 19px;
+                                line-height: 19px;
+                                font-size: 16px;
+                                vertical-align: bottom;
+                            }
+                        }
+                        >div:nth-child(2) {
+                            //width: 93px;
+                            height: 16px;
+                            line-height: 16px;
+                            vertical-align: top;
+                            //float: left;
+
+                            & :nth-child(1) { //select
+                                display: inline-block;
+                                width: 110px;
+                                height: 17px;
+                                line-height: 17px;
+                                border: 0;
+                                vertical-align: top;
+                                font-size: 11px;
+                                letter-spacing: -1px;
+                                margin-left: -2px;
+                            }
+                        }
+                    }
+                }
+                .corneum,
+                .level {
+                    td:nth-child(3),
+                    td:nth-child(4) {
+                        & :nth-child(1) {
+                            width: 90px;
+                            font-size: 1em;
+                            border: 0;
+                            height: 35px;
+                            line-height: 35px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+body[page=maintain_05] {
+    #content .maintain .border{
+            padding: 15px;
+            background:url('../img/maintain/05/bg.png') center center no-repeat;
+            background-size: 100%;
+
+            .title{
+                position: relative;
+                width: 375px;
+                height: 30px;
+                height: 30px;
+                line-height: 30px;
+                border:1px solid #333;
+                padding: 0 10px;
+            }
+
+            /* .title:after{
+                content:'*多選，至少選一項';
+                font-size: 0.7em;
+                color:#c1272d;
+                position: absolute;
+                right:10px;
+            } */
+            
+
+            .step{
+                position: relative;
+                font-weight: bold;
+                width: 100%;
+                height: 30px;
+                height: 30px;
+                line-height: 18px;
+                //border:1px solid #333;
+                padding: 0 10px 0 35px;
+                margin-top: 15px;
+            }
+            .step:before{
+                text-align: center;             
+                font-size: 1em;
+                border:1px solid #333;
+                width: 18px;
+                height: 18px;
+                border-radius: 99em;
+                position: absolute;
+                left:0;
+                top:0;
+            }
+
+            .suggest{
+                position: absolute;
+                width: 300px;
+                top: 45px;
+                right: 15px;
+
+                textarea{
+                    width: 300px;
+                    height: 115px;
+                    resize: none;
+                    font-size: 1em;
+                    padding: 7px;
+
+                    &::-webkit-input-placeholder { /* WebKit browsers */
+                        color: #aaa;
+                    }
+                }
+            }
+
+            .s1:before{
+                content:'1';
+            }
+
+            .s2:before{
+                content:'2';
+            }
+
+            .s3:before{
+                content:'3';
+            }
+
+            
+
+            
+
+            ul{
+                margin-top: 7px;
+                li{
+                    height: 38px;
+                    line-height: 38px;
+                    input[type="checkbox"]{
+                        width: 20px;
+                        height: 20px;
+                        vertical-align: sub;
+                        margin-right: 15px;
+                        display: none;
+                    }
+                    input[type="checkbox"] + label {
+                        color:#333;
+                        float:left;
+                        width: 180px;
+                        height: 38px;
+                        line-height: 38px;
+                    }
+
+                    input[type="checkbox"] + label span {
+                        display:inline-block;
+                        width:20px;
+                        height:20px;
+                        margin:-2px 10px 0 0;
+                        vertical-align:middle;
+                        //background:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/check_radio_sheet.png) left top no-repeat;
+                        cursor:pointer;
+                        border:1px solid #333;
+                    }
+
+                    input[type="checkbox"]:checked + label span {
+                        background:url('../img/check.png') 1px 3px no-repeat;
+                        background-size: 16px;
+                    }
+
+                    .sub{
+                        display: none;
+
+                        select{
+                            width: 310px;
+                            height: 38px;
+                            float: left;
+                            //display: none;
+                            background-color: rgba(255,255,255,0.7);
+                        }
+
+                        input[type=text]{
+                            width: 300px;
+                            height: 38px;
+                            line-height: 38px;
+                            float:right;
+                            outline: 0;
+                            border:0;
+                            border-bottom: 1px solid #666;
+                            padding: 0 7px;
+                            display: none;
+                            background-color: rgba(255,255,255,0.7);
+
+                            &::-webkit-input-placeholder { /* WebKit browsers */
+                                color: #aaa;
+                            }                       
+                        }
+                    }
+
+
+
+
+                }
+            }
+        
+    }
+}

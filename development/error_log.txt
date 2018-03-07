@@ -1,0 +1,644 @@
+[07-Feb-2018 09:13:36 Europe/Berlin] PHP Warning:  require(psw.php): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php on line 17
+[07-Feb-2018 09:13:36 Europe/Berlin] PHP Stack trace:
+[07-Feb-2018 09:13:36 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php:0
+[07-Feb-2018 09:13:36 Europe/Berlin] PHP Fatal error:  require(): Failed opening required 'psw.php' (include_path='.:/Applications/MAMP/bin/php/php5.5.38/lib/php') in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php on line 17
+[07-Feb-2018 09:13:36 Europe/Berlin] PHP Stack trace:
+[07-Feb-2018 09:13:36 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php:0
+[07-Feb-2018 09:25:14 Europe/Berlin] PHP Warning:  require(psw.php): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php on line 17
+[07-Feb-2018 09:25:14 Europe/Berlin] PHP Stack trace:
+[07-Feb-2018 09:25:14 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php:0
+[07-Feb-2018 09:25:14 Europe/Berlin] PHP Fatal error:  require(): Failed opening required 'psw.php' (include_path='.:/Applications/MAMP/bin/php/php5.5.38/lib/php') in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php on line 17
+[07-Feb-2018 09:25:14 Europe/Berlin] PHP Stack trace:
+[07-Feb-2018 09:25:14 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php:0
+[07-Feb-2018 09:28:24 Europe/Berlin] PHP Warning:  require(psw.php): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php on line 17
+[07-Feb-2018 09:28:24 Europe/Berlin] PHP Stack trace:
+[07-Feb-2018 09:28:24 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php:0
+[07-Feb-2018 09:28:24 Europe/Berlin] PHP Fatal error:  require(): Failed opening required 'psw.php' (include_path='.:/Applications/MAMP/bin/php/php5.5.38/lib/php') in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php on line 17
+[07-Feb-2018 09:28:24 Europe/Berlin] PHP Stack trace:
+[07-Feb-2018 09:28:24 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php:0
+[07-Feb-2018 09:31:24 Europe/Berlin] PHP Warning:  require(psw.php): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php on line 17
+[07-Feb-2018 09:31:24 Europe/Berlin] PHP Stack trace:
+[07-Feb-2018 09:31:24 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php:0
+[07-Feb-2018 09:31:24 Europe/Berlin] PHP Fatal error:  require(): Failed opening required 'psw.php' (include_path='.:/Applications/MAMP/bin/php/php5.5.38/lib/php') in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php on line 17
+[07-Feb-2018 09:31:24 Europe/Berlin] PHP Stack trace:
+[07-Feb-2018 09:31:24 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php:0
+[07-Feb-2018 09:33:44 Europe/Berlin] PHP Warning:  require(psw.php): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php on line 17
+[07-Feb-2018 09:33:44 Europe/Berlin] PHP Stack trace:
+[07-Feb-2018 09:33:44 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php:0
+[07-Feb-2018 09:33:44 Europe/Berlin] PHP Fatal error:  require(): Failed opening required 'psw.php' (include_path='.:/Applications/MAMP/bin/php/php5.5.38/lib/php') in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php on line 17
+[07-Feb-2018 09:33:44 Europe/Berlin] PHP Stack trace:
+[07-Feb-2018 09:33:44 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php:0
+[07-Feb-2018 09:34:50 Europe/Berlin] PHP Warning:  require(psw.php): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php on line 17
+[07-Feb-2018 09:34:50 Europe/Berlin] PHP Stack trace:
+[07-Feb-2018 09:34:50 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php:0
+[07-Feb-2018 09:34:50 Europe/Berlin] PHP Fatal error:  require(): Failed opening required 'psw.php' (include_path='.:/Applications/MAMP/bin/php/php5.5.38/lib/php') in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php on line 17
+[07-Feb-2018 09:34:50 Europe/Berlin] PHP Stack trace:
+[07-Feb-2018 09:34:50 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php:0
+[07-Feb-2018 09:35:16 Europe/Berlin] PHP Warning:  require_once(psw.php): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php on line 17
+[07-Feb-2018 09:35:16 Europe/Berlin] PHP Stack trace:
+[07-Feb-2018 09:35:16 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php:0
+[07-Feb-2018 09:35:16 Europe/Berlin] PHP Fatal error:  require_once(): Failed opening required 'psw.php' (include_path='.:/Applications/MAMP/bin/php/php5.5.38/lib/php') in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php on line 17
+[07-Feb-2018 09:35:16 Europe/Berlin] PHP Stack trace:
+[07-Feb-2018 09:35:16 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php:0
+[07-Feb-2018 09:36:34 Europe/Berlin] PHP Notice:  Trying to get property of non-object in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php on line 137
+[07-Feb-2018 09:36:34 Europe/Berlin] PHP Stack trace:
+[07-Feb-2018 09:36:34 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php:0
+[07-Feb-2018 09:36:49 Europe/Berlin] PHP Notice:  Trying to get property of non-object in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php on line 137
+[07-Feb-2018 09:36:49 Europe/Berlin] PHP Stack trace:
+[07-Feb-2018 09:36:49 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php:0
+[07-Feb-2018 09:37:05 Europe/Berlin] PHP Notice:  Trying to get property of non-object in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php on line 137
+[07-Feb-2018 09:37:05 Europe/Berlin] PHP Stack trace:
+[07-Feb-2018 09:37:05 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php:0
+[07-Feb-2018 09:37:29 Europe/Berlin] PHP Notice:  Trying to get property of non-object in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php on line 137
+[07-Feb-2018 09:37:29 Europe/Berlin] PHP Stack trace:
+[07-Feb-2018 09:37:29 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php:0
+[07-Feb-2018 09:38:21 Europe/Berlin] PHP Notice:  Trying to get property of non-object in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php on line 137
+[07-Feb-2018 09:38:21 Europe/Berlin] PHP Stack trace:
+[07-Feb-2018 09:38:21 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php:0
+[07-Feb-2018 09:40:22 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Exception' with message 'Serialization of 'SimpleXMLElement' is not allowed' in [no active file]:0
+Stack trace:
+#0 {main}
+  thrown in [no active file] on line 0
+[07-Feb-2018 09:51:39 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Exception' with message 'Serialization of 'SimpleXMLElement' is not allowed' in [no active file]:0
+Stack trace:
+#0 {main}
+  thrown in [no active file] on line 0
+[07-Feb-2018 09:51:57 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Exception' with message 'Serialization of 'SimpleXMLElement' is not allowed' in [no active file]:0
+Stack trace:
+#0 {main}
+  thrown in [no active file] on line 0
+[07-Feb-2018 09:52:19 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Exception' with message 'Serialization of 'SimpleXMLElement' is not allowed' in [no active file]:0
+Stack trace:
+#0 {main}
+  thrown in [no active file] on line 0
+[07-Feb-2018 09:52:38 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Exception' with message 'Serialization of 'SimpleXMLElement' is not allowed' in [no active file]:0
+Stack trace:
+#0 {main}
+  thrown in [no active file] on line 0
+[07-Feb-2018 09:52:54 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Exception' with message 'Serialization of 'SimpleXMLElement' is not allowed' in [no active file]:0
+Stack trace:
+#0 {main}
+  thrown in [no active file] on line 0
+[07-Feb-2018 11:07:29 Europe/Berlin] PHP Notice:  Trying to get property of non-object in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php on line 150
+[07-Feb-2018 11:07:29 Europe/Berlin] PHP Stack trace:
+[07-Feb-2018 11:07:29 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php:0
+[07-Feb-2018 11:07:29 Europe/Berlin] PHP Notice:  Trying to get property of non-object in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php on line 150
+[07-Feb-2018 11:07:29 Europe/Berlin] PHP Stack trace:
+[07-Feb-2018 11:07:29 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php:0
+[07-Feb-2018 11:07:29 Europe/Berlin] PHP Notice:  Trying to get property of non-object in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php on line 150
+[07-Feb-2018 11:07:29 Europe/Berlin] PHP Stack trace:
+[07-Feb-2018 11:07:29 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php:0
+[07-Feb-2018 11:49:55 Europe/Berlin] PHP Notice:  Undefined variable: XmlData in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getLoginInfo.php on line 77
+[07-Feb-2018 11:49:55 Europe/Berlin] PHP Stack trace:
+[07-Feb-2018 11:49:55 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php:0
+[07-Feb-2018 11:49:55 Europe/Berlin] PHP   2. require() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php:1
+[07-Feb-2018 11:49:55 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getLoginInfo.php on line 31
+[07-Feb-2018 11:49:55 Europe/Berlin] PHP Stack trace:
+[07-Feb-2018 11:49:55 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php:0
+[07-Feb-2018 11:49:55 Europe/Berlin] PHP   2. require() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php:1
+[07-Feb-2018 11:49:55 Europe/Berlin] PHP   3. array2xml() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getLoginInfo.php:77
+[07-Feb-2018 11:49:57 Europe/Berlin] PHP Notice:  Undefined variable: XmlData in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getLoginInfo.php on line 77
+[07-Feb-2018 11:49:57 Europe/Berlin] PHP Stack trace:
+[07-Feb-2018 11:49:57 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php:0
+[07-Feb-2018 11:49:57 Europe/Berlin] PHP   2. require() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php:1
+[07-Feb-2018 11:49:57 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getLoginInfo.php on line 31
+[07-Feb-2018 11:49:57 Europe/Berlin] PHP Stack trace:
+[07-Feb-2018 11:49:57 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php:0
+[07-Feb-2018 11:49:57 Europe/Berlin] PHP   2. require() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php:1
+[07-Feb-2018 11:49:57 Europe/Berlin] PHP   3. array2xml() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getLoginInfo.php:77
+[07-Feb-2018 11:50:38 Europe/Berlin] PHP Notice:  Undefined variable: XmlData in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getLoginInfo.php on line 77
+[07-Feb-2018 11:50:38 Europe/Berlin] PHP Stack trace:
+[07-Feb-2018 11:50:38 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php:0
+[07-Feb-2018 11:50:38 Europe/Berlin] PHP   2. require() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php:1
+[07-Feb-2018 11:50:38 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getLoginInfo.php on line 31
+[07-Feb-2018 11:50:38 Europe/Berlin] PHP Stack trace:
+[07-Feb-2018 11:50:38 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php:0
+[07-Feb-2018 11:50:38 Europe/Berlin] PHP   2. require() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php:1
+[07-Feb-2018 11:50:38 Europe/Berlin] PHP   3. array2xml() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getLoginInfo.php:77
+[07-Feb-2018 11:50:40 Europe/Berlin] PHP Notice:  Undefined variable: XmlData in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getLoginInfo.php on line 77
+[07-Feb-2018 11:50:40 Europe/Berlin] PHP Stack trace:
+[07-Feb-2018 11:50:40 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php:0
+[07-Feb-2018 11:50:40 Europe/Berlin] PHP   2. require() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php:1
+[07-Feb-2018 11:50:40 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getLoginInfo.php on line 31
+[07-Feb-2018 11:50:40 Europe/Berlin] PHP Stack trace:
+[07-Feb-2018 11:50:40 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php:0
+[07-Feb-2018 11:50:40 Europe/Berlin] PHP   2. require() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/login.php:1
+[07-Feb-2018 11:50:40 Europe/Berlin] PHP   3. array2xml() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getLoginInfo.php:77
+[08-Feb-2018 03:30:54 Europe/Berlin] PHP Notice:  Undefined variable: XmlData in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getLoginInfo.php on line 77
+[08-Feb-2018 03:30:54 Europe/Berlin] PHP Stack trace:
+[08-Feb-2018 03:30:54 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getLoginInfo.php:0
+[08-Feb-2018 03:30:54 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getLoginInfo.php on line 31
+[08-Feb-2018 03:30:54 Europe/Berlin] PHP Stack trace:
+[08-Feb-2018 03:30:54 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getLoginInfo.php:0
+[08-Feb-2018 03:30:54 Europe/Berlin] PHP   2. array2xml() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getLoginInfo.php:77
+[09-Feb-2018 05:29:57 Europe/Berlin] PHP Notice:  Undefined index: TELM in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/cusLogin.php on line 74
+[09-Feb-2018 05:29:57 Europe/Berlin] PHP Stack trace:
+[09-Feb-2018 05:29:57 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/cusLogin.php:0
+[09-Feb-2018 05:30:25 Europe/Berlin] PHP Notice:  Undefined index: TELM in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/cusLogin.php on line 74
+[09-Feb-2018 05:30:25 Europe/Berlin] PHP Stack trace:
+[09-Feb-2018 05:30:25 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/cusLogin.php:0
+[09-Feb-2018 09:20:23 Europe/Berlin] PHP Catchable fatal error:  Object of class stdClass could not be converted to string in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/cusLogin.php on line 144
+[09-Feb-2018 09:20:23 Europe/Berlin] PHP Stack trace:
+[09-Feb-2018 09:20:23 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/cusLogin.php:0
+[09-Feb-2018 09:20:38 Europe/Berlin] PHP Catchable fatal error:  Object of class stdClass could not be converted to string in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/cusLogin.php on line 144
+[09-Feb-2018 09:20:38 Europe/Berlin] PHP Stack trace:
+[09-Feb-2018 09:20:38 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/cusLogin.php:0
+[09-Feb-2018 09:21:13 Europe/Berlin] PHP Catchable fatal error:  Object of class stdClass could not be converted to string in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/cusLogin.php on line 144
+[09-Feb-2018 09:21:13 Europe/Berlin] PHP Stack trace:
+[09-Feb-2018 09:21:13 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/cusLogin.php:0
+[09-Feb-2018 09:21:13 Europe/Berlin] PHP   2. printf() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/cusLogin.php:144
+[12-Feb-2018 10:43:27 Europe/Berlin] PHP Notice:  Undefined index: CUSTNO in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/updateVip.php on line 65
+[12-Feb-2018 10:43:27 Europe/Berlin] PHP Stack trace:
+[12-Feb-2018 10:43:27 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/updateVip.php:0
+[13-Feb-2018 08:37:59 Europe/Berlin] PHP Notice:  Undefined index: EMAIL in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/updateVip.php on line 69
+[13-Feb-2018 08:37:59 Europe/Berlin] PHP Stack trace:
+[13-Feb-2018 08:37:59 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/updateVip.php:0
+[13-Feb-2018 10:13:40 Europe/Berlin] PHP Notice:  Undefined index: EMAIL in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/updateVip.php on line 69
+[13-Feb-2018 10:13:40 Europe/Berlin] PHP Stack trace:
+[13-Feb-2018 10:13:40 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/updateVip.php:0
+[13-Feb-2018 12:40:25 Europe/Berlin] PHP Notice:  Undefined index: EMAIL in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/updateVip.php on line 69
+[13-Feb-2018 12:40:25 Europe/Berlin] PHP Stack trace:
+[13-Feb-2018 12:40:25 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/updateVip.php:0
+[13-Feb-2018 12:51:50 Europe/Berlin] PHP Notice:  Undefined index: CUSTNO in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/updateVip.php on line 65
+[13-Feb-2018 12:51:50 Europe/Berlin] PHP Stack trace:
+[13-Feb-2018 12:51:50 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/updateVip.php:0
+[13-Feb-2018 12:51:50 Europe/Berlin] PHP Notice:  Undefined index: EMAIL in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/updateVip.php on line 69
+[13-Feb-2018 12:51:50 Europe/Berlin] PHP Stack trace:
+[13-Feb-2018 12:51:50 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/updateVip.php:0
+[13-Feb-2018 12:53:21 Europe/Berlin] PHP Notice:  Undefined index: EMAIL in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/updateVip.php on line 69
+[13-Feb-2018 12:53:21 Europe/Berlin] PHP Stack trace:
+[13-Feb-2018 12:53:21 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/updateVip.php:0
+[22-Feb-2018 04:49:08 Europe/Berlin] PHP Fatal error:  Call to undefined function cuont() in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getMackupData.php on line 130
+[22-Feb-2018 04:49:08 Europe/Berlin] PHP Stack trace:
+[22-Feb-2018 04:49:08 Europe/Berlin] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getMackupData.php:0
+[23-Feb-2018 06:30:57 UTC] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://210.208.107.109:80/WebService/wsSHISEIDO.asmx?wsdl' : failed to load external entity "https://210.208.107.109:80/WebService/wsSHISEIDO.asmx?wsdl"
+ in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getLoginInfo.php on line 96
+[23-Feb-2018 06:32:50 UTC] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://210.208.107.109:80/WebService/wsSHISEIDO.asmx?wsdl' : failed to load external entity "https://210.208.107.109:80/WebService/wsSHISEIDO.asmx?wsdl"
+ in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getLoginInfo.php on line 96
+[23-Feb-2018 06:38:39 UTC] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://210.208.107.109:80/WebService/wsSHISEIDO.asmx?wsdl' : failed to load external entity "https://210.208.107.109:80/WebService/wsSHISEIDO.asmx?wsdl"
+ in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getLoginInfo.php on line 96
+[23-Feb-2018 06:39:37 UTC] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://210.208.107.109:80/WebService/wsSHISEIDO.asmx?wsdl' : failed to load external entity "https://210.208.107.109:80/WebService/wsSHISEIDO.asmx?wsdl"
+ in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getLoginInfo.php on line 96
+[23-Feb-2018 06:41:12 UTC] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'https://210.208.107.109:80/WebService/wsSHISEIDO.asmx?wsdl' : failed to load external entity "https://210.208.107.109:80/WebService/wsSHISEIDO.asmx?wsdl"
+ in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/cusLogin.php on line 99
+[04-Mar-2018 20:23:09 Asia/Taipei] PHP Notice:  Undefined index: data in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getFileName.php on line 19
+[04-Mar-2018 20:23:09 Asia/Taipei] PHP Stack trace:
+[04-Mar-2018 20:23:09 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getFileName.php:0
+[04-Mar-2018 20:24:02 Asia/Taipei] PHP Notice:  Undefined index: data in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getFileName.php on line 19
+[04-Mar-2018 20:24:02 Asia/Taipei] PHP Stack trace:
+[04-Mar-2018 20:24:02 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getFileName.php:0
+[04-Mar-2018 20:27:31 Asia/Taipei] PHP Notice:  Undefined index: data in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getFileName.php on line 19
+[04-Mar-2018 20:27:31 Asia/Taipei] PHP Stack trace:
+[04-Mar-2018 20:27:31 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getFileName.php:0
+[04-Mar-2018 20:28:09 Asia/Taipei] PHP Notice:  Undefined index: data in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getFileName.php on line 19
+[04-Mar-2018 20:28:09 Asia/Taipei] PHP Stack trace:
+[04-Mar-2018 20:28:09 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getFileName.php:0
+[04-Mar-2018 20:30:05 Asia/Taipei] PHP Notice:  Undefined index: data in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getFileName.php on line 19
+[04-Mar-2018 20:30:05 Asia/Taipei] PHP Stack trace:
+[04-Mar-2018 20:30:05 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getFileName.php:0
+[04-Mar-2018 20:31:15 Asia/Taipei] PHP Notice:  Undefined index: data in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getFileName.php on line 19
+[04-Mar-2018 20:31:15 Asia/Taipei] PHP Stack trace:
+[04-Mar-2018 20:31:15 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getFileName.php:0
+[04-Mar-2018 20:31:43 Asia/Taipei] PHP Notice:  Undefined index: data in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getFileName.php on line 19
+[04-Mar-2018 20:31:43 Asia/Taipei] PHP Stack trace:
+[04-Mar-2018 20:31:43 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getFileName.php:0
+[04-Mar-2018 20:32:16 Asia/Taipei] PHP Notice:  Undefined index: data in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getFileName.php on line 19
+[04-Mar-2018 20:32:16 Asia/Taipei] PHP Stack trace:
+[04-Mar-2018 20:32:16 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getFileName.php:0
+[04-Mar-2018 20:32:42 Asia/Taipei] PHP Notice:  Undefined index: data in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getFileName.php on line 19
+[04-Mar-2018 20:32:42 Asia/Taipei] PHP Stack trace:
+[04-Mar-2018 20:32:42 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getFileName.php:0
+[04-Mar-2018 20:33:18 Asia/Taipei] PHP Notice:  Undefined index: data in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getFileName.php on line 19
+[04-Mar-2018 20:33:18 Asia/Taipei] PHP Stack trace:
+[04-Mar-2018 20:33:18 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getFileName.php:0
+[04-Mar-2018 20:43:01 Asia/Taipei] PHP Notice:  Undefined index: data in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getFileName.php on line 19
+[04-Mar-2018 20:43:01 Asia/Taipei] PHP Stack trace:
+[04-Mar-2018 20:43:01 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getFileName.php:0
+[04-Mar-2018 20:47:45 Asia/Taipei] PHP Notice:  Undefined index: data in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getFileName.php on line 19
+[04-Mar-2018 20:47:45 Asia/Taipei] PHP Stack trace:
+[04-Mar-2018 20:47:45 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getFileName.php:0
+[04-Mar-2018 20:48:14 Asia/Taipei] PHP Notice:  Undefined index: data in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getFileName.php on line 19
+[04-Mar-2018 20:48:14 Asia/Taipei] PHP Stack trace:
+[04-Mar-2018 20:48:14 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getFileName.php:0
+[04-Mar-2018 20:49:52 Asia/Taipei] PHP Notice:  Undefined index: data in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getFileName.php on line 19
+[04-Mar-2018 20:49:52 Asia/Taipei] PHP Stack trace:
+[04-Mar-2018 20:49:52 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getFileName.php:0
+[04-Mar-2018 20:52:16 Asia/Taipei] PHP Notice:  Undefined index: data in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getFileName.php on line 19
+[04-Mar-2018 20:52:16 Asia/Taipei] PHP Stack trace:
+[04-Mar-2018 20:52:16 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getFileName.php:0
+[04-Mar-2018 20:52:37 Asia/Taipei] PHP Notice:  Undefined index: data in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getFileName.php on line 19
+[04-Mar-2018 20:52:37 Asia/Taipei] PHP Stack trace:
+[04-Mar-2018 20:52:37 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getFileName.php:0
+[04-Mar-2018 21:01:58 Asia/Taipei] PHP Notice:  Undefined index: data in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getFileName.php on line 20
+[04-Mar-2018 21:01:58 Asia/Taipei] PHP Stack trace:
+[04-Mar-2018 21:01:58 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getFileName.php:0
+[04-Mar-2018 21:02:34 Asia/Taipei] PHP Notice:  Undefined index: data in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getFileName.php on line 20
+[04-Mar-2018 21:02:34 Asia/Taipei] PHP Stack trace:
+[04-Mar-2018 21:02:34 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/getFileName.php:0
+[05-Mar-2018 03:16:00 Asia/Taipei] PHP Warning:  mkdir(): Permission denied in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 136
+[05-Mar-2018 03:16:00 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 03:16:00 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 03:16:00 Asia/Taipei] PHP   2. mkdir() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:136
+[05-Mar-2018 03:16:00 Asia/Taipei] PHP Warning:  file_put_contents(/image/skincare/2018//2018/2018340.png): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 140
+[05-Mar-2018 03:16:00 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 03:16:00 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 03:16:00 Asia/Taipei] PHP   2. file_put_contents() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:140
+[05-Mar-2018 03:20:00 Asia/Taipei] PHP Notice:  Array to string conversion in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 123
+[05-Mar-2018 03:20:00 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 03:20:00 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 03:20:00 Asia/Taipei] PHP Notice:  Undefined variable: forder in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 124
+[05-Mar-2018 03:20:00 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 03:20:00 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 03:20:00 Asia/Taipei] PHP Notice:  Undefined variable: forder in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 125
+[05-Mar-2018 03:20:00 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 03:20:00 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 03:20:00 Asia/Taipei] PHP Warning:  mkdir(): Permission denied in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 131
+[05-Mar-2018 03:20:00 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 03:20:00 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 03:20:00 Asia/Taipei] PHP   2. mkdir() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:131
+[05-Mar-2018 03:20:00 Asia/Taipei] PHP Warning:  file_put_contents(/image/skincare////Array0.png): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 135
+[05-Mar-2018 03:20:00 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 03:20:00 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 03:20:00 Asia/Taipei] PHP   2. file_put_contents() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:135
+[05-Mar-2018 03:22:06 Asia/Taipei] PHP Notice:  Undefined variable: forder in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 124
+[05-Mar-2018 03:22:06 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 03:22:06 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 03:27:53 Asia/Taipei] PHP Fatal error:  Call to undefined method PDO::db2_last_insert_id() in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 63
+[05-Mar-2018 03:27:53 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 03:27:53 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 03:27:53 Asia/Taipei] PHP   2. getId($data = *uninitialized*) /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:126
+[05-Mar-2018 03:28:43 Asia/Taipei] PHP Notice:  Undefined property: PDO::$i_no in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 63
+[05-Mar-2018 03:28:43 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 03:28:43 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 03:28:43 Asia/Taipei] PHP   2. getId() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:126
+[05-Mar-2018 03:28:43 Asia/Taipei] PHP Warning:  mkdir(): Permission denied in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 132
+[05-Mar-2018 03:28:43 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 03:28:43 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 03:28:43 Asia/Taipei] PHP   2. mkdir() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:132
+[05-Mar-2018 03:28:43 Asia/Taipei] PHP Warning:  file_put_contents(/image/skincare/2018//2018/20180305.png): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 136
+[05-Mar-2018 03:28:43 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 03:28:43 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 03:28:43 Asia/Taipei] PHP   2. file_put_contents() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:136
+[05-Mar-2018 03:32:12 Asia/Taipei] PHP Warning:  mkdir(): Permission denied in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 132
+[05-Mar-2018 03:32:12 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 03:32:12 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 03:32:12 Asia/Taipei] PHP   2. mkdir(*uninitialized*, *uninitialized*, *uninitialized*) /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:132
+[05-Mar-2018 03:32:17 Asia/Taipei] PHP Warning:  file_put_contents(/image/skincare/2018//2018/2018030522.png): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 136
+[05-Mar-2018 03:32:17 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 03:32:17 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 03:32:17 Asia/Taipei] PHP   2. file_put_contents(*uninitialized*, *uninitialized*) /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:136
+[05-Mar-2018 03:38:52 Asia/Taipei] PHP Warning:  mkdir(): Permission denied in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 132
+[05-Mar-2018 03:38:52 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 03:38:52 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 03:38:52 Asia/Taipei] PHP   2. mkdir() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:132
+[05-Mar-2018 03:38:52 Asia/Taipei] PHP Warning:  file_put_contents(/image/skincare/2018//2018/2018030523.png): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 136
+[05-Mar-2018 03:38:52 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 03:38:52 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 03:38:52 Asia/Taipei] PHP   2. file_put_contents() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:136
+[05-Mar-2018 03:39:58 Asia/Taipei] PHP Warning:  mkdir(): Permission denied in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 132
+[05-Mar-2018 03:39:58 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 03:39:58 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 03:39:58 Asia/Taipei] PHP   2. mkdir() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:132
+[05-Mar-2018 03:39:58 Asia/Taipei] PHP Warning:  file_put_contents(/image/skincare/2018//2018/2018030524.png): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 136
+[05-Mar-2018 03:39:58 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 03:39:58 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 03:39:58 Asia/Taipei] PHP   2. file_put_contents() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:136
+[05-Mar-2018 03:41:30 Asia/Taipei] PHP Warning:  mkdir(): Permission denied in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 132
+[05-Mar-2018 03:41:30 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 03:41:30 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 03:41:30 Asia/Taipei] PHP   2. mkdir() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:132
+[05-Mar-2018 03:41:30 Asia/Taipei] PHP Warning:  file_put_contents(/image/skincare/2018//2018/2018030525.png): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 136
+[05-Mar-2018 03:41:30 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 03:41:30 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 03:41:30 Asia/Taipei] PHP   2. file_put_contents() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:136
+[05-Mar-2018 03:43:00 Asia/Taipei] PHP Warning:  mkdir(): Permission denied in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 132
+[05-Mar-2018 03:43:00 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 03:43:00 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 03:43:00 Asia/Taipei] PHP   2. mkdir() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:132
+[05-Mar-2018 03:43:00 Asia/Taipei] PHP Warning:  file_put_contents(/image/skincare/2018//2018/2018030526.png): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 136
+[05-Mar-2018 03:43:01 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 03:43:01 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 03:43:01 Asia/Taipei] PHP   2. file_put_contents() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:136
+[05-Mar-2018 03:46:31 Asia/Taipei] PHP Warning:  mkdir(): Permission denied in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 132
+[05-Mar-2018 03:46:31 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 03:46:31 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 03:46:31 Asia/Taipei] PHP   2. mkdir() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:132
+[05-Mar-2018 03:46:31 Asia/Taipei] PHP Warning:  file_put_contents(/image/skincare/2018//2018/2018030527.png): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 136
+[05-Mar-2018 03:46:31 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 03:46:31 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 03:46:31 Asia/Taipei] PHP   2. file_put_contents() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:136
+[05-Mar-2018 03:47:17 Asia/Taipei] PHP Warning:  mkdir(): Permission denied in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 132
+[05-Mar-2018 03:47:17 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 03:47:17 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 03:47:17 Asia/Taipei] PHP   2. mkdir(*uninitialized*, *uninitialized*, *uninitialized*) /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:132
+[05-Mar-2018 03:47:19 Asia/Taipei] PHP Warning:  file_put_contents(/image/skincare/2018//2018/2018030529.png): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 136
+[05-Mar-2018 03:47:19 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 03:47:19 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 03:47:19 Asia/Taipei] PHP   2. file_put_contents(*uninitialized*, *uninitialized*) /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:136
+[05-Mar-2018 03:48:38 Asia/Taipei] PHP Warning:  mkdir(): Permission denied in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 132
+[05-Mar-2018 03:48:38 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 03:48:38 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 03:48:38 Asia/Taipei] PHP   2. mkdir(*uninitialized*, *uninitialized*, *uninitialized*) /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:132
+[05-Mar-2018 03:48:40 Asia/Taipei] PHP Warning:  file_put_contents(/image/skincare/2018/2018/2018030530.png): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 136
+[05-Mar-2018 03:48:40 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 03:48:40 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 03:48:40 Asia/Taipei] PHP   2. file_put_contents(*uninitialized*, *uninitialized*) /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:136
+[05-Mar-2018 03:49:24 Asia/Taipei] PHP Warning:  mkdir(): Permission denied in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 132
+[05-Mar-2018 03:49:24 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 03:49:24 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 03:49:24 Asia/Taipei] PHP   2. mkdir(*uninitialized*, *uninitialized*, *uninitialized*) /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:132
+[05-Mar-2018 03:49:25 Asia/Taipei] PHP Warning:  file_put_contents(/image/skincare//2018/2018030531.png): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 136
+[05-Mar-2018 03:49:25 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 03:49:25 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 03:49:25 Asia/Taipei] PHP   2. file_put_contents(*uninitialized*, *uninitialized*) /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:136
+[05-Mar-2018 03:52:35 Asia/Taipei] PHP Warning:  mkdir(): Permission denied in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 132
+[05-Mar-2018 03:52:35 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 03:52:35 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 03:52:35 Asia/Taipei] PHP   2. mkdir() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:132
+[05-Mar-2018 03:52:35 Asia/Taipei] PHP Warning:  file_put_contents(/image/skincare//2018/2018030532.png): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 136
+[05-Mar-2018 03:52:35 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 03:52:35 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 03:52:35 Asia/Taipei] PHP   2. file_put_contents() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:136
+[05-Mar-2018 03:53:31 Asia/Taipei] PHP Warning:  mkdir(): Permission denied in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 132
+[05-Mar-2018 03:53:31 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 03:53:31 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 03:53:31 Asia/Taipei] PHP   2. mkdir() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:132
+[05-Mar-2018 03:53:31 Asia/Taipei] PHP Warning:  file_put_contents(/image/skincare//2018/2018030533.png): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 136
+[05-Mar-2018 03:53:31 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 03:53:31 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 03:53:31 Asia/Taipei] PHP   2. file_put_contents() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:136
+[05-Mar-2018 03:56:39 Asia/Taipei] PHP Warning:  mkdir(): Permission denied in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 132
+[05-Mar-2018 03:56:39 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 03:56:39 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 03:56:39 Asia/Taipei] PHP   2. mkdir() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:132
+[05-Mar-2018 03:56:39 Asia/Taipei] PHP Warning:  file_put_contents(/image/skincare//2018/2018030534.png): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 136
+[05-Mar-2018 03:56:39 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 03:56:39 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 03:56:39 Asia/Taipei] PHP   2. file_put_contents() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:136
+[05-Mar-2018 03:58:44 Asia/Taipei] PHP Warning:  mkdir(): Permission denied in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 132
+[05-Mar-2018 03:58:44 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 03:58:44 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 03:58:44 Asia/Taipei] PHP   2. mkdir() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:132
+[05-Mar-2018 03:58:44 Asia/Taipei] PHP Warning:  file_put_contents(/image/skincare//2018/2018030536.png): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 136
+[05-Mar-2018 03:58:44 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 03:58:44 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 03:58:44 Asia/Taipei] PHP   2. file_put_contents() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:136
+[05-Mar-2018 03:59:59 Asia/Taipei] PHP Warning:  mkdir(): Permission denied in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 132
+[05-Mar-2018 03:59:59 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 03:59:59 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 03:59:59 Asia/Taipei] PHP   2. mkdir() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:132
+[05-Mar-2018 03:59:59 Asia/Taipei] PHP Warning:  file_put_contents(/image/skincare//2018/2018030537.png): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 136
+[05-Mar-2018 03:59:59 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 03:59:59 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 03:59:59 Asia/Taipei] PHP   2. file_put_contents() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:136
+[05-Mar-2018 04:01:00 Asia/Taipei] PHP Warning:  mkdir(): Permission denied in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 132
+[05-Mar-2018 04:01:00 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 04:01:00 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 04:01:00 Asia/Taipei] PHP   2. mkdir() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:132
+[05-Mar-2018 04:01:00 Asia/Taipei] PHP Warning:  file_put_contents(/image/skincare//2018/2018030538.png): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 136
+[05-Mar-2018 04:01:00 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 04:01:00 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 04:01:00 Asia/Taipei] PHP   2. file_put_contents() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:136
+[05-Mar-2018 04:01:53 Asia/Taipei] PHP Warning:  mkdir(): Permission denied in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 132
+[05-Mar-2018 04:01:53 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 04:01:53 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 04:01:53 Asia/Taipei] PHP   2. mkdir() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:132
+[05-Mar-2018 04:01:53 Asia/Taipei] PHP Warning:  file_put_contents(/image/skincare//2018/2018030539.png): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 136
+[05-Mar-2018 04:01:53 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 04:01:53 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 04:01:53 Asia/Taipei] PHP   2. file_put_contents() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:136
+[05-Mar-2018 04:02:55 Asia/Taipei] PHP Warning:  mkdir(): Permission denied in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 132
+[05-Mar-2018 04:02:55 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 04:02:55 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 04:02:55 Asia/Taipei] PHP   2. mkdir() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:132
+[05-Mar-2018 04:02:55 Asia/Taipei] PHP Warning:  file_put_contents(/image/skincare/2018/2018030540.png): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 136
+[05-Mar-2018 04:02:55 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 04:02:55 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 04:02:55 Asia/Taipei] PHP   2. file_put_contents() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:136
+[05-Mar-2018 04:03:53 Asia/Taipei] PHP Warning:  mkdir(): Permission denied in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 132
+[05-Mar-2018 04:03:53 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 04:03:53 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 04:03:53 Asia/Taipei] PHP   2. mkdir() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:132
+[05-Mar-2018 04:03:53 Asia/Taipei] PHP Warning:  file_put_contents(/image/skincare/2018/2018030541.png): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 136
+[05-Mar-2018 04:03:53 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 04:03:53 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 04:03:53 Asia/Taipei] PHP   2. file_put_contents() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:136
+[05-Mar-2018 04:06:29 Asia/Taipei] PHP Warning:  mkdir(): Permission denied in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 132
+[05-Mar-2018 04:06:29 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 04:06:29 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 04:06:29 Asia/Taipei] PHP   2. mkdir() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:132
+[05-Mar-2018 04:06:29 Asia/Taipei] PHP Warning:  file_put_contents(/image/skincare/2018/2018030542.png): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 136
+[05-Mar-2018 04:06:29 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 04:06:29 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 04:06:29 Asia/Taipei] PHP   2. file_put_contents() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:136
+[05-Mar-2018 04:25:39 Asia/Taipei] PHP Warning:  file_put_contents(image/skincare/image/skincare/2018/2018030551.png): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 101
+[05-Mar-2018 04:25:39 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 04:25:39 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 04:25:39 Asia/Taipei] PHP   2. file_put_contents() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:101
+[05-Mar-2018 04:27:31 Asia/Taipei] PHP Warning:  file_put_contents(image/skincare/2018/2018030552.png): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 101
+[05-Mar-2018 04:27:31 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 04:27:31 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 04:27:31 Asia/Taipei] PHP   2. file_put_contents() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:101
+[05-Mar-2018 04:29:55 Asia/Taipei] PHP Warning:  file_put_contents(image/skincare/2018/2018030554.png): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 101
+[05-Mar-2018 04:29:55 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 04:29:55 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 04:29:55 Asia/Taipei] PHP   2. file_put_contents(*uninitialized*, *uninitialized*) /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:101
+[05-Mar-2018 04:30:38 Asia/Taipei] PHP Warning:  file_put_contents(image/skincare/2018/2018030555.png): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 101
+[05-Mar-2018 04:30:38 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 04:30:38 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 04:30:38 Asia/Taipei] PHP   2. file_put_contents(*uninitialized*, *uninitialized*) /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:101
+[05-Mar-2018 04:31:55 Asia/Taipei] PHP Warning:  file_put_contents(image/skincare/2018/2018030556.png): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 101
+[05-Mar-2018 04:31:55 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 04:31:55 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 04:31:55 Asia/Taipei] PHP   2. file_put_contents() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:101
+[05-Mar-2018 04:32:25 Asia/Taipei] PHP Warning:  mkdir(): File exists in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 97
+[05-Mar-2018 04:32:25 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 04:32:25 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 04:32:25 Asia/Taipei] PHP   2. mkdir(*uninitialized*, *uninitialized*, *uninitialized*) /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:97
+[05-Mar-2018 04:32:26 Asia/Taipei] PHP Warning:  file_put_contents(image/skincare/2018/2018030557.png): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 101
+[05-Mar-2018 04:32:26 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 04:32:26 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 04:32:26 Asia/Taipei] PHP   2. file_put_contents(*uninitialized*, *uninitialized*) /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:101
+[05-Mar-2018 04:37:43 Asia/Taipei] PHP Warning:  mkdir(): File exists in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 99
+[05-Mar-2018 04:37:43 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 04:37:43 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 04:37:43 Asia/Taipei] PHP   2. mkdir() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:99
+[05-Mar-2018 04:37:43 Asia/Taipei] PHP Warning:  file_put_contents(image/skincare/2018/2018/2018030558.png): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 103
+[05-Mar-2018 04:37:43 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 04:37:43 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 04:37:43 Asia/Taipei] PHP   2. file_put_contents() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:103
+[05-Mar-2018 04:38:23 Asia/Taipei] PHP Warning:  file_put_contents(image/skincare/2018/2018/2018030559.png): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 103
+[05-Mar-2018 04:38:23 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 04:38:23 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 04:38:23 Asia/Taipei] PHP   2. file_put_contents() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:103
+[05-Mar-2018 04:42:11 Asia/Taipei] PHP Warning:  file_put_contents(image/skincare/2018./2018/2018030562.png): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 100
+[05-Mar-2018 04:42:11 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 04:42:11 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 04:42:11 Asia/Taipei] PHP   2. file_put_contents(*uninitialized*, *uninitialized*) /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:100
+[05-Mar-2018 04:43:14 Asia/Taipei] PHP Warning:  mkdir(): File exists in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 99
+[05-Mar-2018 04:43:14 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 04:43:14 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 04:43:14 Asia/Taipei] PHP   2. mkdir(*uninitialized*, *uninitialized*, *uninitialized*) /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:99
+[05-Mar-2018 04:43:15 Asia/Taipei] PHP Warning:  file_put_contents(image/skincare/2018/.2018/2018030563.png): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 100
+[05-Mar-2018 04:43:15 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 04:43:15 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 04:43:15 Asia/Taipei] PHP   2. file_put_contents(*uninitialized*, *uninitialized*) /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:100
+[05-Mar-2018 04:45:56 Asia/Taipei] PHP Warning:  file_put_contents(2019.'/'.2018/2018030565.png): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 100
+[05-Mar-2018 04:45:56 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 04:45:56 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 04:45:56 Asia/Taipei] PHP   2. file_put_contents(*uninitialized*, *uninitialized*) /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:100
+[05-Mar-2018 04:46:20 Asia/Taipei] PHP Warning:  mkdir(): File exists in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 99
+[05-Mar-2018 04:46:20 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 04:46:20 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 04:46:20 Asia/Taipei] PHP   2. mkdir(*uninitialized*, *uninitialized*, *uninitialized*) /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:99
+[05-Mar-2018 04:46:20 Asia/Taipei] PHP Warning:  file_put_contents(2019.'/'.2018/2018030566.png): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 100
+[05-Mar-2018 04:46:20 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 04:46:20 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 04:46:20 Asia/Taipei] PHP   2. file_put_contents(*uninitialized*, *uninitialized*) /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:100
+[05-Mar-2018 04:46:50 Asia/Taipei] PHP Warning:  file_put_contents(2018.'/'.2018/2018030567.png): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 103
+[05-Mar-2018 04:46:50 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 04:46:50 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 04:46:50 Asia/Taipei] PHP   2. file_put_contents(*uninitialized*, *uninitialized*) /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:103
+[05-Mar-2018 04:47:15 Asia/Taipei] PHP Warning:  file_put_contents(2018.'/'.2018/2018030568.png): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 103
+[05-Mar-2018 04:47:15 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 04:47:15 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 04:47:15 Asia/Taipei] PHP   2. file_put_contents(*uninitialized*, *uninitialized*) /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:103
+[05-Mar-2018 04:47:45 Asia/Taipei] PHP Warning:  file_put_contents(2018/2018/2018030569.png): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 103
+[05-Mar-2018 04:47:45 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 04:47:45 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 04:47:45 Asia/Taipei] PHP   2. file_put_contents(*uninitialized*, *uninitialized*) /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:103
+[05-Mar-2018 04:49:02 Asia/Taipei] PHP Warning:  file_put_contents(2018/2018030570.png): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 100
+[05-Mar-2018 04:49:02 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 04:49:02 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 04:49:02 Asia/Taipei] PHP   2. file_put_contents(*uninitialized*, *uninitialized*) /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:100
+[05-Mar-2018 04:50:19 Asia/Taipei] PHP Warning:  file_put_contents(2018/2018030571.png): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 100
+[05-Mar-2018 04:50:19 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 04:50:19 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 04:50:19 Asia/Taipei] PHP   2. file_put_contents(*uninitialized*, *uninitialized*) /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:100
+[05-Mar-2018 04:50:45 Asia/Taipei] PHP Warning:  mkdir(): File exists in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 99
+[05-Mar-2018 04:50:45 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 04:50:45 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 04:50:45 Asia/Taipei] PHP   2. mkdir() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:99
+[05-Mar-2018 04:59:02 Asia/Taipei] PHP Warning:  fopen(image/skincare/2018): failed to open stream: Operation now in progress in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 104
+[05-Mar-2018 04:59:02 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 04:59:02 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 04:59:02 Asia/Taipei] PHP   2. fopen(*uninitialized*, *uninitialized*) /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:104
+[05-Mar-2018 05:13:56 Asia/Taipei] PHP Warning:  mkdir(): File exists in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 99
+[05-Mar-2018 05:13:56 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 05:13:56 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 05:13:56 Asia/Taipei] PHP   2. mkdir() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:99
+[05-Mar-2018 05:13:56 Asia/Taipei] PHP Warning:  file_put_contents(image/skincare/2018/1.png): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 101
+[05-Mar-2018 05:13:56 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 05:13:56 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 05:13:56 Asia/Taipei] PHP   2. file_put_contents() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:101
+[05-Mar-2018 05:18:43 Asia/Taipei] PHP Warning:  mkdir(): File exists in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 101
+[05-Mar-2018 05:18:43 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 05:18:43 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 05:18:43 Asia/Taipei] PHP   2. mkdir() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:101
+[05-Mar-2018 10:54:52 Asia/Taipei] PHP Warning:  mkdir(): File exists in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 99
+[05-Mar-2018 10:54:52 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 10:54:52 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 10:54:52 Asia/Taipei] PHP   2. getmackupImg() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:113
+[05-Mar-2018 10:54:52 Asia/Taipei] PHP   3. mkdir() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:99
+[05-Mar-2018 11:10:39 Asia/Taipei] PHP Notice:  Undefined variable: pdo in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 73
+[05-Mar-2018 11:10:39 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 11:10:39 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 11:10:39 Asia/Taipei] PHP   2. getmackupImg($data = *uninitialized*) /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:113
+[05-Mar-2018 11:10:39 Asia/Taipei] PHP Fatal error:  Call to a member function rollBack() on a non-object in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 73
+[05-Mar-2018 11:10:39 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 11:10:39 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 11:10:39 Asia/Taipei] PHP   2. getmackupImg($data = *uninitialized*) /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:113
+[05-Mar-2018 19:09:29 Asia/Taipei] PHP Warning:  require(fpdf/fpdf.php): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 119
+[05-Mar-2018 19:09:29 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 19:09:29 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 19:09:29 Asia/Taipei] PHP   2. savePDFImg() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:145
+[05-Mar-2018 19:09:29 Asia/Taipei] PHP Fatal error:  require(): Failed opening required 'fpdf/fpdf.php' (include_path='.:/Applications/MAMP/bin/php/php5.5.38/lib/php') in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 119
+[05-Mar-2018 19:09:29 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 19:09:29 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 19:09:29 Asia/Taipei] PHP   2. savePDFImg() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:145
+[05-Mar-2018 19:10:06 Asia/Taipei] PHP Warning:  mkdir(): File exists in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 99
+[05-Mar-2018 19:10:06 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 19:10:06 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 19:10:06 Asia/Taipei] PHP   2. getmackupImg() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:113
+[05-Mar-2018 19:10:06 Asia/Taipei] PHP   3. mkdir() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:99
+[05-Mar-2018 19:10:06 Asia/Taipei] PHP Warning:  file_put_contents(image/skincare/pdf/8901010002.pdf): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 130
+[05-Mar-2018 19:10:06 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 19:10:06 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 19:10:06 Asia/Taipei] PHP   2. savePDFImg() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:145
+[05-Mar-2018 19:10:06 Asia/Taipei] PHP   3. file_put_contents() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:130
+[05-Mar-2018 19:10:54 Asia/Taipei] PHP Warning:  mkdir(): File exists in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 100
+[05-Mar-2018 19:10:54 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 19:10:54 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 19:10:54 Asia/Taipei] PHP   2. getmackupImg() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:114
+[05-Mar-2018 19:10:54 Asia/Taipei] PHP   3. mkdir() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:100
+[05-Mar-2018 19:10:54 Asia/Taipei] PHP Warning:  file_put_contents(image/skincare/pdf/8901010002.pdf): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 131
+[05-Mar-2018 19:10:54 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 19:10:54 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 19:10:54 Asia/Taipei] PHP   2. savePDFImg() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:146
+[05-Mar-2018 19:10:54 Asia/Taipei] PHP   3. file_put_contents() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:131
+[05-Mar-2018 19:10:56 Asia/Taipei] PHP Warning:  mkdir(): File exists in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 100
+[05-Mar-2018 19:10:56 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 19:10:56 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 19:10:56 Asia/Taipei] PHP   2. getmackupImg() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:114
+[05-Mar-2018 19:10:56 Asia/Taipei] PHP   3. mkdir() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:100
+[05-Mar-2018 19:10:56 Asia/Taipei] PHP Warning:  file_put_contents(image/skincare/pdf/8901010002.pdf): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 131
+[05-Mar-2018 19:10:56 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 19:10:56 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 19:10:56 Asia/Taipei] PHP   2. savePDFImg() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:146
+[05-Mar-2018 19:10:56 Asia/Taipei] PHP   3. file_put_contents() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:131
+[05-Mar-2018 19:11:41 Asia/Taipei] PHP Warning:  mkdir(): File exists in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 100
+[05-Mar-2018 19:11:41 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 19:11:41 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 19:11:41 Asia/Taipei] PHP   2. getmackupImg() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:114
+[05-Mar-2018 19:11:41 Asia/Taipei] PHP   3. mkdir() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:100
+[05-Mar-2018 19:11:41 Asia/Taipei] PHP Warning:  file_put_contents(image/skincare/pdf/8901010002.pdf): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php on line 131
+[05-Mar-2018 19:11:41 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 19:11:41 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 19:11:41 Asia/Taipei] PHP   2. savePDFImg() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:146
+[05-Mar-2018 19:11:41 Asia/Taipei] PHP   3. file_put_contents() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:131
+[05-Mar-2018 19:16:28 Asia/Taipei] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Unsupported image type: pdf' in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/fpdf/fpdf.php:271
+Stack trace:
+#0 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/fpdf/fpdf.php(884): FPDF->Error('Unsupported ima...')
+#1 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php(136): FPDF->Image('image/skincare/...', 'png')
+#2 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php(146): savePDFImg(Array)
+#3 {main}
+  thrown in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/fpdf/fpdf.php on line 271
+[05-Mar-2018 19:21:12 Asia/Taipei] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: image/skincare/pdf/8901010002.pdf' in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/fpdf/fpdf.php:271
+Stack trace:
+#0 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #8, 'image/skincare/...')
+#2 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/fpdf/fpdf.php(885): FPDF->_parsepng('image/skincare/...')
+#3 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php(136): FPDF->Image('image/skincare/...', 0, 0, 0, 0, 'png')
+#4 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php(146): savePDFImg(Array)
+#5 {main}
+  thrown in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/fpdf/fpdf.php on line 271
+[05-Mar-2018 19:32:36 Asia/Taipei] PHP Warning:  fopen(image/skincare/pdf/8901010002.pdf): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/fpdf/fpdf.php on line 1259
+[05-Mar-2018 19:32:36 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 19:32:36 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 19:32:36 Asia/Taipei] PHP   2. savePDFImg() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:146
+[05-Mar-2018 19:32:36 Asia/Taipei] PHP   3. FPDF->Image() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:136
+[05-Mar-2018 19:32:36 Asia/Taipei] PHP   4. FPDF->_parsepng() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/fpdf/fpdf.php:885
+[05-Mar-2018 19:32:36 Asia/Taipei] PHP   5. fopen() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/fpdf/fpdf.php:1259
+[05-Mar-2018 19:32:36 Asia/Taipei] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Can't open image file: image/skincare/pdf/8901010002.pdf' in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/fpdf/fpdf.php:271
+Stack trace:
+#0 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/fpdf/fpdf.php(1261): FPDF->Error('Can't open imag...')
+#1 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/fpdf/fpdf.php(885): FPDF->_parsepng('image/skincare/...')
+#2 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php(136): FPDF->Image('image/skincare/...', 0, 0, 0, 0, 'png')
+#3 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php(146): savePDFImg(Array)
+#4 {main}
+  thrown in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/fpdf/fpdf.php on line 271
+[05-Mar-2018 19:33:01 Asia/Taipei] PHP Warning:  fopen(image/skincare/pdf/8901010002.pdf): failed to open stream: No such file or directory in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/fpdf/fpdf.php on line 1259
+[05-Mar-2018 19:33:01 Asia/Taipei] PHP Stack trace:
+[05-Mar-2018 19:33:01 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:0
+[05-Mar-2018 19:33:01 Asia/Taipei] PHP   2. savePDFImg() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:145
+[05-Mar-2018 19:33:01 Asia/Taipei] PHP   3. FPDF->Image() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php:135
+[05-Mar-2018 19:33:01 Asia/Taipei] PHP   4. FPDF->_parsepng() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/fpdf/fpdf.php:885
+[05-Mar-2018 19:33:01 Asia/Taipei] PHP   5. fopen() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/fpdf/fpdf.php:1259
+[05-Mar-2018 19:33:01 Asia/Taipei] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Can't open image file: image/skincare/pdf/8901010002.pdf' in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/fpdf/fpdf.php:271
+Stack trace:
+#0 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/fpdf/fpdf.php(1261): FPDF->Error('Can't open imag...')
+#1 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/fpdf/fpdf.php(885): FPDF->_parsepng('image/skincare/...')
+#2 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php(135): FPDF->Image('image/skincare/...', 0, 0, 0, 0, 'png')
+#3 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php(145): savePDFImg(Array)
+#4 {main}
+  thrown in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/fpdf/fpdf.php on line 271

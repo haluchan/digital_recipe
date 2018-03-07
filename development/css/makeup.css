@@ -1,0 +1,435 @@
+@charset "UTF-8";
+select {
+  border: 0;
+  border-bottom: 1px solid #666;
+  appearance: none;
+  background: url("../img/arrow.svg") right center no-repeat;
+  background-size: 15px; }
+
+body[page=makeup_01] #content .makeup .border {
+  background: url("../img/makeup/01/bg.png") center center no-repeat;
+  background-size: 100%; }
+  body[page=makeup_01] #content .makeup .border .L {
+    width: 465px;
+    height: inherit;
+    padding: 15px; }
+    body[page=makeup_01] #content .makeup .border .L .title {
+      width: 435px; }
+    body[page=makeup_01] #content .makeup .border .L .title:after {
+      content: '*多選，至少選一項';
+      font-size: 0.7em;
+      color: #c1272d;
+      position: absolute;
+      right: 10px; }
+    body[page=makeup_01] #content .makeup .border .L select, body[page=makeup_01] #content .makeup .border .L input {
+      width: 315px;
+      height: 38px;
+      line-height: 38px;
+      padding: 0 7px;
+      border: 0;
+      border-bottom: 1px solid #666; }
+    body[page=makeup_01] #content .makeup .border .L ul {
+      margin-top: 15px; }
+      body[page=makeup_01] #content .makeup .border .L ul li {
+        height: 38px;
+        line-height: 38px; }
+        body[page=makeup_01] #content .makeup .border .L ul li input[type="checkbox"] {
+          width: 20px;
+          height: 20px;
+          vertical-align: sub;
+          margin-right: 15px;
+          display: none; }
+        body[page=makeup_01] #content .makeup .border .L ul li input[type="checkbox"] + label {
+          color: #333;
+          height: 38px;
+          line-height: 38px;
+          float: left;
+          width: 120px; }
+        body[page=makeup_01] #content .makeup .border .L ul li input[type="checkbox"] + label span {
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          margin: -2px 10px 0 0;
+          vertical-align: middle;
+          cursor: pointer;
+          border: 1px solid #333; }
+        body[page=makeup_01] #content .makeup .border .L ul li input[type="checkbox"]:checked + label span {
+          background: url("../img/check.png") 1px 3px no-repeat;
+          background-size: 16px; }
+        body[page=makeup_01] #content .makeup .border .L ul li .sub {
+          display: none; }
+          body[page=makeup_01] #content .makeup .border .L ul li .sub input[type="text"]::-webkit-input-placeholder {
+            /* WebKit browsers */
+            color: #ccc; }
+  body[page=makeup_01] #content .makeup .border .R {
+    width: 377px;
+    height: inherit;
+    padding: 15px; }
+    body[page=makeup_01] #content .makeup .border .R select {
+      width: 100%;
+      height: 38px;
+      line-height: 38px;
+      padding: 0 7px; }
+    body[page=makeup_01] #content .makeup .border .R ul {
+      margin-top: 45px; }
+      body[page=makeup_01] #content .makeup .border .R ul li {
+        height: 38px;
+        line-height: 38px; }
+        body[page=makeup_01] #content .makeup .border .R ul li input[type="checkbox"] {
+          width: 20px;
+          height: 20px;
+          vertical-align: sub;
+          margin-right: 15px;
+          display: none; }
+        body[page=makeup_01] #content .makeup .border .R ul li input[type="checkbox"] + label {
+          color: #333;
+          height: 38px;
+          line-height: 38px;
+          width: 120px; }
+        body[page=makeup_01] #content .makeup .border .R ul li input[type="checkbox"] + label span {
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          margin: -2px 10px 0 0;
+          vertical-align: middle;
+          cursor: pointer;
+          border: 1px solid #333; }
+        body[page=makeup_01] #content .makeup .border .R ul li input[type="checkbox"]:checked + label span {
+          background: url("../img/check.png") 1px 3px no-repeat;
+          background-size: 16px; }
+        body[page=makeup_01] #content .makeup .border .R ul li input[type=text] {
+          width: 270px;
+          height: 38px;
+          line-height: 38px;
+          float: right;
+          outline: 0;
+          border: 0;
+          border-bottom: 1px solid #666;
+          padding: 0 7px;
+          display: none; }
+          body[page=makeup_01] #content .makeup .border .R ul li input[type=text]::-webkit-input-placeholder {
+            /* WebKit browsers */
+            color: #ccc; }
+
+body[page=makeup_02] .makeup .border .L {
+  width: 410px;
+  height: 448px; }
+  body[page=makeup_02] .makeup .border .L .title {
+    margin: 15px 15px 8px; }
+body[page=makeup_02] .makeup .border .R {
+  width: 432px;
+  height: 448px;
+  padding: 15px 15px 0px 0; }
+  body[page=makeup_02] .makeup .border .R .title {
+    width: 411px;
+    height: 34px;
+    line-height: 34px;
+    margin: 0 auto 15px;
+    font-size: 1em;
+    font-weight: bold; }
+    body[page=makeup_02] .makeup .border .R .title input {
+      height: 34px;
+      line-height: 33px;
+      border: 0;
+      border-bottom: 1px solid #666;
+      margin-left: 15px;
+      vertical-align: top; }
+    body[page=makeup_02] .makeup .border .R .title select {
+      height: 34px;
+      line-height: 34px;
+      border: 0;
+      border-bottom: 1px solid #666;
+      margin-left: 15px;
+      appearance: none;
+      background: url("../img/arrow.svg") right center no-repeat;
+      background-size: 15px; }
+  body[page=makeup_02] .makeup .border .R .blank table {
+    margin: 0 auto 15px;
+    width: 411px; }
+    body[page=makeup_02] .makeup .border .R .blank table tr td {
+      border: 1px solid #666;
+      height: 35px;
+      line-height: 35px;
+      padding: 0 7px; }
+      body[page=makeup_02] .makeup .border .R .blank table tr td:nth-child(3n-2) {
+        font-weight: bold; }
+      body[page=makeup_02] .makeup .border .R .blank table tr td:nth-child(3) {
+        border: 0;
+        width: 10px;
+        padding: 0; }
+      body[page=makeup_02] .makeup .border .R .blank table tr td input {
+        height: 35px;
+        line-height: 30px;
+        border: 0; }
+      body[page=makeup_02] .makeup .border .R .blank table tr td select {
+        line-height: 35px;
+        border: 0;
+        appearance: none;
+        background: url("../img/arrow.svg") right center no-repeat;
+        background-size: 15px; }
+  body[page=makeup_02] .makeup .border .R table.form {
+    margin: 14px auto;
+    width: 411px;
+    text-align: center; }
+    body[page=makeup_02] .makeup .border .R table.form colgroup col:nth-child(1) {
+      width: 105px; }
+    body[page=makeup_02] .makeup .border .R table.form colgroup col:nth-child(2) {
+      width: 48px; }
+    body[page=makeup_02] .makeup .border .R table.form colgroup col:nth-child(3) {
+      width: 129px; }
+    body[page=makeup_02] .makeup .border .R table.form colgroup col:nth-child(4) {
+      width: 129px; }
+    body[page=makeup_02] .makeup .border .R table.form tr {
+      height: 35px;
+      line-height: 35px; }
+      body[page=makeup_02] .makeup .border .R table.form tr.title {
+        font-weight: bold; }
+      body[page=makeup_02] .makeup .border .R table.form tr td {
+        border: 1px solid #333;
+        padding: 0 7px;
+        vertical-align: middle; }
+        body[page=makeup_02] .makeup .border .R table.form tr td:first-child {
+          font-weight: bold;
+          text-align: left; }
+        body[page=makeup_02] .makeup .border .R table.form tr td input {
+          text-align: center;
+          font-size: 1em;
+          font-weight: 100;
+          outline: none;
+          border: 0;
+          padding: 0; }
+        body[page=makeup_02] .makeup .border .R table.form tr td select {
+          background-color: #fff;
+          appearance: none;
+          background: url("../img/arrow.svg") right center no-repeat;
+          background-size: 15px; }
+    body[page=makeup_02] .makeup .border .R table.form .water input {
+      text-align: center;
+      width: 46%;
+      margin-left: 0px;
+      height: 35px;
+      line-height: 35px; }
+    body[page=makeup_02] .makeup .border .R table.form .tension td:nth-child(3), body[page=makeup_02] .makeup .border .R table.form .tension td:nth-child(4) {
+      font-size: 16px;
+      padding: 0; }
+      body[page=makeup_02] .makeup .border .R table.form .tension td:nth-child(3) > div:first-child, body[page=makeup_02] .makeup .border .R table.form .tension td:nth-child(4) > div:first-child {
+        width: 32px;
+        height: 35px;
+        border-right: 1px solid #333;
+        float: left; }
+        body[page=makeup_02] .makeup .border .R table.form .tension td:nth-child(3) > div:first-child input, body[page=makeup_02] .makeup .border .R table.form .tension td:nth-child(4) > div:first-child input {
+          width: 100%; }
+      body[page=makeup_02] .makeup .border .R table.form .tension td:nth-child(3) > div:nth-child(2), body[page=makeup_02] .makeup .border .R table.form .tension td:nth-child(4) > div:nth-child(2) {
+        width: 95px;
+        height: 35px;
+        float: left; }
+        body[page=makeup_02] .makeup .border .R table.form .tension td:nth-child(3) > div:nth-child(2) :nth-child(1), body[page=makeup_02] .makeup .border .R table.form .tension td:nth-child(4) > div:nth-child(2) :nth-child(1) {
+          width: 40px;
+          height: 35px;
+          line-height: 35px;
+          border: 0;
+          vertical-align: top;
+          font-size: 1em; }
+        body[page=makeup_02] .makeup .border .R table.form .tension td:nth-child(3) > div:nth-child(2) :nth-child(2), body[page=makeup_02] .makeup .border .R table.form .tension td:nth-child(4) > div:nth-child(2) :nth-child(2) {
+          margin-left: -2px;
+          width: 57px;
+          height: 35px;
+          letter-spacing: 1px; }
+          body[page=makeup_02] .makeup .border .R table.form .tension td:nth-child(3) > div:nth-child(2) :nth-child(2) input, body[page=makeup_02] .makeup .border .R table.form .tension td:nth-child(3) > div:nth-child(2) :nth-child(2) span, body[page=makeup_02] .makeup .border .R table.form .tension td:nth-child(4) > div:nth-child(2) :nth-child(2) input, body[page=makeup_02] .makeup .border .R table.form .tension td:nth-child(4) > div:nth-child(2) :nth-child(2) span {
+            width: 40px;
+            margin-left: -2px;
+            padding: 0;
+            display: inline-block;
+            text-align: center; }
+    body[page=makeup_02] .makeup .border .R table.form .opacity td:nth-child(3), body[page=makeup_02] .makeup .border .R table.form .opacity td:nth-child(4) {
+      padding: 0; }
+      body[page=makeup_02] .makeup .border .R table.form .opacity td:nth-child(3) > div:first-child, body[page=makeup_02] .makeup .border .R table.form .opacity td:nth-child(4) > div:first-child {
+        height: 19px;
+        line-height: 19px;
+        vertical-align: middle; }
+        body[page=makeup_02] .makeup .border .R table.form .opacity td:nth-child(3) > div:first-child input, body[page=makeup_02] .makeup .border .R table.form .opacity td:nth-child(4) > div:first-child input {
+          width: 100%;
+          height: 19px;
+          line-height: 19px;
+          font-size: 16px;
+          vertical-align: bottom; }
+      body[page=makeup_02] .makeup .border .R table.form .opacity td:nth-child(3) > div:nth-child(2), body[page=makeup_02] .makeup .border .R table.form .opacity td:nth-child(4) > div:nth-child(2) {
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top; }
+        body[page=makeup_02] .makeup .border .R table.form .opacity td:nth-child(3) > div:nth-child(2) :nth-child(1), body[page=makeup_02] .makeup .border .R table.form .opacity td:nth-child(4) > div:nth-child(2) :nth-child(1) {
+          display: inline-block;
+          width: 110px;
+          height: 17px;
+          line-height: 17px;
+          border: 0;
+          vertical-align: top;
+          font-size: 11px;
+          letter-spacing: -1px;
+          margin-left: -2px; }
+    body[page=makeup_02] .makeup .border .R table.form .corneum td:nth-child(3) :nth-child(1), body[page=makeup_02] .makeup .border .R table.form .corneum td:nth-child(4) :nth-child(1), body[page=makeup_02] .makeup .border .R table.form .level td:nth-child(3) :nth-child(1), body[page=makeup_02] .makeup .border .R table.form .level td:nth-child(4) :nth-child(1) {
+      width: 90px;
+      font-size: 1em;
+      border: 0;
+      height: 35px;
+      line-height: 35px; }
+body[page=makeup_02] .makeup .border .B {
+  width: 842px;
+  height: 50px;
+  padding: 0 15px 15px; }
+  body[page=makeup_02] .makeup .border .B .title {
+    width: 178px;
+    padding: 0 14px;
+    text-align: center;
+    line-height: 30px;
+    height: 30px;
+    border: 1px solid #666;
+    vertical-align: middle; }
+  body[page=makeup_02] .makeup .border .B form {
+    height: 30px;
+    line-height: 30px; }
+    body[page=makeup_02] .makeup .border .B form input {
+      margin: 0 10px 0 15px;
+      width: 20px;
+      height: 20px;
+      vertical-align: bottom;
+      height: 30px;
+      line-height: 30px; }
+
+body[page=makeup_03] .makeup .border .L {
+  width: 370px;
+  height: inherit;
+  padding: 15px;
+  background: url("../img/makeup/03/L-bg.png") center top no-repeat;
+  background-size: cover; }
+body[page=makeup_03] .makeup .border .R {
+  width: 472px;
+  height: inherit; }
+body[page=makeup_03] .makeup .border .brow, body[page=makeup_03] .makeup .border .note, body[page=makeup_03] .makeup .border .lamp, body[page=makeup_03] .makeup .border .eye, body[page=makeup_03] .makeup .border .title {
+  box-sizing: border-box; }
+body[page=makeup_03] .makeup .border .popmenu {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #333;
+  border-radius: 5px;
+  bottom: 15px;
+  left: 15px;
+  width: 375px;
+  height: 470px;
+  padding: 45px 37.5px 20px; }
+  body[page=makeup_03] .makeup .border .popmenu .close {
+    position: absolute;
+    width: 25px;
+    top: 5px;
+    right: 5px; }
+  body[page=makeup_03] .makeup .border .popmenu .title {
+    width: 300px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    border: 1px solid #333; }
+  body[page=makeup_03] .makeup .border .popmenu select {
+    font-size: 1em;
+    width: 300px;
+    height: 30px;
+    margin-top: 12px;
+    border: 0;
+    border-bottom: 1px solid #333;
+    appearance: none;
+    background: url("../img/arrow.svg") right center no-repeat;
+    background-size: 15px; }
+  body[page=makeup_03] .makeup .border .popmenu .brow-dis {
+    width: 300px;
+    margin: 35px 0 15px; }
+  body[page=makeup_03] .makeup .border .popmenu .menu {
+    width: 300px;
+    padding: 0 30px;
+    margin-top: 13px; }
+    body[page=makeup_03] .makeup .border .popmenu .menu.b3, body[page=makeup_03] .makeup .border .popmenu .menu.b, body[page=makeup_03] .makeup .border .popmenu .menu.c {
+      display: none; }
+    body[page=makeup_03] .makeup .border .popmenu .menu .dis {
+      width: 100%;
+      height: 90px; }
+      body[page=makeup_03] .makeup .border .popmenu .menu .dis > * {
+        float: left; }
+      body[page=makeup_03] .makeup .border .popmenu .menu .dis .img {
+        width: 95px; }
+      body[page=makeup_03] .makeup .border .popmenu .menu .dis .dt {
+        width: 145px; }
+    body[page=makeup_03] .makeup .border .popmenu .menu .list {
+      width: 100%;
+      height: 160px;
+      margin-top: 16px; }
+      body[page=makeup_03] .makeup .border .popmenu .menu .list ul li {
+        width: 40px;
+        float: left;
+        margin-bottom: 0px; }
+        body[page=makeup_03] .makeup .border .popmenu .menu .list ul li > div:first-child {
+          width: 36px;
+          margin: 0 auto;
+          padding: 3px; }
+        body[page=makeup_03] .makeup .border .popmenu .menu .list ul li.active > div:first-child {
+          border: 1px solid #666; }
+        body[page=makeup_03] .makeup .border .popmenu .menu .list ul li .bt_num {
+          text-align: center;
+          font-size: 0.7em;
+          line-height: 1.3; }
+  body[page=makeup_03] .makeup .border .popmenu .ok {
+    text-align: center;
+    width: 300px;
+    height: 50px;
+    line-height: 50px;
+    border: 1px solid #333;
+    border-radius: 7px; }
+body[page=makeup_03] .makeup .border .note {
+  position: absolute;
+  bottom: 15px;
+  left: 15px; }
+  body[page=makeup_03] .makeup .border .note input {
+    width: 300px;
+    font-size: 1.1em;
+    line-height: 1.8em;
+    vertical-align: middle;
+    outline: none;
+    border-radius: 0;
+    border: 0;
+    border-bottom: 1px solid #666;
+    background-color: rgba(255, 255, 255, 0.8); }
+    body[page=makeup_03] .makeup .border .note input::-webkit-input-placeholder {
+      /* WebKit browsers */
+      color: #bbb; }
+  body[page=makeup_03] .makeup .border .note .new, body[page=makeup_03] .makeup .border .note .remove {
+    font-size: 1em;
+    text-align: center;
+    border: 1px solid #666;
+    border-radius: 99em;
+    background-color: #fff;
+    width: 25px;
+    height: 25px;
+    line-height: 21px;
+    vertical-align: middle;
+    outline: none;
+    margin-left: 10px;
+    display: inline-block;
+    text-decoration: top; }
+
+body[page=makeup_04] #content .makeup .border {
+  background: url("../img/makeup/04/bg.png") center center no-repeat;
+  background-size: 100%; }
+  body[page=makeup_04] #content .makeup .border .L {
+    padding: 15px; }
+    body[page=makeup_04] #content .makeup .border .L .title {
+      width: 340px; }
+    body[page=makeup_04] #content .makeup .border .L textarea {
+      margin-top: 15px;
+      padding: 15px;
+      width: 100%;
+      height: 80px;
+      resize: none;
+      font-size: 1em; }
+      body[page=makeup_04] #content .makeup .border .L textarea::-webkit-input-placeholder {
+        /* WebKit browsers */
+        color: #bbb; }
+
+/*# sourceMappingURL=makeup.css.map */

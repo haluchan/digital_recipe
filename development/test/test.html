@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/jquery-2.2.2.min.js" type="text/javascript"></script>
+    <title>Title</title>
+</head>
+<body>
+
+<div ><button id="front">aaaaa</button></div>
+<div id="after"></div>
+
+</body>
+<script>
+
+ $('#front').on('click',function (){
+
+     sentData();
+
+
+ 
+     
+ });
+
+    function sentData() {
+
+        // var DataInfo = {
+        //     "aa":"bnasnd"
+        // };
+        //
+        // $.ajax({
+        //     type: "POST",
+        //     url: "../sentMaintain.php",
+        //     contentType:"application/json; charset=utf-8",
+        //     cache: false,
+        //     data: DataInfo,
+        //     dataType:"JSON",
+        //     success: function (data) {
+        //         alert('OK');
+        //         $('#after').text(data);
+        //     },
+        //     error: function (err) {
+        //         alert("發生錯誤:"+err.status);
+        //         $('#after').text(err);
+        //         console.log(DataInfo);
+        //     }
+        //
+        // });
+
+
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange=function (){
+            if( xhr.readyState == 4){
+                if( xhr.status == 200 ){
+                    alert( ok);
+
+                }else{
+                    alert( xhr.status );
+                }
+            }
+        };
+
+        var json_upload = "data=" + JSON.stringify({name:"John Rambo", time:"2pm"});
+        var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
+        xmlhttp.open("POST", "../getFileName.php");
+        xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xmlhttp.send(json_upload);
+
+    }
+</script>
+
+</html>

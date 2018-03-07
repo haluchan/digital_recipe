@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-TW" prefix="og: http://ogp.me/ns#">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1112,  maximum-scale=1.0, user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" type="text/css" href="css/reset.min.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/makeup.css">
+    <link rel="stylesheet" type="text/css" href="css/paint_face.css">
+    <script src="js/jquery-2.2.2.min.js" type="text/javascript"></script>
+    <script src="js/html2canvas.js" type="text/javascript"></script>
+    <!--
+    <script src="https://code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js"  type="text/javascript"></script>
+    -->
+</head>
+
+<body class="clearfix" page="makeup_03">
+    <!--div class="size">
+                    <h1>xx尺寸測試</h1>
+            <p id="mo-size">monitor size</p>
+            <p id="browser-size">browser size</p>
+            <br><br><br>
+    </div-->
+    <div id="menu" class="floatL">
+        <div class="btn"><img src="img/menu-btn.png"></div>
+        <ul>
+            <li><a href="makeup_01.html" style="text-decoration:none ;color: #000000">肌膚困擾/需求</a></li>
+            <li><a href="makeup_02.html" style="text-decoration:none ;color: #000000">肌膚檢測結果</a></li>
+            <li class="active"><a href="makeup_03.html" style="text-decoration:none ;color: #000000">彩妝處方箋</a></li>
+            <li><a href="makeup_04.html" style="text-decoration:none ;color: #000000">其他建議</a></li>
+        </ul>
+        <div class="foot">
+            <div class="logo"><img src="img/logo.png"></div>
+            <div class="Back2Log"><a href="login.html" style="text-decoration:none ;color: #000000"><img src="img/back2log.png"></a></div>
+        </div>
+    </div>
+    <div id="content" class="floatR">
+        <header>
+            <div class="slogan">為妳解決、改善肌膚的困擾，創造專屬於妳的「美麗處方箋」。</div>
+            <div class="clearfix border-B">
+                <div class="title floatL">彩妝處方箋 MAKEUP RECIPE</div>
+                <div class="date floatR">檢測日期：<span id="date"></span></div>
+            </div>
+            <div class="clearfix">
+                <div class="name floatL">顧客姓名：<span id="vipnm"></span></div>
+                <div class="member floatL">會員編號：<span id="vipids" ></span></div>
+                <div class="attendant floatL">服務人員：<span id="bcnm"></span></div>
+            </div>
+        </header>
+        <main class="makeup">
+            <div class="border clearfix">
+                <div class="L floatL">
+                    <div class="title bold">彩妝處方箋</div>
+                </div>
+                <!--edit by robert start-->
+                <div id="makeupRecipe" class="R floatR">
+                    <div id="html-content" style="background: #FFFFFF">
+                        <div class="faceBg"></div>
+                        <div class="btn" data="brow"></div>
+                        <div class="typeName" data="brow"></div>
+                        <div class="btn" data="eye"></div>
+                        <div class="typeName" data="eye"></div>
+                        <div class="btn" data="lips"></div>
+                        <div class="typeName" data="lips"></div>
+                        <canvas id="canvasFace" class="canvas disable" width="472" height="497"></canvas>
+                        <div class="canvasTool" data-toolNumber="0">
+                            <div class="tool" data-tool="painter">
+                                <img src="img/makeup/btn_painter.png" alt="畫筆" class="btnTool" />
+                                <img src="img/makeup/btn_painter_clicked.png" alt="畫筆點選中" class="btnTool hide" />
+                            </div>
+                            <div class="tool" data-tool="pallete">
+                                <div class="colors hide">
+                                    <div class="row">
+                                        <div class="color active" data-color="#FF0000"> </div>
+                                        <div class="color" data-color="#FF9600"></div>
+                                        <div class="color" data-color="#FFEF00"></div>
+                                        <div class="color" data-color="#00AED9"></div>
+                                        <div class="color" data-color="#DB46A1"></div>
+                                        <br />
+                                        <div class="color" data-color="#000000"></div>
+                                        <div class="color" data-color="#FFFFFF"></div>
+                                        <div class="color" data-color="#01BC2C"></div>
+                                        <div class="color" data-color="#004FE9"></div>
+                                        <div class="color" data-color="#831CCF"></div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                                <img src="img/makeup/btn_color_FF0000.png" alt="調色盤" class="btnTool" />
+                            </div>
+                            <div class="tool" data-tool="ereaser">
+                                <img src="img/makeup/btn_ereaser.png" alt="橡皮擦" class="btnTool" />
+                                <img src="img/makeup/btn_ereaser_clicked.png" alt="橡皮擦點選中" class="btnTool hide" />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="previewImage"></div>
+                </div>
+                <!--edit by robert end-->
+                <div class="popmenu brow">
+                    <div class="close"><img src="img/btn-close.png"></div>
+                    <div class="title bold">選擇眉型</div>
+                    <select name="brow" class="bt">
+                        <option value="01">長眉</option>
+                        <option value="02">短眉</option>
+                        <option value="03">上揚的眉</option>
+                        <option value="04">下垂的眉</option>
+                        <option value="05">曲線眉</option>
+                        <option value="06">直線眉</option>
+                        <option value="07">粗眉</option>
+                        <option value="08">細眉</option>
+                        <option value="09">濃眉</option>
+                        <option value="10">淡眉</option>
+                    </select>
+                    <!--edit by robert start-->
+                    <div class="brow-dis dis">
+                        <div class="img">
+                            <img src="img/makeup/03/brow/a01.png">
+                        </div>
+                    </div>
+                    <!--edit by robert end-->
+                    <div class="ok">確認套用</div>
+                </div>
+                <div class="popmenu eye">
+                    <div class="close"><img src="img/btn-close.png"></div>
+                    <div class="title bold">選擇眼彩</div>
+                    <select name="eye" class="bt">
+                        <option value="b2">活現誘色完美眼彩膏</option>
+                        <option value="b3">活現誘色完美眼彩</option>
+                    </select>
+                    <div class="menu b2" data="eye_b2">
+                        <div class="dis clearfix">
+                            <div class="img"><img src="img/makeup/03/eye_b2/eye-img-b201.png"></div>
+                            <div class="dt"></div>
+                        </div>
+                        <div class="list">
+                            <ul class="clearfix"></ul>
+                        </div>
+                    </div>
+                    <div class="menu b3" data="eye_b3">
+                        <div class="dis clearfix">
+                            <div class="img"><img src="img/makeup/03/eye_b3/eye-img-b301.png"></div>
+                            <div class="dt"></div>
+                        </div>
+                        <div class="list">
+                            <ul class="clearfix"></ul>
+                        </div>
+                    </div>
+                    <div class="ok">確認套用</div>
+                </div>
+                <div class="popmenu lips">
+                    <div class="close"><img src="img/btn-close.png"></div>
+                    <div class="title bold">選擇唇彩</div>
+                    <select name="lips" class="bt">
+                        <option value="a">3D微整型光感唇蜜</option>
+                        <option value="b">活現誘色鏡光唇釉</option>
+                        <option value="c">活現誘色唇膏EX</option>
+                    </select>
+                    <div class="menu a" data="lips_a">
+                        <div class="dis clearfix">
+                            <div class="img"><img src="img/makeup/03/lips_a/img/NC04.png"></div>
+                            <div class="dt"></div>
+                        </div>
+                        <div class="list">
+                            <ul class="clearfix"></ul>
+                        </div>
+                    </div>
+                    <div class="menu b" data="lips_b">
+                        <div class="dis clearfix">
+                            <div class="img"><img src="img/makeup/03/lips_b/img/01.png"></div>
+                            <div class="dt"></div>
+                        </div>
+                        <div class="list">
+                            <ul class="clearfix"></ul>
+                        </div>
+                    </div>
+                    <div class="menu c" data="lips_c">
+                        <div class="dis clearfix">
+                            <div class="img"><img src="img/makeup/03/lips_c/img/C01.png"></div>
+                            <div class="dt"></div>
+                        </div>
+                        <div class="list">
+                            <ul class="clearfix"></ul>
+                        </div>
+                    </div>
+                    <div class="ok">確認套用</div>
+                </div>
+                <div class="note">
+                    <div id="firstInput">
+                        <input type="text" placeholder="請填寫圖片說明" name="MAKUP_TEXT" maxlength="18"/><div class="new">+</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="prev floatL">上一步</div>
+            <div class="next floatR">下一步</div>
+        </footer>
+    </div>
+    <form name="makeup_03">
+        <input name="browImg" data="brow" type="hidden"  />
+        <input name="browVal" data="brow" type="hidden" />
+        <input name="browText" data="brow" type="hidden" />
+        <input name="eyeImg" data="brow" type="hidden" />
+        <input name="eyeType" type="hidden" />
+        <input name="eyeVal" type="hidden" />
+        <input name="eyeText" type="hidden" />
+        <input name="lipsImg" data="brow" type="hidden" />
+        <input name="lipsType" type="hidden" />
+        <input name="lipsVal" type="hidden" />
+        <input name="lipsText" type="hidden" />
+    </form>
+    <script src="js/common.js" type="text/javascript"></script>
+    <script src="js/makeup_03.js" type="text/javascript"></script>
+    <script src="js/paint_face.js" type="text/javascript"></script>
+    <script src="js/canvas.js" type="text/javascript"></script>
+    <script src="js/mackup_03h.js" type="text/javascript"></script>
+</body>
+
+</html>

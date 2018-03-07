@@ -1,0 +1,247 @@
+.canvasTool {
+    position: absolute;
+    bottom: 15px;
+    right: 25px;
+
+    .tool {
+        width: 50px;
+        height: 50px;
+        background-color: #FFF;
+        margin-bottom: 2px;
+        border-radius: 5px;
+        border: 1px solid #000;
+
+        img.btnTool {
+            width: 40px;
+            height: 40px;
+            margin: 5px;
+        }
+
+        &.clicked {
+            background-color: #b2b2b2;
+        }
+
+
+        &[data-tool='painter'] {}
+
+        &[data-tool='pallete'] .colors {
+            transition: 1s;
+            width: 105px;
+            margin-left: -100px;
+            padding: 5px;
+            background: #FFF;
+            border-radius: 5px 0 0 5px;
+            border-left: 1px solid #000;
+            border-top: 1px solid #000;
+            border-bottom: 1px solid #000;
+            height: 50px;
+            margin-top: -1px;
+            float: left;
+
+            .seperator {
+                width: 1px;
+                background: #000;
+                margin: 5px 0;
+                display: inline;
+            }
+
+            .row {
+                display: block;
+                border-right: 1px solid #000;
+
+                margin: 2px auto 0px 2px;
+
+                .color {
+                    width: 15px;
+                    height: 15px;
+                    float: left;
+                    margin: 1px;
+
+                    &.active {
+                        border: 1px solid #000;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.hide {
+    display: none;
+}
+
+.disable {
+    pointer-events: none;
+}
+
+
+
+
+
+/*maintain 01*/
+
+#maintainRecipe01 {
+    position: relative;
+    .skinResult {
+        position: relative;
+        background-size: cover;
+        background-position: left top;
+        background-repeat: no-repeat;
+        width: 470px;
+        background-image: url("../img/maintain/01/maintain01_paint_bg.png");
+        height: 449px;
+    }
+
+    .canvasTool {
+        right: 5px;
+        bottom: 10px;
+    }
+}
+
+
+/*maintain 04*/
+
+#maintainRecipe04 {
+    position: relative;
+    .skinResult {
+        position: relative;
+        background-size: cover;
+        background-position: left top;
+        background-repeat: no-repeat;
+        width: 380px;
+        background-image: url("../img/maintain/04/maintain04_paint_bg.png");
+        height: 442px;
+    }
+
+    .canvasTool {
+
+        right: 35px;
+        top: 10px;
+        height: 55px;
+        .tool {
+            margin-left: 5px;
+        }
+    }
+}
+
+
+
+
+/*makeup 02*/
+
+#skinResultGroup {
+    position: relative;
+
+    .skinResult1 {
+        position: relative;
+        background-size: cover;
+        background-position: left top;
+        background-repeat: no-repeat;
+        width: 410px;
+        background-image: url("../img/makeup/02/paint_bg01.png");
+        height: 220px;
+        }
+    .skinResult2 {
+        position: relative;
+        background-size: cover;
+        background-position: left top;
+        background-repeat: no-repeat;
+        width: 410px;
+        background-image: url("../img/makeup/02/paint_bg02.png");
+        height: 175px;
+        }
+}
+
+
+
+.canvasTool {
+    right: 5px;
+    bottom: 10px;
+}
+
+
+
+
+
+
+
+
+/*makeup 03*/
+
+#makeupRecipe {
+    position: relative;
+
+    div.faceBg {
+        width: 472px;
+        height: 497px;
+        background: url("../img/makeup/03/paint_face/face_bg.png") left top no-repeat;
+        background-size: cover;
+    }
+
+    div.typeName {
+        position: absolute;
+        color: #808080;
+        font-size: 0.8em;
+        text-align: right;
+        line-height: 1.2em;
+
+        &[data='brow'] {
+            top: 100px;
+            right: 60px;
+            width: 100px;
+        }
+
+        &[data='eye'] {
+            top: 158px;
+            left: 20px;
+            width: 80px;
+        }
+
+        &[data='lips'] {
+            width: 200px;
+            bottom: 18px;
+            left: 25px;
+            text-align: left;
+        }
+    }
+
+    div.btn {
+        position: absolute;
+
+        &[data='brow'] {
+            top: 150px;
+            left: 117px;
+            width: 200px;
+            height: 35px;
+            background: url("../img/makeup/03/paint_face/btn_eyebrows.png") left top no-repeat;
+            background-size: cover;
+        }
+
+        &[data='eye'] {
+            top: 180px;
+            left: 110px;
+            width: 185px;
+            height: 40px;
+            background: url("../img/makeup/03/paint_face/btn_eyes.png") left top no-repeat;
+            background-size: cover;
+        }
+
+        &[data='lips'] {
+            top: 300px;
+            left: 150px;
+            width: 95px;
+            height: 40px;
+            background: url("../img/makeup/03/paint_face/btn_lips.png") left top no-repeat;
+            background-size: cover;
+        }
+    }
+
+
+    #canvasFace {
+        position: absolute;
+        width: 472px;
+        height: 497px;
+        top: 0;
+        left: 0;
+    }
+}

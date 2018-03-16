@@ -1,0 +1,27 @@
+<component name="libraryTable">
+  <library name="Generated files" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/dist/development/20180314/maintain_05.js" />
+        <item url="file://$PROJECT_DIR$/dist/development/js/loginCmd.js" />
+        <item url="file://$PROJECT_DIR$/dist/development/js/maintain_05.js" />
+        <item url="file://$PROJECT_DIR$/dist/development/js/maintain_05h.js" />
+        <item url="file://$PROJECT_DIR$/dist/development/js/preview_maintain_h.js" />
+        <item url="file://$PROJECT_DIR$/dist/development/js/preview_makeup.js" />
+        <item url="file://$PROJECT_DIR$/dist/development/old/maintain_05.js" />
+        <item url="file://$PROJECT_DIR$/dist/development/test/test.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/dist/development/20180314/maintain_05.js" />
+      <root url="file://$PROJECT_DIR$/dist/development/js/loginCmd.js" />
+      <root url="file://$PROJECT_DIR$/dist/development/js/maintain_05.js" />
+      <root url="file://$PROJECT_DIR$/dist/development/js/maintain_05h.js" />
+      <root url="file://$PROJECT_DIR$/dist/development/js/preview_maintain_h.js" />
+      <root url="file://$PROJECT_DIR$/dist/development/js/preview_makeup.js" />
+      <root url="file://$PROJECT_DIR$/dist/development/old/maintain_05.js" />
+      <root url="file://$PROJECT_DIR$/dist/development/test/test.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>

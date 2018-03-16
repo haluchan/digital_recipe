@@ -51,9 +51,41 @@ $(document).ready(function(){
 
 
 
+    //mean跳轉跳
+    if(localStorage.getItem('DRY') !== null){
+        $('.btn').siblings('ul').children('li:eq(0)').css('color','#000000');
+
+        $('.btn').siblings('ul').children('li:eq(0)').on('click touchstart',function (){
+            location.href = 'maintain_01.html';
+        });
+    }
+    if(localStorage.getItem('AIR_DRY') !== null){
+        $('.btn').siblings('ul').children('li:eq(1)').css('color','#000000');
+
+        $('.btn').siblings('ul').children('li:eq(1)').on('click touchstart',function (){
+            location.href = 'maintain_02.html';
+        });
+    }
+    if(localStorage.getItem('MOISTURIZING') !== null){
+        $('.btn').siblings('ul').children('li:eq(2)').css('color','#000000');
+
+        $('.btn').siblings('ul').children('li:eq(2)').on('click touchstart',function (){
+            location.href = 'maintain_03.html';
+        });
+    }
+    if(localStorage.getItem('canvasFace_3') !== null){
+        $('.btn').siblings('ul').children('li:eq(3)').css('color','#000000');
+
+        $('.btn').siblings('ul').children('li:eq(3)').on('click touchstart',function (){
+            location.href = 'maintain_04.html';
+        });
+    }
 
 });
 
+
+
+//回首頁清暫存
 $('.Back2Log').on('click',function () {
     localStorage.clear();
 });
@@ -85,60 +117,6 @@ $('.prev').on('click',function(){
 
     location.href = "maintain_03.html";
 });
-
-
-
-function tmpData() {
-
-
-
-    var tmpskin_color = localStorage.getItem('SKIN_COLOR_C');
-
-    document.querySelectorAll('select')[0].value = skin_color_cEX(tmpskin_color);
-
-
-    var slen =  document.querySelectorAll('select');
-
-    for (var j = 0; j < slen.length; j++) {
-
-        var tmpSelectData = localStorage.getItem(slen[j].name);
-
-        slen[j].value = tmpSelectData;
-
-    }
-
-
-
-
-    var len =  document.querySelectorAll('input');
-
-    for (var i = 0; i < len.length-6; i++) {
-
-
-        var tmpInputData = localStorage.getItem(len[i].name);
-
-
-        len[i].value = tmpInputData;
-
-    }
-
-    for (var k = 9; k < len.length; k++) {
-
-        var tmpnm = localStorage.getItem(len[k].name);
-
-        if(tmpnm === "1"){
-            len[k].setAttribute('checked','checked');
-            len[k].setAttribute('value','1');
-        }
-
-    }
-
-
-
-}
-
-
-
 
 function htmlToCanvas() {
 
@@ -364,12 +342,28 @@ function checkdata() {
 
     for (var i = 0; i < 8; i++) {
 
-        if($("input[type*=text]")[i].value === "" ){
+        var num = /^[0-9]+$/;
+        var tmpNm =$("input[type*=text]")[i].name;
+        var tmpData = document.querySelectorAll('input')[i].value;
 
-            var tmpNm =$("input[type*=text]")[i].name;
+        if($("input[type*=text]")[i].value === "" ){
 
             alert("請輸入"+ exchangeName(tmpNm) );
             return false;
+        }else{
+
+            if(i === 0){
+                continue;
+            }
+
+            if(!num.test(tmpData)){
+
+                alert(exchangeName(tmpNm) + "只能輸入數字");
+
+                return false;
+
+            }
+
         }
 
     }

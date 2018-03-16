@@ -34,16 +34,13 @@ $(document).ready(function(){
 
     }
 
-
-
-    sessionData();
-
+    sessionData(htmlToCanvas);
 
 });
 
 $('.next').on('click',function(){
 
-    if(htmlToCanvas){
+    if(htmlToCanvas()){
         sentData();
     }
 
@@ -80,7 +77,7 @@ function getMackupData(xmlDoc){
 
 }
 
-function sessionData() {
+function sessionData(callback) {
 
     var sg = parseInt(localStorage.SG);
     var skinLevel = parseInt(localStorage.SKIN_LEVEL);
@@ -142,6 +139,9 @@ function sessionData() {
             }
         }
     }
+
+
+    callback();
 
 }
 
@@ -326,6 +326,7 @@ function naturalEX(tmp) {
 function sentData() {
 
 
+
     for (var i = 1; i <= 10; i++) {
 
         var tmp = "MAKUP_TEXT_"+i ;
@@ -391,12 +392,12 @@ function sentData() {
         HORNY: localStorage.HORNY,
         SKIN_LEVEL: localStorage.SKIN_LEVEL,
         EYEBROW_TC: localStorage.EYEBROW_TC,
-        SHADOW: "1",
-        SHADOW_S: "1",
-        SHADOW_COLOR_C: "1",
-        LIP_O: "1",
-        LIP_SC: "1",
-        LIP_COLOR: "1",
+        SHADOW: localStorage.SHADOW,
+        SHADOW_S: localStorage.SHADOW_S,
+        SHADOW_COLOR_C: localStorage.SHADOW_COLOR_C,
+        LIP_O: localStorage.LIP_O,
+        LIP_SC: localStorage.LIP_SC,
+        LIP_COLOR: localStorage.LIP_COLOR,
         MAKUP_TXT_1: localStorage.MAKUP_TEXT_1,
         MAKUP_TXT_2: localStorage.MAKUP_TEXT_2,
         MAKUP_TXT_3: localStorage.MAKUP_TEXT_3,

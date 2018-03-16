@@ -10,21 +10,48 @@ $(document).ready(function() {
     $('#vipids').text(vipids);
     $('#bcnm').text(bcnm);
 
-
-
     if (localStorage.canvasFace_2 !== undefined){
         $('.skinResult').css("display","none");
         $('#previewImage').append("<img src="+localStorage.canvasFace_2+">");
     }else{
         $('canvasTool').css("display","block");
     }
-
     sessionData();
 
 
+    //mean跳轉跳
+    if(localStorage.getItem('DRY') !== null){
+        $('.btn').siblings('ul').children('li:eq(0)').css('color','#000000');
+
+        $('.btn').siblings('ul').children('li:eq(0)').on('click touchstart',function (){
+            location.href = 'maintain_01.html';
+        });
+    }
+    if(localStorage.getItem('AIR_DRY') !== null){
+        $('.btn').siblings('ul').children('li:eq(1)').css('color','#000000');
+
+        $('.btn').siblings('ul').children('li:eq(1)').on('click touchstart',function (){
+            location.href = 'maintain_02.html';
+        });
+    }
+    if(localStorage.getItem('MOISTURIZING') !== null){
+        $('.btn').siblings('ul').children('li:eq(2)').css('color','#000000');
+
+        $('.btn').siblings('ul').children('li:eq(2)').on('click touchstart',function (){
+            location.href = 'maintain_03.html';
+        });
+    }
+    if(localStorage.getItem('canvasFace_3') !== null){
+        $('.btn').siblings('ul').children('li:eq(3)').css('color','#000000');
+
+        $('.btn').siblings('ul').children('li:eq(3)').on('click touchstart',function (){
+            location.href = 'maintain_04.html';
+        });
+    }
 
 });
 
+//回首頁清暫存
 $('.Back2Log').on('click',function () {
     localStorage.clear();
 });

@@ -8,6 +8,8 @@
 
 
 require_once('phpinit.php');
+error_reporting(E_ERROR | E_PARSE);
+
 require('psw.php');
 $UserID="innity54395064";
 $MARKNO = "IPSA";
@@ -179,7 +181,7 @@ function skinWaterImg($data,$last_id){
 
     }
 
-    return $fileName.".png";
+    return $fileName."png";
 
 }
 
@@ -236,7 +238,7 @@ if(isset($data)) {
                 "ROW" => array(
                     "MARKNO" => $MARKNO,
                     "VIPIDS" => $data["VIPIDS"],
-                    "DATE" => $data["DATE"],
+                    "DATE" => "",//系統自動帶入
                     "BCID" => $data["BCID"],
                     "DRY" => $data["DRY"],
                     "OIL" => $data["OIL"],
@@ -351,6 +353,7 @@ try{
 //    echo "<br>";
 //    echo("\nDumping request:\n");
 //    var_dump(html_entity_decode($client->__getLastRequest(),ENT_QUOTES | ENT_XML1, 'UTF-8'));
+
 //    echo "<br>";
 //    echo("\nDumping response headers:\n");
 //    var_dump($client->__getLastResponseHeaders());
@@ -474,8 +477,8 @@ function sendMail($data){
         //,"abc@yahoo.com" => "Mike.Porter"
 //        "forchang0120@gmail.com" => "Halu"
     ));
-    $message->setSubject("IPSA 肌膚檢測結果");
-    $message->setBody("感謝您! 近日到IPSA門市進行檢測，您本次檢測結果在附件裡。");
+    $message->setSubject("專屬您的IPSA 電子處方箋");
+    $message->setBody("親愛的貴賓您好：感謝您蒞臨IPSA專櫃進行肌膚檢測，隨信附上您本次電子處方箋。");
     $message->setFrom("admin@ipsa.com.tw", "IPSA");
 
 //attachment(附件)

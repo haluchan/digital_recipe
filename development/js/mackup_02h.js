@@ -57,13 +57,40 @@ $(document).ready(function(){
     }
 
 
+    //mean跳轉跳
+    if(localStorage.getItem('DRY') !== null){
+        $('.btn').siblings('ul').children('li:eq(0)').css('color','#000000');
 
+        $('.btn').siblings('ul').children('li:eq(0)').on('click touchstart',function (){
+            location.href = 'makeup_01.html';
+        });
+    }
 
+    if(localStorage.getItem('canvasFace_0') !== null){
+        $('.btn').siblings('ul').children('li:eq(1)').css('color','#000000');
+
+        $('.btn').siblings('ul').children('li:eq(1)').on('click touchstart',function (){
+            location.href = 'makeup_02.html';
+        });
+    }
+    if(localStorage.getItem('canvasFace_2') !== null){
+        $('.btn').siblings('ul').children('li:eq(2)').css('color','#000000');
+
+        $('.btn').siblings('ul').children('li:eq(2)').on('click touchstart',function (){
+            location.href = 'makeup_03.html';
+        });
+    }
 
 
 });
 
 
+
+
+
+
+
+//產生canvas圖檔
 function htmlToCanvas1(callback){
 
     $('.canvasTool').css('display','none');
@@ -76,13 +103,10 @@ function htmlToCanvas1(callback){
             localStorage.setItem('canvasFace_0',canvas.toDataURL("image/png"));
             callback()
         }
-
-
     });
 
-
-
 }
+
 
 function htmlToCanvas2() {
 
@@ -96,8 +120,6 @@ function htmlToCanvas2() {
             localStorage.setItem('canvasFace_1',canvas.toDataURL("image/png"));
         }
     });
-
-
 
 }
 
@@ -126,7 +148,6 @@ $('.next').on('click',function(){
 
             saveData();
 
-
         if(localStorage.canvasFace_0 === undefined && localStorage.canvasFace_1 === undefined) {
 
             htmlToCanvas1(htmlToCanvas2);
@@ -134,8 +155,6 @@ $('.next').on('click',function(){
             // htmlToCanvas2();
 
         }
-
-
             setTimeout(function () {
                 window.open('makeup_03.html','_self');
             },300);
@@ -178,7 +197,6 @@ function getMackupData(xmlDoc){
 
     $('#p-skin_level').text(skinLevelEX(skinLevel));
 
-
 }
 
 
@@ -201,10 +219,9 @@ function saveData() {
     }
 
 
-
-
-
 }
+
+
 
 function elasticityEX(tmp) {
     switch(tmp) {
@@ -214,13 +231,14 @@ function elasticityEX(tmp) {
         case 2:
             tmp = "G";
             break;
-
     }
 
     return(tmp);
 }
 
 
+
+//檔案值交換
 function skinLevelEX(tmp) {
 
     switch(tmp) {
@@ -279,71 +297,6 @@ function transparencyEX(tmp) {
     return(tmp);
 
 }
-
-
-
-
-//資料檢查
-function checkdata() {
-
-    for (var i = 0; i < 11; i++) {
-
-        if(document.querySelectorAll('input')[i].value === "" ){
-
-            var tmpNm = document.querySelectorAll('input')[i].name;
-
-            alert("請輸入"+ exchangeName(tmpNm) );
-            return false;
-        }
-
-    }
-
-
-    for (var k = 0; k < 7; k++) {
-        if(document.querySelectorAll('select')[k].value === "" ){
-
-            var tmp = document.querySelectorAll('select')[k].name;
-
-            alert("請輸入"+ exchangeName(tmp) );
-            return false;
-        }
-
-    }
-
-    function checkboxx() {
-
-        var num = 0;
-
-        for (var i = 0; i < 6; i++) {
-
-            if($("input[type*='checkbox']")[i].value === "1"){
-
-                // var num = 0;
-
-                 num++
-
-
-            }
-
-        }
-
-        return(num);
-
-    }
-
-
-    if (checkboxx() === 0){
-
-        alert("請至少選擇一種底妝");
-        return false;
-    }
-
-
-
-    return true;
-
-}
-
 
 
 function exchangeName(tmpNm) {
@@ -451,9 +404,91 @@ function natural_c(tmp) {
 }
 
 
+
+
+
+//資料檢查
+function checkdata() {
+
+    for (var i = 0; i < 9; i++) {
+
+        var num = /^[0-9]+$/;
+        var tmpNm =$("input[type*=text]")[i].name;
+        var tmpData = document.querySelectorAll('input')[i].value;
+
+        if($("input[type*=text]")[i].value === "" ){
+
+            alert("請輸入"+ exchangeName(tmpNm) );
+            return false;
+        }else{
+
+            if(i === 0){
+                continue;
+            }
+
+            if(!num.test(tmpData)){
+
+                alert(exchangeName(tmpNm) + "只能輸入數字");
+
+                return false;
+
+            }
+
+        }
+
+    }
+
+
+    for (var k = 0; k < 7; k++) {
+        if(document.querySelectorAll('select')[k].value === "" ){
+
+            var tmp = document.querySelectorAll('select')[k].name;
+
+            alert("請輸入"+ exchangeName(tmp) );
+            return false;
+        }
+
+    }
+
+    function checkboxx() {
+
+        var num = 0;
+
+        for (var i = 0; i < 6; i++) {
+
+            if($("input[type*='checkbox']")[i].value === "1"){
+
+                // var num = 0;
+
+                 num++
+
+
+            }
+
+        }
+
+        return(num);
+
+    }
+
+
+    if (checkboxx() === 0){
+
+        alert("請至少選擇一種底妝");
+        return false;
+    }
+
+
+
+    return true;
+
+}
+
+
+
+
+//暫存資料
 function sessionData() {
-
-
 
     var tmpskin_color = localStorage.getItem('SKIN_COLOR_C');
 

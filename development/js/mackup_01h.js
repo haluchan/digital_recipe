@@ -10,11 +10,32 @@ $(document).ready(function(){
     $('#vipids').text(vipids);
     $('#bcnm').text(bcnm);
 
+    tmpData();
 
 
+    //mean跳轉跳
+    if(localStorage.getItem('DRY') !== null){
+        $('.btn').siblings('ul').children('li:eq(0)').css('color','#000000');
 
-        tmpData();
+        $('.btn').siblings('ul').children('li:eq(0)').on('click touchstart',function (){
+            location.href = 'makeup_01.html';
+        });
+    }
 
+    if(localStorage.getItem('canvasFace_0') !== null){
+        $('.btn').siblings('ul').children('li:eq(1)').css('color','#000000');
+
+        $('.btn').siblings('ul').children('li:eq(1)').on('click touchstart',function (){
+            location.href = 'makeup_02.html';
+        });
+    }
+    if(localStorage.getItem('canvasFace_2') !== null){
+        $('.btn').siblings('ul').children('li:eq(2)').css('color','#000000');
+
+        $('.btn').siblings('ul').children('li:eq(2)').on('click touchstart',function (){
+            location.href = 'makeup_03.html';
+        });
+    }
 
 
 });

@@ -21,6 +21,8 @@ function loginInfo(xmlDoc) {
 //表單位置
 $(document).ready(function() {
 
+    localStorage.clear();
+
     //bcid 登入
     $('.login').click(function flogin() {
 
@@ -263,7 +265,6 @@ $(document).ready(function() {
 
             }else{
 
-
                     $('.next').unbind('click',fnext);
 
                     var xhr = new XMLHttpRequest();
@@ -271,9 +272,11 @@ $(document).ready(function() {
                         if( xhr.readyState == 4){
                             if( xhr.status == 200 ){
                                 var rtncodeInt = parseInt(xhr.responseXML.getElementsByTagName('RTNCODE')[0].textContent);
+                                // console.log(xhr.responseText);
                                 if( rtncodeInt !== 0){
                                     console.log(xhr.responseXML);
-                                    alert('輸入生日、電話、信箱有誤，請重新確認');
+
+                                    alert(xhr.responseXML.getElementsByTagName('RTNMSG')[0].textContent);
                                 }else{
                                     // console.log(xhr.responseXML.getElementsByTagName('BCNAME')[0].textContent);
                                     alert('新增會員成功，您的會員編號為' + xhr.responseXML.getElementsByTagName('VIPIDS')[0].textContent);
@@ -421,6 +424,7 @@ function nVip(xmlDoc) {
 
     var Today=new Date();
     localStorage.setItem("DATE" , Today.getFullYear() + "/" + (Today.getMonth()+1) + "/" + Today.getDate());
+    localStorage.setItem("DATE" , Today.getFullYear() + "/" + (Today.getMonth()+1) + "/" + Today.getDate());
     localStorage.setItem('BCID',$('#bcid').val());
     localStorage.setItem("VIPIDS",$('#vipids').val());
     localStorage.setItem("MAIL",$('#signMail').val());
@@ -450,9 +454,6 @@ function updataVip(xmlDoc) {
 
 
 }
-
-
-
 
 
 

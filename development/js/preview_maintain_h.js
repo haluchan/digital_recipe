@@ -11,8 +11,7 @@ $(document).ready(function(){
     $('#vipids').text(vipids);
     $('#bcnm').text(bcnm);
 
-    //產生下拉選單
-    sessionDate();
+
 
     //前一次資料
     if(vipids){
@@ -38,19 +37,22 @@ $(document).ready(function(){
 
     }
 
+    //產生下拉選單
+    sessionDate(htmlToCanvas);
+
 });
 
 
 $('.next').on('click',function(){
 
-   if(htmlToCanvas){
+   if(htmlToCanvas()){
         sentData();
     }
 
 
     $('.bg').css('display','block');
 
-})
+});
 
 
 
@@ -67,7 +69,7 @@ $('.prev').on('click',function(){
 
 
 
-function sessionDate(){
+function sessionDate(callback){
 
     var sg = parseInt(localStorage.SG);
     var skinLevel = parseInt(localStorage.SKIN_LEVEL);
@@ -193,6 +195,10 @@ function sessionDate(){
 
 
     $('#SUGGESTION').text(localStorage.SUGGESTION);
+
+
+
+    callback();
 
 }
 
@@ -474,9 +480,6 @@ function specEx(tmp) {
 function sentData() {
 
 
-
-
-
     var data = {
         VIPIDS: localStorage.VIPIDS,
         DATE: localStorage.DATE,
@@ -592,7 +595,7 @@ function sentData() {
 
 }
 
-function htmlToCanva() {
+function htmlToCanvas() {
 
 
     html2canvas($('#content'), {

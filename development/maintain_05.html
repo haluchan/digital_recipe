@@ -3,6 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=1112px,  maximum-scale=1.0, user-scalable=0" />
+	<meta name="format-detection" content="telephone=no">
+	<meta HTTP-EQUIV="cache-Ccontrol" CONTENT="no-cache">
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
@@ -18,11 +20,11 @@
 	<div id="menu" class="floatL">
 		<div class="btn"><img src="img/menu-btn.png"></div>
 		<ul>
-			<li><a href="maintain_01.html"  style="text-decoration:none ;color: #000000">肌膚困擾</a></li>
-			<li><a href="maintain_02.html" style="text-decoration:none ;color: #000000">內外在因素/困擾</a></li>
-			<li><a href="maintain_03.html" style="text-decoration:none ;color: #000000">日常保養與底妝</a></li>
-			<li><a href="maintain_04.html" style="text-decoration:none ;color: #000000">肌膚檢測結果</a></li>
-			<li class="active"><a href="maintain_05.html" style="text-decoration:none ;color: #000000">永恆美肌的關鍵</a></li>
+			<li style="color: #888888">肌膚困擾</li>
+			<li style="color: #888888">內外在因素/困擾</li>
+			<li style="color: #888888">日常保養與底妝</li>
+			<li style="color: #888888">肌膚檢測結果</li>
+			<li class="active">永恆美肌的關鍵</li>
 		</ul>
 		<div class="foot">
 			<div class="logo"><img src="img/logo.png"></div>
@@ -51,10 +53,27 @@
 				
 					<div class="title bold">永恆美肌的關鍵</div>
 					<div class="step s1">調整循環代謝的基礎保養</div>	
-					<ul>
+					<ul class="adjust">
 						<li>1.調理肌膚水油平衡，細胞代謝順暢</li>
 						<li>2.創造健全皮脂膜</li>
 					</ul>
+
+					<div class="basic">
+						<input type="checkbox" id="basic">
+						<label for="basic"><span></span>基礎保養</label>
+						<div class="sub">
+							<select id="remove" class="remove"  name="remove">
+								<option value="0">請選擇卸妝</option>
+							</select>
+							<select id="clean" class="clean"  name="clean">
+								<option value="0">請選擇清潔</option>
+							</select>
+							<span>ME濕潤平衡液</span>
+							<select id="balance" class="balance"  name="balance">
+								<option value="0">請選擇</option>
+							</select>
+						</div>
+					</div>
 					
 					<div class="step s2">阻礙循環代謝要因中守護肌膚的特殊保養</div>
 					

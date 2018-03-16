@@ -2,7 +2,7 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="27c80d5f-b43b-447f-8809-dc58452973eb" name="IPSA" url="">
+      <webServer id="27c80d5f-b43b-447f-8809-dc58452973eb" name="IPSA" url="https://www.ipsa.com.tw">
         <fileTransfer host="203.69.42.186" port="21" rootFolder="/digital_recipe">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" />

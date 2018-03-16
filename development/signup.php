@@ -139,8 +139,6 @@ if(isset($_REQUEST["CUSTNO"] , $_REQUEST["VIPNM"] , $_REQUEST["SBIRTH"] , $_REQU
         echo $result->WS_CREVIPBASEResult;
 
 
-
-
     }catch(Exception $e){
 
         printf("Message = %s",$e->__toString());

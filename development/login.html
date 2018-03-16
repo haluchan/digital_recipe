@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=1112px,  maximum-scale=1.0, user-scalable=0" />
+	<meta HTTP-EQUIV="cache-Ccontrol" CONTENT="no-cache">
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
@@ -22,7 +23,7 @@
 				<div class="blank clearfix">
 					<!--<form class="formlogin" action="getLoginInfo.php" method="post">-->
 						<div class="title floatL">服務人員工號</div>
-						<div class="content floatL"><input id="bcid" type="text" placeholder="請輸入服務人員工號" name="BCID" value=""></div>
+						<div class="content floatL"><input id="bcid" type="text" placeholder="請輸入服務人員工號" name="BCID" value="" maxlength="6"></div>
 					<!--</form>-->
 				</div>
 			</div>
@@ -71,7 +72,7 @@
 
 				<div class="blank clearfix">
 					<div class="title w4 floatL ">顧客生日</div>
-					<div class="content floatL"><input id="sbirth" class="date" type="date" placeholder="西元(年/月/日)" value=""></div>
+					<div class="content floatL"><input id="sbirth" class="date" type="date" min="1918-01-01" placeholder="西元(年/月/日)" value="" max=""></div>
 				</div>
 				<div style="">
 					<input type="hidden" id="custno" value=''>

@@ -127,8 +127,7 @@ body[page=preview_maintain] #content .maintain .border {
         text-align: center; }
     body[page=preview_maintain] #content .maintain .border .R .mL {
       width: 175px;
-      height: 213px;
-      background-color: red; }
+      height: 213px; }
     body[page=preview_maintain] #content .maintain .border .R .mR {
       width: 288px; }
       body[page=preview_maintain] #content .maintain .border .R .mR .blank table {

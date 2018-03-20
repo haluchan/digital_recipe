@@ -256,6 +256,10 @@ if(isset($data)) {
                     "SKIN_COLOR_C" => $data["SKIN_COLOR_C"],
                     "SKIN_LIGHT" => $data["SKIN_LIGHT"],
                     "SKIN_LIGHT_C" => $data["SKIN_LIGHT_C"],
+                    "BASC" => $data["BASC"],
+                    "BASC_REMOVER" => $data["BASC_REMOVER"],
+                    "BASC_CLEAN" => $data["BASC_CLEAN"],
+                    "BASC_WET" => $data["BASC_WET"],
                     "HORNY_C" => $data["HORNY_C"],
                     "HORNY_T" => $data["HORNY_T"],
                     "DRYING_C" => $data["DRYING_C"],
@@ -267,6 +271,7 @@ if(isset($data)) {
                     "UV_C" => $data["UV_C"],
                     "UV_T" => $data["UV_T"],
                     "OTHER_C" => $data["OTHER_C"],
+                    "OTHER_T" => $data["OTHER_T"],
                     "SUGGESTION" => $data["SUGGESTION"],
                     "MAKEUP_URL" => $makeupName,
                     "SKIN_WATER_URL" => $skinWaterName
@@ -326,11 +331,11 @@ try{
 //    var_dump($client->__getLastResponseHeaders());
 //    echo "<br>";
 //    echo("\nDumping response:\n");
-//    var_dump($client->__getLastResponse());
+//    var_dump(html_entity_decode($client->__getLastResponse(),ENT_QUOTES | ENT_XML1, 'UTF-8'));
 
 
 
-//    printf('Result = %s' , $result->WS_UPDVIPBASEResult);
+//    printf('Result = %s' , $result->WS_CREIPSASKINCAREResult);
 
     $bcXml = simplexml_load_string($result->WS_CREIPSASKINCAREResult);
 

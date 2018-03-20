@@ -91,6 +91,15 @@ function sessionDate(callback){
 
     $('.suggest').text(localStorage.MAKUP_TXT_C);
 
+
+    var removeValue = parseInt(localStorage.BASC_REMOVE);
+    var cleanValue = parseInt(localStorage.BASC_CLEAN);
+    var wetValue = parseInt(localStorage.BASC_WET);
+
+    $("#basc_remove").text(removeEx(removeValue));
+    $("#basc_clean").text(cleanEx(cleanValue));
+    $("#basc_wet").text(wetEx(wetValue));
+
     $("#NATURAL_C").text(naturalEX(natural));
     $("#ACQUIRED_C").text(acquiredEX(acquired));
     $("#MOISTURE").text(localStorage.MOISTURE);
@@ -108,16 +117,27 @@ function sessionDate(callback){
     $('div[name="SKIN_LIGHT_C"]').text(skin_light_cEX(skin_light_c));
     $('div[name="SKIN_LIGHT_O"]').text(localStorage.SKIN_LIGHT_O);
 
+
+
+    if(localStorage.BASC_WET !=="0" || localStorage.BASC_CLEAN !=="0" || localStorage.BASC_REMOVE !=="0"){
+
+        $('#basic').attr('checked','checked');
+    }
+
+
+
     if(localStorage.HORNY_C !=="0"){
 
         $('#0').attr('checked','checked');
         $('#sHORNY').text(specEx(localStorage.HORNY_C));
+        $('#sHORNY').css('display','block');
 
-        if(localStorage.HORNY_T !== ""){
+        if(localStorage.HORNY_T !== "0"){
             $('#0').attr('checked','checked');
-            $('#sHORNY').text(localStorage.HORNY_T);
+            $('#pHORNY').text(hornyEx(localStorage.HORNY_T));
+            $('#pHORNY').siblings(".arrow").css('display','block');
+            $('#pHORNY').css('display','block');
         }
-
     }
 
 
@@ -125,10 +145,13 @@ function sessionDate(callback){
 
         $('#2').attr('checked','checked');
         $('#sDRYING').text(specEx(localStorage.DRYING_C));
+        $('#sDRYING').css('display','block');
 
-        if(localStorage.DRYING_T !== ""){
+        if(localStorage.DRYING_T !== "0"){
             $('#2').attr('checked','checked');
-            $('#sDRYING').text(localStorage.DRYING_T);
+            $('#pDRYING').text(dryingEx(localStorage.DRYING_T));
+            $('#pDRYING').siblings(".arrow").css('display','block');
+            $('#pDRYING').css('display','block');
         }
 
 
@@ -139,10 +162,13 @@ function sessionDate(callback){
 
         $('#3').attr('checked','checked');
         $('#sWHITENING').text(specEx(localStorage.WHITENING_C));
+        $('#sWHITENING').css('display','block');
 
-        if(localStorage.WHITENING_T !== ""){
+        if(localStorage.WHITENING_T !== "0"){
             $('#3').attr('checked','checked');
-            $('#sWHITENING').text(localStorage.WHITENING_T);
+            $('#pWHITENING').text(whiteningEx(localStorage.WHITENING_T));
+            $('#pWHITENING').siblings(".arrow").css('display','block');
+            $('#pWHITENING').css('display','block');
         }
 
 
@@ -155,10 +181,13 @@ function sessionDate(callback){
 
         $('#4').attr('checked','checked');
         $('#sELASTICITY').text(specEx(localStorage.ELASTICITY_C));
+        $('#sELASTICITY').css('display','block');
 
-        if(localStorage.ELASTICITY_T !== ""){
+        if(localStorage.ELASTICITY_T !== "0"){
             $('#4').attr('checked','checked');
-            $('#sELASTICITY').text(localStorage.ELASTICITY_T);
+            $('#pELASTICITY').text(elasticityEx(localStorage.ELASTICITY_T));
+            $('#pELASTICITY').siblings(".arrow").css('display','block');
+            $('#pELASTICITY').css('display','block');
         }
 
 
@@ -170,10 +199,13 @@ function sessionDate(callback){
 
         $('#5').attr('checked','checked');
         $('#sUV').text(specEx(localStorage.UV_C));
+        $('#sUV').css('display','block');
 
-        if(localStorage.UV_T !== ""){
+        if(localStorage.UV_T !== "0"){
             $('#5').attr('checked','checked');
-            $('#sUV').text(localStorage.UV_T);
+            $('#pUV').text(uvEx(localStorage.UV_T));
+            $('#pUV').siblings(".arrow").css('display','block');
+            $('#pUV').css('display','block');
         }
 
 
@@ -184,10 +216,13 @@ function sessionDate(callback){
 
         $('#6').attr('checked','checked');
         $('#sOTHER').text(specEx(localStorage.OTHER_C));
+        $('#sOTHER').css('display','block');
 
-        if(localStorage.OTHER_T !== ""){
+        if(localStorage.OTHER_T !== "0"){
             $('#6').attr('checked','checked');
-            $('#sOTHER').text(localStorage.OTHER_T);
+            $('#pOTHER').text(otherEx(localStorage.OTHER_T));
+            $('#pOTHER').siblings(".arrow").css('display','block');
+            $('#pOTHER').css('display','block');
         }
 
     }
@@ -477,6 +512,424 @@ function specEx(tmp) {
     return (tmp);
 }
 
+function removeEx(tmp) {
+
+    switch(tmp) {
+        case 1:
+            tmp = "瞬卸潔膚油EX";
+            break;
+        case 2:
+            tmp = "瞬卸潔膚蜜EX";
+            break;
+        case 3:
+            tmp = "瞬卸潔膚霜EX";
+            break;
+        case 4:
+            tmp = "逆齡再生溫感卸妝凝露";
+            break;
+        case 5:
+            tmp = "眼唇卸妝液";
+            break;
+        default:
+            tmp = "";
+    }
+
+    return(tmp);
+}
+
+
+function cleanEx(tmp){
+
+    switch(tmp) {
+        case 1:
+            tmp = "舒緩潔膚乳";
+            break;
+        case 2:
+            tmp = "海洋礦物皂";
+            break;
+        case 3:
+            tmp = "透明潔膚乳e";
+            break;
+        case 4:
+            tmp = "柔潤潔膚乳N";
+            break;
+        default:
+            tmp = "";
+    }
+
+    return(tmp);
+}
+
+
+
+function wetEx(tmp) {
+
+    switch(tmp) {
+        case 1:
+            tmp = "基礎1";
+            break;
+        case 2:
+            tmp = "基礎2";
+            break;
+        case 3:
+            tmp = "基礎3";
+            break;
+        case 4:
+            tmp = "基礎4";
+            break;
+        case 5:
+            tmp = "強化1";
+            break;
+        case 6:
+            tmp = "強化2";
+            break;
+        case 7:
+            tmp = "強化3";
+            break;
+        case 8:
+            tmp = "強化4";
+            break;
+        case 9:
+            tmp = "超強化1";
+            break;
+        case 10:
+            tmp = "超強化2";
+            break;
+        case 11:
+            tmp = "超強化3";
+            break;
+        case 12:
+            tmp = "超強化4";
+            break;
+        case 13:
+            tmp = "舒緩1";
+            break;
+        case 14:
+            tmp = "舒緩2";
+            break;
+        case 15:
+            tmp = "極致1";
+            break;
+        case 16:
+            tmp = "極致2";
+            break;
+        case 17:
+            tmp = "極致3";
+            break;
+        default:
+            tmp = "";
+    }
+
+    return(tmp);
+}
+
+
+
+function hornyEx(tmp) {
+
+    switch(tmp) {
+        case "1401":
+            tmp = "泥狀角質按摩霜e";
+            break;
+        case "1402":
+            tmp = "逆齡再生修復精露";
+            break;
+        case "1403":
+            tmp = "角質發光液EX 1";
+            break;
+        case "1404":
+            tmp = "角質發光液EX 2";
+            break;
+        case "1501":
+            tmp = "泥狀角質按摩霜e";
+            break;
+        case "1502":
+            tmp = "逆齡再生修復精露";
+            break;
+        case "1503":
+            tmp = "角質發光液EX 1";
+            break;
+        case "1504":
+            tmp = "角質發光液EX 2";
+            break;
+
+    }
+
+    return(tmp);
+
+
+}
+
+
+
+
+
+function dryingEx(tmp) {
+
+    switch(tmp) {
+        case "1701":
+            tmp = "美膚膜力保濕露";
+            break;
+        case "1702":
+            tmp = "美膚保水菁華棒";
+            break;
+        case "1703":
+            tmp = "美膚溫感眼部精華";
+            break;
+        case "1704":
+            tmp = "膜力護唇抗UV精華";
+            break;
+        case "1705":
+            tmp = "美膚微整機能液";
+            break;
+        case "1706":
+            tmp = "美膚微整精華凝凍";
+            break;
+        case "1801":
+            tmp = "美膚膜力保濕露";
+            break;
+        case "1802":
+            tmp = "美膚保水菁華棒";
+            break;
+        case "1803":
+            tmp = "美膚溫感眼部精華";
+            break;
+        case "1804":
+            tmp = "膜力護唇抗UV精華";
+            break;
+        case "1805":
+            tmp = "美膚微整機能液";
+            break;
+        case "1806":
+            tmp = "美膚微整精華凝凍";
+            break;
+
+    }
+
+    return(tmp);
+
+
+}
+
+
+
+
+function whiteningEx(tmp) {
+
+    switch(tmp) {
+        case "2001":
+            tmp = "肌淨白精萃OP";
+            break;
+        case "2002":
+            tmp = "肌淨白面膜";
+            break;
+        case "2101":
+            tmp = "肌淨白精萃OP";
+            break;
+        case "2102":
+            tmp = "肌淨白面膜";
+            break;
+        case "2201":
+            tmp = "肌淨白精萃OP";
+            break;
+        case "2202":
+            tmp = "肌淨白面膜";
+            break;
+
+    }
+
+    return(tmp);
+
+
+}
+
+
+
+function elasticityEx(tmp) {
+
+    switch(tmp) {
+        case "2401":
+            tmp = "逆齡再生無痕乳霜";
+            break;
+        case "2402":
+            tmp = "逆齡再生無痕眼膜霜";
+            break;
+        case "2403":
+            tmp = "肌能膜力緊緻精華";
+            break;
+        case "2404":
+            tmp = "肌能補充膠囊";
+            break;
+        case "2405":
+            tmp = "緊緻集效霜";
+            break;
+        case "2406":
+            tmp = "抗皺集效霜";
+            break;
+        case "2501":
+            tmp = "逆齡再生無痕乳霜";
+            break;
+        case "2502":
+            tmp = "逆齡再生無痕眼膜霜";
+            break;
+        case "2503":
+            tmp = "肌能膜力緊緻精華";
+            break;
+        case "2504":
+            tmp = "肌能補充膠囊";
+            break;
+        case "2505":
+            tmp = "緊緻集效霜";
+            break;
+        case "2506":
+            tmp = "抗皺集效霜";
+            break;
+
+    }
+
+    return(tmp);
+
+
+}
+
+
+
+
+function uvEx(tmp) {
+
+    switch(tmp) {
+        case "2701":
+            tmp = "舒緩隔光霜EX";
+            break;
+        case "2702":
+            tmp = "臉部抗痕防護乳EX";
+            break;
+        case "2703":
+            tmp = "全身抗痕防護乳";
+            break;
+
+    }
+
+    return(tmp);
+
+}
+
+
+
+function otherEx(tmp) {
+
+    switch(tmp) {
+        case "2901":
+            tmp = "粉刺敷面組合N";
+            break;
+        case "2902":
+            tmp = "急效抗壓馴荳精華";
+            break;
+        case "2903":
+            tmp = "身體馴荳噴霧EX";
+            break;
+        case "2904":
+            tmp = "按摩水凝露N";
+            break;
+        case "3001":
+            tmp = "粉刺敷面組合N";
+            break;
+        case "3002":
+            tmp = "急效抗壓馴荳精華";
+            break;
+        case "3003":
+            tmp = "2步驟粉刺組";
+            break;
+        case "3004":
+            tmp = "身體馴荳噴霧EX";
+            break;
+        case "3005":
+            tmp = "按摩水凝露N";
+            break;
+        case "3101":
+            tmp = "粉刺敷面組合N";
+            break;
+        case "3102":
+            tmp = "急效抗壓馴荳精華";
+            break;
+        case "3103":
+            tmp = "2步驟粉刺組";
+            break;
+        case "3104":
+            tmp = "身體馴荳噴霧EX";
+            break;
+        case "3105":
+            tmp = "按摩水凝露N";
+            break;
+        case "3201":
+            tmp = "粉刺敷面組合N";
+            break;
+        case "3202":
+            tmp = "急效抗壓馴荳精華";
+            break;
+        case "3203":
+            tmp = "2步驟粉刺組";
+            break;
+        case "3204":
+            tmp = "身體馴荳噴霧EX";
+            break;
+        case "3205":
+            tmp = "按摩水凝露N";
+            break;
+        case "3301":
+            tmp = "粉刺敷面組合N";
+            break;
+        case "3302":
+            tmp = "急效抗壓馴荳精華";
+            break;
+        case "3303":
+            tmp = "2步驟粉刺組";
+            break;
+        case "3304":
+            tmp = "身體馴荳噴霧EX";
+            break;
+        case "3305":
+            tmp = "按摩水凝露N";
+            break;
+        case "3401":
+            tmp = "粉刺敷面組合N";
+            break;
+        case "3402":
+            tmp = "急效抗壓馴荳精華";
+            break;
+        case "3403":
+            tmp = "2步驟粉刺組";
+            break;
+        case "3404":
+            tmp = "身體馴荳噴霧EX";
+            break;
+        case "3405":
+            tmp = "按摩水凝露N";
+            break;
+        case "3501":
+            tmp = "粉刺敷面組合N";
+            break;
+        case "3502":
+            tmp = "急效抗壓馴荳精華";
+            break;
+        case "3503":
+            tmp = "2步驟粉刺組";
+            break;
+        case "3504":
+            tmp = "身體馴荳噴霧EX";
+            break;
+        case "3505":
+            tmp = "按摩水凝露N";
+            break;
+
+
+    }
+
+    return(tmp);
+}
+
+
+
 function sentData() {
 
 
@@ -549,6 +1002,10 @@ function sentData() {
         SKIN_COLOR_C: localStorage.SKIN_COLOR_C,
         SKIN_LIGHT: localStorage.SKIN_LIGHT_O,
         SKIN_LIGHT_C: localStorage.SKIN_LIGHT_C,
+        BASC: localStorage.BASC,
+        BASC_REMOVER: localStorage.BASC_REMOVE,
+        BASC_CLEAN: localStorage.BASC_CLEAN,
+        BASC_WET: localStorage.BASC_WET,
         HORNY_C: localStorage.HORNY_C,
         HORNY_T: localStorage.HORNY_T,
         DRYING_C: localStorage.DRYING_C,
@@ -560,6 +1017,7 @@ function sentData() {
         UV_C: localStorage.UV_C,
         UV_T: localStorage.UV_T,
         OTHER_C: localStorage.OTHER_C,
+        OTHER_T: localStorage.OTHER_T,
         SUGGESTION: localStorage.SUGGESTION,
         MAKEUP_URL: localStorage.canvasFace_2,
         SKIN_WATER_URL: localStorage.canvasFace_3,

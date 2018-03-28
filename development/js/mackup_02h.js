@@ -99,11 +99,15 @@ function htmlToCanvas1(callback){
         onrendered: function (canvas) {
             dpi: window.devicePixelRatio,
             $('#previewImage-1').append("<img src="+canvas.toDataURL("image/png")+">");
-            $('#previewImage-1 > img').css('display','none');
+            $('#previewImage-1 > img').css('display','block');
             localStorage.setItem('canvasFace_0',canvas.toDataURL("image/png"));
-            callback()
+
+
+            callback();
         }
     });
+
+
 
 }
 
@@ -116,7 +120,7 @@ function htmlToCanvas2() {
         dpi: window.devicePixelRatio,
         onrendered: function (canvas) {
             $('#previewImage-2').append("<img src="+canvas.toDataURL("image/png")+">");
-            $('#previewImage-2 > img').css('display','none');
+            $('#previewImage-2 > img').css('display','block');
             localStorage.setItem('canvasFace_1',canvas.toDataURL("image/png"));
         }
     });
@@ -410,13 +414,21 @@ function natural_c(tmp) {
 //資料檢查
 function checkdata() {
 
-    for (var i = 0; i < 9; i++) {
+    var titleVal =$("input[type*='text']")[0].value;
+
+    if(titleVal === ""){
+        alert("請輸入主題");
+
+        return false;
+    }
+
+    for (var i = 0; i < 8; i++) {
 
         var num = /^[0-9]+$/;
-        var tmpNm =$("input[type*=text]")[i].name;
+        var tmpNm =$("input[type*=tel]")[i].name;
         var tmpData = document.querySelectorAll('input')[i].value;
 
-        if($("input[type*=text]")[i].value === "" ){
+        if($("input[type*=tel]")[i].value === "" ){
 
             alert("請輸入"+ exchangeName(tmpNm) );
             return false;
@@ -519,6 +531,10 @@ function sessionData() {
        len[i].value = tmpInputData;
 
     }
+
+    var subVal = localStorage.getItem("SUBJECT");
+
+    $("input[type*='text']")[0].value = subVal;
 
     for (var k = 9; k < len.length; k++) {
 

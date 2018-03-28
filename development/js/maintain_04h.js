@@ -340,13 +340,22 @@ function natural_c(tmp) {
 
 function checkdata() {
 
-    for (var i = 0; i < 8; i++) {
+    var titleVal =$("input[type*=text]")[0].value;
+
+    if(titleVal === ""){
+        alert("請輸入主題");
+
+        return false;
+    }
+
+
+    for (var i = 0; i < 7; i++) {
 
         var num = /^[0-9]+$/;
-        var tmpNm =$("input[type*=text]")[i].name;
-        var tmpData = document.querySelectorAll('input')[i].value;
+        var tmpNm =$("input[type*=tel]")[i].name;
+        var tmpData = $("input[type*=tel]")[i].value;
 
-        if($("input[type*=text]")[i].value === "" ){
+        if($("input[type*=tel]")[i].value === "" ){
 
             alert("請輸入"+ exchangeName(tmpNm) );
             return false;
@@ -429,9 +438,11 @@ function sessionData() {
 
     }
 
+    var subVal = localStorage.getItem("SUBJECT");
 
+    $("input[type*=text]")[0].value = subVal;
 
-    var len =  $("input[type*=text]");
+    var len =  $("input[type*=tel]");
 
     for (var i = 0; i < len.length; i++) {
 

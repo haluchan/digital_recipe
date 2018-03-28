@@ -2,6 +2,7 @@ select{
 	border: 0;
 	border-bottom: 1px solid #666;
 	appearance:none;
+	-webkit-appearance: none;
 	background: url('../img/arrow.svg') right center no-repeat;
 	background-size: 15px;
 }
@@ -204,6 +205,7 @@ body[page=makeup_02] {
 					border-bottom: 1px solid #666;
 					margin-left: 15px;
 					appearance:none;
+					-webkit-appearance: none;
 					background: url('../img/arrow.svg') right center no-repeat;
 					background-size: 15px;
 				}
@@ -241,6 +243,7 @@ body[page=makeup_02] {
 								line-height: 35px;
 								border: 0;
 								appearance:none;
+								-webkit-appearance: none;
 								background: url('../img/arrow.svg') right center no-repeat;
 								background-size: 15px;
 							}
@@ -299,6 +302,7 @@ body[page=makeup_02] {
 						select{
 							background-color: #fff;
 							appearance:none;
+							-webkit-appearance: none;
 							background: url('../img/arrow.svg') right center no-repeat;
 							background-size: 15px;
 						}
@@ -505,6 +509,7 @@ body[page=makeup_03] {
 				border:0;
 				border-bottom: 1px solid #333;
 				appearance:none;
+				-webkit-appearance: none;
 				background: url('../img/arrow.svg') right center no-repeat;
 				background-size: 15px;
 			}

@@ -245,8 +245,8 @@ function createCanvas(ele) {
     var setting = {
 
         erease: false,
-        lineWidth: 5,
-        ereaserWidth: ereaserWidth,
+        lineWidth: 4.2,
+        ereaserWidth: 30, //ereaserWidth
         strokeColor: '#F00',
         isCanvasOn: false,
         isPainterOn: false,

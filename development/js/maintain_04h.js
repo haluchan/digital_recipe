@@ -75,9 +75,13 @@ $(document).ready(function(){
     }
     if(localStorage.getItem('canvasFace_3') !== null){
         $('.btn').siblings('ul').children('li:eq(3)').css('color','#000000');
+        $('.btn').siblings('ul').children('li:eq(4)').css('color','#000000');
 
         $('.btn').siblings('ul').children('li:eq(3)').on('click touchstart',function (){
             location.href = 'maintain_04.html';
+        });
+        $('.btn').siblings('ul').children('li:eq(4)').on('click touchstart',function (){
+            location.href = 'maintain_05.html';
         });
     }
 

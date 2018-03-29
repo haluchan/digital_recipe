@@ -377,16 +377,15 @@ function vipLocinInfo(xmlDoc) {
 
      if (!xmlDoc.getElementsByTagName('VIPNM')[0]){
 
-         alert('查無客戶資料');
+         alert('查無客戶資料，轉按確定後跳註冊頁面');
 
          $('.vipnmInfo').text($('#vipnm').val());
          $('.sbrithInfo').text(sbirth);
          $('#telmOption').append($('<option>').val("新客戶").text("新客戶"));
 
 
-         state++;
+         state+=2;
          step();
-
     }else{
 
          $('#vipids').val( xmlDoc.getElementsByTagName('VIPIDS')[0].textContent);

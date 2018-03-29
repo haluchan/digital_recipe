@@ -7,6 +7,8 @@
         <item url="file://$PROJECT_DIR$/dist/development/js/dataEx.js" />
         <item url="file://$PROJECT_DIR$/dist/development/js/loginCmd.js" />
         <item url="file://$PROJECT_DIR$/dist/development/js/mackup_02h.js" />
+        <item url="file://$PROJECT_DIR$/dist/development/js/maintain_02h.js" />
+        <item url="file://$PROJECT_DIR$/dist/development/js/maintain_03h.js" />
         <item url="file://$PROJECT_DIR$/dist/development/js/maintain_04.js" />
         <item url="file://$PROJECT_DIR$/dist/development/js/maintain_04h.js" />
         <item url="file://$PROJECT_DIR$/dist/development/js/maintain_05.js" />
@@ -23,6 +25,8 @@
       <root url="file://$PROJECT_DIR$/dist/development/js/dataEx.js" />
       <root url="file://$PROJECT_DIR$/dist/development/js/loginCmd.js" />
       <root url="file://$PROJECT_DIR$/dist/development/js/mackup_02h.js" />
+      <root url="file://$PROJECT_DIR$/dist/development/js/maintain_02h.js" />
+      <root url="file://$PROJECT_DIR$/dist/development/js/maintain_03h.js" />
       <root url="file://$PROJECT_DIR$/dist/development/js/maintain_04.js" />
       <root url="file://$PROJECT_DIR$/dist/development/js/maintain_04h.js" />
       <root url="file://$PROJECT_DIR$/dist/development/js/maintain_05.js" />

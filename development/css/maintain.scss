@@ -453,6 +453,7 @@ body[page=maintain_04] {
                         margin-left: 0px;
                         height: 35px;
                         line-height: 35px;
+                        font: inherit;
                     }
                 }
 
@@ -468,6 +469,7 @@ body[page=maintain_04] {
                             float: left;
                             input {
                                 width: 100%;
+                                font-weight: 400;
                             }
                         }
                         >div:nth-child(2) {
@@ -496,6 +498,7 @@ body[page=maintain_04] {
                                     margin-left: -1px;
                                     padding: 0;
                                     display: inline-block;
+                                    font: inherit;
                                 }
                             }
                         }
@@ -509,15 +512,18 @@ body[page=maintain_04] {
                         >div:first-child {
                             //width: 34px;
                             height: 19px; //border-right: 1px solid #333;
-                            line-height: 19px;      
-                            vertical-align: middle; 
+                            line-height: 19px;
+                            font-size: 16px;
+                            vertical-align: top;
                             //float: left;
                             input {
                                 width: 100%;
                                 height: 19px;
                                 line-height: 19px;
                                 font-size: 16px;
-                                vertical-align: bottom;
+                                vertical-align: top;
+                                font-weight: 400;
+                                font-weight: initial;
                             }
                         }
                         >div:nth-child(2) {
@@ -551,6 +557,7 @@ body[page=maintain_04] {
                             border: 0;
                             height: 35px;
                             line-height: 35px;
+                            font: inherit;
                         }
                     }
                 }

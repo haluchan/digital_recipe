@@ -99,7 +99,7 @@ function htmlToCanvas1(callback){
         onrendered: function (canvas) {
             dpi: window.devicePixelRatio,
             $('#previewImage-1').append("<img src="+canvas.toDataURL("image/png")+">");
-            $('#previewImage-1 > img').css('display','block');
+            $('#previewImage-1 > img').css('display','none');
             localStorage.setItem('canvasFace_0',canvas.toDataURL("image/png"));
 
 
@@ -120,7 +120,7 @@ function htmlToCanvas2() {
         dpi: window.devicePixelRatio,
         onrendered: function (canvas) {
             $('#previewImage-2').append("<img src="+canvas.toDataURL("image/png")+">");
-            $('#previewImage-2 > img').css('display','block');
+            $('#previewImage-2 > img').css('display','none');
             localStorage.setItem('canvasFace_1',canvas.toDataURL("image/png"));
         }
     });
@@ -163,10 +163,7 @@ $('.next').on('click',function(){
                 window.open('makeup_03.html','_self');
             },300);
         }
-
 });
-
-
 
 
 

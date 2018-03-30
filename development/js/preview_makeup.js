@@ -11,38 +11,25 @@ $(document).ready(function(){
     $('#vipids').text(vipids);
     $('#bcnm').text(bcnm);
 
+    getlastData(vipids);
+    sessionData();
 
 
     //前一次資料
-    if(vipids){
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange=function (){
-            if( xhr.readyState == 4){
-                if( xhr.status == 200 ){
-                    if(xhr.responseXML.getElementsByTagName('RTNMSG')[0].textContent !== "查無檢驗資料") {
-                        getMackupData(xhr.responseXML)
-                    }
-                }else{
-                    alert( xhr.status );
-                }
-            }
-        };
 
-        var url = 'getMackupData.php?VIPIDS='+ vipids;
-        xhr.open("GET", url, true);
-        xhr.send( null );
 
-    }
 
-    sessionData(htmlToCanvas);
+
 
 });
 
 $('.next').on('click',function(){
 
-    if(htmlToCanvas()){
-        sentData();
-    }
+   if(htmlToCanvas){
+    sentData();
+   }
+
+
 
     $('.bg').css('display','block');
 });
@@ -57,27 +44,31 @@ $('.prev').on('click',function(){
 
 function getMackupData(xmlDoc){
 
-    var elasticity =parseInt(xmlDoc.getElementsByTagName('ELASTICITY')[0].textContent);
-    var transparency = parseInt(xmlDoc.getElementsByTagName('TRANSPARENCY_C')[0].textContent);
-    var skinLevel = parseInt(xmlDoc.getElementsByTagName('SKIN_LEVEL')[0].textContent);
 
-    $('#p-moisture').text(xmlDoc.getElementsByTagName('MOISTURE')[0].textContent);
-    $('#p-sebum').text(xmlDoc.getElementsByTagName('SEBUM')[0].textContent);
-    $('#p-tension').text(xmlDoc.getElementsByTagName('TENSION')[0].textContent);
+        var elasticity =parseInt(xmlDoc.getElementsByTagName('ELASTICITY')[0].textContent);
+        var transparency = parseInt(xmlDoc.getElementsByTagName('TRANSPARENCY_C')[0].textContent);
+        var skinLevel = parseInt(xmlDoc.getElementsByTagName('SKIN_LEVEL')[0].textContent);
 
-    $('#p-elasticity').text(elasticityEX(elasticity));
-    $('#p-sg').text(xmlDoc.getElementsByTagName('SG')[0].textContent);
+        $('#p-moisture').text(xmlDoc.getElementsByTagName('MOISTURE')[0].textContent);
+        $('#p-sebum').text(xmlDoc.getElementsByTagName('SEBUM')[0].textContent);
+        $('#p-tension').text(xmlDoc.getElementsByTagName('TENSION')[0].textContent);
 
-    $('#p-transparency_c').text(transparencyEX(transparency));
-    $('#p-transparency').text(xmlDoc.getElementsByTagName('TRANSPARENCY')[0].textContent);
-    $('#p-horny').text(xmlDoc.getElementsByTagName('HORNY')[0].textContent);
+        $('#p-elasticity').text(elasticityEX(elasticity));
+        $('#p-sg').text(xmlDoc.getElementsByTagName('SG')[0].textContent);
 
-    $('#p-skin_level').text(skinLevelEX(skinLevel));
+        $('#p-transparency_c').text(transparencyEX(transparency));
+        $('#p-transparency').text(xmlDoc.getElementsByTagName('TRANSPARENCY')[0].textContent);
+        $('#p-horny').text(xmlDoc.getElementsByTagName('HORNY')[0].textContent);
+
+        $('#p-skin_level').text(skinLevelEX(skinLevel));
+
+        htmlToCanvas();
+
 
 
 }
 
-function sessionData(callback) {
+function sessionData() {
 
     var sg = parseInt(localStorage.SG);
     var skinLevel = parseInt(localStorage.SKIN_LEVEL);
@@ -90,7 +81,7 @@ function sessionData(callback) {
 
 
     $('.theme_c').text(localStorage.SUBJECT);
-    canvasImg();
+
     $('.suggest').text(localStorage.MAKUP_TXT_C);
 
     $("#NATURAL_C").text(naturalEX(natural));
@@ -133,22 +124,19 @@ function sessionData(callback) {
 
             if (localStorage.key(i) === "MAKUP_TEXT_" + j) {
                 var tmp =localStorage.getItem("MAKUP_TEXT_" + j);
-                if(!tmp === ""){
-                $('.wrap').append("<div class=\"tip\">"+tmp+"</div>");
+                if(tmp !== ""){
+                $('.wrap').append("<div class='tip'>"+tmp+"</div>");
                 }
             }
         }
     }
 
+    canvasImg();
 
-    callback();
-
+    return true
 }
 
 function canvasImg() {
-    // $("#canvasFace_0").append("<img style='width:106%' src="+localStorage.canvasFace_0+">");
-    // $("#canvasFace_1").append("<img style='width:106%' src="+localStorage.canvasFace_1+">");
-    // $("#canvasFace_2").append("<img style='width:110% ; margin-top:37px' src="+localStorage.canvasFace_2+">");
 
     $("#canvasFace_0").css('background-image',"url('"+localStorage.canvasFace_0+"')");
     $("#canvasFace_1").css('background-image',"url('"+localStorage.canvasFace_1+"')");
@@ -419,7 +407,7 @@ function sentData() {
     xhr.onreadystatechange=function (){
         if( xhr.readyState == 4){
             if( xhr.status == 200 ){
-                // $('#postData').append("<img src="+xhr.responseText+">");
+                $('#postData').append("<img src="+xhr.responseText+">");
                 $('#postData').text(xhr.responseText);
 
                 if(xhr.responseText !== false){
@@ -452,7 +440,7 @@ function htmlToCanvas() {
     html2canvas($('#content'), {
         dpi: window.devicePixelRatio*4,
         onrendered: function (canvas) {
-            // $('#postData').append("<img src="+canvas.toDataURL("image/png")+">");
+            // $('#postData').append("<img src="+canvas.toDataURL("image/png")+">"); ////pdf檢查用
             localStorage.setItem('PDFImage',canvas.toDataURL("image/png"));
         }
     });
@@ -460,7 +448,35 @@ function htmlToCanvas() {
     return true;
 }
 
+function getlastData(vipids) {
 
+    if(vipids){
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange=function (){
+            if( xhr.readyState == 4){
+                if( xhr.status == 200 ){
+                    if(xhr.responseXML.getElementsByTagName('RTNMSG')[0].textContent !== "查無檢驗資料") {
+                        getMackupData(xhr.responseXML);
+                    }else{
+                        if(sessionData() === true){
+                            htmlToCanvas();
+                        }
+                    }
+
+                }else{
+                    alert( xhr.status );
+                }
+            }
+        };
+
+        // var url = 'getMackupData.php?VIPIDS='+ vipids;
+        var url = 'getTestData.php?VIPIDS='+ vipids; //最新一筆檢測資料
+        xhr.open("GET", url, true);
+        xhr.send( null );
+
+    }
+
+}
 
 
 

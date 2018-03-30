@@ -25,6 +25,17 @@ $(function() {
         $(this).css('background-image', imgPath);
         $('div.typeName[data="' + model + '"]').text(obj.text);
 
+
+        if($('.typeName[data="brow"]').text() === "0"){
+            $('.typeName[data="brow"]').text("");
+        }
+        if($('.typeName[data="eye"]').text() === "0"){
+            $('.typeName[data="eye"]').text("");
+        }
+        if($('.typeName[data="lips"]').text() === "0"){
+            $('.typeName[data="lips"]').text("");
+        }
+
     });
 
     $('.popmenu .ok').on('click', function() {

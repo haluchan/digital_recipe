@@ -32,7 +32,8 @@ $(document).ready(function(){
             }
         };
 
-        var url = 'getMaintainData.php?VIPIDS='+ vipids;
+        // var url = 'getMaintainData.php?VIPIDS='+ vipids;
+        var url = 'getTestData.php?VIPIDS='+ vipids; //最新一筆檢測資料
         xhr.open("GET", url, true);
         xhr.send( null );
 

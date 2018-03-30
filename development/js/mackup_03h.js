@@ -40,7 +40,7 @@ $(document).ready(function(){
 
 
     //mean跳轉跳
-    if(localStorage.getItem('DRY') !== null){
+    if(localStorage.getItem('DRY') !== null || localStorage.getItem('OIL') !== null || localStorage.getItem('PORES') !== null || localStorage.getItem('ACEN') !== null || localStorage.getItem('DULL') !== null || localStorage.getItem('CB') !== null || localStorage.getItem('SOPTS') !== null || localStorage.getItem('DARK_CIRCLES') !== null || localStorage.getItem('TE') !== null || localStorage.getItem('WRINKLE') !== null || localStorage.getItem('SENSITIVE') !== null || localStorage.getItem('EYE_DULL') !== null || localStorage.getItem('EYE_EDEMA') !== null || localStorage.getItem('LIP_DULL') !== null || localStorage.getItem('MELLOW') !== null || localStorage.getItem('DIMENSION') !== null){
         $('.btn').siblings('ul').children('li:eq(0)').css('color','#000000');
 
         $('.btn').siblings('ul').children('li:eq(0)').on('click touchstart',function (){
@@ -57,9 +57,13 @@ $(document).ready(function(){
     }
     if(localStorage.getItem('canvasFace_2') !== null){
         $('.btn').siblings('ul').children('li:eq(2)').css('color','#000000');
+        $('.btn').siblings('ul').children('li:eq(3)').css('color','#000000');
 
         $('.btn').siblings('ul').children('li:eq(2)').on('click touchstart',function (){
             location.href = 'makeup_03.html';
+        });
+        $('.btn').siblings('ul').children('li:eq(3)').on('click touchstart',function (){
+            location.href = 'makeup_04.html';
         });
     }
 
@@ -165,6 +169,8 @@ function getdata() {
     localStorage.setItem('LIP_O',$("input[name*='lipsType']")[0].value);
     localStorage.setItem('LIP_SC',$("input[name*='lipsType']")[0].value);
     localStorage.setItem('LIP_COLOR',$("input[name*='lipsVal']")[0].value);
+
+
 }
 
 function tmpDate() {

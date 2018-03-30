@@ -33,12 +33,12 @@ $(document).ready(function(){
 
 		//美肌等級
 		skin_level = [
-			{ value:'1'         , name:'+3'},
-			{ value:'2'         , name:'+2'},
-			{ value:'3'         , name:'+1'},
-			{ value:'4'         , name:'-1'},
-			{ value:'5'         , name:'-2'},
-			{ value:'6'         , name:'-3'}
+			{ value:'1'         , name:'&nbsp&nbsp+3'},
+			{ value:'2'         , name:'&nbsp&nbsp+2'},
+			{ value:'3'         , name:'&nbsp&nbsp+1'},
+			{ value:'4'         , name:'&nbsp&nbsp&nbsp-1'},
+			{ value:'5'         , name:'&nbsp&nbsp&nbsp-2'},
+			{ value:'6'         , name:'&nbsp&nbsp&nbsp-3'}
 		],
 
 		//原膚色

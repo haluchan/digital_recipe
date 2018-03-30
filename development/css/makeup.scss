@@ -317,6 +317,7 @@ body[page=makeup_02] {
 						margin-left: 0px;
 						height: 35px;
 						line-height: 35px;
+						font: inherit;
 					}
 				}
 
@@ -331,6 +332,7 @@ body[page=makeup_02] {
 							float: left;
 							input{
 								width: 100%;
+								font-weight: 400;
 							}
 						}
 						>div:nth-child(2){
@@ -340,7 +342,7 @@ body[page=makeup_02] {
 
 							& :nth-child(1){ //select
 								width: 40px;
-								height: 35px;
+								height: 34px;
 								line-height: 35px;
 								border:0;
 								vertical-align: top;
@@ -357,6 +359,7 @@ body[page=makeup_02] {
 									padding: 0;
 									display: inline-block;
 									text-align: center;
+									font: inherit;
 
 								}
 							}
@@ -370,15 +373,18 @@ body[page=makeup_02] {
 						>div:first-child{
 							//width: 34px;
                             height: 19px; //border-right: 1px solid #333;
-                            line-height: 19px;      
-                            vertical-align: middle; 
+                            line-height: 19px;
+							font-size: 16px;
+                            vertical-align: top;
                             //float: left;
+							font-weight: 400;
                             input {
                                 width: 100%;
                                 height: 19px;
                                 line-height: 19px;
                                 font-size: 16px;
                                 vertical-align: bottom;
+								font-weight: 400;
                             }
 						}
 						>div:nth-child(2){
@@ -411,6 +417,7 @@ body[page=makeup_02] {
 							border:0;
 							height: 35px;
 							line-height: 35px;
+							font: inherit;
 						}
 					}
 				}
@@ -613,7 +620,7 @@ body[page=makeup_03] {
 				outline: none;
 				margin-left: 10px;
 				display: inline-block;
-				text-decoration: top;
+
 			}
 		}
 	}

@@ -12,33 +12,11 @@ $(document).ready(function(){
     $('#bcnm').text(bcnm);
 
 
+    getlastData(vipids);
+    sessionData();
+
 
     //前一次資料
-    if(vipids){
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange=function (){
-            if( xhr.readyState == 4){
-                if( xhr.status == 200 ){
-
-                    if(xhr.responseXML.getElementsByTagName('RTNMSG')[0].textContent !== "查無檢驗資料"){
-
-                        getMaintainData(xhr.responseXML);
-                    }
-
-                }else{
-                    alert( xhr.status );
-                }
-            }
-        };
-
-        var url = 'getMaintainData.php?VIPIDS='+ vipids;
-        xhr.open("GET", url, true);
-        xhr.send( null );
-
-    }
-
-    //產生下拉選單
-    sessionDate(htmlToCanvas);
 
 });
 
@@ -69,7 +47,7 @@ $('.prev').on('click',function(){
 
 
 
-function sessionDate(callback){
+function sessionData(){
 
     var sg = parseInt(localStorage.SG);
     var skinLevel = parseInt(localStorage.SKIN_LEVEL);
@@ -232,8 +210,7 @@ function sessionDate(callback){
     $('#SUGGESTION').text(localStorage.SUGGESTION);
 
 
-
-    callback();
+return true
 
 }
 
@@ -263,7 +240,7 @@ function getMaintainData(xmlDoc) {
 
     $('#p-skin_level').text(skinLevelEX(skinLevel));
 
-
+    htmlToCanvas();
 }
 
 
@@ -1028,7 +1005,7 @@ function sentData() {
     xhr.onreadystatechange=function (){
         if( xhr.readyState == 4){
             if( xhr.status == 200 ){
-                // $('#postData').append("<img src="+xhr.responseText+">");
+                $('#postData').append("<img src="+xhr.responseText+">");
                 $('#postData').text(xhr.responseText);
 
                 if(xhr.responseText !== false){
@@ -1059,7 +1036,7 @@ function htmlToCanvas() {
     html2canvas($('#content'), {
         dpi: window.devicePixelRatio*4,
         onrendered: function (canvas) {
-            // $('#postData').append("<img src="+canvas.toDataURL("image/png")+">");
+            // $('#postData').append("<img src="+canvas.toDataURL("image/png")+">"); //pdf檢查用
             localStorage.setItem('PDFImage',canvas.toDataURL("image/png"));
         }
     });
@@ -1069,7 +1046,37 @@ function htmlToCanvas() {
 
 }
 
+function getlastData(vipids) {
 
+    if(vipids){
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange=function (){
+            if( xhr.readyState == 4){
+                if( xhr.status == 200 ){
+
+                    if(xhr.responseXML.getElementsByTagName('RTNMSG')[0].textContent !== "查無檢驗資料"){
+
+                        getMaintainData(xhr.responseXML);
+                    }else {
+                        if(sessionData() === true){
+                            htmlToCanvas();
+                        }
+                    }
+
+                }else{
+                    alert( xhr.status );
+                }
+            }
+        };
+
+        // var url = 'getMaintainData.php?VIPIDS='+ vipids;
+        var url = 'getTestData.php?VIPIDS='+ vipids; //最新一筆檢測資料
+        xhr.open("GET", url, true);
+        xhr.send( null );
+
+    }
+
+}
 
 
 

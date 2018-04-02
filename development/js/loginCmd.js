@@ -365,15 +365,7 @@ function vipLocinInfo(xmlDoc) {
     var birth = $('#sbirth').val();
     var sbirth = birth.replace(/-/g,'/');
     vipxmlDoc = xmlDoc;
-    // var rtncodeInt = parseInt(xmlDoc.getElementsByTagName('RTNCODE')[0].textContent);
-    // var rtnName = xmlDoc.getElementsByTagName('VIPNM')[0].textContent;
-    // console.log(typeof(rtnName));
 
-
-        // console.log(xmlDoc);
-        // console.log(xmlDoc.getElementsByTagName('TELM').length);
-        // console.log(xmlDoc.getElementsByTagName('ROW')[0].textContent);
-        // console.log(xmlDoc.getElementsByTagName('ROW')[1].textContent);
 
      if (!xmlDoc.getElementsByTagName('VIPNM')[0]){
 
@@ -481,7 +473,7 @@ function updataInfo(Telm) {
     xhr.send(null);
 
 
-    }
+}
 
 
 function dataSession() {

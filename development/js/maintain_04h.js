@@ -52,36 +52,37 @@ $(document).ready(function(){
 
 
 
-    //mean跳轉跳
+    //mean跳轉
+    var btn = $('.btn');
     if(localStorage.getItem('DRY') !== null){
-        $('.btn').siblings('ul').children('li:eq(0)').css('color','#000000');
+        btn.siblings('ul').children('li:eq(0)').css('color','#000000');
 
-        $('.btn').siblings('ul').children('li:eq(0)').on('click touchstart',function (){
+        btn.siblings('ul').children('li:eq(0)').on('click touchstart',function (){
             location.href = 'maintain_01.html';
         });
     }
     if(localStorage.getItem('AIR_DRY') !== null){
-        $('.btn').siblings('ul').children('li:eq(1)').css('color','#000000');
+        btn.siblings('ul').children('li:eq(1)').css('color','#000000');
 
-        $('.btn').siblings('ul').children('li:eq(1)').on('click touchstart',function (){
+        btn.siblings('ul').children('li:eq(1)').on('click touchstart',function (){
             location.href = 'maintain_02.html';
         });
     }
     if(localStorage.getItem('MOISTURIZING') !== null){
-        $('.btn').siblings('ul').children('li:eq(2)').css('color','#000000');
+        btn.siblings('ul').children('li:eq(2)').css('color','#000000');
 
-        $('.btn').siblings('ul').children('li:eq(2)').on('click touchstart',function (){
+        btn.siblings('ul').children('li:eq(2)').on('click touchstart',function (){
             location.href = 'maintain_03.html';
         });
     }
     if(localStorage.getItem('canvasFace_3') !== null){
-        $('.btn').siblings('ul').children('li:eq(3)').css('color','#000000');
-        $('.btn').siblings('ul').children('li:eq(4)').css('color','#000000');
+        btn.siblings('ul').children('li:eq(3)').css('color','#000000');
+        btn.siblings('ul').children('li:eq(4)').css('color','#000000');
 
-        $('.btn').siblings('ul').children('li:eq(3)').on('click touchstart',function (){
+        btn.siblings('ul').children('li:eq(3)').on('click touchstart',function (){
             location.href = 'maintain_04.html';
         });
-        $('.btn').siblings('ul').children('li:eq(4)').on('click touchstart',function (){
+        btn.siblings('ul').children('li:eq(4)').on('click touchstart',function (){
             location.href = 'maintain_05.html';
         });
     }
@@ -244,7 +245,7 @@ function exchangeName(tmpNm) {
             break;
         case "SKIN_COLOR_C":
             tmpNm = "原膚色";
-            break
+            break;
         case "SKIN_LIGHT_C":
             tmpNm = "素肌透光度";
             break;

@@ -40,7 +40,7 @@ $(document).ready(function(){
     //canvas圖片預覽
     var canvas1 = localStorage.getItem('canvasFace_0');
     var canvas2 = localStorage.getItem('canvasFace_1');
-    //
+
     if (localStorage.canvasFace_0 !== undefined){
         $('.skinResult1').css("display","none");
         $('#previewImage-1').append("<img src="+canvas1+">");
@@ -52,44 +52,42 @@ $(document).ready(function(){
         $('.skinResult2').css("display","none");
         $('#previewImage-2').append("<img src="+canvas2+">");
 
-
     }else{
         $('canvasTool').css("display","block");
     }
 
 
-    //mean跳轉跳
+    //mean跳轉
+    var btn = $('.btn');
     if(localStorage.getItem('DRY') !== null || localStorage.getItem('OIL') !== null || localStorage.getItem('PORES') !== null || localStorage.getItem('ACEN') !== null || localStorage.getItem('DULL') !== null || localStorage.getItem('CB') !== null || localStorage.getItem('SOPTS') !== null || localStorage.getItem('DARK_CIRCLES') !== null || localStorage.getItem('TE') !== null || localStorage.getItem('WRINKLE') !== null || localStorage.getItem('SENSITIVE') !== null || localStorage.getItem('EYE_DULL') !== null || localStorage.getItem('EYE_EDEMA') !== null || localStorage.getItem('LIP_DULL') !== null || localStorage.getItem('MELLOW') !== null || localStorage.getItem('DIMENSION') !== null){
-        $('.btn').siblings('ul').children('li:eq(0)').css('color','#000000');
+        btn.siblings('ul').children('li:eq(0)').css('color','#000000');
 
-        $('.btn').siblings('ul').children('li:eq(0)').on('click touchstart',function (){
+        btn.siblings('ul').children('li:eq(0)').on('click touchstart',function (){
             location.href = 'makeup_01.html';
         });
     }
 
     if(localStorage.getItem('canvasFace_0') !== null){
-        $('.btn').siblings('ul').children('li:eq(1)').css('color','#000000');
+        btn.siblings('ul').children('li:eq(1)').css('color','#000000');
 
-        $('.btn').siblings('ul').children('li:eq(1)').on('click touchstart',function (){
+        btn.siblings('ul').children('li:eq(1)').on('click touchstart',function (){
             location.href = 'makeup_02.html';
         });
     }
     if(localStorage.getItem('canvasFace_2') !== null){
-        $('.btn').siblings('ul').children('li:eq(2)').css('color','#000000');
-        $('.btn').siblings('ul').children('li:eq(3)').css('color','#000000');
+        btn.siblings('ul').children('li:eq(2)').css('color','#000000');
+        btn.siblings('ul').children('li:eq(3)').css('color','#000000');
 
-        $('.btn').siblings('ul').children('li:eq(2)').on('click touchstart',function (){
+        btn.siblings('ul').children('li:eq(2)').on('click touchstart',function (){
             location.href = 'makeup_03.html';
         });
-        $('.btn').siblings('ul').children('li:eq(3)').on('click touchstart',function (){
+        btn.siblings('ul').children('li:eq(3)').on('click touchstart',function (){
             location.href = 'makeup_04.html';
         });
     }
 
 
 });
-
-
 
 
 
@@ -106,8 +104,6 @@ function htmlToCanvas1(callback){
             $('#previewImage-1').append("<img src="+canvas.toDataURL("image/png")+">");
             $('#previewImage-1 > img').css('display','none');
             localStorage.setItem('canvasFace_0',canvas.toDataURL("image/png"));
-
-
 
         }
     });
@@ -315,7 +311,7 @@ function exchangeName(tmpNm) {
             break;
         case "SKIN_COLOR_C":
             tmpNm = "原膚色";
-            break
+            break;
         case "SKIN_LIGHT_C":
             tmpNm = "素肌透光度";
             break;
@@ -520,8 +516,6 @@ function sessionData() {
         slen[j].value = tmpSelectData;
 
     }
-
-
 
 
     var len =  document.querySelectorAll('input');

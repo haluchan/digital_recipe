@@ -11,7 +11,6 @@ require('psw.php');
 $UserID="innity54395064";
 $_REQUEST["TIMES"] = "1";
 $_REQUEST["MARKNO"] = "IPSA";
-//$_REQUEST["VIPIDS"] = "8901010002";
 
 
 //陣列轉XML function
@@ -50,8 +49,6 @@ function array2xml($data, $tag = '')
 if(isset($_REQUEST["VIPIDS"])){
 
     $XmlData = array(
-
-
 
         "COLLECTION" => array(
             "LOGIN" => array(
@@ -150,15 +147,6 @@ if(isset($_REQUEST["VIPIDS"])){
 
             if($RTNCODE === 0){
 
-                if($ROWLEN === 0){
-
-                    header("content-type:text/xml");
-
-                    echo '<?xml version="1.0" encoding="utf-8"?>';
-
-                    echo"<RTNMSG>查無檢驗資料</RTNMSG>";
-
-                }else{
 
                     header("content-type:text/xml");
 
@@ -166,7 +154,6 @@ if(isset($_REQUEST["VIPIDS"])){
 
                     echo $sResult;
 
-                }
 
             }else{
 
@@ -188,21 +175,9 @@ if(isset($_REQUEST["VIPIDS"])){
 
             $ROWLEN = count($bcXml->RTNDATA->ROW);
 
-//        echo $ROWLEN;
 
             if($RTNCODE === 0){
 
-
-                if($ROWLEN === 0){
-
-                    header("content-type:text/xml");
-
-                    echo '<?xml version="1.0" encoding="utf-8"?>';
-
-                    echo"<RTNMSG>查無檢驗資料</RTNMSG>";
-//               echo $requestString;
-
-                }else{
 
                     header("content-type:text/xml");
 
@@ -210,8 +185,6 @@ if(isset($_REQUEST["VIPIDS"])){
 
                     echo $mResult;
 
-//                echo $requestString;
-                }
 
             }else{
 
@@ -238,9 +211,7 @@ if(isset($_REQUEST["VIPIDS"])){
 
                 $testXml = $skinXml;
 
-            }
-
-            if(strtotime($mDate) > strtotime($sDate))  {
+            }else{
 
                 $testData = $mResult;
 
@@ -255,24 +226,12 @@ if(isset($_REQUEST["VIPIDS"])){
             if($RTNCODE === 0){
 
 
-                if($ROWLEN === 0){
-
-                    header("content-type:text/xml");
-
-                    echo '<?xml version="1.0" encoding="utf-8"?>';
-
-                    echo"<RTNMSG>查無檢驗資料</RTNMSG>";
-
-
-                }else{
-
                     header("content-type:text/xml");
 
                     echo '<?xml version="1.0" encoding="utf-8"?>';
 
                     echo $testData;
 
-                }
 
             }else{
 
@@ -306,7 +265,6 @@ if(isset($_REQUEST["VIPIDS"])){
 }else{
 
     echo "VIPID錯誤";
-
 
 }
 

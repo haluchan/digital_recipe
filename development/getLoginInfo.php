@@ -109,7 +109,7 @@ if(isset($_REQUEST["BCID"])){
 //    var_dump($client->__getLastRequestHeaders());
 //    echo "<br>";
 //    echo("\nDumping request:\n");
-//    var_dump($client->__getLastRequest());
+//    var_dump(html_entity_decode($client->__getLastRequest(),ENT_QUOTES | ENT_XML1, 'UTF-8'));//解決括弧<>編碼
 //    echo "<br>";
 //    echo("\nDumping response headers:\n");
 //    var_dump($client->__getLastResponseHeaders());
@@ -129,8 +129,6 @@ if(isset($_REQUEST["BCID"])){
         echo '<?xml version="1.0" encoding="utf-8"?>';
 
         echo $result->WS_GETBCSHCUSTNOResult;
-
-
 
 
     }catch(Exception $e){

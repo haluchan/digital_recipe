@@ -5,8 +5,13 @@
  * Date: 西元2018/2/6
  * Time: 下午2:50
  */
+
+
 $psn = 54395064;
 $psnString = $psn .''; //toString
+
+$ip = 'https://210.208.107.109:8080';
+
 
 $dayArry = array();
 $psnArry = array();

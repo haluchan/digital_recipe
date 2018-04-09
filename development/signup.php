@@ -99,7 +99,7 @@ if(isset($_REQUEST["CUSTNO"] , $_REQUEST["VIPNM"] , $_REQUEST["SBIRTH"] , $_REQU
 //        ])
         ];
 
-        $url = 'https://210.208.107.109:80/WebService/wsSHISEIDO.asmx?wsdl';
+        $url = $ip . '/WebService/wsSHISEIDO.asmx?wsdl';
 
         $client = new SoapClient($url,$options);
 

@@ -129,7 +129,6 @@ if(isset($_REQUEST["VIPIDS"])){
 
         $sResult = $skinResult->WS_GETIPSASKINCAREResult;
 
-
         $mResult = $makeupResult->WS_GETIPSAMACKUPResult;
 
 
@@ -137,9 +136,9 @@ if(isset($_REQUEST["VIPIDS"])){
 
         $makeupXml = simplexml_load_string($mResult);
 
+//        print_r($skinXml); //check date
 
-
-        if(isset($skinXml->RTNDATA->ROW->DATA) && !isset($makeupXml->RTNDATA->ROW->DATA)){
+        if(isset($skinXml->RTNDATA->ROW->DATE) && !isset($makeupXml->RTNDATA->ROW->DATE)){
 
             $RTNCODE = (int)$skinXml->WSTATUS->ROW->RTNCODE;
 
@@ -167,7 +166,7 @@ if(isset($_REQUEST["VIPIDS"])){
 
         }
 
-        if(isset($makeupXml->RTNDATA->ROW->DATA) && !isset($skinXml->RTNDATA->ROW->DATA)){
+        if(isset($makeupXml->RTNDATA->ROW->DATE) && !isset($skinXml->RTNDATA->ROW->DATE)){
 
             $mDate = (string)$makeupXml->RTNDATA->ROW->DATE;
 
@@ -200,7 +199,7 @@ if(isset($_REQUEST["VIPIDS"])){
         }
 
 
-        if(isset($skinXml->RTNDATA->ROW->DATA) && isset($makeupXml->RTNDATA->ROW->DATA)){
+        if(isset($skinXml->RTNDATA->ROW->DATE) && isset($makeupXml->RTNDATA->ROW->DATE)){
 
             $sDate = (string)$skinXml->RTNDATA->ROW->DATE;
             $mDate = (string)$makeupXml->RTNDATA->ROW->DATE;
@@ -245,7 +244,7 @@ if(isset($_REQUEST["VIPIDS"])){
 
         }
 
-        if(!isset($skinXml->RTNDATA->ROW->DATA) && !isset($makeupXml->RTNDATA->ROW->DATA)){
+        if(!isset($skinXml->RTNDATA->ROW->DATE) && !isset($makeupXml->RTNDATA->ROW->DATE)){
 
             header("content-type:text/xml");
 

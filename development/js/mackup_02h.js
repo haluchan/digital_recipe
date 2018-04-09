@@ -425,10 +425,10 @@ function checkdata() {
     for (var i = 0; i < 8; i++) {
 
         var num = /^[0-9]+$/;
-        var tmpNm =$("input[type*=tel]")[i].name;
+        var tmpNm =$("input")[i].name;
         var tmpData = document.querySelectorAll('input')[i].value;
 
-        if($("input[type*=tel]")[i].value === "" ){
+        if($("input")[i].value === "" ){
 
             alert("請輸入"+ exchangeName(tmpNm) );
             return false;

@@ -176,6 +176,13 @@ body[page=makeup_02] {
 			.title{
 				margin: 15px 15px 8px;
 			}
+			.title:after{
+				content:'*必填';
+				font-size: 0.7em;
+				color:#c1272d;
+				position: absolute;
+				right:10px;
+			}
 		}
 
 		.R{
@@ -190,6 +197,7 @@ body[page=makeup_02] {
 				margin: 0 auto 15px;
 				font-size: 1em;
 				font-weight: bold;
+
 				input{
 					height: 34px;
 					line-height: 33px;

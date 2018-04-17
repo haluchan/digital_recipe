@@ -66,7 +66,7 @@ if(isset($_REQUEST["TELM"])){
                     "VIPIDS" => $_REQUEST["VIPIDS"],
                     "BCID"=> $_REQUEST["BCID"],
                     "TELM"=> $_REQUEST["TELM"],
-                    "EMAIL" =>$_REQUEST["MAIL"]))
+                    "MAIL" =>$_REQUEST["MAIL"]))
         )
     );
 

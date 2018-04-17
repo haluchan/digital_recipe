@@ -139,7 +139,7 @@ function saveData() {
 
     var textare = $('textarea')[0].name;
     var textUare = textare.toUpperCase();
-    var textareValue = $('textarea')[0].value;
+    var textareValue = $('#textarea').val();
 
     localStorage.setItem(textUare,textareValue);
 
@@ -526,6 +526,8 @@ function sessionData() {
                 $('#'+ selectName +'').siblings('span').css('display','block');
 
 
+
+
                 }
 
             }
@@ -534,8 +536,8 @@ function sessionData() {
 
     }
 
+        $('#textarea').val(localStorage.getItem("SUGGESTION"));
 
-    $('textarea').val(localStorage.getItem("SUGGESTION"));
 
 }
 

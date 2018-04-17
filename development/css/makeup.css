@@ -117,6 +117,12 @@ body[page=makeup_02] .makeup .border .L {
   height: 448px; }
   body[page=makeup_02] .makeup .border .L .title {
     margin: 15px 15px 8px; }
+  body[page=makeup_02] .makeup .border .L .title:after {
+    content: '*必填';
+    font-size: 0.7em;
+    color: #c1272d;
+    position: absolute;
+    right: 10px; }
 body[page=makeup_02] .makeup .border .R {
   width: 432px;
   height: 448px;

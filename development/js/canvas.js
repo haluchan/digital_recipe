@@ -30,7 +30,7 @@ canvas.each(function(index, element) {
             ctobj[index].lineWidth = setting[index].ereaserWidth;
             ctobj[index].globalCompositeOperation = 'destination-out';
             ctobj[index].arc(50, 50, 5, 0, 2 * Math.PI, false);
-        
+
             touchMark(mark, mousePos);
         }
         // console.log(ctobj[index].lineWidth);
@@ -38,7 +38,7 @@ canvas.each(function(index, element) {
         evt.preventDefault();
 
         $(this).on('touchmove', function(evt) {
-            
+
             var mousePos = getMousePos(element, evt);
             var mark = $(this).parent('div').children('.mark');
             ctobj[index].lineTo(mousePos.x, mousePos.y);
@@ -242,12 +242,17 @@ function getMousePos(elt, evt) {
 function createCanvas(ele) {
     ctx = ele.getContext('2d');
 
+    var defaultStrokeColor = $('.tool[data-tool="pallete"] .color.active').data('color');
+
+    if (!defaultStrokeColor) {
+        defaultStrokeColor = '#b2b2b2';
+    }
     var setting = {
 
         erease: false,
-        lineWidth: 4.2,
+        lineWidth: 2,
         ereaserWidth: 30, //ereaserWidth
-        strokeColor: '#F00',
+        strokeColor: defaultStrokeColor,
         isCanvasOn: false,
         isPainterOn: false,
         isEreaserOn: false

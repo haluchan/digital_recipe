@@ -17,7 +17,7 @@ body[page=maintain_01] {
             padding: 15px;
 
             .title:after {
-
+                content:'*多選，至少選一項';
                 font-size: 0.7em;
                 color: #c1272d;
                 position: absolute;
@@ -238,6 +238,13 @@ body[page=maintain_03] {
                 padding: 0 10px;
                 margin-top: 7px;
             }
+            .title2:after{
+              content:'*必填';
+              font-size: 0.7em;
+              color:#c1272d;
+              position: absolute;
+              right:10px;
+            }
 
             select{
                 width: 100%;
@@ -317,6 +324,13 @@ body[page=maintain_04] {
             .title {
                 margin: 15px 15px 0 15px;
                 width: 330px;
+            }
+            .title:after{
+              content:'*必填';
+              font-size: 0.7em;
+              color:#c1272d;
+              position: absolute;
+              right:10px;
             }
         }
 
@@ -602,6 +616,12 @@ body[page=maintain_05] {
                 //border:1px solid #333;
                 padding: 0 5px 0 35px;
                 //margin-top: 15px;
+            }
+            .s2:after{
+                content:'*多選，至少選一項';
+                font-size: 0.7em;
+                color:#c1272d;
+                padding-left:10px;
             }
 
             .step:before{

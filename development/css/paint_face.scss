@@ -26,9 +26,9 @@
 
         &[data-tool='pallete'] .colors {
             transition: 1s;
-            width: 105px;
-            margin-left: -100px;
-            padding: 5px;
+            width: 180px;
+            margin-left: -175px;
+            padding: 4px 4px;
             background: #FFF;
             border-radius: 5px 0 0 5px;
             border-left: 1px solid #000;
@@ -50,15 +50,25 @@
                 border-right: 1px solid #000;
 
                 margin: 2px auto 0px 2px;
+                padding:0 0 0 5px;
 
                 .color {
-                    width: 15px;
-                    height: 15px;
+                    width: 17px;
+                    height: 17px;
                     float: left;
                     margin: 1px;
+                    color: #FFF;
 
                     &.active {
-                        border: 1px solid #000;
+                        outline: 1px solid #000;
+                    }
+
+                    span {
+                        font-size: 12px;
+                        -webkit-transform: scale(0.45);
+                        display: inline-block;
+                        height:100%;
+                        margin-left:-46%;
                     }
                 }
             }
@@ -73,6 +83,8 @@
 .disable {
     pointer-events: none;
 }
+
+
 
 
 
@@ -97,6 +109,8 @@
         bottom: 10px;
     }
 }
+
+
 
 
 /*maintain 04*/
@@ -127,6 +141,8 @@
 
 
 
+
+
 /*makeup 02*/
 
 #skinResultGroup {
@@ -140,7 +156,7 @@
         width: 410px;
         background-image: url("../img/makeup/02/paint_bg01.png");
         height: 200px;
-        }
+    }
     .skinResult2 {
         position: relative;
         background-size: cover;
@@ -149,7 +165,7 @@
         width: 410px;
         background-image: url("../img/makeup/02/paint_bg02.png");
         height: 190px;
-        }
+    }
 }
 
 
@@ -158,6 +174,8 @@
     right: 5px;
     bottom: 10px;
 }
+
+
 
 
 
@@ -210,7 +228,7 @@
 
         &[data='brow'] {
             top: 150px;
-            left: 117px;
+            left: 107px;
             width: 200px;
             height: 35px;
             background: url("../img/makeup/03/paint_face/btn_eyebrows.png") left top no-repeat;
@@ -243,5 +261,10 @@
         height: 497px;
         top: 0;
         left: 0;
+    }
+
+    .canvasTool {
+        right: 15px;
+        bottom: 15px;
     }
 }

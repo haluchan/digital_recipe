@@ -12,6 +12,7 @@ body[page=maintain_01] .maintain .border .L {
   height: inherit;
   padding: 15px; }
   body[page=maintain_01] .maintain .border .L .title:after {
+    content: '*多選，至少選一項';
     font-size: 0.7em;
     color: #c1272d;
     position: absolute;
@@ -157,6 +158,12 @@ body[page=maintain_03] #content .maintain .border .R {
     border: 1px solid #333;
     padding: 0 10px;
     margin-top: 7px; }
+  body[page=maintain_03] #content .maintain .border .R .title2:after {
+    content: '*必填';
+    font-size: 0.7em;
+    color: #c1272d;
+    position: absolute;
+    right: 10px; }
   body[page=maintain_03] #content .maintain .border .R select {
     width: 100%;
     height: 38px;
@@ -209,6 +216,12 @@ body[page=maintain_04] #content .maintain .border .L {
   body[page=maintain_04] #content .maintain .border .L .title {
     margin: 15px 15px 0 15px;
     width: 330px; }
+  body[page=maintain_04] #content .maintain .border .L .title:after {
+    content: '*必填';
+    font-size: 0.7em;
+    color: #c1272d;
+    position: absolute;
+    right: 10px; }
 body[page=maintain_04] #content .maintain .border .R {
   width: 432px;
   height: 499px;
@@ -416,6 +429,11 @@ body[page=maintain_05] #content .maintain .border {
     height: 30px;
     line-height: 18px;
     padding: 0 5px 0 35px; }
+  body[page=maintain_05] #content .maintain .border .s2:after {
+    content: '*多選，至少選一項';
+    font-size: 0.7em;
+    color: #c1272d;
+    padding-left: 10px; }
   body[page=maintain_05] #content .maintain .border .step:before {
     text-align: center;
     font-size: 1em;

@@ -1,22 +1,3 @@
-//bcid 回傳處理
-function loginInfo(xmlDoc) {
-
-    var bcnm = xmlDoc.getElementsByTagName('BCNAME')[0].textContent;
-    var bcid = document.getElementById('bcid').value;
-    $('.bcid').text(bcid);
-    $('.bcnm').text(bcnm);
-
-    var cmabnm =xmlDoc.getElementsByTagName('CMABNM');
-    for (i=0 ; i< cmabnm.length ;i++){
-        $('#locOption').append("<option value="+xmlDoc.getElementsByTagName('CUSTNO')[i].textContent+ ">" +xmlDoc.getElementsByTagName('CMABNM')[i].textContent+ "</option>")
-    }
-
-    state++;
-    step();
-}
-
-
-
 
 //表單位置
 $(document).ready(function() {
@@ -27,47 +8,52 @@ $(document).ready(function() {
     $('.login').click(function flogin() {
 
         var bcid = $('#bcid').val();
-        if (bcid === '') {
-            alert('請輸入員工編號')
-        } else if (bcid.length < 6) {
-            alert('員工編號不完整喔')
 
-        } else {
+        if(WLine() === true){
 
-            $('.login').unbind('click',flogin);
+            if (bcid === '') {
+                alert('請輸入員工編號')
+            } else if (bcid.length < 6) {
+                alert('員工編號不完整喔')
 
+            } else {
 
-            var xhr = new XMLHttpRequest();
-            xhr.onreadystatechange=function (){
-                if( xhr.readyState == 4){
-                    if( xhr.status == 200 ){
-                        console.log( xhr.responseXML.getElementsByTagName('RTNCODE')[0].textContent);
-                        var rtncodeInt = parseInt(xhr.responseXML.getElementsByTagName('RTNCODE')[0].textContent);
+                $('.login').unbind('click',flogin);
 
 
-                        if( rtncodeInt !== 0){
-                            console.log(xhr.responseXML);
-                            alert('輸入員工編號無效，請重新確認')
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange=function (){
+                    if( xhr.readyState == 4){
+                        if( xhr.status == 200 ){
+                            console.log( xhr.responseXML.getElementsByTagName('RTNCODE')[0].textContent);
+                            var rtncodeInt = parseInt(xhr.responseXML.getElementsByTagName('RTNCODE')[0].textContent);
+
+
+                            if( rtncodeInt !== 0){
+                                console.log(xhr.responseXML);
+                                alert('輸入員工編號無效，請重新確認')
+
+                            }else{
+                                // console.log(xhr.responseXML.getElementsByTagName('BCNAME')[0].textContent);
+                                alert( xhr.responseXML.getElementsByTagName('BCNAME')[0].textContent +' '+ '歡迎回來');
+                                loginInfo(xhr.responseXML);
+
+                            }
+
+                            $('.login').bind('click',flogin);
 
                         }else{
-                            // console.log(xhr.responseXML.getElementsByTagName('BCNAME')[0].textContent);
-                            alert( xhr.responseXML.getElementsByTagName('BCNAME')[0].textContent +' '+ '歡迎回來');
-                            loginInfo(xhr.responseXML);
-
+                            alert( xhr.status );
                         }
-
-                        $('.login').bind('click',flogin);
-
-                    }else{
-                        alert( xhr.status );
                     }
-                }
-            };
+                };
 
-            var url = 'getLoginInfo.php?BCID='+ bcid;
-            xhr.open("GET", url, true);
-            xhr.send( null );
+                var url = 'getLoginInfo.php?BCID='+ bcid;
+                xhr.open("GET", url, true);
+                xhr.send( null );
 
+
+            }
 
         }
     });
@@ -217,6 +203,33 @@ $(document).ready(function() {
                         }
 
                 }
+
+            }else if($('#newTelm').val() !== ''){
+
+                var mobile_format = /09[0-9]{8}/;
+
+                if (!mobile_format.test($('#newTelm').val())) {
+
+                    alert('您輸入的電話格式有誤');
+
+                    return false;
+
+
+                }else if (!$('div.goto > span > span').hasClass('active')) {
+
+                    alert('請選擇要進行的項目');
+
+                    return false;
+
+                }else {
+
+                    var tmpTelm = $('#newTelm').val();
+
+                    updataInfo(tmpTelm);
+                }
+
+
+
             }else{
 
                 if (!$('div.goto > span > span').hasClass('active')) {
@@ -356,6 +369,40 @@ $(document).ready(function() {
 
 
 });
+
+//網路偵測
+function WLine(){
+
+    var states = navigator.onLine;
+    if(states){
+        return true;
+    }else{
+        alert("請連上網路");
+        return false;
+    }
+
+}
+
+//bcid 回傳處理
+function loginInfo(xmlDoc) {
+
+    var bcnm = xmlDoc.getElementsByTagName('BCNAME')[0].textContent;
+    var bcid = document.getElementById('bcid').value;
+    $('.bcid').text(bcid);
+    $('.bcnm').text(bcnm);
+
+    var cmabnm =xmlDoc.getElementsByTagName('CMABNM');
+    for (i=0 ; i< cmabnm.length ;i++){
+        $('#locOption').append("<option value="+xmlDoc.getElementsByTagName('CUSTNO')[i].textContent+ ">" +xmlDoc.getElementsByTagName('CMABNM')[i].textContent+ "</option>")
+    }
+
+    state++;
+    step();
+}
+
+
+
+
 
 //VIP登入
 

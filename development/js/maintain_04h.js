@@ -346,13 +346,13 @@ function natural_c(tmp) {
 
 function checkdata() {
 
-    var titleVal =$("input[type*=text]")[0].value;
+    // var titleVal =$("input[type*=text]")[0].value;
 
-    if(titleVal === ""){
-        alert("請輸入主題");
-
-        return false;
-    }
+    // if(titleVal === ""){
+    //     alert("請輸入主題");
+    //
+    //     return false;
+    // }
 
 
     for (var i = 0; i < 7; i++) {
@@ -361,39 +361,45 @@ function checkdata() {
         var tmpNm =$("input[type*=tel]")[i].name;
         var tmpData = $("input[type*=tel]")[i].value;
 
-        if($("input[type*=tel]")[i].value === "" ){
-
-            alert("請輸入"+ exchangeName(tmpNm) );
-            return false;
-        }else{
+        // if($("input[type*=tel]")[i].value === "" ){
+        //
+        //     alert("請輸入"+ exchangeName(tmpNm) );
+        //     return false;
+        // }else{
 
             if(i === 0){
                 continue;
             }
 
-            if(!num.test(tmpData)){
 
-                alert(exchangeName(tmpNm) + "只能輸入數字");
+            if($("input")[i].value !==""){
 
-                return false;
+                if(!num.test(tmpData)){
+
+                    alert(exchangeName(tmpNm) + "只能輸入數字");
+
+                    return false;
+
+                }
 
             }
 
-        }
+
+        // }
 
     }
 
 
-    for (var k = 0; k < 7; k++) {
-        if($("select")[k].value === "" ){
-
-            var tmp = $("select")[k].name;
-
-            alert("請輸入"+ exchangeName(tmp) );
-            return false;
-        }
-
-    }
+    // for (var k = 0; k < 7; k++) {
+    //     if($("select")[k].value === "" ){
+    //
+    //         var tmp = $("select")[k].name;
+    //
+    //         alert("請輸入"+ exchangeName(tmp) );
+    //         return false;
+    //     }
+    //
+    // }
 
     return true;
 

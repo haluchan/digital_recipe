@@ -414,13 +414,13 @@ function natural_c(tmp) {
 //資料檢查
 function checkdata() {
 
-    var titleVal =$("input[type*='text']")[0].value;
+    // var titleVal =$("input[type*='text']")[0].value;
 
-    if(titleVal === ""){
-        alert("請輸入主題");
-
-        return false;
-    }
+    // if(titleVal === ""){
+    //     alert("請輸入主題");
+    //
+    //     return false;
+    // }
 
     for (var i = 0; i < 8; i++) {
 
@@ -428,39 +428,43 @@ function checkdata() {
         var tmpNm =$("input")[i].name;
         var tmpData = document.querySelectorAll('input')[i].value;
 
-        if($("input")[i].value === "" ){
-
-            alert("請輸入"+ exchangeName(tmpNm) );
-            return false;
-        }else{
+        // if($("input")[i].value === "" ){
+        //
+        //     alert("請輸入"+ exchangeName(tmpNm) );
+        //     return false;
+        // }else{
 
             if(i === 0){
                 continue;
             }
 
-            if(!num.test(tmpData)){
+            if($("input")[i].value !==""){
 
-                alert(exchangeName(tmpNm) + "只能輸入數字");
+                if (!num.test(tmpData)) {
 
-                return false;
+                    alert(exchangeName(tmpNm) + "只能輸入數字");
+
+                    return false;
+
+                }
 
             }
 
-        }
+        // }
 
     }
 
 
-    for (var k = 0; k < 7; k++) {
-        if(document.querySelectorAll('select')[k].value === "" ){
-
-            var tmp = document.querySelectorAll('select')[k].name;
-
-            alert("請輸入"+ exchangeName(tmp) );
-            return false;
-        }
-
-    }
+    // for (var k = 0; k < 7; k++) {
+    //     if(document.querySelectorAll('select')[k].value === "" ){
+    //
+    //         var tmp = document.querySelectorAll('select')[k].name;
+    //
+    //         alert("請輸入"+ exchangeName(tmp) );
+    //         return false;
+    //     }
+    //
+    // }
 
     function checkboxx() {
 

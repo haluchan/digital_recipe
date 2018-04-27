@@ -9,6 +9,7 @@ $(document).ready(function() {
         var state = 4;
         step(state);
         sessionData();
+        clearSession();
 
     }else{
         var state = 1;
@@ -350,6 +351,35 @@ $(document).ready(function() {
 
         }else if(state === 3){
 
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange=function (){
+                if( xhr.readyState == 4){
+                    if( xhr.status == 200 ) {
+
+                        var xmlDoc = xhr.responseXML;
+
+                        var bcnm = localStorage.getItem('BCNM');
+                        var bcid = localStorage.BCID;
+                        $('.bcid').text(bcid);
+                        $('.bcnm').text(bcnm);
+                        $('#locOption > option').remove();
+
+                        var cmabnm =xmlDoc.getElementsByTagName('CMABNM');
+                        $('#locOption').append($('<option>').val("").text("請選擇櫃點"));
+                        for (i=0 ; i< cmabnm.length ;i++){
+                            $('#locOption').append("<option value="+xmlDoc.getElementsByTagName('CUSTNO')[i].textContent+ ">" +xmlDoc.getElementsByTagName('CMABNM')[i].textContent+ "</option>")
+                        }
+
+                    }
+                }
+            };
+
+            var bcide = localStorage.BCID;
+            var url = 'getLoginInfo.php?BCID='+ bcide;
+            xhr.open("POST", url, true);
+            xhr.send( null );
+
+
             state--;
         }else if(state === 4){
             $('#telmOption > option').remove();
@@ -418,11 +448,14 @@ function loginInfo(xmlDoc , state) {
     $('.bcid').text(bcid);
     $('.bcnm').text(bcnm);
     $('#locOption > option').remove();
+    $('#locOption').append($('<option>').val("").text("請選擇櫃點"));
 
     var cmabnm =xmlDoc.getElementsByTagName('CMABNM');
     for (i=0 ; i< cmabnm.length ;i++){
         $('#locOption').append("<option value="+xmlDoc.getElementsByTagName('CUSTNO')[i].textContent+ ">" +xmlDoc.getElementsByTagName('CMABNM')[i].textContent+ "</option>")
     }
+
+
 
     state++;
     step(state);
@@ -668,4 +701,45 @@ function step(state){
 
     }
     console.log(state);
+}
+
+function clearSession() {
+
+    var ls =localStorage.length;
+
+    for (var i = 0; i < ls; i++) {
+
+        var lsName = localStorage.key(i);
+
+        switch(lsName) {
+            case "BCID":
+
+                break;
+            case "BCNM":
+                
+                break;
+            case "BIRTHDAY":
+
+                break;
+            case "DATE":
+
+                break;
+            case "LOCINFO":
+
+                break;
+            case "MAIL":
+
+                break;
+            case "VIPIDS":
+
+                break;
+            case "VIPNM":
+
+                break;
+            default:
+               localStorage.removeItem(lsName);
+        }
+
+    }
+
 }

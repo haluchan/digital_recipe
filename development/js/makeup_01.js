@@ -75,43 +75,16 @@ $(document).ready(function(){
 		
 
 	for(i=0 ; i<status.length-5 ; i++){
-		if(status[i].option.length != 0){
-			$('.status').append('<li><input type="checkbox" id="'+i+'" class = "LDemand"><label for="'+i+'"><span></span>'+status[i].name+'</label><div class="sub"><select id="'+status[i].id+'" name="'+status[i].name+'內容"></select></sub></li>');
 
-			for(s=0 ; s<status[i].option.length ; s++){
-				$('#'+status[i].id).append('<option value="'+status[i].option[s].value+'">'+status[i].option[s].name+'</option>');
-			}
-		}else{
-			$('.status').append('<li><input type="checkbox" id="'+i+'"class = "LDemand"><label for="'+i+'"><span></span>'+status[i].name+'</label><div class="sub"><input type="text" id="'+status[i].id+'" name="'+status[i].name+'文字" placeholder="請填寫需求" class="other" maxlength="16"></sub></li>');
-		}
+			$('.status').append('<li><input type="checkbox" id="'+i+'" class = "LDemand" name="'+status[i].id+'"><label for="'+i+'"><span></span>'+status[i].name+'</label></li>');
+
 		console.log(typeof(status[i].option));
 	} 	
 
 	for(i=status.length-5 ; i<status.length ; i++){
 		$('.r_status').append('<li><input type="checkbox" id="'+i+'" name="'+status[i].id+'"><label for="'+i+'"><span></span>'+status[i].name+'</label></li>');
 	}
-	
 
-	$(document).on('click','label',function(){
-		if($(this).siblings('input[type="checkbox"]').prop('checked')){
-			$(this).siblings('.sub').fadeOut(200);
-            $(this).siblings('.sub').children('select').val('0');
-            $(this).siblings('.sub').children('input').val('');
-		}else{
-			$(this).siblings('.sub').fadeIn(100);
-			console.log($(this).siblings('.sub').children('select').find(":selected").text()+','+$(this).siblings('.sub').children('select').val());
-		}
-	});
-
-
-	$(document).on('change','select',function(){
-		if($(this).find(":selected").text() == '其他'){
-			$(this).siblings('input[type="text"]').fadeIn(200);
-		}else{
-			$(this).siblings('input[type="text"]').fadeOut(100);
-		}
-		console.log($(this).find(":selected").text()+','+$(this).val());
-	});
 
 });
 

@@ -642,3 +642,27 @@ Stack trace:
 #3 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/test.php(145): savePDFImg(Array)
 #4 {main}
   thrown in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/fpdf/fpdf.php on line 271
+[18-Apr-2018 17:24:34 Asia/Taipei] PHP Fatal error:  Call to a member function rollBack() on a non-object in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/sentMaintain.php on line 53
+[18-Apr-2018 17:24:34 Asia/Taipei] PHP Stack trace:
+[18-Apr-2018 17:24:34 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/sentMaintain.php:0
+[18-Apr-2018 17:24:34 Asia/Taipei] PHP   2. getName() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/sentMaintain.php:62
+[18-Apr-2018 17:25:10 Asia/Taipei] PHP Fatal error:  Call to a member function rollBack() on a non-object in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/sentMaintain.php on line 53
+[18-Apr-2018 17:25:10 Asia/Taipei] PHP Stack trace:
+[18-Apr-2018 17:25:10 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/sentMaintain.php:0
+[18-Apr-2018 17:25:10 Asia/Taipei] PHP   2. getName() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/sentMaintain.php:62
+[18-Apr-2018 17:26:58 Asia/Taipei] PHP Fatal error:  Call to a member function rollBack() on a non-object in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/sentMaintain.php on line 53
+[18-Apr-2018 17:26:58 Asia/Taipei] PHP Stack trace:
+[18-Apr-2018 17:26:58 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/sentMaintain.php:0
+[18-Apr-2018 17:26:58 Asia/Taipei] PHP   2. getName() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/sentMaintain.php:62
+[18-Apr-2018 17:29:10 Asia/Taipei] PHP Fatal error:  Call to a member function rollBack() on a non-object in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/sentMaintain.php on line 53
+[18-Apr-2018 17:29:10 Asia/Taipei] PHP Stack trace:
+[18-Apr-2018 17:29:10 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/sentMaintain.php:0
+[18-Apr-2018 17:29:10 Asia/Taipei] PHP   2. getName() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/sentMaintain.php:62
+[18-Apr-2018 17:29:40 Asia/Taipei] PHP Fatal error:  Call to a member function rollBack() on a non-object in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/sentMaintain.php on line 53
+[18-Apr-2018 17:29:40 Asia/Taipei] PHP Stack trace:
+[18-Apr-2018 17:29:40 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/sentMaintain.php:0
+[18-Apr-2018 17:29:40 Asia/Taipei] PHP   2. getName() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/sentMaintain.php:62
+[18-Apr-2018 17:32:49 Asia/Taipei] PHP Fatal error:  Call to a member function rollBack() on a non-object in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/sentMakeup.php on line 55
+[18-Apr-2018 17:32:49 Asia/Taipei] PHP Stack trace:
+[18-Apr-2018 17:32:49 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/sentMakeup.php:0
+[18-Apr-2018 17:32:49 Asia/Taipei] PHP   2. getName() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/sentMakeup.php:64

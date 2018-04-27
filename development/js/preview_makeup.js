@@ -18,18 +18,16 @@ $(document).ready(function(){
     //前一次資料
 
 
-
-
-
 });
 
 $('.next').on('click',function(){
 
-   if(htmlToCanvas){
-    sentData();
+
+    // htmlToCanvas();
+   if(htmlToCanvas()){
+        sentData();
+
    }
-
-
 
     $('.bg').css('display','block');
 });
@@ -81,9 +79,10 @@ function sessionData() {
 
 
     $('.theme_c').text(localStorage.SUBJECT);
-
-    $('.suggest').text(localStorage.MAKUP_TXT_C);
-
+    if(localStorage.SUGGESTION !== undefined){
+        var textCont = localStorage.SUGGESTION;
+        $('.suggest').append('<span>' + textCont.replace(/\n/g,'<br/>') + '<span>');
+    }
     $("#NATURAL_C").text(naturalEX(natural));
     $("#ACQUIRED_C").text(acquiredEX(acquired));
     $("#MOISTURE").text(localStorage.MOISTURE);
@@ -132,6 +131,11 @@ function sessionData() {
     }
 
     canvasImg();
+
+    if(localStorage.MAKUP_TXT_C !== undefined){
+        var textCont = localStorage.MAKUP_TXT_C;
+        $('.suggest').append('<span>' + textCont.replace(/\n/g,'<br/>') + '<span>');
+    }
 
     return true
 }
@@ -436,6 +440,7 @@ function sentData() {
 
 function htmlToCanvas() {
 
+    $('footer').css('display','none');
 
     html2canvas($('#content'), {
         dpi: window.devicePixelRatio*4,
@@ -445,7 +450,9 @@ function htmlToCanvas() {
         }
     });
 
-    return true;
+
+    $('footer').css('display','block');
+    return true
 }
 
 function getlastData(vipids) {
@@ -464,14 +471,15 @@ function getlastData(vipids) {
                     }
 
                 }else{
-                    alert( xhr.status );
+                    alert("伺服器回應有狀況");
+                    console.log(xhr.status);
                 }
             }
         };
 
         // var url = 'getMackupData.php?VIPIDS='+ vipids;
         var url = 'getTestData.php?VIPIDS='+ vipids; //最新一筆檢測資料
-        xhr.open("GET", url, true);
+        xhr.open("POST", url, true);
         xhr.send( null );
 
     }

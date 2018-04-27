@@ -536,7 +536,8 @@ function sessionData() {
 
     }
 
-        $('#textarea').val(localStorage.getItem("SUGGESTION"));
+
+    $('#textarea').html(localStorage.getItem("SUGGESTION"));
 
 
 }

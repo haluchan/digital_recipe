@@ -2,10 +2,24 @@
 //表單位置
 $(document).ready(function() {
 
-    localStorage.clear();
+    var vipID = localStorage.VIPIDS;
+    var vipMail = localStorage.MAIL;
+
+    if(vipID !== undefined && vipMail!== undefined ){
+        var state = 4;
+        step(state);
+        sessionData();
+
+    }else{
+        var state = 1;
+        localStorage.clear();
+        step(state);
+    }
+
+
 
     //bcid 登入
-    $('.login').click(function flogin() {
+    $('.login').on('click',function flogin() {
 
         var bcid = $('#bcid').val();
 
@@ -31,36 +45,42 @@ $(document).ready(function() {
 
                             if( rtncodeInt !== 0){
                                 console.log(xhr.responseXML);
-                                alert('輸入員工編號無效，請重新確認')
+                                alert('輸入員工編號無效，請重新確認');
 
                             }else{
                                 // console.log(xhr.responseXML.getElementsByTagName('BCNAME')[0].textContent);
                                 alert( xhr.responseXML.getElementsByTagName('BCNAME')[0].textContent +' '+ '歡迎回來');
-                                loginInfo(xhr.responseXML);
+                                loginInfo(xhr.responseXML , state);
+                                state++;
+                                console.log(state);
 
                             }
 
                             $('.login').bind('click',flogin);
 
                         }else{
-                            alert( xhr.status );
+                            alert("伺服器回應有狀況");
+                            console.log(xhr.status);
+
                         }
                     }
                 };
 
                 var url = 'getLoginInfo.php?BCID='+ bcid;
-                xhr.open("GET", url, true);
+                xhr.open("POST", url, true);
                 xhr.send( null );
 
 
             }
 
+            console.log(state);
         }
+
     });
 
-    $('.next').click(function fnext() {
+    $('.next').on('click',function fnext() {
 
-
+        console.log(state);
         if(state === 2){
             if($('#locOption option:selected').val() === ""){
                 alert("請選擇櫃點")
@@ -77,15 +97,18 @@ $(document).ready(function() {
                     }
                 }
                 state++;
-                step();
+                step(state);
             }
         }else if (state === 3) {
 
             var vipnm = $('#vipnm').val();
             var sbirth = $('#sbirth').val();
+            var bform = new RegExp("^([0-9]{4})[./]{1}([0-9]{1,2})[./]{1}([0-9]{1,2})$");
             if (vipnm === '' && sbirth === '') {
-                alert('請輸入姓名以及生日')
-            } else{
+                alert('請輸入姓名以及生日');
+            }else if(!bform.test(sbirth)){
+                alert("請輸入 YYYY/MM/DD 日期格式");
+            }else{
                 var vipnm = $('#vipnm').val();
                 var birth = $('#sbirth').val();
                 var sbirth = birth.replace(/-/g,'/');
@@ -102,24 +125,26 @@ $(document).ready(function() {
                             }else{
 
                             // console.log(xhr.responseXML.getElementsByTagName('RTNDATA'));
-                            vipLocinInfo(xhr.responseXML);
+                                state = vipLocinInfo(xhr.responseXML,state);
+
                             }
 
                         }else{
-                            alert( xhr.status );
+                            alert("伺服器回應有狀況");
+                            console.log(xhr.status);
+
                         }
                         $('.next').bind('click',fnext);
                     }
                 };
 
                 var url = 'cusLogin.php?VIPNM='+ vipnm + '&SBIRTH=' + sbirth;
-                xhr.open("GET", url, true);
+                xhr.open("POST", url, true);
                 xhr.send( null );
 
             }
 
         }else if(state === 4) {
-
 
             if ($('#telmOption option:selected').val() === "新客戶"){
 
@@ -127,7 +152,7 @@ $(document).ready(function() {
                 $('#signMail').val($('#newMail').val());
 
                 state++;
-                step();
+                step(state);
             }
 
             var newMail = $('#newMail').val();
@@ -297,14 +322,16 @@ $(document).ready(function() {
                                 }
 
                             }else{
-                                alert( xhr.status );
+                                alert("伺服器回應有狀況");
+                                console.log(xhr.status);
+
                             }
                             $('.next').bind('click',fnext);
                         }
                     };
 
                     var url = 'signup.php?CUSTNO=' + newcustno + '&VIPNM='+ signNm + '&SBIRTH=' + signBirth + '&MAIL=' + signMail + '&TELM=' +signTelm;
-                    xhr.open("GET", url, true);
+                    xhr.open("POST", url, true);
                     xhr.send( null );
 
 
@@ -314,8 +341,8 @@ $(document).ready(function() {
 
     });
 
-    $('.prev').click(function(){
-        // alert("LL");
+    $('.prev').on('click',function(){
+
         if(state === 2){
             $('#locOption > option').remove();
             $('#locOption').append($('<option>').val("").text("請選擇櫃點"));
@@ -335,7 +362,7 @@ $(document).ready(function() {
             state-=2;
         }
 
-        step();
+        step(state);
     });
 
 
@@ -346,7 +373,7 @@ $(document).ready(function() {
         if ($('#telmOption').val() === "新客戶") {
 
             state++;
-            step();
+            step(state);
 
         }
 
@@ -384,12 +411,13 @@ function WLine(){
 }
 
 //bcid 回傳處理
-function loginInfo(xmlDoc) {
+function loginInfo(xmlDoc , state) {
 
     var bcnm = xmlDoc.getElementsByTagName('BCNAME')[0].textContent;
     var bcid = document.getElementById('bcid').value;
     $('.bcid').text(bcid);
     $('.bcnm').text(bcnm);
+    $('#locOption > option').remove();
 
     var cmabnm =xmlDoc.getElementsByTagName('CMABNM');
     for (i=0 ; i< cmabnm.length ;i++){
@@ -397,7 +425,8 @@ function loginInfo(xmlDoc) {
     }
 
     state++;
-    step();
+    step(state);
+
 }
 
 
@@ -406,7 +435,7 @@ function loginInfo(xmlDoc) {
 
 //VIP登入
 
-function vipLocinInfo(xmlDoc) {
+function vipLocinInfo(xmlDoc ,state) {
 
     var vipnm = $('#vipnm').val();
     var birth = $('#sbirth').val();
@@ -424,7 +453,9 @@ function vipLocinInfo(xmlDoc) {
 
 
          state+=2;
-         step();
+         step(state);
+
+         return state;
     }else{
 
          $('#vipids').val( xmlDoc.getElementsByTagName('VIPIDS')[0].textContent);
@@ -444,7 +475,8 @@ function vipLocinInfo(xmlDoc) {
          $('#telmOption').append($('<option>').val("新客戶").text("新客戶"));
 
          state++;
-         step();
+         step(state);
+         return state;
     }
 
 }
@@ -510,13 +542,15 @@ function updataInfo(Telm) {
                 console.log(xhr.responseXML);
                 updataVip(xhr.responseXML);
             } else {
-                alert(xhr.status);
+                alert("伺服器回應有狀況");
+                console.log(xhr.status);
+
             }
         }
     };
 
     var url = 'updateVip.php?BCID=' + bcid + '&CUSTNO=' + custno + '&VIPIDS=' + vipids + '&MAIL=' + newMail + '&TELM=' + Telm;
-    xhr.open("GET", url, true);
+    xhr.open("POST", url, true);
     xhr.send(null);
 
 
@@ -532,8 +566,106 @@ function dataSession() {
     localStorage.setItem("MAIL", $('#newMail').val());
     localStorage.setItem("VIPNM", $('#vipnm').val());
     localStorage.setItem("BCNM", $('#bcnm').text());
-
+    localStorage.setItem("LOCINFO", $('.locInfo').eq(0).text());
+    localStorage.setItem("BIRTHDAY", $('.sbrithInfo').eq(0).text());
 
 }
 
 
+function sessionData() {
+
+
+    $('#bcid').val(localStorage.BCID);
+    $('#vipnm').val(localStorage.VIPNM);
+    $('.bcid').text(localStorage.BCID);
+    $('.bcnm').text(localStorage.BCNM);
+    $('.locInfo').text(localStorage.LOCINFO);
+    $('.vipnmInfo').text(localStorage.VIPNM);
+    $('.sbrithInfo').text(localStorage.BIRTHDAY);
+
+    var vipnm = localStorage.getItem('VIPNM');
+    var sbirth = localStorage.getItem('BIRTHDAY');
+
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange=function (){
+        if( xhr.readyState == 4){
+            if( xhr.status == 200 ){
+
+                if(xhr.responseText === "1"){
+                    alert("查無此客戶");
+                }else{
+
+                    var xmlDoc = xhr.responseXML;
+                    vipxmlDoc = xmlDoc;
+
+                    $('#vipids').val( xmlDoc.getElementsByTagName('VIPIDS')[0].textContent);
+                    $('.vipnmInfo').text(vipnm);
+                    $('.sbrithInfo').text(sbirth);
+
+
+                    for (var i = 1; i <= xmlDoc.getElementsByTagName('TELM').length; i++) {
+
+                        $('#telmOption').append(
+                            $('<option>').val(xmlDoc.getElementsByTagName('ROW')[i].childNodes[6].textContent).attr('data-row',i).text(xmlDoc.getElementsByTagName('ROW')[i].childNodes[6].textContent))
+
+                    }
+
+                    $('#telmOption').append($('<option>').val("新客戶").text("新客戶"));
+
+                }
+
+            }else{
+                alert("伺服器回應有狀況");
+                console.log(xhr.status);
+
+            }
+        }
+    };
+
+    var url = 'cusLogin.php?VIPNM='+ vipnm + '&SBIRTH=' + sbirth;
+    xhr.open("POST", url, true);
+    xhr.send( null );
+
+}
+
+function step(state){
+    switch(state){
+        case 1:
+            $('.border>div,.prev,.next').hide();
+            $('.step_1,.login').fadeIn(300);
+            return state;
+            break;
+
+        case 2:
+            $('.border>div,.login').hide();
+            $('.step_2,.prev,.next').fadeIn(300);
+            return state;
+            break;
+
+        case 3:
+            $('.border>div').hide();
+            $('.step_3').fadeIn(300);
+            return state;
+            break;
+
+        case 4:
+            $('.border>div').hide();
+            $('.step_4').fadeIn(300);
+            $('.login').hide();
+            $('.prev,.next').fadeIn(300);
+            return state;
+            break;
+
+        case 5:
+            $('.border>div').hide();
+            $('.step_5').fadeIn(300);
+            return state;
+            break;
+
+        default:
+            $('.border>div,.prev,.next').hide();
+            $('.step_1,.login').fadeIn(300);
+
+    }
+    console.log(state);
+}

@@ -23,8 +23,11 @@ $(document).ready(function(){
 
 $('.next').on('click',function(){
 
+
+
    if(htmlToCanvas()){
         sentData();
+
     }
 
 
@@ -206,9 +209,10 @@ function sessionData(){
     }
 
 
-
-    $('#SUGGESTION').text(localStorage.SUGGESTION);
-
+    if(localStorage.SUGGESTION !== undefined){
+        var textCont = localStorage.SUGGESTION;
+        $('.suggest').append('<span>' + textCont.replace(/\n/g,'<br/>') + '<span>');
+    }
 
 return true
 
@@ -1032,6 +1036,7 @@ function sentData() {
 
 function htmlToCanvas() {
 
+    $('footer').css('display','none');
 
     html2canvas($('#content'), {
         dpi: window.devicePixelRatio*4,
@@ -1041,6 +1046,8 @@ function htmlToCanvas() {
         }
     });
 
+
+    $('footer').css('display','block');
     return true;
 
 
@@ -1064,14 +1071,15 @@ function getlastData(vipids) {
                     }
 
                 }else{
-                    alert( xhr.status );
+                    alert("伺服器回應有狀況");
+                    console.log(xhr.status);
                 }
             }
         };
 
         // var url = 'getMaintainData.php?VIPIDS='+ vipids;
         var url = 'getTestData.php?VIPIDS='+ vipids; //最新一筆檢測資料
-        xhr.open("GET", url, true);
+        xhr.open("POST", url, true);
         xhr.send( null );
 
     }

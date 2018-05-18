@@ -62,7 +62,7 @@ if(isset($_REQUEST["VIPNM"])){
                     "MARKNO" => $_REQUEST["MARKNO"],
                     "VIPNM" => $_REQUEST["VIPNM"],
                     "SBIRTH"=> $_REQUEST["SBIRTH"],
-                    "TELM" =>''))
+                    "TELM" =>""))
         )
     );
 
@@ -155,8 +155,9 @@ if(isset($_REQUEST["VIPNM"])){
 
             $xml = $bcXml->WSTATUS->ROW->RTNCODE;
 
-            echo $xml;
+//            echo $xml;
 
+            echo $result->WS_GETVIPBASEResult;
         }
 
 

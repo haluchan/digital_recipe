@@ -2,18 +2,18 @@
 //表單位置
 $(document).ready(function() {
 
-    var vipID = localStorage.VIPIDS;
-    var vipMail = localStorage.MAIL;
+    var vipID = sessionStorage.VIPIDS;
+    var vipMail = sessionStorage.MAIL;
 
     if(vipID !== undefined && vipMail!== undefined ){
-        var state = 4;
+         state = 4;
         step(state);
         sessionData();
         clearSession();
 
     }else{
-        var state = 1;
-        localStorage.clear();
+         state = 1;
+        sessionStorage.clear();
         step(state);
     }
 
@@ -103,16 +103,18 @@ $(document).ready(function() {
         }else if (state === 3) {
 
             var vipnm = $('#vipnm').val();
-            var sbirth = $('#sbirth').val();
+            var bt =  $('#sbirth').val();
+            var by = bt.substr(0,4);
+            var bm = bt.substr(4,2);
+            var bd = bt.substr(6,2);
+            var sbirth = by + "/" + bm + "/" + bd;
             var bform = new RegExp("^([0-9]{4})[./]{1}([0-9]{1,2})[./]{1}([0-9]{1,2})$");
             if (vipnm === '' && sbirth === '') {
                 alert('請輸入姓名以及生日');
             }else if(!bform.test(sbirth)){
-                alert("請輸入 YYYY/MM/DD 日期格式");
+                alert("請輸入 YYYYMMDD 日期格式");
             }else{
                 var vipnm = $('#vipnm').val();
-                var birth = $('#sbirth').val();
-                var sbirth = birth.replace(/-/g,'/');
                 $('.next').unbind('click',fnext);
 
 
@@ -121,14 +123,16 @@ $(document).ready(function() {
                     if( xhr.readyState == 4){
                         if( xhr.status == 200 ){
 
-                            if(xhr.responseText === "1"){
-                                alert("查無此客戶");
-                            }else{
+                            // var RTNcode = xhr.responseXML.getElementsByTagName('RTNCODE')[0].textContent;
+
+                            // if(RTNcode === "1" || xhr.responseXML.getElementsByTagName('VIPIDS')[0] === undefined){
+                            //     alert("查無此客戶");
+                            // }else{
 
                             // console.log(xhr.responseXML.getElementsByTagName('RTNDATA'));
                                 state = vipLocinInfo(xhr.responseXML,state);
 
-                            }
+                            // }
 
                         }else{
                             alert("伺服器回應有狀況");
@@ -288,7 +292,8 @@ $(document).ready(function() {
                     alert('請輸入電話以及電子信箱');
                     return false;
 
-                }else if (!mobileFormat.test(signTelm)) {
+                }
+                else if (!mobileFormat.test(signTelm)) {
                     alert('您輸入的電話格式有誤');
                     return false;
                 }
@@ -311,11 +316,19 @@ $(document).ready(function() {
                         if( xhr.readyState == 4){
                             if( xhr.status == 200 ){
                                 var rtncodeInt = parseInt(xhr.responseXML.getElementsByTagName('RTNCODE')[0].textContent);
+
                                 // console.log(xhr.responseText);
                                 if( rtncodeInt !== 0){
                                     console.log(xhr.responseXML);
+                                    var rtnText = xhr.responseXML.getElementsByTagName('RTNMSG')[0].textContent;
+                                    if(rtnText === "VIP姓名 + 生日已存在。"){
+                                        
+                                        alert("VIP姓名 + 生日已存在。\n" + "請回上一頁，在名字後方加入\"*-.+/等符號\"區別\n" +
+                                            "**注意請服務人員務必在檢測後調整顧客正確名字")
+                                    }else{
+                                        alert(xhr.responseXML.getElementsByTagName('RTNMSG')[0].textContent);
+                                    }
 
-                                    alert(xhr.responseXML.getElementsByTagName('RTNMSG')[0].textContent);
                                 }else{
                                     // console.log(xhr.responseXML.getElementsByTagName('BCNAME')[0].textContent);
                                     alert('新增會員成功，您的會員編號為' + xhr.responseXML.getElementsByTagName('VIPIDS')[0].textContent);
@@ -351,35 +364,39 @@ $(document).ready(function() {
 
         }else if(state === 3){
 
-            var xhr = new XMLHttpRequest();
-            xhr.onreadystatechange=function (){
-                if( xhr.readyState == 4){
-                    if( xhr.status == 200 ) {
 
-                        var xmlDoc = xhr.responseXML;
 
-                        var bcnm = localStorage.getItem('BCNM');
-                        var bcid = localStorage.BCID;
-                        $('.bcid').text(bcid);
-                        $('.bcnm').text(bcnm);
-                        $('#locOption > option').remove();
+            if(sessionStorage.BCID !== undefined){
 
-                        var cmabnm =xmlDoc.getElementsByTagName('CMABNM');
-                        $('#locOption').append($('<option>').val("").text("請選擇櫃點"));
-                        for (i=0 ; i< cmabnm.length ;i++){
-                            $('#locOption').append("<option value="+xmlDoc.getElementsByTagName('CUSTNO')[i].textContent+ ">" +xmlDoc.getElementsByTagName('CMABNM')[i].textContent+ "</option>")
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange=function (){
+                    if( xhr.readyState == 4){
+                        if( xhr.status == 200 ) {
+
+                            var xmlDoc = xhr.responseXML;
+
+                            var bcnm = sessionStorage.getItem('BCNM');
+                            var bcid = sessionStorage.BCID;
+                            $('.bcid').text(bcid);
+                            $('.bcnm').text(bcnm);
+                            $('#locOption > option').remove();
+
+                            var cmabnm =xmlDoc.getElementsByTagName('CMABNM');
+                            $('#locOption').append($('<option>').val("").text("請選擇櫃點"));
+                            for (i=0 ; i< cmabnm.length ;i++){
+                                $('#locOption').append("<option value="+xmlDoc.getElementsByTagName('CUSTNO')[i].textContent+ ">" +xmlDoc.getElementsByTagName('CMABNM')[i].textContent+ "</option>")
+                            }
+
                         }
-
                     }
-                }
-            };
+                };
 
-            var bcide = localStorage.BCID;
+            var bcide = sessionStorage.BCID;
             var url = 'getLoginInfo.php?BCID='+ bcide;
             xhr.open("POST", url, true);
             xhr.send( null );
 
-
+            }
             state--;
         }else if(state === 4){
             $('#telmOption > option').remove();
@@ -412,11 +429,14 @@ $(document).ready(function() {
         }else{
             var dataRow =$('#telmOption option:selected').attr('data-row');
 
-            $('.vipnmInfo').text(vipxmlDoc.getElementsByTagName('ROW')[dataRow].childNodes[4].textContent);
-            $('.sbrithInfo').text(vipxmlDoc.getElementsByTagName('ROW')[dataRow].childNodes[5].textContent);
-            $('#vipids').text(vipxmlDoc.getElementsByTagName('ROW')[dataRow].childNodes[2].textContent);
-            $('#oldMail').val(vipxmlDoc.getElementsByTagName('ROW')[dataRow].childNodes[7].textContent);
-            $('#newMail').val(vipxmlDoc.getElementsByTagName('ROW')[dataRow].childNodes[7].textContent);
+            $('.vipnmInfo').text(vipxmlDoc.getElementsByTagName('VIPNM')[dataRow].textContent);
+            $('.sbrithInfo').text(vipxmlDoc.getElementsByTagName('SBIRTH')[dataRow].textContent);
+            $('#vipids').text(vipxmlDoc.getElementsByTagName('VIPIDS')[dataRow].textContent);
+            $('#vipids').val(vipxmlDoc.getElementsByTagName('VIPIDS')[dataRow].textContent);
+            $('#oldMail').val(vipxmlDoc.getElementsByTagName('MAIL')[dataRow].textContent);
+            $('#newMail').val(vipxmlDoc.getElementsByTagName('MAIL')[dataRow].textContent);
+            $('#vipCustno').val(vipxmlDoc.getElementsByTagName('CUSTNO')[dataRow].textContent)
+
 
         }
 
@@ -471,8 +491,11 @@ function loginInfo(xmlDoc , state) {
 function vipLocinInfo(xmlDoc ,state) {
 
     var vipnm = $('#vipnm').val();
-    var birth = $('#sbirth').val();
-    var sbirth = birth.replace(/-/g,'/');
+    var bt =  $('#sbirth').val();
+    var by = bt.substr(0,4);
+    var bm = bt.substr(4,2);
+    var bd = bt.substr(6,2);
+    var sbirth = by + "/" + bm + "/" + bd;
     vipxmlDoc = xmlDoc;
 
 
@@ -489,11 +512,16 @@ function vipLocinInfo(xmlDoc ,state) {
          step(state);
 
          return state;
+
     }else{
+
+
+
 
          $('#vipids').val( xmlDoc.getElementsByTagName('VIPIDS')[0].textContent);
          $('.vipnmInfo').text(vipnm);
          $('.sbrithInfo').text(sbirth);
+         $('#vipCustno').val(xmlDoc.getElementsByTagName('CUSTNO')[0].textContent);
 
          // console.log(xmlDoc.getElementsByTagName('RTNCODE'));
 
@@ -501,11 +529,12 @@ function vipLocinInfo(xmlDoc ,state) {
          for (var i = 1; i <= xmlDoc.getElementsByTagName('TELM').length; i++) {
 
              $('#telmOption').append(
-                 $('<option>').val(xmlDoc.getElementsByTagName('ROW')[i].childNodes[6].textContent).attr('data-row',i).text(xmlDoc.getElementsByTagName('ROW')[i].childNodes[6].textContent))
+                 $('<option>').val(xmlDoc.getElementsByTagName('ROW')[i].childNodes[6].textContent).attr('data-row',i-1).text(xmlDoc.getElementsByTagName('ROW')[i].childNodes[6].textContent))
 
          }
 
          $('#telmOption').append($('<option>').val("新客戶").text("新客戶"));
+
 
          state++;
          step(state);
@@ -526,13 +555,13 @@ function nVip(xmlDoc) {
     $('#vipids').val(vipids);
 
     var Today=new Date();
-    localStorage.setItem("DATE" , Today.getFullYear() + "/" + (Today.getMonth()+1) + "/" + Today.getDate());
-    localStorage.setItem("DATE" , Today.getFullYear() + "/" + (Today.getMonth()+1) + "/" + Today.getDate());
-    localStorage.setItem('BCID',$('#bcid').val());
-    localStorage.setItem("VIPIDS",$('#vipids').val());
-    localStorage.setItem("MAIL",$('#signMail').val());
-    localStorage.setItem("VIPNM", $('#vipnm').val());
-    localStorage.setItem("BCNM", $('#bcnm').text());
+    sessionStorage.setItem("DATE" , Today.getFullYear() + "/" + (Today.getMonth()+1) + "/" + Today.getDate());
+    sessionStorage.setItem("DATE" , Today.getFullYear() + "/" + (Today.getMonth()+1) + "/" + Today.getDate());
+    sessionStorage.setItem('BCID',$('#bcid').val());
+    sessionStorage.setItem("VIPIDS",$('#vipids').val());
+    sessionStorage.setItem("MAIL",$('#signMail').val());
+    sessionStorage.setItem("VIPNM", $('#vipnm').val());
+    sessionStorage.setItem("BCNM", $('#bcnm').text());
 
     location.href = location.href = page + "_01.html";
 
@@ -542,7 +571,9 @@ function nVip(xmlDoc) {
 function updataVip(xmlDoc) {
 
     console.log(xmlDoc);
-    if (xmlDoc.getElementsByTagName('RTNMSG')[0].textContent !== '更新成功。') {
+
+    if (xmlDoc.getElementsByTagName('RTNMSG')[0].textContent == null || xmlDoc.getElementsByTagName('RTNMSG')[0].textContent !== '更新成功。') {
+        console.log(toString(xmlDoc));
         // console.log(toString(xmlDoc.getElementsByTagName('RTNMSG')[0].textContent));
         alert('輸入電話、信箱有誤，請重新確認');
         return false;
@@ -564,7 +595,11 @@ function updataInfo(Telm) {
     var vipids = $('#vipids').val();
     var newMail = $('#newMail').val();
     var bcid = $('#bcid').val();
-    var custno = $('#custno').val();
+    if($('#vipCustno').val() === ""){
+        var custno = sessionStorage.getItem('VIPCUSTNO')
+    }else{
+        var custno = $('#vipCustno').val();
+    }
     // var newTelm =$('#newTelm').val();
 
 
@@ -593,14 +628,16 @@ function updataInfo(Telm) {
 function dataSession() {
 
     var Today=new Date();
-    localStorage.setItem("DATE" , Today.getFullYear() + "/" + (Today.getMonth()+1) + "/" + Today.getDate());
-    localStorage.setItem('BCID', $('#bcid').val());
-    localStorage.setItem("VIPIDS", $('#vipids').val());
-    localStorage.setItem("MAIL", $('#newMail').val());
-    localStorage.setItem("VIPNM", $('#vipnm').val());
-    localStorage.setItem("BCNM", $('#bcnm').text());
-    localStorage.setItem("LOCINFO", $('.locInfo').eq(0).text());
-    localStorage.setItem("BIRTHDAY", $('.sbrithInfo').eq(0).text());
+    sessionStorage.setItem("DATE" , Today.getFullYear() + "/" + (Today.getMonth()+1) + "/" + Today.getDate());
+    sessionStorage.setItem('BCID', $('#bcid').val());
+    sessionStorage.setItem('CUSTNO', $('#custno').val());
+    sessionStorage.setItem('VIPCUSTNO', $('#vipCustno').val());
+    sessionStorage.setItem("VIPIDS", $('#vipids').val());
+    sessionStorage.setItem("MAIL", $('#newMail').val());
+    sessionStorage.setItem("VIPNM", $('#vipnm').val());
+    sessionStorage.setItem("BCNM", $('#bcnm').text());
+    sessionStorage.setItem("LOCINFO", $('.locInfo').eq(0).text());
+    sessionStorage.setItem("BIRTHDAY", $('.sbrithInfo').eq(0).text());
 
 }
 
@@ -608,25 +645,25 @@ function dataSession() {
 function sessionData() {
 
 
-    $('#bcid').val(localStorage.BCID);
-    $('#vipnm').val(localStorage.VIPNM);
-    $('.bcid').text(localStorage.BCID);
-    $('.bcnm').text(localStorage.BCNM);
-    $('.locInfo').text(localStorage.LOCINFO);
-    $('.vipnmInfo').text(localStorage.VIPNM);
-    $('.sbrithInfo').text(localStorage.BIRTHDAY);
+    $('#bcid').val(sessionStorage.BCID);
+    $('#vipnm').val(sessionStorage.VIPNM);
+    $('.bcid').text(sessionStorage.BCID);
+    $('.bcnm').text(sessionStorage.BCNM);
+    $('.locInfo').text(sessionStorage.LOCINFO);
+    $('.vipnmInfo').text(sessionStorage.VIPNM);
+    $('.sbrithInfo').text(sessionStorage.BIRTHDAY);
+    $('#custno').val(sessionStorage.CUSTNO);
+    $('#vipCustno').val(sessionStorage.VIPCUSTNO);
 
-    var vipnm = localStorage.getItem('VIPNM');
-    var sbirth = localStorage.getItem('BIRTHDAY');
+    var vipnm = sessionStorage.getItem('VIPNM');
+    var sbirth = sessionStorage.getItem('BIRTHDAY');
 
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange=function (){
         if( xhr.readyState == 4){
             if( xhr.status == 200 ){
 
-                if(xhr.responseText === "1"){
-                    alert("查無此客戶");
-                }else{
+                if(xhr.responseXML !== undefined){
 
                     var xmlDoc = xhr.responseXML;
                     vipxmlDoc = xmlDoc;
@@ -639,7 +676,7 @@ function sessionData() {
                     for (var i = 1; i <= xmlDoc.getElementsByTagName('TELM').length; i++) {
 
                         $('#telmOption').append(
-                            $('<option>').val(xmlDoc.getElementsByTagName('ROW')[i].childNodes[6].textContent).attr('data-row',i).text(xmlDoc.getElementsByTagName('ROW')[i].childNodes[6].textContent))
+                            $('<option>').val(xmlDoc.getElementsByTagName('ROW')[i].childNodes[6].textContent).attr('data-row',i-1).text(xmlDoc.getElementsByTagName('ROW')[i].childNodes[6].textContent))
 
                     }
 
@@ -664,6 +701,7 @@ function sessionData() {
 function step(state){
     switch(state){
         case 1:
+            sessionStorage.clear();
             $('.border>div,.prev,.next').hide();
             $('.step_1,.login').fadeIn(300);
             return state;
@@ -705,11 +743,11 @@ function step(state){
 
 function clearSession() {
 
-    var ls =localStorage.length;
+    var ls =sessionStorage.length;
 
     for (var i = 0; i < ls; i++) {
 
-        var lsName = localStorage.key(i);
+        var lsName = sessionStorage.key(i);
 
         switch(lsName) {
             case "BCID":
@@ -736,8 +774,14 @@ function clearSession() {
             case "VIPNM":
 
                 break;
+            case "CUSTNO":
+
+                break;
+            case "VIPCUSTNO":
+
+                break;
             default:
-               localStorage.removeItem(lsName);
+               sessionStorage.removeItem(lsName);
         }
 
     }

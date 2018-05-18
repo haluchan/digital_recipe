@@ -1,18 +1,18 @@
 $(document).ready(function() {
 
-    var date = localStorage.getItem('DATE');
-    var vipnm = localStorage.getItem('VIPNM');
-    var vipids = localStorage.getItem('VIPIDS');
-    var bcnm = localStorage.getItem('BCNM');
+    var date = sessionStorage.getItem('DATE');
+    var vipnm = sessionStorage.getItem('VIPNM');
+    var vipids = sessionStorage.getItem('VIPIDS');
+    var bcnm = sessionStorage.getItem('BCNM');
 
     $('#date').text(date);
     $('#vipnm').text(vipnm);
     $('#vipids').text(vipids);
     $('#bcnm').text(bcnm);
 
-    if (localStorage.canvasFace_2 !== undefined){
+    if (sessionStorage.canvasFace_2 !== undefined){
         $('.skinResult').css("display","none");
-        $('#previewImage').append("<img src="+localStorage.canvasFace_2+">");
+        $('#previewImage').append("<img src="+sessionStorage.canvasFace_2+">");
     }else{
         $('canvasTool').css("display","block");
     }
@@ -21,28 +21,28 @@ $(document).ready(function() {
 
     //mean跳轉
     var btn = $('.btn');
-    if(localStorage.getItem('DRY') !== null){
+    if(sessionStorage.getItem('DRY') !== null){
         btn.siblings('ul').children('li:eq(0)').css('color','#000000');
 
         btn.siblings('ul').children('li:eq(0)').on('click touchstart',function (){
             location.href = 'maintain_01.html';
         });
     }
-    if(localStorage.getItem('AIR_DRY') !== null){
+    if(sessionStorage.getItem('AIR_DRY') !== null){
         btn.siblings('ul').children('li:eq(1)').css('color','#000000');
 
         btn.siblings('ul').children('li:eq(1)').on('click touchstart',function (){
             location.href = 'maintain_02.html';
         });
     }
-    if(localStorage.getItem('MOISTURIZING') !== null){
+    if(sessionStorage.getItem('MOISTURIZING') !== null){
         btn.siblings('ul').children('li:eq(2)').css('color','#000000');
 
         btn.siblings('ul').children('li:eq(2)').on('click touchstart',function (){
             location.href = 'maintain_03.html';
         });
     }
-    if(localStorage.getItem('canvasFace_3') !== null){
+    if(sessionStorage.getItem('canvasFace_3') !== null){
         btn.siblings('ul').children('li:eq(3)').css('color','#000000');
 
         btn.siblings('ul').children('li:eq(3)').on('click touchstart',function (){
@@ -54,7 +54,7 @@ $(document).ready(function() {
 
 //回首頁清暫存
 $('.Back2Log').on('click',function () {
-    localStorage.clear();
+    sessionStorage.clear();
 });
 
 
@@ -66,7 +66,7 @@ $('.next').on('click',function(){
 
         getdata();
 
-        if(localStorage.canvasFace_2 === undefined){
+        if(sessionStorage.canvasFace_2 === undefined){
             htmlToCanvas();
         }
 
@@ -94,11 +94,11 @@ function getdata() {
 
         if($('input')[i].checked === true){
 
-            localStorage.setItem(name,"1");
+            sessionStorage.setItem(name,"1");
 
         }else{
 
-            localStorage.setItem(name,"0");
+            sessionStorage.setItem(name,"0");
         }
 
     }
@@ -116,7 +116,7 @@ function htmlToCanvas() {
         onrendered: function (canvas) {
             $('#previewImage').append("<img src="+canvas.toDataURL("image/png")+">");
             $('#previewImage > img').css('display','none');
-            localStorage.setItem('canvasFace_2',canvas.toDataURL("image/png"));
+            sessionStorage.setItem('canvasFace_2',canvas.toDataURL("image/png"));
         }
     });
 
@@ -126,11 +126,11 @@ function htmlToCanvas() {
 function sessionData() {
 
 
-    var len = localStorage.length;
+    var len = sessionStorage.length;
     for (var i = 0; i < len; i++) {
 
-        var inputName = localStorage.key(i);
-        var inputValue = localStorage.getItem(inputName);
+        var inputName = sessionStorage.key(i);
+        var inputValue = sessionStorage.getItem(inputName);
 
             if(inputValue === "1"){
 

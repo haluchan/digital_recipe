@@ -1,10 +1,10 @@
 $(document).ready(function(){
 
 
-    var date = localStorage.getItem('DATE');
-    var vipnm = localStorage.getItem('VIPNM');
-    var vipids= localStorage.getItem('VIPIDS');
-    var bcnm = localStorage.getItem('BCNM');
+    var date = sessionStorage.getItem('DATE');
+    var vipnm = sessionStorage.getItem('VIPNM');
+    var vipids= sessionStorage.getItem('VIPIDS');
+    var bcnm = sessionStorage.getItem('BCNM');
 
     $('#date').text(date);
     $('#vipnm').text(vipnm);
@@ -52,30 +52,30 @@ $('.prev').on('click',function(){
 
 function sessionData(){
 
-    var sg = parseInt(localStorage.SG);
-    var skinLevel = parseInt(localStorage.SKIN_LEVEL);
-    var transparency = parseInt(localStorage.TRANSPARENCY_C);
-    var skin_color_c = parseInt(localStorage.SKIN_COLOR_C);
-    var skin_light_c = parseInt(localStorage.SKIN_LIGHT_C);
-    var elasticity = parseInt(localStorage.ELASTICITY);
+    var sg = parseInt(sessionStorage.SG);
+    var skinLevel = parseInt(sessionStorage.SKIN_LEVEL);
+    var transparency = parseInt(sessionStorage.TRANSPARENCY_C);
+    var skin_color_c = parseInt(sessionStorage.SKIN_COLOR_C);
+    var skin_light_c = parseInt(sessionStorage.SKIN_LIGHT_C);
+    var elasticity = parseInt(sessionStorage.ELASTICITY);
 
-    var natural = parseInt(localStorage.NATURAL_C);
-    var acquired = parseInt(localStorage.ACQUIRED_C);
+    var natural = parseInt(sessionStorage.NATURAL_C);
+    var acquired = parseInt(sessionStorage.ACQUIRED_C);
 
 
-    $('.theme_c').text(localStorage.SUBJECT);
+    $('.theme_c').text(sessionStorage.SUBJECT);
 
-    if(localStorage.canvasFace_3 !== undefined){
+    if(sessionStorage.canvasFace_3 !== undefined){
         canvasImg();
 
     }
 
-    $('.suggest').text(localStorage.MAKUP_TXT_C);
+    $('.suggest').text(sessionStorage.MAKUP_TXT_C);
 
 
-    var removeValue = parseInt(localStorage.BASC_REMOVE);
-    var cleanValue = parseInt(localStorage.BASC_CLEAN);
-    var wetValue = parseInt(localStorage.BASC_WET);
+    var removeValue = parseInt(sessionStorage.BASC_REMOVE);
+    var cleanValue = parseInt(sessionStorage.BASC_CLEAN);
+    var wetValue = parseInt(sessionStorage.BASC_WET);
 
     $("#basc_remove").text(removeEx(removeValue));
     $("#basc_clean").text(cleanEx(cleanValue));
@@ -83,54 +83,54 @@ function sessionData(){
 
     $("#NATURAL_C").text(naturalEX(natural));
     $("#ACQUIRED_C").text(acquiredEX(acquired));
-    $("#MOISTURE").text(localStorage.MOISTURE);
-    $("#SEBUM").text(localStorage.SEBUM);
-    $("#CHEEK_COLOR").text(localStorage.CHEEK_COLOR);
-    $("#TENSION").text(localStorage.TENSION);
+    $("#MOISTURE").text(sessionStorage.MOISTURE);
+    $("#SEBUM").text(sessionStorage.SEBUM);
+    $("#CHEEK_COLOR").text(sessionStorage.CHEEK_COLOR);
+    $("#TENSION").text(sessionStorage.TENSION);
     $("#ELASTICITY").text(elasticityEX(elasticity));
     $("#SG").text(elasticityEX(sg));
-    $("#TRANSPARENCY").text(localStorage.TRANSPARENCY);
+    $("#TRANSPARENCY").text(sessionStorage.TRANSPARENCY);
     $("#TRANSPARENCY_C").text(transparencyEX(transparency));
-    $("#HORNY").text(localStorage.HORNY);
+    $("#HORNY").text(sessionStorage.HORNY);
     $("#SKIN_LEVEL").text(skinLevelEX(skinLevel));
 
     $('div[name="SKIN_COLOR_C"]').text(skin_color_cEX(skin_color_c));
     $('div[name="SKIN_LIGHT_C"]').text(skin_light_cEX(skin_light_c));
-    $('div[name="SKIN_LIGHT_O"]').text(localStorage.SKIN_LIGHT_O);
+    $('div[name="SKIN_LIGHT_O"]').text(sessionStorage.SKIN_LIGHT_O);
 
 
 
-    if(localStorage.BASC_WET !=="0" || localStorage.BASC_CLEAN !=="0" || localStorage.BASC_REMOVE !=="0"){
+    if(sessionStorage.BASC_WET !=="0" || sessionStorage.BASC_CLEAN !=="0" || sessionStorage.BASC_REMOVE !=="0"){
 
         $('#basic').attr('checked','checked');
     }
 
 
 
-    if(localStorage.HORNY_C !=="0"){
+    if(sessionStorage.HORNY_C !=="0"){
 
         $('#0').attr('checked','checked');
-        $('#sHORNY').text(specEx(localStorage.HORNY_C));
+        $('#sHORNY').text(specEx(sessionStorage.HORNY_C));
         $('#sHORNY').css('display','block');
 
-        if(localStorage.HORNY_T !== "0"){
+        if(sessionStorage.HORNY_T !== "0"){
             $('#0').attr('checked','checked');
-            $('#pHORNY').text(hornyEx(localStorage.HORNY_T));
+            $('#pHORNY').text(hornyEx(sessionStorage.HORNY_T));
             $('#pHORNY').siblings(".arrow").css('display','block');
             $('#pHORNY').css('display','block');
         }
     }
 
 
-    if(localStorage.DRYING_C !=="0"){
+    if(sessionStorage.DRYING_C !=="0"){
 
         $('#2').attr('checked','checked');
-        $('#sDRYING').text(specEx(localStorage.DRYING_C));
+        $('#sDRYING').text(specEx(sessionStorage.DRYING_C));
         $('#sDRYING').css('display','block');
 
-        if(localStorage.DRYING_T !== "0"){
+        if(sessionStorage.DRYING_T !== "0"){
             $('#2').attr('checked','checked');
-            $('#pDRYING').text(dryingEx(localStorage.DRYING_T));
+            $('#pDRYING').text(dryingEx(sessionStorage.DRYING_T));
             $('#pDRYING').siblings(".arrow").css('display','block');
             $('#pDRYING').css('display','block');
         }
@@ -139,15 +139,15 @@ function sessionData(){
     }
 
 
-    if(localStorage.WHITENING_C !=="0"){
+    if(sessionStorage.WHITENING_C !=="0"){
 
         $('#3').attr('checked','checked');
-        $('#sWHITENING').text(specEx(localStorage.WHITENING_C));
+        $('#sWHITENING').text(specEx(sessionStorage.WHITENING_C));
         $('#sWHITENING').css('display','block');
 
-        if(localStorage.WHITENING_T !== "0"){
+        if(sessionStorage.WHITENING_T !== "0"){
             $('#3').attr('checked','checked');
-            $('#pWHITENING').text(whiteningEx(localStorage.WHITENING_T));
+            $('#pWHITENING').text(whiteningEx(sessionStorage.WHITENING_T));
             $('#pWHITENING').siblings(".arrow").css('display','block');
             $('#pWHITENING').css('display','block');
         }
@@ -158,15 +158,15 @@ function sessionData(){
 
 
 
-    if(localStorage.ELASTICITY_C !=="0"){
+    if(sessionStorage.ELASTICITY_C !=="0"){
 
         $('#4').attr('checked','checked');
-        $('#sELASTICITY').text(specEx(localStorage.ELASTICITY_C));
+        $('#sELASTICITY').text(specEx(sessionStorage.ELASTICITY_C));
         $('#sELASTICITY').css('display','block');
 
-        if(localStorage.ELASTICITY_T !== "0"){
+        if(sessionStorage.ELASTICITY_T !== "0"){
             $('#4').attr('checked','checked');
-            $('#pELASTICITY').text(elasticityEx(localStorage.ELASTICITY_T));
+            $('#pELASTICITY').text(elasticityEx(sessionStorage.ELASTICITY_T));
             $('#pELASTICITY').siblings(".arrow").css('display','block');
             $('#pELASTICITY').css('display','block');
         }
@@ -176,15 +176,15 @@ function sessionData(){
     }
 
 
-    if(localStorage.UV_C !=="0"){
+    if(sessionStorage.UV_C !=="0"){
 
         $('#5').attr('checked','checked');
-        $('#sUV').text(specEx(localStorage.UV_C));
+        $('#sUV').text(specEx(sessionStorage.UV_C));
         $('#sUV').css('display','block');
 
-        if(localStorage.UV_T !== "0"){
+        if(sessionStorage.UV_T !== "0"){
             $('#5').attr('checked','checked');
-            $('#pUV').text(uvEx(localStorage.UV_T));
+            $('#pUV').text(uvEx(sessionStorage.UV_T));
             $('#pUV').siblings(".arrow").css('display','block');
             $('#pUV').css('display','block');
         }
@@ -193,15 +193,15 @@ function sessionData(){
     }
 
 
-    if(localStorage.OTHER_C !=="0"){
+    if(sessionStorage.OTHER_C !=="0"){
 
         $('#6').attr('checked','checked');
-        $('#sOTHER').text(specEx(localStorage.OTHER_C));
+        $('#sOTHER').text(specEx(sessionStorage.OTHER_C));
         $('#sOTHER').css('display','block');
 
-        if(localStorage.OTHER_T !== "0"){
+        if(sessionStorage.OTHER_T !== "0"){
             $('#6').attr('checked','checked');
-            $('#pOTHER').text(otherEx(localStorage.OTHER_T));
+            $('#pOTHER').text(otherEx(sessionStorage.OTHER_T));
             $('#pOTHER').siblings(".arrow").css('display','block');
             $('#pOTHER').css('display','block');
         }
@@ -209,8 +209,8 @@ function sessionData(){
     }
 
 
-    if(localStorage.SUGGESTION !== undefined){
-        var textCont = localStorage.SUGGESTION;
+    if(sessionStorage.SUGGESTION !== undefined){
+        var textCont = sessionStorage.SUGGESTION;
         $('.suggest').append('<span>' + textCont.replace(/\n/g,'<br/>') + '<span>');
     }
 
@@ -219,8 +219,8 @@ return true
 }
 
 function canvasImg() {
-    // $("#canvasFace_3").append("<div style='width:110%' src="+localStorage.canvasFace_3+">");
-    $("#canvasFace_3").css('background-image',"url('"+localStorage.canvasFace_3+"')");
+    // $("#canvasFace_3").append("<div style='width:110%' src="+sessionStorage.canvasFace_3+">");
+    $("#canvasFace_3").css('background-image',"url('"+sessionStorage.canvasFace_3+"')");
 }
 
 
@@ -256,6 +256,9 @@ function elasticityEX(tmp) {
         case 2:
             tmp = "G";
             break;
+        default:
+            tmp = "";
+
 
     }
 
@@ -283,6 +286,9 @@ function skinLevelEX(tmp) {
         case 6:
             tmp = "-3";
             break;
+        default:
+            tmp = "";
+
 
     }
 
@@ -314,6 +320,9 @@ function transparencyEX(tmp) {
         case 7:
             tmp = "黃色化";
             break;
+        default:
+            tmp = "";
+
 
     }
 
@@ -339,6 +348,9 @@ function skin_color_cEX(tmp) {
         case 5:
             tmp = "201";
             break;
+        default:
+            tmp = "";
+
     }
 
     return(tmp);
@@ -358,6 +370,9 @@ function skin_light_cEX(tmp) {
         case 3:
             tmp = "P";
             break;
+        default:
+            tmp = "";
+
 
     }
 
@@ -382,6 +397,9 @@ function acquiredEX(tmp) {
         case 4:
             tmp = "D4";
             break;
+        default:
+            tmp = "";
+
 
     }
 
@@ -405,6 +423,9 @@ function naturalEX(tmp) {
         case 4:
             tmp = "IV";
             break;
+        default:
+            tmp = "";
+
 
     }
 
@@ -915,94 +936,94 @@ function sentData() {
 
 
     var data = {
-        VIPIDS: localStorage.VIPIDS,
-        DATE: localStorage.DATE,
-        MAIL: localStorage.MAIL,
-        VIPNM: localStorage.VIPNM,
-        BCID: localStorage.BCID,
-        DRY: localStorage.DRY,
-        OIL: localStorage.OIL,
-        PORES: localStorage.PORES,
-        ACEN: localStorage.ACEN,
-        DULL: localStorage.DULL,
-        SPOTS: localStorage.SPOTS,
-        CB: localStorage.CB,
-        DARK_CIRCLES: localStorage.DARK_CIRCLES,
-        TE: localStorage.TE,
-        WRINKLE: localStorage.WRINKLE,
-        SENSITIVE: localStorage.SENSITIVE,
-        AIR_DRY: localStorage.AIR_DRY,
-        DUST: localStorage.DUST,
-        AIR: localStorage.AIR,
-        UV_LUX: localStorage.UV_LUX,
-        AGE: localStorage.AGE,
-        FOOD: localStorage.FOOD,
-        SLEEP_L: localStorage.SLEEP_L,
-        PRESSURE: localStorage.PRESSURE,
-        MOISTURIZING: localStorage.MOISTURIZING,
-        WHITE: localStorage.WHITE,
-        ANTI_AGE: localStorage.ANTI_AGE,
-        REMOVER: localStorage.REMOVER,
-        CLEAN: localStorage.CLEAN,
-        ME: localStorage.ME,
-        LOTION: localStorage.LOTION,
-        EMULSION: localStorage.EMULSION,
-        BEAUTY_FLUID: localStorage.BEAUTY_FLUID,
-        CREAM: localStorage.CREAM,
-        CREAM_PROTECTS: localStorage.CREAM_PROTECTS,
-        CREAM_CONTROL: localStorage.CREAM_CONTROL,
-        OTHER_M: localStorage.OTHER_M,
-        OTHER_MC: localStorage.OTHER_MC,
-        PASTE: localStorage.PASTE,
-        PASTE_C: localStorage.PASTE_C,
-        LIQUID: localStorage.LIQUID,
-        LIQUID_C: localStorage.LIQUID_C,
-        CREAMY: localStorage.CREAMY,
-        CREAMY_C: localStorage.CREAMY_C,
-        CAKE: localStorage.CAKE,
-        CAKE_C: localStorage.CAKE_C,
-        POWDER: localStorage.POWDER,
-        POWDER_C: localStorage.POWDER_C,
-        AIRB: localStorage.AIRB,
-        AIRB_C: localStorage.AIRB_C,
-        BB: localStorage.BB,
-        BB_C: localStorage.BB_C,
-        APPROVE_C: localStorage.APPROVE_C,
-        SUBJECT: localStorage.SUBJECT,
-        NATURAL_C: localStorage.NATURAL_C,
-        ACQUIRED_C: localStorage.ACQUIRED_C,
-        MOISTURE: localStorage.MOISTURE,
-        SEBUM: localStorage.SEBUM,
-        TENSION: localStorage.TENSION,
-        ELASTICITY: localStorage.ELASTICITY,
-        SG: localStorage.SG,
-        TRANSPARENCY: localStorage.TRANSPARENCY,
-        TRANSPARENCY_C: localStorage.TRANSPARENCY_C,
-        HORNY: localStorage.HORNY,
-        SKIN_LEVEL: localStorage.SKIN_LEVEL,
-        SKIN_COLOR_C: localStorage.SKIN_COLOR_C,
-        SKIN_LIGHT: localStorage.SKIN_LIGHT_O,
-        SKIN_LIGHT_C: localStorage.SKIN_LIGHT_C,
-        BASC: localStorage.BASC,
-        BASC_REMOVER: localStorage.BASC_REMOVE,
-        BASC_CLEAN: localStorage.BASC_CLEAN,
-        BASC_WET: localStorage.BASC_WET,
-        HORNY_C: localStorage.HORNY_C,
-        HORNY_T: localStorage.HORNY_T,
-        DRYING_C: localStorage.DRYING_C,
-        DRYING_T: localStorage.DRYING_T,
-        WHITENING_C: localStorage.WHITENING_C,
-        WHITENING_T: localStorage.WHITENING_T,
-        ELASTICITY_C: localStorage.ELASTICITY_C,
-        ELASTICITY_T: localStorage.ELASTICITY_T,
-        UV_C: localStorage.UV_C,
-        UV_T: localStorage.UV_T,
-        OTHER_C: localStorage.OTHER_C,
-        OTHER_T: localStorage.OTHER_T,
-        SUGGESTION: localStorage.SUGGESTION,
-        MAKEUP_URL: localStorage.canvasFace_2,
-        SKIN_WATER_URL: localStorage.canvasFace_3,
-        PDFImage:localStorage.PDFImage
+        VIPIDS: sessionStorage.VIPIDS,
+        DATE: sessionStorage.DATE,
+        MAIL: sessionStorage.MAIL,
+        VIPNM: sessionStorage.VIPNM,
+        BCID: sessionStorage.BCID,
+        DRY: sessionStorage.DRY,
+        OIL: sessionStorage.OIL,
+        PORES: sessionStorage.PORES,
+        ACEN: sessionStorage.ACEN,
+        DULL: sessionStorage.DULL,
+        SPOTS: sessionStorage.SPOTS,
+        CB: sessionStorage.CB,
+        DARK_CIRCLES: sessionStorage.DARK_CIRCLES,
+        TE: sessionStorage.TE,
+        WRINKLE: sessionStorage.WRINKLE,
+        SENSITIVE: sessionStorage.SENSITIVE,
+        AIR_DRY: sessionStorage.AIR_DRY,
+        DUST: sessionStorage.DUST,
+        AIR: sessionStorage.AIR,
+        UV_LUX: sessionStorage.UV_LUX,
+        AGE: sessionStorage.AGE,
+        FOOD: sessionStorage.FOOD,
+        SLEEP_L: sessionStorage.SLEEP_L,
+        PRESSURE: sessionStorage.PRESSURE,
+        MOISTURIZING: sessionStorage.MOISTURIZING,
+        WHITE: sessionStorage.WHITE,
+        ANTI_AGE: sessionStorage.ANTI_AGE,
+        REMOVER: sessionStorage.REMOVER,
+        CLEAN: sessionStorage.CLEAN,
+        ME: sessionStorage.ME,
+        LOTION: sessionStorage.LOTION,
+        EMULSION: sessionStorage.EMULSION,
+        BEAUTY_FLUID: sessionStorage.BEAUTY_FLUID,
+        CREAM: sessionStorage.CREAM,
+        CREAM_PROTECTS: sessionStorage.CREAM_PROTECTS,
+        CREAM_CONTROL: sessionStorage.CREAM_CONTROL,
+        OTHER_M: sessionStorage.OTHER_M,
+        OTHER_MC: sessionStorage.OTHER_MC,
+        PASTE: sessionStorage.PASTE,
+        PASTE_C: sessionStorage.PASTE_C,
+        LIQUID: sessionStorage.LIQUID,
+        LIQUID_C: sessionStorage.LIQUID_C,
+        CREAMY: sessionStorage.CREAMY,
+        CREAMY_C: sessionStorage.CREAMY_C,
+        CAKE: sessionStorage.CAKE,
+        CAKE_C: sessionStorage.CAKE_C,
+        POWDER: sessionStorage.POWDER,
+        POWDER_C: sessionStorage.POWDER_C,
+        AIRB: sessionStorage.AIRB,
+        AIRB_C: sessionStorage.AIRB_C,
+        BB: sessionStorage.BB,
+        BB_C: sessionStorage.BB_C,
+        APPROVE_C: sessionStorage.APPROVE_C,
+        SUBJECT: sessionStorage.SUBJECT,
+        NATURAL_C: sessionStorage.NATURAL_C,
+        ACQUIRED_C: sessionStorage.ACQUIRED_C,
+        MOISTURE: sessionStorage.MOISTURE,
+        SEBUM: sessionStorage.SEBUM,
+        TENSION: sessionStorage.TENSION,
+        ELASTICITY: sessionStorage.ELASTICITY,
+        SG: sessionStorage.SG,
+        TRANSPARENCY: sessionStorage.TRANSPARENCY,
+        TRANSPARENCY_C: sessionStorage.TRANSPARENCY_C,
+        HORNY: sessionStorage.HORNY,
+        SKIN_LEVEL: sessionStorage.SKIN_LEVEL,
+        SKIN_COLOR_C: sessionStorage.SKIN_COLOR_C,
+        SKIN_LIGHT: sessionStorage.SKIN_LIGHT_O,
+        SKIN_LIGHT_C: sessionStorage.SKIN_LIGHT_C,
+        BASC: sessionStorage.BASC,
+        BASC_REMOVER: sessionStorage.BASC_REMOVE,
+        BASC_CLEAN: sessionStorage.BASC_CLEAN,
+        BASC_WET: sessionStorage.BASC_WET,
+        HORNY_C: sessionStorage.HORNY_C,
+        HORNY_T: sessionStorage.HORNY_T,
+        DRYING_C: sessionStorage.DRYING_C,
+        DRYING_T: sessionStorage.DRYING_T,
+        WHITENING_C: sessionStorage.WHITENING_C,
+        WHITENING_T: sessionStorage.WHITENING_T,
+        ELASTICITY_C: sessionStorage.ELASTICITY_C,
+        ELASTICITY_T: sessionStorage.ELASTICITY_T,
+        UV_C: sessionStorage.UV_C,
+        UV_T: sessionStorage.UV_T,
+        OTHER_C: sessionStorage.OTHER_C,
+        OTHER_T: sessionStorage.OTHER_T,
+        SUGGESTION: sessionStorage.SUGGESTION,
+        MAKEUP_URL: sessionStorage.canvasFace_2,
+        SKIN_WATER_URL: sessionStorage.canvasFace_3,
+        PDFImage:sessionStorage.PDFImage
     };
 
     var xhr = new XMLHttpRequest();
@@ -1010,7 +1031,7 @@ function sentData() {
         if( xhr.readyState == 4){
             if( xhr.status == 200 ){
                 $('#postData').append("<img src="+xhr.responseText+">");
-                $('#postData').text(xhr.responseText);
+                $('#postData').text(xhr.responseText); //php回傳內容
 
                 if(xhr.responseText !== false){
                     $('.bg').css('display','none');
@@ -1018,7 +1039,7 @@ function sentData() {
 
                 if(xhr.responseText === "新增成功，信件已送出"){
                     alert("新增成功，信件已送出");
-                    localStorage.clear();
+                    sessionStorage.clear();
                     location.href = "login.html";
                 }
             }else{
@@ -1036,18 +1057,20 @@ function sentData() {
 
 function htmlToCanvas() {
 
-    $('footer').css('display','none');
+    var footer = $('footer');
+
+    footer.css('display','none');
 
     html2canvas($('#content'), {
         dpi: window.devicePixelRatio*4,
         onrendered: function (canvas) {
             // $('#postData').append("<img src="+canvas.toDataURL("image/png")+">"); //pdf檢查用
-            localStorage.setItem('PDFImage',canvas.toDataURL("image/png"));
+            sessionStorage.setItem('PDFImage',canvas.toDataURL("image/png"));
         }
     });
 
 
-    $('footer').css('display','block');
+    footer.css('display','block');
     return true;
 
 
@@ -1077,8 +1100,8 @@ function getlastData(vipids) {
             }
         };
 
-        // var url = 'getMaintainData.php?VIPIDS='+ vipids;
-        var url = 'getTestData.php?VIPIDS='+ vipids; //最新一筆檢測資料
+        var url = 'getMaintainData.php?VIPIDS='+ vipids;
+        // var url = 'getTestData.php?VIPIDS='+ vipids; //最新一筆檢測資料
         xhr.open("POST", url, true);
         xhr.send( null );
 

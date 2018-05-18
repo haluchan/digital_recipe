@@ -71,10 +71,11 @@
 
 				<div class="blank clearfix">
 					<div class="title w4 floatL ">顧客生日</div>
-					<div class="content floatL"><input id="sbirth" class="tel" type="text" min="1918-01-01" placeholder="西元(年/月/日)" value="" max=""></div>
+					<div class="content floatL"><input id="sbirth" class="tel" type="text" min="1918/01/01" placeholder="西元(YYYYMMDD)" value="" max=""></div>
 				</div>
 				<div style="">
-					<input type="hidden" id="custno" value=''>
+					<input type="hidden" id="custno" value="">
+                    <input type="hidden" id="vipCustno" value="">
 				</div>
 			</div>	
 
@@ -120,9 +121,8 @@
 					<div class="title w4 floatL ">顧客信箱</div>
 					<div class="content floatL">
 						<input type="hidden" id="oldMail" value="">
-						<input id="newMail" class="mail" value=""></div>
+						<input type="email" id="newMail" class="mail" value=""></div>
 				</div>
-
 				<div class="blank clearfix">
 					<div class="title w4 floatL ">檢測項目</div>
 					<div class="content floatL clearfix">

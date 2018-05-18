@@ -1,10 +1,10 @@
 $(document).ready(function(){
 
 
-    var date = localStorage.getItem('DATE');
-    var vipnm = localStorage.getItem('VIPNM');
-    var vipids= localStorage.getItem('VIPIDS');
-    var bcnm = localStorage.getItem('BCNM');
+    var date = sessionStorage.getItem('DATE');
+    var vipnm = sessionStorage.getItem('VIPNM');
+    var vipids= sessionStorage.getItem('VIPIDS');
+    var bcnm = sessionStorage.getItem('BCNM');
 
     $('#date').text(date);
     $('#vipnm').text(vipnm);
@@ -68,46 +68,46 @@ function getMackupData(xmlDoc){
 
 function sessionData() {
 
-    var sg = parseInt(localStorage.SG);
-    var skinLevel = parseInt(localStorage.SKIN_LEVEL);
-    var transparency = parseInt(localStorage.TRANSPARENCY_C);
-    var skin_color_c = parseInt(localStorage.SKIN_COLOR_C);
-    var skin_light_c = parseInt(localStorage.SKIN_LIGHT_C);
-    var elasticity = parseInt(localStorage.ELASTICITY);
-    var natural = parseInt(localStorage.NATURAL_C);
-    var acquired = parseInt(localStorage.ACQUIRED_C);
+    var sg = parseInt(sessionStorage.SG);
+    var skinLevel = parseInt(sessionStorage.SKIN_LEVEL);
+    var transparency = parseInt(sessionStorage.TRANSPARENCY_C);
+    var skin_color_c = parseInt(sessionStorage.SKIN_COLOR_C);
+    var skin_light_c = parseInt(sessionStorage.SKIN_LIGHT_C);
+    var elasticity = parseInt(sessionStorage.ELASTICITY);
+    var natural = parseInt(sessionStorage.NATURAL_C);
+    var acquired = parseInt(sessionStorage.ACQUIRED_C);
 
 
-    $('.theme_c').text(localStorage.SUBJECT);
-    if(localStorage.SUGGESTION !== undefined){
-        var textCont = localStorage.SUGGESTION;
+    $('.theme_c').text(sessionStorage.SUBJECT);
+    if(sessionStorage.SUGGESTION !== undefined){
+        var textCont = sessionStorage.SUGGESTION;
         $('.suggest').append('<span>' + textCont.replace(/\n/g,'<br/>') + '<span>');
     }
     $("#NATURAL_C").text(naturalEX(natural));
     $("#ACQUIRED_C").text(acquiredEX(acquired));
-    $("#MOISTURE").text(localStorage.MOISTURE);
-    $("#SEBUM").text(localStorage.SEBUM);
-    $("#CHEEK_COLOR").text(localStorage.CHEEK_COLOR);
-    $("#TENSION").text(localStorage.TENSION);
+    $("#MOISTURE").text(sessionStorage.MOISTURE);
+    $("#SEBUM").text(sessionStorage.SEBUM);
+    $("#CHEEK_COLOR").text(sessionStorage.CHEEK_COLOR);
+    $("#TENSION").text(sessionStorage.TENSION);
     $("#ELASTICITY").text(elasticityEX(elasticity));
     $("#SG").text(elasticityEX(sg));
-    $("#TRANSPARENCY").text(localStorage.TRANSPARENCY);
+    $("#TRANSPARENCY").text(sessionStorage.TRANSPARENCY);
     $("#TRANSPARENCY_C").text(transparencyEX(transparency));
-    $("#HORNY").text(localStorage.HORNY);
+    $("#HORNY").text(sessionStorage.HORNY);
     $("#SKIN_LEVEL").text(skinLevelEX(skinLevel));
 
     $('div[name="SKIN_COLOR_C"]').text(skin_color_cEX(skin_color_c));
     $('div[name="SKIN_LIGHT_C"]').text(skin_light_cEX(skin_light_c));
-    $('div[name="SKIN_LIGHT_O"]').text(localStorage.SKIN_LIGHT_O);
+    $('div[name="SKIN_LIGHT_O"]').text(sessionStorage.SKIN_LIGHT_O);
 
 
 
-    $("input[name*='CREAM_F']").val(localStorage.CREAM_F);
-    $("input[name*='COSMETICS_F']").val(localStorage.COSMETICS_F);
-    $("input[name*='WATER_F']").val(localStorage.WATER_F);
-    $("input[name*='POWDER_F']").val(localStorage.POWDER_F);
-    $("input[name*='FOUNDATION_F']").val(localStorage.FOUNDATION_F);
-    $("input[name*='PRESSED_F']").val(localStorage.PRESSED_F);
+    $("input[name*='CREAM_F']").val(sessionStorage.CREAM_F);
+    $("input[name*='COSMETICS_F']").val(sessionStorage.COSMETICS_F);
+    $("input[name*='WATER_F']").val(sessionStorage.WATER_F);
+    $("input[name*='POWDER_F']").val(sessionStorage.POWDER_F);
+    $("input[name*='FOUNDATION_F']").val(sessionStorage.FOUNDATION_F);
+    $("input[name*='PRESSED_F']").val(sessionStorage.PRESSED_F);
 
     for (var i = 0; i < 6; i++) {
        if( $('input')[i].value === "1"){
@@ -116,13 +116,13 @@ function sessionData() {
 
     }
 
-    var len = localStorage.length;
+    var len = sessionStorage.length;
 
     for (var i = 0; i < len; i++) {
         for (var j = 1; j < 11; j++) {
 
-            if (localStorage.key(i) === "MAKUP_TEXT_" + j) {
-                var tmp =localStorage.getItem("MAKUP_TEXT_" + j);
+            if (sessionStorage.key(i) === "MAKUP_TEXT_" + j) {
+                var tmp =sessionStorage.getItem("MAKUP_TEXT_" + j);
                 if(tmp !== ""){
                 $('.wrap').append("<div class='tip'>"+tmp+"</div>");
                 }
@@ -132,8 +132,8 @@ function sessionData() {
 
     canvasImg();
 
-    if(localStorage.MAKUP_TXT_C !== undefined){
-        var textCont = localStorage.MAKUP_TXT_C;
+    if(sessionStorage.MAKUP_TXT_C !== undefined){
+        var textCont = sessionStorage.MAKUP_TXT_C;
         $('.suggest').append('<span>' + textCont.replace(/\n/g,'<br/>') + '<span>');
     }
 
@@ -142,9 +142,9 @@ function sessionData() {
 
 function canvasImg() {
 
-    $("#canvasFace_0").css('background-image',"url('"+localStorage.canvasFace_0+"')");
-    $("#canvasFace_1").css('background-image',"url('"+localStorage.canvasFace_1+"')");
-    $("#canvasFace_2").css('background-image',"url('"+localStorage.canvasFace_2+"')");
+    $("#canvasFace_0").css('background-image',"url('"+sessionStorage.canvasFace_0+"')");
+    $("#canvasFace_1").css('background-image',"url('"+sessionStorage.canvasFace_1+"')");
+    $("#canvasFace_2").css('background-image',"url('"+sessionStorage.canvasFace_2+"')");
 
 
 }
@@ -158,6 +158,8 @@ function elasticityEX(tmp) {
         case 2:
             tmp = "G";
             break;
+        default:
+            tmp = "";
 
     }
 
@@ -185,6 +187,8 @@ function skinLevelEX(tmp) {
         case 6:
             tmp = "-3";
             break;
+        default:
+            tmp = "";
 
     }
 
@@ -204,6 +208,8 @@ function skin_light_cEX(tmp) {
         case 3:
             tmp = "P";
             break;
+        default:
+            tmp = "";
 
     }
 
@@ -236,6 +242,8 @@ function transparencyEX(tmp) {
         case 7:
             tmp = "黃色化";
             break;
+        default:
+            tmp = "";
 
     }
 
@@ -261,6 +269,8 @@ function skin_color_cEX(tmp) {
         case 5:
             tmp = "201";
             break;
+        default:
+            tmp = "";
     }
 
     return(tmp);
@@ -282,6 +292,8 @@ function acquiredEX(tmp) {
         case 4:
             tmp = "D4";
             break;
+        default:
+            tmp = "";
 
     }
 
@@ -305,6 +317,8 @@ function naturalEX(tmp) {
         case 4:
             tmp = "IV";
             break;
+        default:
+            tmp = "";
 
     }
 
@@ -323,9 +337,9 @@ function sentData() {
 
         var tmp = "MAKUP_TEXT_"+i ;
 
-        if(localStorage.getItem(tmp) === null){
+        if(sessionStorage.getItem(tmp) === null){
 
-            localStorage.setItem(tmp,"");
+            sessionStorage.setItem(tmp,"");
 
         }
 
@@ -337,74 +351,74 @@ function sentData() {
 
 
     var data = {
-        VIPIDS: localStorage.VIPIDS,
-        DATE: localStorage.DATE,
-        MAIL: localStorage.MAIL,
-        VIPNM: localStorage.VIPNM,
-        BCID: localStorage.BCID,
-        DRY: localStorage.DRY,
-        OIL: localStorage.OIL,
-        PORES: localStorage.PORES,
-        ACEN: localStorage.ACEN,
-        DULL: localStorage.DULL,
-        CB: localStorage.CB,
-        SPOTS: localStorage.SPOTS,
-        DARK_CIRCLES: localStorage.DARK_CIRCLES,
-        TE: localStorage.TE,
-        WRINKLE: localStorage.WRINKLE,
-        SENSITIVE: localStorage.SENSITIVE,
-        EYE_EDEMA: localStorage.EYE_EDEMA,
-        EYE_DULL: localStorage.EYE_DULL,
-        LIP_DULL: localStorage.LIP_DULL,
-        MELLOW: localStorage.MELLOW,
-        DIMENSION: localStorage.DIMENSION,
+        VIPIDS: sessionStorage.VIPIDS,
+        DATE: sessionStorage.DATE,
+        MAIL: sessionStorage.MAIL,
+        VIPNM: sessionStorage.VIPNM,
+        BCID: sessionStorage.BCID,
+        DRY: sessionStorage.DRY,
+        OIL: sessionStorage.OIL,
+        PORES: sessionStorage.PORES,
+        ACEN: sessionStorage.ACEN,
+        DULL: sessionStorage.DULL,
+        CB: sessionStorage.CB,
+        SPOTS: sessionStorage.SPOTS,
+        DARK_CIRCLES: sessionStorage.DARK_CIRCLES,
+        TE: sessionStorage.TE,
+        WRINKLE: sessionStorage.WRINKLE,
+        SENSITIVE: sessionStorage.SENSITIVE,
+        EYE_EDEMA: sessionStorage.EYE_EDEMA,
+        EYE_DULL: sessionStorage.EYE_DULL,
+        LIP_DULL: sessionStorage.LIP_DULL,
+        MELLOW: sessionStorage.MELLOW,
+        DIMENSION: sessionStorage.DIMENSION,
         REFLECTION_N: "0",
         REFLECTION_B: "0",
         REFLECTION_O: "0",
-        CREAM_F: localStorage.CREAM_F,
-        COSMETICS_F: localStorage.COSMETICS_F,
-        WATER_F: localStorage.WATER_F,
-        POWDER_F: localStorage.POWDER_F,
-        FOUNDATION_F: localStorage.FOUNDATION_F,
-        PRESSED_F: localStorage.PRESSED_F,
-        SUBJECT: localStorage.SUBJECT,
-        SKIN_COLOR_C: localStorage.SKIN_COLOR_C,
-        SKIN_LIGHT_C: localStorage.SKIN_LIGHT_C,
-        SKIN_LIGHT_O: localStorage.SKIN_LIGHT_O,
-        CHEEK_COLOR: localStorage.CHEEK_COLOR,
-        NATURAL_C: localStorage.NATURAL_C,
-        ACQUIRED_C: localStorage.ACQUIRED_C,
-        MOISTURE: localStorage.MOISTURE,
-        SEBUM: localStorage.SEBUM,
-        TENSION: localStorage.TENSION,
-        ELASTICITY: localStorage.ELASTICITY,
-        SG: localStorage.SG,
-        TRANSPARENCY: localStorage.TRANSPARENCY,
-        TRANSPARENCY_C: localStorage.TRANSPARENCY_C,
-        HORNY: localStorage.HORNY,
-        SKIN_LEVEL: localStorage.SKIN_LEVEL,
-        EYEBROW_TC: localStorage.EYEBROW_TC,
-        SHADOW: localStorage.SHADOW,
-        SHADOW_S: localStorage.SHADOW_S,
-        SHADOW_COLOR_C: localStorage.SHADOW_COLOR_C,
-        LIP_O: localStorage.LIP_O,
-        LIP_SC: localStorage.LIP_SC,
-        LIP_COLOR: localStorage.LIP_COLOR,
-        MAKUP_TXT_1: localStorage.MAKUP_TEXT_1,
-        MAKUP_TXT_2: localStorage.MAKUP_TEXT_2,
-        MAKUP_TXT_3: localStorage.MAKUP_TEXT_3,
-        MAKUP_TXT_4: localStorage.MAKUP_TEXT_4,
-        MAKUP_TXT_5: localStorage.MAKUP_TEXT_5,
-        MAKUP_TXT_6: localStorage.MAKUP_TEXT_6,
-        MAKUP_TXT_7: localStorage.MAKUP_TEXT_7,
-        MAKUP_TXT_8: localStorage.MAKUP_TEXT_8,
-        MAKUP_TXT_9: localStorage.MAKUP_TEXT_9,
-        MAKUP_TXT_10: localStorage.MAKUP_TEXT_10,
-        MAKUP_TXT_C: localStorage.MAKUP_TXT_C,
-        MAKEUP_URL: localStorage.canvasFace_0,
-        SKIN_URL: localStorage.canvasFace_1,
-        SKIN_WATER_URL: localStorage.canvasFace_2,
-        PDFImage:localStorage.PDFImage
+        CREAM_F: sessionStorage.CREAM_F,
+        COSMETICS_F: sessionStorage.COSMETICS_F,
+        WATER_F: sessionStorage.WATER_F,
+        POWDER_F: sessionStorage.POWDER_F,
+        FOUNDATION_F: sessionStorage.FOUNDATION_F,
+        PRESSED_F: sessionStorage.PRESSED_F,
+        SUBJECT: sessionStorage.SUBJECT,
+        SKIN_COLOR_C: sessionStorage.SKIN_COLOR_C,
+        SKIN_LIGHT_C: sessionStorage.SKIN_LIGHT_C,
+        SKIN_LIGHT_O: sessionStorage.SKIN_LIGHT_O,
+        CHEEK_COLOR: sessionStorage.CHEEK_COLOR,
+        NATURAL_C: sessionStorage.NATURAL_C,
+        ACQUIRED_C: sessionStorage.ACQUIRED_C,
+        MOISTURE: sessionStorage.MOISTURE,
+        SEBUM: sessionStorage.SEBUM,
+        TENSION: sessionStorage.TENSION,
+        ELASTICITY: sessionStorage.ELASTICITY,
+        SG: sessionStorage.SG,
+        TRANSPARENCY: sessionStorage.TRANSPARENCY,
+        TRANSPARENCY_C: sessionStorage.TRANSPARENCY_C,
+        HORNY: sessionStorage.HORNY,
+        SKIN_LEVEL: sessionStorage.SKIN_LEVEL,
+        EYEBROW_TC: sessionStorage.EYEBROW_TC,
+        SHADOW: sessionStorage.SHADOW,
+        SHADOW_S: sessionStorage.SHADOW_S,
+        SHADOW_COLOR_C: sessionStorage.SHADOW_COLOR_C,
+        LIP_O: sessionStorage.LIP_O,
+        LIP_SC: sessionStorage.LIP_SC,
+        LIP_COLOR: sessionStorage.LIP_COLOR,
+        MAKUP_TXT_1: sessionStorage.MAKUP_TEXT_1,
+        MAKUP_TXT_2: sessionStorage.MAKUP_TEXT_2,
+        MAKUP_TXT_3: sessionStorage.MAKUP_TEXT_3,
+        MAKUP_TXT_4: sessionStorage.MAKUP_TEXT_4,
+        MAKUP_TXT_5: sessionStorage.MAKUP_TEXT_5,
+        MAKUP_TXT_6: sessionStorage.MAKUP_TEXT_6,
+        MAKUP_TXT_7: sessionStorage.MAKUP_TEXT_7,
+        MAKUP_TXT_8: sessionStorage.MAKUP_TEXT_8,
+        MAKUP_TXT_9: sessionStorage.MAKUP_TEXT_9,
+        MAKUP_TXT_10: sessionStorage.MAKUP_TEXT_10,
+        MAKUP_TXT_C: sessionStorage.MAKUP_TXT_C,
+        MAKEUP_URL: sessionStorage.canvasFace_0,
+        SKIN_URL: sessionStorage.canvasFace_1,
+        SKIN_WATER_URL: sessionStorage.canvasFace_2,
+        PDFImage:sessionStorage.PDFImage
     };
 
     var xhr = new XMLHttpRequest();
@@ -412,7 +426,7 @@ function sentData() {
         if( xhr.readyState == 4){
             if( xhr.status == 200 ){
                 $('#postData').append("<img src="+xhr.responseText+">");
-                $('#postData').text(xhr.responseText);
+                $('#postData').text(xhr.responseText); //php回傳內容
 
                 if(xhr.responseText !== false){
                     $('.bg').css('display','none');
@@ -421,7 +435,7 @@ function sentData() {
                 if(xhr.responseText === "新增成功，信件已送出"){
 
                     alert("新增成功，信件已送出");
-                    localStorage.clear();
+                    sessionStorage.clear();
                     location.href = "login.html";
                 }
 
@@ -440,18 +454,20 @@ function sentData() {
 
 function htmlToCanvas() {
 
-    $('footer').css('display','none');
+    var footer = $('footer');
+
+    footer.css('display','none');
 
     html2canvas($('#content'), {
         dpi: window.devicePixelRatio*4,
         onrendered: function (canvas) {
             // $('#postData').append("<img src="+canvas.toDataURL("image/png")+">"); ////pdf檢查用
-            localStorage.setItem('PDFImage',canvas.toDataURL("image/png"));
+            sessionStorage.setItem('PDFImage',canvas.toDataURL("image/png"));
         }
     });
 
 
-    $('footer').css('display','block');
+    footer.css('display','block');
     return true
 }
 

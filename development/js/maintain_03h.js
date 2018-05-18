@@ -1,9 +1,9 @@
 $(document).ready(function() {
 
-    var date = localStorage.getItem('DATE');
-    var vipnm = localStorage.getItem('VIPNM');
-    var vipids = localStorage.getItem('VIPIDS');
-    var bcnm = localStorage.getItem('BCNM');
+    var date = sessionStorage.getItem('DATE');
+    var vipnm = sessionStorage.getItem('VIPNM');
+    var vipids = sessionStorage.getItem('VIPIDS');
+    var bcnm = sessionStorage.getItem('BCNM');
 
     $('#date').text(date);
     $('#vipnm').text(vipnm);
@@ -33,28 +33,28 @@ $(document).ready(function() {
 
     //mean跳轉
     var btn = $('.btn');
-    if(localStorage.getItem('DRY') !== null){
+    if(sessionStorage.getItem('DRY') !== null){
         btn.siblings('ul').children('li:eq(0)').css('color','#000000');
 
         btn.siblings('ul').children('li:eq(0)').on('click touchstart',function (){
             location.href = 'maintain_01.html';
         });
     }
-    if(localStorage.getItem('AIR_DRY') !== null){
+    if(sessionStorage.getItem('AIR_DRY') !== null){
         btn.siblings('ul').children('li:eq(1)').css('color','#000000');
 
         btn.siblings('ul').children('li:eq(1)').on('click touchstart',function (){
             location.href = 'maintain_02.html';
         });
     }
-    if(localStorage.getItem('MOISTURIZING') !== null){
+    if(sessionStorage.getItem('MOISTURIZING') !== null){
         btn.siblings('ul').children('li:eq(2)').css('color','#000000');
 
         btn.siblings('ul').children('li:eq(2)').on('click touchstart',function (){
             location.href = 'maintain_03.html';
         });
     }
-    if(localStorage.getItem('canvasFace_3') !== null){
+    if(sessionStorage.getItem('canvasFace_3') !== null){
         btn.siblings('ul').children('li:eq(3)').css('color','#000000');
         btn.siblings('ul').children('li:eq(4)').css('color','#000000');
 
@@ -72,7 +72,7 @@ $(document).ready(function() {
 
 //回首頁清暫存
 $('.Back2Log').on('click',function () {
-    localStorage.clear();
+    sessionStorage.clear();
 });
 
 
@@ -105,10 +105,10 @@ $('.prev').on('click',function(){
 
 function sessionData() {
 
-    var len = localStorage.length;
+    var len = sessionStorage.length;
     for (var i = 0; i < len; i++) {
 
-        var sessionName = localStorage.key(i);
+        var sessionName = sessionStorage.key(i);
         var dailyLen = $(".L > .daily > li > input[type*='checkbox']").length;
 
         for (var j = 0; j < dailyLen; j++) {
@@ -117,9 +117,9 @@ function sessionData() {
             var idUName = idName.toUpperCase();
             if(sessionName === idUName) {
 
-                if(localStorage.getItem(sessionName) === "1"){
+                if(sessionStorage.getItem(sessionName) === "1"){
 
-                $(".L > .daily > li > input[type*='checkbox']")[j].value = localStorage.getItem(sessionName);
+                $(".L > .daily > li > input[type*='checkbox']")[j].value = sessionStorage.getItem(sessionName);
                 $(".L > .daily > li > input[type*='checkbox']")[j].checked = true;
 
                 }
@@ -134,9 +134,9 @@ function sessionData() {
             var idUName = idName.toUpperCase();
             if(sessionName === idUName){
 
-                if(localStorage.getItem(sessionName) === "1") {
+                if(sessionStorage.getItem(sessionName) === "1") {
 
-                    $(".R > .daily_2 > li > input[type*='checkbox']")[k].value = localStorage.getItem(sessionName);
+                    $(".R > .daily_2 > li > input[type*='checkbox']")[k].value = sessionStorage.getItem(sessionName);
                     $(".R > .daily_2 > li > input[type*='checkbox']")[k].checked = true;
                 }
             }
@@ -148,7 +148,7 @@ function sessionData() {
         var otherName = $(".R > .daily_2 > li > input[type*='text']")[0].id;
         var otherUName = otherName.toUpperCase();
         if(sessionName === otherUName){
-            $(".R > .daily_2 > li > input[type*='text']")[0].value = localStorage.getItem(sessionName);
+            $(".R > .daily_2 > li > input[type*='text']")[0].value = sessionStorage.getItem(sessionName);
             if($(".R > .daily_2 > li > input[type*='text']").siblings("input[type*='checkbox']")[0].checked === true){
                 $(".R > .daily_2 > li > input[type*='text']")[0].setAttribute("style", "display : block;");
             }
@@ -163,8 +163,8 @@ function sessionData() {
             var idUName = idName.toUpperCase();
             if(sessionName === idUName){
 
-                if(localStorage.getItem(sessionName) === "1") {
-                    $(".R > .basic > li > input[type*='checkbox']")[l].value = localStorage.getItem(sessionName);
+                if(sessionStorage.getItem(sessionName) === "1") {
+                    $(".R > .basic > li > input[type*='checkbox']")[l].value = sessionStorage.getItem(sessionName);
                     $(".R > .basic > li > input[type*='checkbox']")[l].checked = true;
                 }
             }
@@ -172,7 +172,7 @@ function sessionData() {
             var idName =$(".R > .basic > li > input[type*='text']")[l].id;
             var idUName = idName.toUpperCase();
             if(sessionName === idUName){
-                $(".R > .basic > li > input[type*='text']")[l].value = localStorage.getItem(sessionName);
+                $(".R > .basic > li > input[type*='text']")[l].value = sessionStorage.getItem(sessionName);
 
                 if($(".R > .basic > li > input[type*='text']").siblings("input[type*='checkbox']")[l].checked === true){
                     $(".R > .basic > li > input[type*='text']")[l].setAttribute("style", "display : block;");
@@ -185,7 +185,7 @@ function sessionData() {
         var selectName =  $('select')[0].name;
         var selectUName = selectName.toUpperCase();
         if(sessionName === selectUName){
-            $('select')[0].value = localStorage.getItem(sessionName);
+            $('select')[0].value = sessionStorage.getItem(sessionName);
         }
 
     }
@@ -199,11 +199,11 @@ function getdata() {
 
             var idName = $('.daily > li > input')[i].id;
             var name  = idName.toUpperCase();
-            localStorage.setItem(name,"1");
+            sessionStorage.setItem(name,"1");
         }else{
             var idName = $('.daily > li > input')[i].id;
             var name  = idName.toUpperCase();
-            localStorage.setItem(name,"0");
+            sessionStorage.setItem(name,"0");
         }
 
     }
@@ -215,11 +215,11 @@ function getdata() {
 
             var idName = $('.daily_2 > li > input')[j].id;
             var name  = idName.toUpperCase();
-            localStorage.setItem(name,"1");
+            sessionStorage.setItem(name,"1");
         }else{
             var idName = $('.daily_2 > li > input')[j].id;
             var name  = idName.toUpperCase();
-            localStorage.setItem(name,"0");
+            sessionStorage.setItem(name,"0");
         }
 
     }
@@ -228,7 +228,7 @@ function getdata() {
         var idValue = $('.daily_2 > li > input')[2].value;
         var name  = idName.toUpperCase();
 
-        localStorage.setItem(name,idValue);
+        sessionStorage.setItem(name,idValue);
 
 
     for (var l = 0; l < 7; l++) {
@@ -237,18 +237,18 @@ function getdata() {
 
             var idName = $('.basic > li > input[type*="checkbox"]')[l].id;
             var name  = idName.toUpperCase();
-            localStorage.setItem(name,"1");
+            sessionStorage.setItem(name,"1");
         }else{
             var idName = $('.basic > li > input[type*="checkbox"]')[l].id;
             var name  = idName.toUpperCase();
-            localStorage.setItem(name,"0");
+            sessionStorage.setItem(name,"0");
         }
 
         var idName = $('.basic > li > input[type*="text"]')[l].id;
         var idValue = $('.basic > li > input[type*="text"]')[l].value;
         var name  = idName.toUpperCase();
 
-        localStorage.setItem(name,idValue);
+        sessionStorage.setItem(name,idValue);
 
     }
 
@@ -256,7 +256,7 @@ function getdata() {
     var sUName = sName.toUpperCase();
     var sValue = $('select')[0].value;
 
-    localStorage.setItem(sUName,sValue);
+    sessionStorage.setItem(sUName,sValue);
 
     return true;
 

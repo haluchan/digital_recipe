@@ -1,9 +1,9 @@
 $(document).ready(function(){
 
-    var date = localStorage.getItem('DATE');
-    var vipnm = localStorage.getItem('VIPNM');
-    var vipids= localStorage.getItem('VIPIDS');
-    var bcnm = localStorage.getItem('BCNM');
+    var date = sessionStorage.getItem('DATE');
+    var vipnm = sessionStorage.getItem('VIPNM');
+    var vipids= sessionStorage.getItem('VIPIDS');
+    var bcnm = sessionStorage.getItem('BCNM');
 
     $('#date').text(date);
     $('#vipnm').text(vipnm);
@@ -29,8 +29,8 @@ $(document).ready(function(){
             }
         };
 
-        // var url = 'getMackupData.php?VIPIDS='+ vipids;
-        var url = 'getTestData.php?VIPIDS='+ vipids; //最新一筆檢測資料
+        var url = 'getMackupData.php?VIPIDS='+ vipids;
+        // var url = 'getTestData.php?VIPIDS='+ vipids; //最新一筆檢測資料
         xhr.open("GET", url, true);
         xhr.send( null );
 
@@ -38,17 +38,17 @@ $(document).ready(function(){
 
 
     //canvas圖片預覽
-    var canvas1 = localStorage.getItem('canvasFace_0');
-    var canvas2 = localStorage.getItem('canvasFace_1');
+    var canvas1 = sessionStorage.getItem('canvasFace_0');
+    var canvas2 = sessionStorage.getItem('canvasFace_1');
 
-    if (localStorage.canvasFace_0 !== undefined){
+    if (sessionStorage.canvasFace_0 !== undefined){
         $('.skinResult1').css("display","none");
         $('#previewImage-1').append("<img src="+canvas1+">");
     }else{
         $('canvasTool').css("display","block");
     }
 
-    if (localStorage.canvasFace_1 !== undefined){
+    if (sessionStorage.canvasFace_1 !== undefined){
         $('.skinResult2').css("display","none");
         $('#previewImage-2').append("<img src="+canvas2+">");
 
@@ -59,7 +59,7 @@ $(document).ready(function(){
 
     //mean跳轉
     var btn = $('.btn');
-    if(localStorage.getItem('DRY') !== null || localStorage.getItem('OIL') !== null || localStorage.getItem('PORES') !== null || localStorage.getItem('ACEN') !== null || localStorage.getItem('DULL') !== null || localStorage.getItem('CB') !== null || localStorage.getItem('SOPTS') !== null || localStorage.getItem('DARK_CIRCLES') !== null || localStorage.getItem('TE') !== null || localStorage.getItem('WRINKLE') !== null || localStorage.getItem('SENSITIVE') !== null || localStorage.getItem('EYE_DULL') !== null || localStorage.getItem('EYE_EDEMA') !== null || localStorage.getItem('LIP_DULL') !== null || localStorage.getItem('MELLOW') !== null || localStorage.getItem('DIMENSION') !== null){
+    if(sessionStorage.getItem('DRY') !== null || sessionStorage.getItem('OIL') !== null || sessionStorage.getItem('PORES') !== null || sessionStorage.getItem('ACEN') !== null || sessionStorage.getItem('DULL') !== null || sessionStorage.getItem('CB') !== null || sessionStorage.getItem('SOPTS') !== null || sessionStorage.getItem('DARK_CIRCLES') !== null || sessionStorage.getItem('TE') !== null || sessionStorage.getItem('WRINKLE') !== null || sessionStorage.getItem('SENSITIVE') !== null || sessionStorage.getItem('EYE_DULL') !== null || sessionStorage.getItem('EYE_EDEMA') !== null || sessionStorage.getItem('LIP_DULL') !== null || sessionStorage.getItem('MELLOW') !== null || sessionStorage.getItem('DIMENSION') !== null){
         btn.siblings('ul').children('li:eq(0)').css('color','#000000');
 
         btn.siblings('ul').children('li:eq(0)').on('click touchstart',function (){
@@ -67,14 +67,14 @@ $(document).ready(function(){
         });
     }
 
-    if(localStorage.getItem('canvasFace_0') !== null){
+    if(sessionStorage.getItem('canvasFace_0') !== null){
         btn.siblings('ul').children('li:eq(1)').css('color','#000000');
 
         btn.siblings('ul').children('li:eq(1)').on('click touchstart',function (){
             location.href = 'makeup_02.html';
         });
     }
-    if(localStorage.getItem('canvasFace_2') !== null){
+    if(sessionStorage.getItem('canvasFace_2') !== null){
         btn.siblings('ul').children('li:eq(2)').css('color','#000000');
         btn.siblings('ul').children('li:eq(3)').css('color','#000000');
 
@@ -103,7 +103,7 @@ function htmlToCanvas1(callback){
             dpi: window.devicePixelRatio,
             $('#previewImage-1').append("<img src="+canvas.toDataURL("image/png")+">");
             $('#previewImage-1 > img').css('display','none');
-            localStorage.setItem('canvasFace_0',canvas.toDataURL("image/png"));
+            sessionStorage.setItem('canvasFace_0',canvas.toDataURL("image/png"));
 
         }
     });
@@ -123,7 +123,7 @@ function htmlToCanvas2() {
         onrendered: function (canvas) {
             $('#previewImage-2').append("<img src="+canvas.toDataURL("image/png")+">");
             $('#previewImage-2 > img').css('display','none');
-            localStorage.setItem('canvasFace_1',canvas.toDataURL("image/png"));
+            sessionStorage.setItem('canvasFace_1',canvas.toDataURL("image/png"));
         }
     });
 }
@@ -144,7 +144,7 @@ $('.check > input').on('click',function () {
 });
 
 $('.Back2Log').on('click',function () {
-    localStorage.clear();
+    sessionStorage.clear();
 });
 
 
@@ -155,7 +155,7 @@ $('.next').on('click',function(){
 
             saveData();
 
-        if(localStorage.canvasFace_0 === undefined && localStorage.canvasFace_1 === undefined) {
+        if(sessionStorage.canvasFace_0 === undefined && sessionStorage.canvasFace_1 === undefined) {
 
             htmlToCanvas1(htmlToCanvas2);
 
@@ -185,24 +185,44 @@ $('.prev').on('click',function(){
 function getMackupData(xmlDoc){
 
     var elasticity =parseInt(xmlDoc.getElementsByTagName('ELASTICITY')[0].textContent);
-    var transparency = parseInt(xmlDoc.getElementsByTagName('TRANSPARENCY_C')[0].textContent);
+    var transparency_c = parseInt(xmlDoc.getElementsByTagName('TRANSPARENCY_C')[0].textContent);
     var skinLevel = parseInt(xmlDoc.getElementsByTagName('SKIN_LEVEL')[0].textContent);
+    var moisture = parseInt(xmlDoc.getElementsByTagName('MOISTURE')[0].textContent);
+    var sebum = parseInt(xmlDoc.getElementsByTagName('SEBUM')[0].textContent);
+    var tension = parseInt(xmlDoc.getElementsByTagName('TENSION')[0].textContent);
+    var sg = parseInt(xmlDoc.getElementsByTagName('SG')[0].textContent);
+    var transparency = parseInt(xmlDoc.getElementsByTagName('TRANSPARENCY')[0].textContent);
+    var horny = parseInt(xmlDoc.getElementsByTagName('HORNY')[0].textContent);
 
-    $('#p-moisture').text(xmlDoc.getElementsByTagName('MOISTURE')[0].textContent);
-    $('#p-sebum').text(xmlDoc.getElementsByTagName('SEBUM')[0].textContent);
-    $('#p-tension').text(xmlDoc.getElementsByTagName('TENSION')[0].textContent);
+    var check = new checkForm(elasticity, transparency_c, skinLevel, moisture, sebum, tension, sg, transparency, horny);
 
-    $('#p-elasticity').text(elasticityEX(elasticity));
-    $('#p-sg').text(xmlDoc.getElementsByTagName('SG')[0].textContent);
 
-    $('#p-transparency_c').text(transparencyEX(transparency));
-    $('#p-transparency').text(xmlDoc.getElementsByTagName('TRANSPARENCY')[0].textContent);
-    $('#p-horny').text(xmlDoc.getElementsByTagName('HORNY')[0].textContent);
+    $('#p-moisture').text(check.moisture);
+    $('#p-sebum').text(check.sebum);
+    $('#p-tension').text(check.tension);
 
-    $('#p-skin_level').text(skinLevelEX(skinLevel));
+    $('#p-elasticity').text(check.elasticity);
+    $('#p-sg').text(check.sg);
+
+    $('#p-transparency_c').text(check.transparency_c);
+    $('#p-transparency').text(check.transparency);
+    $('#p-horny').text(check.horny);
+
+    $('#p-skin_level').text(check.skinLevel);
 
 }
 
+function checkForm(elasticity, transparency_c, skinLevel, moisture, sebum, tension, sg, transparency, horny) {
+    this.elasticity = elasticityEX(elasticity);
+    this.transparency_c = transparencyEX(transparency_c);
+    this.skinLevel = skinLevelEX(skinLevel);
+    this.moisture = moisture === 0 ? "" : moisture ;
+    this.sebum = sebum === 0 ? "" : sebum ;
+    this.tension = tension === 0 ? "" : tension ;
+    this.sg = sg === 0 ? "" : sg ;
+    this.transparency = transparency === 0 ? "" : transparency ;
+    this.horny = horny === 0 ? "" : horny ;
+}
 
 
 function saveData() {
@@ -210,7 +230,7 @@ function saveData() {
     for (var i = 0; i < len; i++) {
         var key = document.querySelectorAll('input')[i].name;
         var val = document.querySelectorAll('input')[i].value;
-        localStorage.setItem(key, val);
+        sessionStorage.setItem(key, val);
         // alert(tmp);
 
     }
@@ -219,7 +239,7 @@ function saveData() {
     for (var i = 0; i < count; i++) {
         var skey = document.querySelectorAll('select')[i].name;
         var sval = document.querySelectorAll('select')[i].value;
-        localStorage.setItem(skey, sval);
+        sessionStorage.setItem(skey, sval);
     }
 
 
@@ -229,6 +249,9 @@ function saveData() {
 
 function elasticityEX(tmp) {
     switch(tmp) {
+        case 0:
+            tmp = "無";
+            break;
         case 1:
             tmp = "S";
             break;
@@ -246,6 +269,9 @@ function elasticityEX(tmp) {
 function skinLevelEX(tmp) {
 
     switch(tmp) {
+        case 0:
+            tmp = "無選取";
+            break;
         case 1:
              tmp = "+3";
             break;
@@ -274,6 +300,9 @@ function skinLevelEX(tmp) {
 function transparencyEX(tmp) {
 
     switch(tmp) {
+        case 0:
+            tmp = "無選取";
+            break;
         case 1:
             tmp = "角層";
             break;
@@ -478,7 +507,6 @@ function checkdata() {
 
                  num++
 
-
             }
 
         }
@@ -495,7 +523,6 @@ function checkdata() {
     }
 
 
-
     return true;
 
 }
@@ -506,7 +533,7 @@ function checkdata() {
 //暫存資料
 function sessionData() {
 
-    var tmpskin_color = localStorage.getItem('SKIN_COLOR_C');
+    var tmpskin_color = sessionStorage.getItem('SKIN_COLOR_C');
 
     document.querySelectorAll('select')[0].value = skin_color_cEX(tmpskin_color);
 
@@ -515,7 +542,7 @@ function sessionData() {
 
     for (var j = 0; j < slen.length; j++) {
 
-        var tmpSelectData = localStorage.getItem(slen[j].name);
+        var tmpSelectData = sessionStorage.getItem(slen[j].name);
 
         slen[j].value = tmpSelectData;
 
@@ -527,20 +554,20 @@ function sessionData() {
     for (var i = 0; i < len.length-6; i++) {
 
 
-        var tmpInputData = localStorage.getItem(len[i].name);
+        var tmpInputData = sessionStorage.getItem(len[i].name);
 
 
        len[i].value = tmpInputData;
 
     }
 
-    var subVal = localStorage.getItem("SUBJECT");
+    var subVal = sessionStorage.getItem("SUBJECT");
 
     $("input[type*='text']")[0].value = subVal;
 
     for (var k = 9; k < len.length; k++) {
 
-        var tmpnm = localStorage.getItem(len[k].name);
+        var tmpnm = sessionStorage.getItem(len[k].name);
 
         if(tmpnm === "1"){
             len[k].setAttribute('checked','checked');

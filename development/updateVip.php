@@ -128,11 +128,11 @@ if(isset($_REQUEST["TELM"])){
 
 //    printf('Result = %s' , $result->WS_UPDVIPBASEResult);
 
-        $bcXml = simplexml_load_string($result->WS_UPDVIPBASEResult);
+        $vipXml = simplexml_load_string($result->WS_UPDVIPBASEResult);
 
-        $RTNCODE = (int)$bcXml->WSTATUS->ROW->RTNCODE;
+        $RTNCODE = (int)$vipXml->WSTATUS->ROW->RTNCODE;
 
-
+//        echo $vipXml;
 
 
         if($RTNCODE === 0){
@@ -159,9 +159,18 @@ if(isset($_REQUEST["TELM"])){
 
             header("content-type:text/xml");
 
-            $xml = $bcXml->WSTATUS->ROW->RTNCODE;
 
-            echo $xml;
+            $xml = $vipXml->WSTATUS->ROW->RTNCODE;
+
+            echo '<?xml version="1.0" encoding="utf-8"?>';
+
+//            echo $xml;
+
+//            echo $RTNCODE;
+
+//            printf($vipXml) ;
+
+            echo $result->WS_UPDVIPBASEResult;
 
         }
 

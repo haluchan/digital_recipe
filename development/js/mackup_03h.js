@@ -1,30 +1,30 @@
 $(document).ready(function(){
 
 
-    var date = localStorage.getItem('DATE');
-    var vipnm = localStorage.getItem('VIPNM');
-    var vipids= localStorage.getItem('VIPIDS');
-    var bcnm = localStorage.getItem('BCNM');
+    var date = sessionStorage.getItem('DATE');
+    var vipnm = sessionStorage.getItem('VIPNM');
+    var vipids= sessionStorage.getItem('VIPIDS');
+    var bcnm = sessionStorage.getItem('BCNM');
 
     $('#date').text(date);
     $('#vipnm').text(vipnm);
     $('#vipids').text(vipids);
     $('#bcnm').text(bcnm);
 
-    var canvasMackup = localStorage.getItem('canvasFace_2');
+    var canvasMackup = sessionStorage.getItem('canvasFace_2');
 
-    if (localStorage.canvasFace_2 !== undefined){
+    if (sessionStorage.canvasFace_2 !== undefined){
 
         $('#html-content').css("display","none");
         $('#previewImage').append("<img src="+canvasMackup+">");
 
-        localStorage.getItem('EYEBROW_TC',$("input[name*='browVal']")[0].value);
-        localStorage.getItem('SHADOW',$("input[name*='eyeType']")[0].value);
-        localStorage.getItem('SHADOW_S',$("input[name*='eyeType']")[0].value);
-        localStorage.getItem('SHADOW_COLOR_C',$("input[name*='eyeVal']")[0].value);
-        localStorage.getItem('LIP_O',$("input[name*='lipsType']")[0].value);
-        localStorage.getItem('LIP_SC',$("input[name*='lipsType']")[0].value);
-        localStorage.getItem('LIP_COLOR',$("input[name*='lipsVal']")[0].value);
+        sessionStorage.getItem('EYEBROW_TC',$("input[name*='browVal']")[0].value);
+        sessionStorage.getItem('SHADOW',$("input[name*='eyeType']")[0].value);
+        sessionStorage.getItem('SHADOW_S',$("input[name*='eyeType']")[0].value);
+        sessionStorage.getItem('SHADOW_COLOR_C',$("input[name*='eyeVal']")[0].value);
+        sessionStorage.getItem('LIP_O',$("input[name*='lipsType']")[0].value);
+        sessionStorage.getItem('LIP_SC',$("input[name*='lipsType']")[0].value);
+        sessionStorage.getItem('LIP_COLOR',$("input[name*='lipsVal']")[0].value);
 
 
         var count = tmpDate();
@@ -41,7 +41,7 @@ $(document).ready(function(){
 
     //mean跳轉
     var btn = $('.btn');
-    if(localStorage.getItem('DRY') !== null || localStorage.getItem('OIL') !== null || localStorage.getItem('PORES') !== null || localStorage.getItem('ACEN') !== null || localStorage.getItem('DULL') !== null || localStorage.getItem('CB') !== null || localStorage.getItem('SOPTS') !== null || localStorage.getItem('DARK_CIRCLES') !== null || localStorage.getItem('TE') !== null || localStorage.getItem('WRINKLE') !== null || localStorage.getItem('SENSITIVE') !== null || localStorage.getItem('EYE_DULL') !== null || localStorage.getItem('EYE_EDEMA') !== null || localStorage.getItem('LIP_DULL') !== null || localStorage.getItem('MELLOW') !== null || localStorage.getItem('DIMENSION') !== null){
+    if(sessionStorage.getItem('DRY') !== null || sessionStorage.getItem('OIL') !== null || sessionStorage.getItem('PORES') !== null || sessionStorage.getItem('ACEN') !== null || sessionStorage.getItem('DULL') !== null || sessionStorage.getItem('CB') !== null || sessionStorage.getItem('SOPTS') !== null || sessionStorage.getItem('DARK_CIRCLES') !== null || sessionStorage.getItem('TE') !== null || sessionStorage.getItem('WRINKLE') !== null || sessionStorage.getItem('SENSITIVE') !== null || sessionStorage.getItem('EYE_DULL') !== null || sessionStorage.getItem('EYE_EDEMA') !== null || sessionStorage.getItem('LIP_DULL') !== null || sessionStorage.getItem('MELLOW') !== null || sessionStorage.getItem('DIMENSION') !== null){
         btn.siblings('ul').children('li:eq(0)').css('color','#000000');
 
         btn.siblings('ul').children('li:eq(0)').on('click touchstart',function (){
@@ -49,14 +49,14 @@ $(document).ready(function(){
         });
     }
 
-    if(localStorage.getItem('canvasFace_0') !== null){
+    if(sessionStorage.getItem('canvasFace_0') !== null){
         btn.siblings('ul').children('li:eq(1)').css('color','#000000');
 
         btn.siblings('ul').children('li:eq(1)').on('click touchstart',function (){
             location.href = 'makeup_02.html';
         });
     }
-    if(localStorage.getItem('canvasFace_2') !== null){
+    if(sessionStorage.getItem('canvasFace_2') !== null){
         btn.siblings('ul').children('li:eq(2)').css('color','#000000');
         btn.siblings('ul').children('li:eq(3)').css('color','#000000');
 
@@ -74,7 +74,7 @@ $(document).ready(function(){
 
 
 $('.Back2Log').on('click',function () {
-    localStorage.clear();
+    sessionStorage.clear();
 });
 
 
@@ -86,7 +86,7 @@ $('.next').on('click',function() {
 
 
 
-    var canvasMackup = localStorage.getItem('canvasFace_2');
+    var canvasMackup = sessionStorage.getItem('canvasFace_2');
 
 
     if(checkInput()){
@@ -96,14 +96,14 @@ $('.next').on('click',function() {
         var k=1;
 
         for (var j = 1; j < 11; j++) {
-            localStorage.removeItem('MAKUP_TEXT_'+j);
+            sessionStorage.removeItem('MAKUP_TEXT_'+j);
         }
 
         for (var i = 0; i < intext.length; i++) {
             var tmpName = intext[i].name+"_"+k;
             var tmpValue = intext[i].value;
             if(tmpValue){
-                localStorage.setItem(tmpName,tmpValue);
+                sessionStorage.setItem(tmpName,tmpValue);
             }
             k++;
         }
@@ -155,7 +155,7 @@ function htmlToCanvas() {
         onrendered: function (canvas) {
             $('#previewImage').append("<img src="+canvas.toDataURL("image/png")+">");
             $('#previewImage > img').css('display','none');
-            localStorage.setItem('canvasFace_2',canvas.toDataURL("image/png"));
+            sessionStorage.setItem('canvasFace_2',canvas.toDataURL("image/png"));
         }
     });
 
@@ -163,13 +163,13 @@ function htmlToCanvas() {
 }
 
 function getdata() {
-    localStorage.setItem('EYEBROW_TC',$("input[name*='browVal']")[0].value);
-    localStorage.setItem('SHADOW',$("input[name*='eyeType']")[0].value);
-    localStorage.setItem('SHADOW_S',$("input[name*='eyeType']")[0].value);
-    localStorage.setItem('SHADOW_COLOR_C',$("input[name*='eyeVal']")[0].value);
-    localStorage.setItem('LIP_O',$("input[name*='lipsType']")[0].value);
-    localStorage.setItem('LIP_SC',$("input[name*='lipsType']")[0].value);
-    localStorage.setItem('LIP_COLOR',$("input[name*='lipsVal']")[0].value);
+    sessionStorage.setItem('EYEBROW_TC',$("input[name*='browVal']")[0].value);
+    sessionStorage.setItem('SHADOW',$("input[name*='eyeType']")[0].value);
+    sessionStorage.setItem('SHADOW_S',$("input[name*='eyeType']")[0].value);
+    sessionStorage.setItem('SHADOW_COLOR_C',$("input[name*='eyeVal']")[0].value);
+    sessionStorage.setItem('LIP_O',$("input[name*='lipsType']")[0].value);
+    sessionStorage.setItem('LIP_SC',$("input[name*='lipsType']")[0].value);
+    sessionStorage.setItem('LIP_COLOR',$("input[name*='lipsVal']")[0].value);
 
 
 }
@@ -178,13 +178,13 @@ function tmpDate() {
 
     var tmp =[];
 
-    var len = localStorage.length;
+    var len = sessionStorage.length;
 
     for (var i = 0; i < len; i++) {
 
         for (var j = 1; j < 11; j++) {
 
-            if (localStorage.key(i) === "MAKUP_TEXT_" + j) {
+            if (sessionStorage.key(i) === "MAKUP_TEXT_" + j) {
 
                 var tmpName = "MAKUP_TEXT_" + j;
 
@@ -197,9 +197,9 @@ function tmpDate() {
 
                 $('#firstInput').remove();
 
-                $('.note').append('<div><input type="text" placeholder="請填寫圖片說明" maxlength="18" name="MAKUP_TEXT" value="'+localStorage.getItem(tmpName)+'" /><div class="remove">-</div></div>');
+                $('.note').append('<div><input type="text" placeholder="請填寫圖片說明" maxlength="18" name="MAKUP_TEXT" value="'+sessionStorage.getItem(tmpName)+'" /><div class="remove">-</div></div>');
                 }else if(count === 10){
-                    $('.note').append('<div><input type="text" placeholder="請填寫圖片說明" maxlength="18" name="MAKUP_TEXT" value="'+localStorage.getItem(tmpName)+'" /><div class="new" style="display: none">+</div></div>');
+                    $('.note').append('<div><input type="text" placeholder="請填寫圖片說明" maxlength="18" name="MAKUP_TEXT" value="'+sessionStorage.getItem(tmpName)+'" /><div class="new" style="display: none">+</div></div>');
                 }
 
             }

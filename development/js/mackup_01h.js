@@ -1,9 +1,9 @@
 $(document).ready(function(){
 
-    var date = localStorage.getItem('DATE');
-    var vipnm = localStorage.getItem('VIPNM');
-    var vipids= localStorage.getItem('VIPIDS');
-    var bcnm = localStorage.getItem('BCNM');
+    var date = sessionStorage.getItem('DATE');
+    var vipnm = sessionStorage.getItem('VIPNM');
+    var vipids= sessionStorage.getItem('VIPIDS');
+    var bcnm = sessionStorage.getItem('BCNM');
 
     $('#date').text(date);
     $('#vipnm').text(vipnm);
@@ -15,7 +15,7 @@ $(document).ready(function(){
 
     //mean跳轉
     var btn = $('.btn');
-    if(localStorage.getItem('DRY') !== null || localStorage.getItem('OIL') !== null || localStorage.getItem('PORES') !== null || localStorage.getItem('ACEN') !== null || localStorage.getItem('DULL') !== null || localStorage.getItem('CB') !== null || localStorage.getItem('SOPTS') !== null || localStorage.getItem('DARK_CIRCLES') !== null || localStorage.getItem('TE') !== null || localStorage.getItem('WRINKLE') !== null || localStorage.getItem('SENSITIVE') !== null || localStorage.getItem('EYE_DULL') !== null || localStorage.getItem('EYE_EDEMA') !== null || localStorage.getItem('LIP_DULL') !== null || localStorage.getItem('MELLOW') !== null || localStorage.getItem('DIMENSION') !== null){
+    if(sessionStorage.getItem('DRY') !== null || sessionStorage.getItem('OIL') !== null || sessionStorage.getItem('PORES') !== null || sessionStorage.getItem('ACEN') !== null || sessionStorage.getItem('DULL') !== null || sessionStorage.getItem('CB') !== null || sessionStorage.getItem('SOPTS') !== null || sessionStorage.getItem('DARK_CIRCLES') !== null || sessionStorage.getItem('TE') !== null || sessionStorage.getItem('WRINKLE') !== null || sessionStorage.getItem('SENSITIVE') !== null || sessionStorage.getItem('EYE_DULL') !== null || sessionStorage.getItem('EYE_EDEMA') !== null || sessionStorage.getItem('LIP_DULL') !== null || sessionStorage.getItem('MELLOW') !== null || sessionStorage.getItem('DIMENSION') !== null){
         btn.siblings('ul').children('li:eq(0)').css('color','#000000');
 
         btn.siblings('ul').children('li:eq(0)').on('click touchstart',function (){
@@ -23,14 +23,14 @@ $(document).ready(function(){
         });
     }
 
-    if(localStorage.getItem('canvasFace_0') !== null){
+    if(sessionStorage.getItem('canvasFace_0') !== null){
         btn.siblings('ul').children('li:eq(1)').css('color','#000000');
 
         btn.siblings('ul').children('li:eq(1)').on('click touchstart',function (){
             location.href = 'makeup_02.html';
         });
     }
-    if(localStorage.getItem('canvasFace_2') !== null){
+    if(sessionStorage.getItem('canvasFace_2') !== null){
         btn.siblings('ul').children('li:eq(2)').css('color','#000000');
         btn.siblings('ul').children('li:eq(3)').css('color','#000000');
 
@@ -46,7 +46,7 @@ $(document).ready(function(){
 });
 
 $('.Back2Log').on('click',function () {
-    localStorage.clear();
+    sessionStorage.clear();
 });
 
 
@@ -58,7 +58,7 @@ $('.next').on('click',function(){
 
         return false;
     }else{
-        saveSession(toNextPage());
+        saveSession(toNextPage);
     }
 
 
@@ -87,14 +87,14 @@ function saveSession(callback) {
 
         if(input.eq(i).prop('checked') === true){
 
-            localStorage.setItem(nmUp,"1");
+            sessionStorage.setItem(nmUp,"1");
         }else{
-            localStorage.setItem(nmUp,"0");
+            sessionStorage.setItem(nmUp,"0");
         }
 
     }
 
-    callback;
+    if(typeof callback === "function") callback();
 }
 
 function toNextPage() {
@@ -105,17 +105,17 @@ function toNextPage() {
 function sessionData() {
 
     var input = $('input');
-    var lsLength = localStorage.length;
+    var lsLength = sessionStorage.length;
     var inLength = input.length;
 
     for (var i = 0; i < lsLength; i++) {
-        var Nm = localStorage.key(i);
+        var Nm = sessionStorage.key(i);
         var lowNm = Nm.toLocaleLowerCase();
         for (var j = 0; j < inLength; j++) {
 
             if(input.eq(j).attr('name') === lowNm){
 
-                if(localStorage.getItem(Nm) === "1")
+                if(sessionStorage.getItem(Nm) === "1")
 
                 input.eq(j).prop('checked','true');
             }

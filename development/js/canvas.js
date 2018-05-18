@@ -196,7 +196,7 @@ $('.tool[data-tool="ereaser"]').on('click', function() {
 //     $('.canvas').each(function(i) {
 //
 //         var dataURL = saveCanvas($(this)[0]);
-//         localStorage.setItem('canvasFace-' + i, dataURL);
+//         sessionStorage.setItem('canvasFace-' + i, dataURL);
 //     });
 //
 //     console.log(sessionStorage);

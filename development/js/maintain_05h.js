@@ -1,9 +1,9 @@
 $(document).ready(function() {
 
-    var date = localStorage.getItem('DATE');
-    var vipnm = localStorage.getItem('VIPNM');
-    var vipids = localStorage.getItem('VIPIDS');
-    var bcnm = localStorage.getItem('BCNM');
+    var date = sessionStorage.getItem('DATE');
+    var vipnm = sessionStorage.getItem('VIPNM');
+    var vipids = sessionStorage.getItem('VIPIDS');
+    var bcnm = sessionStorage.getItem('BCNM');
 
     $('#date').text(date);
     $('#vipnm').text(vipnm);
@@ -17,28 +17,28 @@ $(document).ready(function() {
 
     //mean跳轉
     var btn = $('.btn');
-    if(localStorage.getItem('DRY') !== null){
+    if(sessionStorage.getItem('DRY') !== null){
         btn.siblings('ul').children('li:eq(0)').css('color','#000000');
 
         btn.siblings('ul').children('li:eq(0)').on('click touchstart',function (){
             location.href = 'maintain_01.html';
         });
     }
-    if(localStorage.getItem('AIR_DRY') !== null){
+    if(sessionStorage.getItem('AIR_DRY') !== null){
         btn.siblings('ul').children('li:eq(1)').css('color','#000000');
 
         btn.siblings('ul').children('li:eq(1)').on('click touchstart',function (){
             location.href = 'maintain_02.html';
         });
     }
-    if(localStorage.getItem('MOISTURIZING') !== null){
+    if(sessionStorage.getItem('MOISTURIZING') !== null){
         btn.siblings('ul').children('li:eq(2)').css('color','#000000');
 
         btn.siblings('ul').children('li:eq(2)').on('click touchstart',function (){
             location.href = 'maintain_03.html';
         });
     }
-    if(localStorage.getItem('canvasFace_3') !== null){
+    if(sessionStorage.getItem('canvasFace_3') !== null){
         btn.siblings('ul').children('li:eq(3)').css('color','#000000');
         btn.siblings('ul').children('li:eq(4)').css('color','#000000');
 
@@ -54,7 +54,7 @@ $(document).ready(function() {
 
 //回首頁清暫存
 $('.Back2Log').on('click',function () {
-    localStorage.clear();
+    sessionStorage.clear();
 });
 
 
@@ -87,53 +87,53 @@ function saveData() {
             var sName = $('select')[i].name;
             var sUName = sName.toUpperCase();
             var sValue = $('select')[i].value;
-            localStorage.setItem(sUName,sValue);
+            sessionStorage.setItem(sUName,sValue);
 
             if($('select')[i].value === "16"){
                 var hornyValue = $('input:text')[0].value;
-                localStorage.setItem('HORNY_T',hornyValue);
+                sessionStorage.setItem('HORNY_T',hornyValue);
             }
             if($('select')[i].value === "19"){
                 var dryingValue = $('input:text')[1].value;
-                localStorage.setItem('DRYING_T',dryingValue);
+                sessionStorage.setItem('DRYING_T',dryingValue);
 
             }
             if($('select')[i].value === "23"){
                 var whiteningValue = $('input:text')[2].value;
-                localStorage.setItem('WHITENING_T',whiteningValue);
+                sessionStorage.setItem('WHITENING_T',whiteningValue);
             }
             if($('select')[i].value === "26"){
                 var elasticityValue = $('input:text')[3].value;
-                localStorage.setItem('ELASTICITY_T',elasticityValue);
+                sessionStorage.setItem('ELASTICITY_T',elasticityValue);
             }
             if($('select')[i].value === "28"){
                 var uvValue = $('input:text')[4].value;
-                localStorage.setItem('UV_T',uvValue);
+                sessionStorage.setItem('UV_T',uvValue);
             }
             if($('select')[i].value === "36"){
                 var otherValue = $('input:text')[5].value;
-                localStorage.setItem('OTHER_T',otherValue);
+                sessionStorage.setItem('OTHER_T',otherValue);
             }
 
     }
 
-    if(localStorage.getItem("HORNY_T") === null){
-        localStorage.setItem("HORNY_T","0")
+    if(sessionStorage.getItem("HORNY_T") === null){
+        sessionStorage.setItem("HORNY_T","0")
     }
-    if(localStorage.getItem("DRYING_T") === null){
-        localStorage.setItem("DRYING_T","0")
+    if(sessionStorage.getItem("DRYING_T") === null){
+        sessionStorage.setItem("DRYING_T","0")
     }
-    if(localStorage.getItem("WHITENING_T") === null){
-        localStorage.setItem("WHITENING_T","0")
+    if(sessionStorage.getItem("WHITENING_T") === null){
+        sessionStorage.setItem("WHITENING_T","0")
     }
-    if(localStorage.getItem("ELASTICITY_T") === null){
-        localStorage.setItem("ELASTICITY_T","0")
+    if(sessionStorage.getItem("ELASTICITY_T") === null){
+        sessionStorage.setItem("ELASTICITY_T","0")
     }
-    if(localStorage.getItem("UV_T") === null){
-        localStorage.setItem("UV_T","0")
+    if(sessionStorage.getItem("UV_T") === null){
+        sessionStorage.setItem("UV_T","0")
     }
-    if(localStorage.getItem("OTHER_T") === null){
-        localStorage.setItem("OTHER_T","0")
+    if(sessionStorage.getItem("OTHER_T") === null){
+        sessionStorage.setItem("OTHER_T","0")
     }
 
 
@@ -141,14 +141,14 @@ function saveData() {
     var textUare = textare.toUpperCase();
     var textareValue = $('#textarea').val();
 
-    localStorage.setItem(textUare,textareValue);
+    sessionStorage.setItem(textUare,textareValue);
 
     var basc = $('#Bbasic').val();
 
     if(basc === "ON"){
-        localStorage.setItem("BASC","1");
+        sessionStorage.setItem("BASC","1");
     }else{
-        localStorage.setItem("BASC","0");
+        sessionStorage.setItem("BASC","0");
     }
 
 
@@ -176,18 +176,18 @@ $('input[type*="checkbox"]').on('change',function(){
 function sessionData() {
 
     var data = skinProdSelect();
-    var horny_t = localStorage.getItem("HORNY_T");
-    var drying_t = localStorage.getItem("DRYING_T");
-    var whitening_t = localStorage.getItem("WHITENING_T");
-    var elasticity_t = localStorage.getItem("ELASTICITY_T");
-    var uv_t = localStorage.getItem("UV_T");
-    var other_t = localStorage.getItem("OTHER_T");
-    var horny_c = localStorage.getItem("HORNY_C");
-    var drying_c = localStorage.getItem("DRYING_C");
-    var whitening_c = localStorage.getItem("WHITENING_C");
-    var elasticity_c = localStorage.getItem("ELASTICITY_C");
-    var uv_c = localStorage.getItem("UV_C");
-    var other_c = localStorage.getItem("OTHER_C");
+    var horny_t = sessionStorage.getItem("HORNY_T");
+    var drying_t = sessionStorage.getItem("DRYING_T");
+    var whitening_t = sessionStorage.getItem("WHITENING_T");
+    var elasticity_t = sessionStorage.getItem("ELASTICITY_T");
+    var uv_t = sessionStorage.getItem("UV_T");
+    var other_t = sessionStorage.getItem("OTHER_T");
+    var horny_c = sessionStorage.getItem("HORNY_C");
+    var drying_c = sessionStorage.getItem("DRYING_C");
+    var whitening_c = sessionStorage.getItem("WHITENING_C");
+    var elasticity_c = sessionStorage.getItem("ELASTICITY_C");
+    var uv_c = sessionStorage.getItem("UV_C");
+    var other_c = sessionStorage.getItem("OTHER_C");
 
     if (horny_c !== null) {
 
@@ -505,12 +505,12 @@ function sessionData() {
     }
 
 
-    var sessionLen = localStorage.length;
+    var sessionLen = sessionStorage.length;
 
     for (var k = 0; k < sessionLen; k++) {
-        var sessionName = localStorage.key(k);
+        var sessionName = sessionStorage.key(k);
         var sessionLName = sessionName.toLowerCase();
-        var sessionValue = localStorage.getItem(sessionName);
+        var sessionValue = sessionStorage.getItem(sessionName);
 
         var slen = $('select').length;
         for (var j = 0; j < slen; j++) {
@@ -537,7 +537,7 @@ function sessionData() {
     }
 
 
-    $('#textarea').html(localStorage.getItem("SUGGESTION"));
+    $('#textarea').html(sessionStorage.getItem("SUGGESTION"));
 
 
 }

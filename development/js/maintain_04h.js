@@ -1,9 +1,9 @@
 $(document).ready(function(){
 
-    var date = localStorage.getItem('DATE');
-    var vipnm = localStorage.getItem('VIPNM');
-    var vipids= localStorage.getItem('VIPIDS');
-    var bcnm = localStorage.getItem('BCNM');
+    var date = sessionStorage.getItem('DATE');
+    var vipnm = sessionStorage.getItem('VIPNM');
+    var vipids= sessionStorage.getItem('VIPIDS');
+    var bcnm = sessionStorage.getItem('BCNM');
 
     $('#date').text(date);
     $('#vipnm').text(vipnm);
@@ -32,8 +32,8 @@ $(document).ready(function(){
             }
         };
 
-        // var url = 'getMaintainData.php?VIPIDS='+ vipids;
-        var url = 'getTestData.php?VIPIDS='+ vipids; //最新一筆檢測資料
+        var url = 'getMaintainData.php?VIPIDS='+ vipids;
+        // var url = 'getTestData.php?VIPIDS='+ vipids; //最新一筆檢測資料
         xhr.open("GET", url, true);
         xhr.send( null );
 
@@ -41,9 +41,9 @@ $(document).ready(function(){
 
 
     //canvas圖片預覽
-    var canvas3 = localStorage.getItem('canvasFace_3');
+    var canvas3 = sessionStorage.getItem('canvasFace_3');
     //
-    if (localStorage.canvasFace_3 !== undefined){
+    if (sessionStorage.canvasFace_3 !== undefined){
         $('.skinResult').css("display","none");
         $('#previewImage').append("<img src="+canvas3+">");
     }else{
@@ -54,28 +54,28 @@ $(document).ready(function(){
 
     //mean跳轉
     var btn = $('.btn');
-    if(localStorage.getItem('DRY') !== null){
+    if(sessionStorage.getItem('DRY') !== null){
         btn.siblings('ul').children('li:eq(0)').css('color','#000000');
 
         btn.siblings('ul').children('li:eq(0)').on('click touchstart',function (){
             location.href = 'maintain_01.html';
         });
     }
-    if(localStorage.getItem('AIR_DRY') !== null){
+    if(sessionStorage.getItem('AIR_DRY') !== null){
         btn.siblings('ul').children('li:eq(1)').css('color','#000000');
 
         btn.siblings('ul').children('li:eq(1)').on('click touchstart',function (){
             location.href = 'maintain_02.html';
         });
     }
-    if(localStorage.getItem('MOISTURIZING') !== null){
+    if(sessionStorage.getItem('MOISTURIZING') !== null){
         btn.siblings('ul').children('li:eq(2)').css('color','#000000');
 
         btn.siblings('ul').children('li:eq(2)').on('click touchstart',function (){
             location.href = 'maintain_03.html';
         });
     }
-    if(localStorage.getItem('canvasFace_3') !== null){
+    if(sessionStorage.getItem('canvasFace_3') !== null){
         btn.siblings('ul').children('li:eq(3)').css('color','#000000');
         btn.siblings('ul').children('li:eq(4)').css('color','#000000');
 
@@ -93,7 +93,7 @@ $(document).ready(function(){
 
 //回首頁清暫存
 $('.Back2Log').on('click',function () {
-    localStorage.clear();
+    sessionStorage.clear();
 });
 
 
@@ -105,7 +105,7 @@ $('.next').on('click',function(){
 
         saveData();
 
-        if(localStorage.canvasFace_3 === undefined) {
+        if(sessionStorage.canvasFace_3 === undefined) {
 
             htmlToCanvas();
 
@@ -133,7 +133,7 @@ function htmlToCanvas() {
         onrendered: function (canvas) {
             $('#previewImage').append("<img src="+canvas.toDataURL("image/png")+">");
             $('#previewImage > img').css('display','none');
-            localStorage.setItem('canvasFace_3',canvas.toDataURL("image/png"));
+            sessionStorage.setItem('canvasFace_3',canvas.toDataURL("image/png"));
         }
     });
 
@@ -146,7 +146,7 @@ function saveData() {
     for (var i = 0; i < len; i++) {
         var key = document.querySelectorAll('input')[i].name;
         var val = document.querySelectorAll('input')[i].value;
-        localStorage.setItem(key, val);
+        sessionStorage.setItem(key, val);
         // alert(tmp);
 
     }
@@ -155,7 +155,7 @@ function saveData() {
     for (var i = 0; i < count; i++) {
         var skey = document.querySelectorAll('select')[i].name;
         var sval = document.querySelectorAll('select')[i].value;
-        localStorage.setItem(skey, sval);
+        sessionStorage.setItem(skey, sval);
     }
 
 
@@ -164,6 +164,9 @@ function saveData() {
 
 function elasticityEX(tmp) {
     switch(tmp) {
+        case 0:
+            tmp = "無";
+            break;
         case 1:
             tmp = "S";
             break;
@@ -180,6 +183,9 @@ function elasticityEX(tmp) {
 function skinLevelEX(tmp) {
 
     switch(tmp) {
+        case 0:
+            tmp = "無選取";
+            break;
         case 1:
             tmp = "+3";
             break;
@@ -208,6 +214,9 @@ function skinLevelEX(tmp) {
 function transparencyEX(tmp) {
 
     switch(tmp) {
+        case 0:
+            tmp = "無選取";
+            break;
         case 1:
             tmp = "角層";
             break;
@@ -297,6 +306,7 @@ function exchangeName(tmpNm) {
 function skin_color_cEX(tmp) {
 
     switch(tmp) {
+
         case 1:
             tmp = "100";
             break;
@@ -372,7 +382,7 @@ function checkdata() {
             }
 
 
-            if($("input")[i].value !==""){
+            if(tmpData!==""){
 
                 if(!num.test(tmpData)){
 
@@ -411,31 +421,54 @@ function checkdata() {
 function getMaintainData(xmlDoc){
 
     var elasticity =parseInt(xmlDoc.getElementsByTagName('ELASTICITY')[0].textContent);
-    var transparency = parseInt(xmlDoc.getElementsByTagName('TRANSPARENCY_C')[0].textContent);
+    var transparency_c = parseInt(xmlDoc.getElementsByTagName('TRANSPARENCY_C')[0].textContent);
     var skinLevel = parseInt(xmlDoc.getElementsByTagName('SKIN_LEVEL')[0].textContent);
+    var moisture = parseInt(xmlDoc.getElementsByTagName('MOISTURE')[0].textContent);
+    var sebum = parseInt(xmlDoc.getElementsByTagName('SEBUM')[0].textContent);
+    var tension = parseInt(xmlDoc.getElementsByTagName('TENSION')[0].textContent);
+    var sg = parseInt(xmlDoc.getElementsByTagName('SG')[0].textContent);
+    var transparency = parseInt(xmlDoc.getElementsByTagName('TRANSPARENCY')[0].textContent);
+    var horny = parseInt(xmlDoc.getElementsByTagName('HORNY')[0].textContent);
 
-    $('#p-moisture').text(xmlDoc.getElementsByTagName('MOISTURE')[0].textContent);
-    $('#p-sebum').text(xmlDoc.getElementsByTagName('SEBUM')[0].textContent);
-    $('#p-tension').text(xmlDoc.getElementsByTagName('TENSION')[0].textContent);
+    var check =  new checkForm(elasticity, transparency_c, skinLevel, moisture, sebum, tension, sg, transparency, horny);
 
-    $('#p-elasticity').text(elasticityEX(elasticity));
-    $('#p-sg').text(xmlDoc.getElementsByTagName('SG')[0].textContent);
 
-    $('#p-transparency_c').text(transparencyEX(transparency));
-    $('#p-transparency').text(xmlDoc.getElementsByTagName('TRANSPARENCY')[0].textContent);
-    $('#p-horny').text(xmlDoc.getElementsByTagName('HORNY')[0].textContent);
+    $('#p-moisture').text(check.moisture);
+    $('#p-sebum').text(check.sebum);
+    $('#p-tension').text(check.tension);
 
-    $('#p-skin_level').text(skinLevelEX(skinLevel));
+    $('#p-elasticity').text(check.elasticity);
+    $('#p-sg').text(check.sg);
+
+    $('#p-transparency_c').text(check.transparency_c);
+    $('#p-transparency').text(check.transparency);
+    $('#p-horny').text(check.horny);
+
+    $('#p-skin_level').text(check.skinLevel);
 
 
 }
+
+
+function checkForm(elasticity, transparency_c, skinLevel, moisture, sebum, tension, sg, transparency, horny) {
+    this.elasticity = elasticityEX(elasticity);
+    this.transparency_c = transparencyEX(transparency_c);
+    this.skinLevel = skinLevelEX(skinLevel);
+    this.moisture = moisture === 0 ? "" : moisture ;
+    this.sebum = sebum === 0 ? "" : sebum ;
+    this.tension = tension === 0 ? "" : tension ;
+    this.sg = sg === 0 ? "" : sg ;
+    this.transparency = transparency === 0 ? "" : transparency ;
+    this.horny = horny === 0 ? "" : horny ;
+}
+
 
 
 function sessionData() {
 
 
 
-    var tmpskin_color = localStorage.getItem('SKIN_COLOR_C');
+    var tmpskin_color = sessionStorage.getItem('SKIN_COLOR_C');
 
     document.querySelectorAll('select')[0].value = skin_color_cEX(tmpskin_color);
 
@@ -444,13 +477,13 @@ function sessionData() {
 
     for (var j = 0; j < slen.length; j++) {
 
-        var tmpSelectData = localStorage.getItem(slen[j].name);
+        var tmpSelectData = sessionStorage.getItem(slen[j].name);
 
         slen[j].value = tmpSelectData;
 
     }
 
-    var subVal = localStorage.getItem("SUBJECT");
+    var subVal = sessionStorage.getItem("SUBJECT");
 
     $("input[type*=text]")[0].value = subVal;
 
@@ -459,7 +492,7 @@ function sessionData() {
     for (var i = 0; i < len.length; i++) {
 
 
-        var tmpInputData = localStorage.getItem(len[i].name);
+        var tmpInputData = sessionStorage.getItem(len[i].name);
 
 
         len[i].value = tmpInputData;

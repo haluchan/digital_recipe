@@ -1030,7 +1030,7 @@ function sentData() {
     xhr.onreadystatechange=function (){
         if( xhr.readyState == 4){
             if( xhr.status == 200 ){
-                $('#postData').append("<img src="+xhr.responseText+">");
+                // $('#postData').append("<img src="+xhr.responseText+">");
                 $('#postData').text(xhr.responseText); //php回傳內容
 
                 if(xhr.responseText !== false){

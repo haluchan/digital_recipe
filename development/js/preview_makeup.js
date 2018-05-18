@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(function(){
 
 
     var date = sessionStorage.getItem('DATE');
@@ -24,10 +24,10 @@ $('.next').on('click',function(){
 
 
     // htmlToCanvas();
-   if(htmlToCanvas()){
+   // if(htmlToCanvas === true){
         sentData();
 
-   }
+   // }
 
     $('.bg').css('display','block');
 });
@@ -43,27 +43,52 @@ $('.prev').on('click',function(){
 function getMackupData(xmlDoc){
 
 
-        var elasticity =parseInt(xmlDoc.getElementsByTagName('ELASTICITY')[0].textContent);
-        var transparency = parseInt(xmlDoc.getElementsByTagName('TRANSPARENCY_C')[0].textContent);
-        var skinLevel = parseInt(xmlDoc.getElementsByTagName('SKIN_LEVEL')[0].textContent);
+    var elasticity,transparency_c,skinLevel,moisture,sebum,tension,sg,transparency,horny,check;
 
-        $('#p-moisture').text(xmlDoc.getElementsByTagName('MOISTURE')[0].textContent);
-        $('#p-sebum').text(xmlDoc.getElementsByTagName('SEBUM')[0].textContent);
-        $('#p-tension').text(xmlDoc.getElementsByTagName('TENSION')[0].textContent);
+    if(xmlDoc.getElementsByTagName('ROW')[1] !== undefined){
 
-        $('#p-elasticity').text(elasticityEX(elasticity));
-        $('#p-sg').text(xmlDoc.getElementsByTagName('SG')[0].textContent);
+        elasticity = parseInt(xmlDoc.getElementsByTagName('ELASTICITY')[0].textContent);
+        transparency_c = parseInt(xmlDoc.getElementsByTagName('TRANSPARENCY_C')[0].textContent);
+        skinLevel = parseInt(xmlDoc.getElementsByTagName('SKIN_LEVEL')[0].textContent);
+        moisture = parseInt(xmlDoc.getElementsByTagName('MOISTURE')[0].textContent);
+        sebum = parseInt(xmlDoc.getElementsByTagName('SEBUM')[0].textContent);
+        tension = parseInt(xmlDoc.getElementsByTagName('TENSION')[0].textContent);
+        sg = parseInt(xmlDoc.getElementsByTagName('SG')[0].textContent);
+        transparency = parseInt(xmlDoc.getElementsByTagName('TRANSPARENCY')[0].textContent);
+        horny = parseInt(xmlDoc.getElementsByTagName('HORNY')[0].textContent);
 
-        $('#p-transparency_c').text(transparencyEX(transparency));
-        $('#p-transparency').text(xmlDoc.getElementsByTagName('TRANSPARENCY')[0].textContent);
-        $('#p-horny').text(xmlDoc.getElementsByTagName('HORNY')[0].textContent);
+      }
+    check = new checkForm(elasticity, transparency_c, skinLevel, moisture, sebum, tension, sg, transparency, horny);
 
-        $('#p-skin_level').text(skinLevelEX(skinLevel));
+    $('#p-moisture').text(check.moisture);
+    $('#p-sebum').text(check.sebum);
+    $('#p-tension').text(check.tension);
 
-        htmlToCanvas();
+    $('#p-elasticity').text(check.elasticity);
+    $('#p-sg').text(check.sg);
+
+    $('#p-transparency_c').text(check.transparency_c);
+    $('#p-transparency').text(check.transparency);
+    $('#p-horny').text(check.horny);
+
+    $('#p-skin_level').text(check.skinLevel);
 
 
 
+  setTimeout(htmlToCanvas(),0);
+
+}
+
+function checkForm(elasticity, transparency_c, skinLevel, moisture, sebum, tension, sg, transparency, horny) {
+    this.elasticity = elasticityEX(elasticity);
+    this.transparency_c = transparencyEX(transparency_c);
+    this.skinLevel = skinLevelEX(skinLevel);
+    this.moisture = moisture === 0 || moisture === undefined ? "" : moisture ;
+    this.sebum = sebum === 0 || sebum === undefined ? "" : sebum ;
+    this.tension = tension === 0 || tension === undefined ? "" : tension ;
+    this.sg = sg === 0 || sg === undefined ? "" : sg ;
+    this.transparency = transparency === 0 || transparency === undefined ? "" : transparency ;
+    this.horny = horny === 0 || horny === undefined ? "" : horny ;
 }
 
 function sessionData() {
@@ -90,7 +115,7 @@ function sessionData() {
     $("#CHEEK_COLOR").text(sessionStorage.CHEEK_COLOR);
     $("#TENSION").text(sessionStorage.TENSION);
     $("#ELASTICITY").text(elasticityEX(elasticity));
-    $("#SG").text(elasticityEX(sg));
+    $("#SG").text(sg);
     $("#TRANSPARENCY").text(sessionStorage.TRANSPARENCY);
     $("#TRANSPARENCY_C").text(transparencyEX(transparency));
     $("#HORNY").text(sessionStorage.HORNY);
@@ -137,7 +162,8 @@ function sessionData() {
         $('.suggest').append('<span>' + textCont.replace(/\n/g,'<br/>') + '<span>');
     }
 
-    return true
+
+
 }
 
 function canvasImg() {
@@ -152,6 +178,9 @@ function canvasImg() {
 
 function elasticityEX(tmp) {
     switch(tmp) {
+        case 0:
+            tmp = "無";
+            break;
         case 1:
             tmp = "S";
             break;
@@ -160,6 +189,9 @@ function elasticityEX(tmp) {
             break;
         default:
             tmp = "";
+        case undefined:
+            tmp = "無";
+            break;
 
     }
 
@@ -169,6 +201,9 @@ function elasticityEX(tmp) {
 function skinLevelEX(tmp) {
 
     switch(tmp) {
+        case 0:
+            tmp = "無選取";
+            break;
         case 1:
             tmp = "+3";
             break;
@@ -187,9 +222,11 @@ function skinLevelEX(tmp) {
         case 6:
             tmp = "-3";
             break;
+        case undefined:
+            tmp = "無選取";
+            break;
         default:
-            tmp = "";
-
+            tmp = "無選取";
     }
 
     return(tmp);
@@ -199,6 +236,9 @@ function skinLevelEX(tmp) {
 function skin_light_cEX(tmp) {
 
     switch(tmp) {
+        case 0:
+          tmp = "無選取";
+            break;
         case 1:
             tmp = "B";
             break;
@@ -208,8 +248,11 @@ function skin_light_cEX(tmp) {
         case 3:
             tmp = "P";
             break;
+        case undefined:
+            tmp = "無選取";
+            break;
         default:
-            tmp = "";
+            tmp = "無選取";
 
     }
 
@@ -221,6 +264,9 @@ function skin_light_cEX(tmp) {
 function transparencyEX(tmp) {
 
     switch(tmp) {
+        case 0:
+            tmp = "無選取";
+            break;
         case 1:
             tmp = "角層";
             break;
@@ -242,8 +288,11 @@ function transparencyEX(tmp) {
         case 7:
             tmp = "黃色化";
             break;
+        case undefined:
+            tmp = "無選取";
+            break;
         default:
-            tmp = "";
+            tmp = "無選取";
 
     }
 
@@ -254,6 +303,9 @@ function transparencyEX(tmp) {
 function skin_color_cEX(tmp) {
 
     switch(tmp) {
+        case 0:
+            tmp = "無選取";
+            break;
         case 1:
             tmp = "100";
             break;
@@ -270,7 +322,7 @@ function skin_color_cEX(tmp) {
             tmp = "201";
             break;
         default:
-            tmp = "";
+            tmp = "無選取";
     }
 
     return(tmp);
@@ -280,6 +332,9 @@ function skin_color_cEX(tmp) {
 function acquiredEX(tmp) {
 
     switch(tmp) {
+        case 0:
+            tmp = "無";
+            break;
         case 1:
             tmp = "D1";
             break;
@@ -293,7 +348,7 @@ function acquiredEX(tmp) {
             tmp = "D4";
             break;
         default:
-            tmp = "";
+            tmp = "無";
 
     }
 
@@ -305,6 +360,9 @@ function acquiredEX(tmp) {
 function naturalEX(tmp) {
 
     switch(tmp) {
+        case 0:
+            tmp = "無";
+            break;
         case 1:
             tmp = "I";
             break;
@@ -318,7 +376,7 @@ function naturalEX(tmp) {
             tmp = "IV";
             break;
         default:
-            tmp = "";
+            tmp = "無";
 
     }
 
@@ -425,14 +483,14 @@ function sentData() {
     xhr.onreadystatechange=function (){
         if( xhr.readyState == 4){
             if( xhr.status == 200 ){
-                $('#postData').append("<img src="+xhr.responseText+">");
-                $('#postData').text(xhr.responseText); //php回傳內容
 
-                if(xhr.responseText !== false){
+                $('#postData').text(xhr.responseXML.getElementsByTagName('MSG')[0].textContent); //php回傳內容
+
+                if(xhr.responseXML !== false){
                     $('.bg').css('display','none');
                 }
 
-                if(xhr.responseText === "新增成功，信件已送出"){
+                if(xhr.responseXML.getElementsByTagName('MSG')[0].textContent === "新增成功，信件已送出"){
 
                     alert("新增成功，信件已送出");
                     sessionStorage.clear();
@@ -478,13 +536,13 @@ function getlastData(vipids) {
         xhr.onreadystatechange=function (){
             if( xhr.readyState == 4){
                 if( xhr.status == 200 ){
-                    if(xhr.responseXML.getElementsByTagName('RTNMSG')[0].textContent !== "查無檢驗資料") {
+                    // if(xhr.responseXML.getElementsByTagName('RTNMSG')[0].textContent !== "查無檢驗資料") {
                         getMackupData(xhr.responseXML);
-                    }else{
-                        if(sessionData() === true){
-                            htmlToCanvas();
-                        }
-                    }
+                    // }else{
+                    //     if(sessionData() === true){
+                    //         htmlToCanvas();
+                        // }
+                    // }
 
                 }else{
                     alert("伺服器回應有狀況");

@@ -1,18 +1,18 @@
 
 //表單位置
-$(document).ready(function() {
+$(function() {
 
     var vipID = sessionStorage.VIPIDS;
     var vipMail = sessionStorage.MAIL;
 
     if(vipID !== undefined && vipMail!== undefined ){
-         state = 4;
+        state = 4;
         step(state);
         sessionData();
         clearSession();
 
     }else{
-         state = 1;
+        state = 1;
         sessionStorage.clear();
         step(state);
     }
@@ -33,7 +33,7 @@ $(document).ready(function() {
 
             } else {
 
-                $('.login').unbind('click',flogin);
+                $('.login').on('click',flogin);
 
 
                 var xhr = new XMLHttpRequest();
@@ -49,7 +49,7 @@ $(document).ready(function() {
                                 alert('輸入員工編號無效，請重新確認');
 
                             }else{
-                                // console.log(xhr.responseXML.getElementsByTagName('BCNAME')[0].textContent);
+
                                 alert( xhr.responseXML.getElementsByTagName('BCNAME')[0].textContent +' '+ '歡迎回來');
                                 loginInfo(xhr.responseXML , state);
                                 state++;
@@ -57,7 +57,7 @@ $(document).ready(function() {
 
                             }
 
-                            $('.login').bind('click',flogin);
+                            $('.login').on('click',flogin);
 
                         }else{
                             alert("伺服器回應有狀況");
@@ -115,7 +115,7 @@ $(document).ready(function() {
                 alert("請輸入 YYYYMMDD 日期格式");
             }else{
                 var vipnm = $('#vipnm').val();
-                $('.next').unbind('click',fnext);
+                $('.next').off('click',fnext);
 
 
                 var xhr = new XMLHttpRequest();
@@ -123,23 +123,14 @@ $(document).ready(function() {
                     if( xhr.readyState == 4){
                         if( xhr.status == 200 ){
 
-                            // var RTNcode = xhr.responseXML.getElementsByTagName('RTNCODE')[0].textContent;
-
-                            // if(RTNcode === "1" || xhr.responseXML.getElementsByTagName('VIPIDS')[0] === undefined){
-                            //     alert("查無此客戶");
-                            // }else{
-
-                            // console.log(xhr.responseXML.getElementsByTagName('RTNDATA'));
-                                state = vipLocinInfo(xhr.responseXML,state);
-
-                            // }
+                            state = vipLocinInfo(xhr.responseXML,state);
 
                         }else{
                             alert("伺服器回應有狀況");
                             console.log(xhr.status);
 
                         }
-                        $('.next').bind('click',fnext);
+                        $('.next').on('click',fnext);
                     }
                 };
 
@@ -309,7 +300,7 @@ $(document).ready(function() {
 
             }else{
 
-                    $('.next').unbind('click',fnext);
+                    $('.next').off('click',fnext);
 
                     var xhr = new XMLHttpRequest();
                     xhr.onreadystatechange=function (){
@@ -340,7 +331,7 @@ $(document).ready(function() {
                                 console.log(xhr.status);
 
                             }
-                            $('.next').bind('click',fnext);
+                            $('.next').on('click',fnext);
                         }
                     };
 
@@ -554,14 +545,17 @@ function nVip(xmlDoc) {
 
     $('#vipids').val(vipids);
 
-    var Today=new Date();
-    sessionStorage.setItem("DATE" , Today.getFullYear() + "/" + (Today.getMonth()+1) + "/" + Today.getDate());
-    sessionStorage.setItem("DATE" , Today.getFullYear() + "/" + (Today.getMonth()+1) + "/" + Today.getDate());
-    sessionStorage.setItem('BCID',$('#bcid').val());
-    sessionStorage.setItem("VIPIDS",$('#vipids').val());
-    sessionStorage.setItem("MAIL",$('#signMail').val());
-    sessionStorage.setItem("VIPNM", $('#vipnm').val());
-    sessionStorage.setItem("BCNM", $('#bcnm').text());
+      var Today=new Date();
+      sessionStorage.setItem("DATE" , Today.getFullYear() + "/" + (Today.getMonth()+1) + "/" + Today.getDate());
+      sessionStorage.setItem('BCID', $('#bcid').val());
+      sessionStorage.setItem('CUSTNO', $('#custno').val());
+      sessionStorage.setItem('VIPCUSTNO', $('#custno').val());
+      sessionStorage.setItem("VIPIDS", $('#vipids').val());
+      sessionStorage.setItem("MAIL", $('#signMail').val());
+      sessionStorage.setItem("VIPNM", $('#vipnm').val());
+      sessionStorage.setItem("BCNM", $('#bcnm').text());
+      sessionStorage.setItem("LOCINFO", $('.locInfo').eq(0).text());
+      sessionStorage.setItem("BIRTHDAY", $('.sbrithInfo').eq(0).text());
 
     location.href = location.href = page + "_01.html";
 
@@ -574,11 +568,9 @@ function updataVip(xmlDoc) {
 
     if (xmlDoc.getElementsByTagName('RTNMSG')[0].textContent == null || xmlDoc.getElementsByTagName('RTNMSG')[0].textContent !== '更新成功。') {
         console.log(toString(xmlDoc));
-        // console.log(toString(xmlDoc.getElementsByTagName('RTNMSG')[0].textContent));
         alert('輸入電話、信箱有誤，請重新確認');
         return false;
     } else {
-        // console.log(xhr.responseXML.getElementsByTagName('BCNAME')[0].textContent);
         alert('會員資料修改成功');
 
         dataSession();

@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(function(){
 
     var date = sessionStorage.getItem('DATE');
     var vipnm = sessionStorage.getItem('VIPNM');

@@ -297,7 +297,8 @@ body[page=preview_maintain] {
 					.water{
 						td>div>div:nth-child(2n-1){
 							text-align: center;
-							width:45%;
+							display: inline-block;
+							//width:45%;
 							margin-left: 0px;
 							//height: 25px;
 							//line-height: 25px;

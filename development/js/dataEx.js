@@ -7,13 +7,16 @@ function skinProdSelect() {
                                 {value:"1401", name:"泥狀角質按摩霜e"},
                                 {value:"1402", name:"逆齡再生修復精露"},
                                 {value:"1403", name:"角質發光液EX 1"},
-                                {value:"1404", name:"角質發光液EX 2"}]},
+                                {value:"1404", name:"角質發光液EX 2"},
+                                {value:"1405", name:"冰點淨白水慕斯"}]},
                         {value:'15' , name:'提升角層濕潤度', option:[
                                 {value:"0", name:"請選擇"},
                                 {value:"1501", name:"泥狀角質按摩霜e"},
                                 {value:"1502", name:"逆齡再生修復精露"},
                                 {value:"1503", name:"角質發光液EX 1"},
-                                {value:"1504", name:"角質發光液EX 2"}]},
+                                {value:"1504", name:"角質發光液EX 2"},
+                                {value:"1505", name:"冰點淨白水慕斯"}]},
+
                         {value:'16' , name:'其他'}]
                 },
                 {id:'drying_' ,name:'乾燥' , option :[

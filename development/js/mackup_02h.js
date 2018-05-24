@@ -94,27 +94,22 @@ $(function(){
 
 
 //產生canvas圖檔
-function htmlToCanvas1(callback){
+function htmlToCanvas1(){
 
     $('.canvasTool').css('display','none');
 
     html2canvas($('#html-content-1'), {
+        dpi: window.devicePixelRatio,
         onrendered: function (canvas) {
-            dpi: window.devicePixelRatio,
             $('#previewImage-1').append("<img src="+canvas.toDataURL("image/png")+">");
             $('#previewImage-1 > img').css('display','none');
             sessionStorage.setItem('canvasFace_0',canvas.toDataURL("image/png"));
 
         }
     });
-
-   callback();
-
-
-
 }
 
-function htmlToCanvas2() {
+function htmlToCanvas2(callback) {
 
     $('.canvasTool').css('display','none');
 
@@ -126,11 +121,8 @@ function htmlToCanvas2() {
             sessionStorage.setItem('canvasFace_1',canvas.toDataURL("image/png"));
         }
     });
+    callback();
 }
-
-
-
-
 
 
 //給底妝值
@@ -151,20 +143,23 @@ $('.Back2Log').on('click',function () {
 //nextPage
 $('.next').on('click',function(){
 
+        if($(window).scrollTop() !== 0){
+            alert("請收起鍵盤後，再按下一步");
+            return false;
+        }
+
         if(checkdata()=== true) {
 
             saveData();
 
         if(sessionStorage.canvasFace_0 === undefined && sessionStorage.canvasFace_1 === undefined) {
 
-            htmlToCanvas1(htmlToCanvas2);
-
-            // htmlToCanvas2();
+            setTimeout(htmlToCanvas2(htmlToCanvas1),300);
 
         }
             setTimeout(function () {
                 window.open('makeup_03.html','_self');
-            },300);
+            },800);
         }
 });
 

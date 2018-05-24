@@ -240,6 +240,7 @@ if(isset($data)) {
                     "VIPIDS" => $data["VIPIDS"],
                     "DATE" => "",//系統自動帶入
                     "BCID" => $data["BCID"],
+//                    "CUSTNO" => $data["CUSTNO"],
                     "DRY" => $data["DRY"],
                     "OIL" => $data["OIL"],
                     "PORES" => $data["PORES"],

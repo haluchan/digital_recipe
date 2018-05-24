@@ -20,10 +20,10 @@ $(document).ready(function(){
             if( xhr.readyState == 4){
                 if( xhr.status == 200 ){
 
-                    if(xhr.responseXML.getElementsByTagName('RTNMSG')[0].textContent !== "查無檢驗資料"){
+                    // if(xhr.responseXML.getElementsByTagName('RTNMSG')[0].textContent !== "查無檢驗資料"){
 
                         getMaintainData(xhr.responseXML);
-                    }
+                    // }
 
 
                 }else{
@@ -107,14 +107,14 @@ $('.next').on('click',function(){
 
         if(sessionStorage.canvasFace_3 === undefined) {
 
-            htmlToCanvas();
+            setTimeout(htmlToCanvas(),300);
 
         }
 
 
             setTimeout(function () {
                 window.open('maintain_05.html','_self');
-            },300);
+            },800);
     }
 
 });
@@ -155,7 +155,11 @@ function saveData() {
     for (var i = 0; i < count; i++) {
         var skey = document.querySelectorAll('select')[i].name;
         var sval = document.querySelectorAll('select')[i].value;
-        sessionStorage.setItem(skey, sval);
+        if(sval === ""){
+            sessionStorage.setItem(skey, 0);
+        }else{
+            sessionStorage.setItem(skey, sval);
+        }
     }
 
 
@@ -172,6 +176,9 @@ function elasticityEX(tmp) {
             break;
         case 2:
             tmp = "G";
+            break;
+        case undefined:
+            tmp = "無";
             break;
 
     }
@@ -203,6 +210,9 @@ function skinLevelEX(tmp) {
             break;
         case 6:
             tmp = "-3";
+            break;
+        case undefined:
+            tmp = "無選取";
             break;
 
     }
@@ -237,6 +247,9 @@ function transparencyEX(tmp) {
             break;
         case 7:
             tmp = "黃色化";
+            break;
+        case undefined:
+            tmp = "無選取";
             break;
 
     }
@@ -420,18 +433,23 @@ function checkdata() {
 
 function getMaintainData(xmlDoc){
 
-    var elasticity =parseInt(xmlDoc.getElementsByTagName('ELASTICITY')[0].textContent);
-    var transparency_c = parseInt(xmlDoc.getElementsByTagName('TRANSPARENCY_C')[0].textContent);
-    var skinLevel = parseInt(xmlDoc.getElementsByTagName('SKIN_LEVEL')[0].textContent);
-    var moisture = parseInt(xmlDoc.getElementsByTagName('MOISTURE')[0].textContent);
-    var sebum = parseInt(xmlDoc.getElementsByTagName('SEBUM')[0].textContent);
-    var tension = parseInt(xmlDoc.getElementsByTagName('TENSION')[0].textContent);
-    var sg = parseInt(xmlDoc.getElementsByTagName('SG')[0].textContent);
-    var transparency = parseInt(xmlDoc.getElementsByTagName('TRANSPARENCY')[0].textContent);
-    var horny = parseInt(xmlDoc.getElementsByTagName('HORNY')[0].textContent);
+    var elasticity,transparency_c,skinLevel,moisture,sebum,tension,sg,transparency,horny,check;
 
-    var check =  new checkForm(elasticity, transparency_c, skinLevel, moisture, sebum, tension, sg, transparency, horny);
+    if(xmlDoc.getElementsByTagName('ROW')[1] !== undefined){
 
+        elasticity = parseInt(xmlDoc.getElementsByTagName('ELASTICITY')[0].textContent);
+        transparency_c = parseInt(xmlDoc.getElementsByTagName('TRANSPARENCY_C')[0].textContent);
+        skinLevel = parseInt(xmlDoc.getElementsByTagName('SKIN_LEVEL')[0].textContent);
+        moisture = parseInt(xmlDoc.getElementsByTagName('MOISTURE')[0].textContent);
+        sebum = parseInt(xmlDoc.getElementsByTagName('SEBUM')[0].textContent);
+        tension = parseInt(xmlDoc.getElementsByTagName('TENSION')[0].textContent);
+        sg = parseInt(xmlDoc.getElementsByTagName('SG')[0].textContent);
+        transparency = parseInt(xmlDoc.getElementsByTagName('TRANSPARENCY')[0].textContent);
+        horny = parseInt(xmlDoc.getElementsByTagName('HORNY')[0].textContent);
+
+    }
+
+    check = new checkForm(elasticity, transparency_c, skinLevel, moisture, sebum, tension, sg, transparency, horny);
 
     $('#p-moisture').text(check.moisture);
     $('#p-sebum').text(check.sebum);
@@ -446,20 +464,18 @@ function getMaintainData(xmlDoc){
 
     $('#p-skin_level').text(check.skinLevel);
 
-
 }
-
 
 function checkForm(elasticity, transparency_c, skinLevel, moisture, sebum, tension, sg, transparency, horny) {
     this.elasticity = elasticityEX(elasticity);
     this.transparency_c = transparencyEX(transparency_c);
     this.skinLevel = skinLevelEX(skinLevel);
-    this.moisture = moisture === 0 ? "" : moisture ;
-    this.sebum = sebum === 0 ? "" : sebum ;
-    this.tension = tension === 0 ? "" : tension ;
-    this.sg = sg === 0 ? "" : sg ;
-    this.transparency = transparency === 0 ? "" : transparency ;
-    this.horny = horny === 0 ? "" : horny ;
+    this.moisture = moisture === 0 || moisture === undefined ? "" : moisture ;
+    this.sebum = sebum === 0 || sebum === undefined ? "" : sebum ;
+    this.tension = tension === 0 || tension === undefined ? "" : tension ;
+    this.sg = sg === 0 || sg === undefined ? "" : sg ;
+    this.transparency = transparency === 0 || transparency === undefined ? "" : transparency ;
+    this.horny = horny === 0 || horny === undefined ? "" : horny ;
 }
 
 

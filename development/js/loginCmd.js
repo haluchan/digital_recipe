@@ -1,6 +1,6 @@
 
 //表單位置
-$(function() {
+$(document).ready(function() {
 
     var vipID = sessionStorage.VIPIDS;
     var vipMail = sessionStorage.MAIL;
@@ -32,8 +32,7 @@ $(function() {
                 alert('員工編號不完整喔')
 
             } else {
-
-                $('.login').on('click',flogin);
+                $('.login').unbind('click',flogin);
 
 
                 var xhr = new XMLHttpRequest();
@@ -57,7 +56,7 @@ $(function() {
 
                             }
 
-                            $('.login').on('click',flogin);
+                            $('.login').bind('click',flogin);
 
                         }else{
                             alert("伺服器回應有狀況");
@@ -115,7 +114,7 @@ $(function() {
                 alert("請輸入 YYYYMMDD 日期格式");
             }else{
                 var vipnm = $('#vipnm').val();
-                $('.next').off('click',fnext);
+                $('.next').unbind('click',fnext);
 
 
                 var xhr = new XMLHttpRequest();
@@ -130,7 +129,7 @@ $(function() {
                             console.log(xhr.status);
 
                         }
-                        $('.next').on('click',fnext);
+                        $('.next').bind('click',fnext);
                     }
                 };
 
@@ -300,7 +299,7 @@ $(function() {
 
             }else{
 
-                    $('.next').off('click',fnext);
+                    $('.next').unbind('click',fnext);
 
                     var xhr = new XMLHttpRequest();
                     xhr.onreadystatechange=function (){

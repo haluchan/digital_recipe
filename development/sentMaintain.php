@@ -193,6 +193,7 @@ if(isset($data)) {
                     "VIPIDS" => $data["VIPIDS"],
                     "DATE" => "",//系統自動帶入
                     "BCID" => $data["BCID"],
+//                    "CUSTNO" => $data["CUSTNO"],
                     "DRY" => $data["DRY"],
                     "OIL" => $data["OIL"],
                     "PORES" => $data["PORES"],
@@ -360,16 +361,19 @@ try{
 
                 delFile($data);
 
-                echo "新增成功，信件已送出";
+                header("content-type:text/xml");
+                echo "<MSG>新增成功，信件已送出</MSG>";
 
             }else{
 
-                echo "MAIL無法發送";
+                header("content-type:text/xml");
+                echo "<MSG>MAIL無法發送</MSG>";
             }
 
         }else{
 
-            echo "檔案無法存取";
+            header("content-type:text/xml");
+            echo "<MSG>檔案無法存取</MSG>>";
 
         }
 

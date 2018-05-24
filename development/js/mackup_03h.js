@@ -93,9 +93,9 @@ $('.next').on('click',function() {
 
 
         var intext = $("input[name*='MAKUP_TEXT']");
-        var k=1;
+        var k=0;
 
-        for (var j = 1; j < 11; j++) {
+        for (var j = 0; j < 10; j++) {
             sessionStorage.removeItem('MAKUP_TEXT_'+j);
         }
 
@@ -110,7 +110,9 @@ $('.next').on('click',function() {
 
         if(!canvasMackup){
 
-            htmlToCanvas();
+            setTimeout(function () {
+                htmlToCanvas();
+            },300);
 
             getdata();
         }
@@ -118,10 +120,9 @@ $('.next').on('click',function() {
 
         setTimeout(function () {
             window.open('makeup_04.html','_self');
-        },300);
+        },800);
 
     }
-
 
 
 });
@@ -180,11 +181,11 @@ function tmpDate() {
 
     var len = sessionStorage.length;
 
-    for (var i = 0; i < len; i++) {
+    // for (var i = 0; i < len; i++) {
 
-        for (var j = 1; j < 11; j++) {
+        for (var j = 0; j < 10; j++) {
 
-            if (sessionStorage.key(i) === "MAKUP_TEXT_" + j) {
+            if (sessionStorage.getItem("MAKUP_TEXT_" + j)) {
 
                 var tmpName = "MAKUP_TEXT_" + j;
 
@@ -204,7 +205,7 @@ function tmpDate() {
 
             }
         }
-    }
+    // }
 
 
     if(count<10){

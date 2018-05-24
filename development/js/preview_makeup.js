@@ -115,7 +115,7 @@ function sessionData() {
     $("#CHEEK_COLOR").text(sessionStorage.CHEEK_COLOR);
     $("#TENSION").text(sessionStorage.TENSION);
     $("#ELASTICITY").text(elasticityEX(elasticity));
-    $("#SG").text(sg);
+    $("#SG").text(sessionStorage.SG);
     $("#TRANSPARENCY").text(sessionStorage.TRANSPARENCY);
     $("#TRANSPARENCY_C").text(transparencyEX(transparency));
     $("#HORNY").text(sessionStorage.HORNY);
@@ -143,17 +143,19 @@ function sessionData() {
 
     var len = sessionStorage.length;
 
-    for (var i = 0; i < len; i++) {
-        for (var j = 1; j < 11; j++) {
+    // for (var i = 0; i < len; i++) {
+        for (var j = 0; j < 10; j++) {
 
-            if (sessionStorage.key(i) === "MAKUP_TEXT_" + j) {
+            // if (sessionStorage.key(i) === "MAKUP_TEXT_" + j) {
+            if (sessionStorage.getItem("MAKUP_TEXT_" + j)){
                 var tmp =sessionStorage.getItem("MAKUP_TEXT_" + j);
                 if(tmp !== ""){
-                $('.wrap').append("<div class='tip'>"+tmp+"</div>");
+                    $('.wrap').append("<div class='tip'>"+tmp+"</div>");
                 }
             }
+            // }
         }
-    }
+    // }
 
     canvasImg();
 
@@ -187,11 +189,11 @@ function elasticityEX(tmp) {
         case 2:
             tmp = "G";
             break;
-        default:
-            tmp = "";
         case undefined:
             tmp = "無";
             break;
+        default:
+            tmp = "";
 
     }
 
@@ -391,7 +393,7 @@ function sentData() {
 
 
 
-    for (var i = 1; i <= 10; i++) {
+    for (var i = 0; i < 10; i++) {
 
         var tmp = "MAKUP_TEXT_"+i ;
 
@@ -414,6 +416,7 @@ function sentData() {
         MAIL: sessionStorage.MAIL,
         VIPNM: sessionStorage.VIPNM,
         BCID: sessionStorage.BCID,
+        //CUSTNO: sessionStorage.CUSTNO, // 尚未啟用
         DRY: sessionStorage.DRY,
         OIL: sessionStorage.OIL,
         PORES: sessionStorage.PORES,
@@ -462,16 +465,16 @@ function sentData() {
         LIP_O: sessionStorage.LIP_O,
         LIP_SC: sessionStorage.LIP_SC,
         LIP_COLOR: sessionStorage.LIP_COLOR,
-        MAKUP_TXT_1: sessionStorage.MAKUP_TEXT_1,
-        MAKUP_TXT_2: sessionStorage.MAKUP_TEXT_2,
-        MAKUP_TXT_3: sessionStorage.MAKUP_TEXT_3,
-        MAKUP_TXT_4: sessionStorage.MAKUP_TEXT_4,
-        MAKUP_TXT_5: sessionStorage.MAKUP_TEXT_5,
-        MAKUP_TXT_6: sessionStorage.MAKUP_TEXT_6,
-        MAKUP_TXT_7: sessionStorage.MAKUP_TEXT_7,
-        MAKUP_TXT_8: sessionStorage.MAKUP_TEXT_8,
-        MAKUP_TXT_9: sessionStorage.MAKUP_TEXT_9,
-        MAKUP_TXT_10: sessionStorage.MAKUP_TEXT_10,
+        MAKUP_TXT_1: sessionStorage.MAKUP_TEXT_0,
+        MAKUP_TXT_2: sessionStorage.MAKUP_TEXT_1,
+        MAKUP_TXT_3: sessionStorage.MAKUP_TEXT_2,
+        MAKUP_TXT_4: sessionStorage.MAKUP_TEXT_3,
+        MAKUP_TXT_5: sessionStorage.MAKUP_TEXT_4,
+        MAKUP_TXT_6: sessionStorage.MAKUP_TEXT_5,
+        MAKUP_TXT_7: sessionStorage.MAKUP_TEXT_6,
+        MAKUP_TXT_8: sessionStorage.MAKUP_TEXT_7,
+        MAKUP_TXT_9: sessionStorage.MAKUP_TEXT_8,
+        MAKUP_TXT_10: sessionStorage.MAKUP_TEXT_9,
         MAKUP_TXT_C: sessionStorage.MAKUP_TXT_C,
         MAKEUP_URL: sessionStorage.canvasFace_0,
         SKIN_URL: sessionStorage.canvasFace_1,
@@ -484,7 +487,7 @@ function sentData() {
         if( xhr.readyState == 4){
             if( xhr.status == 200 ){
 
-                $('#postData').text(xhr.responseXML.getElementsByTagName('MSG')[0].textContent); //php回傳內容
+                // $('#postData').text(xhr.responseXML.getElementsByTagName('MSG')[0].textContent); //php回傳內容
 
                 if(xhr.responseXML !== false){
                     $('.bg').css('display','none');
@@ -551,8 +554,8 @@ function getlastData(vipids) {
             }
         };
 
-        // var url = 'getMackupData.php?VIPIDS='+ vipids;
-        var url = 'getTestData.php?VIPIDS='+ vipids; //最新一筆檢測資料
+        var url = 'getMackupData.php?VIPIDS='+ vipids;
+        // var url = 'getTestData.php?VIPIDS='+ vipids; //最新一筆檢測資料
         xhr.open("POST", url, true);
         xhr.send( null );
 

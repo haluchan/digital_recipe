@@ -7,7 +7,6 @@
  */
 require_once('phpinit.php');
 require('psw.php');
-$UserID="innity54395064";
 $Markno = "IPSA";
 //$_REQUEST["BCID"] = "323346";
 //$Name = "何晏綺";

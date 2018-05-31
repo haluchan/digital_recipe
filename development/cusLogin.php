@@ -7,7 +7,6 @@
  */
 require_once('phpinit.php');
 require('psw.php');
-$UserID="innity54395064";
 $_REQUEST["MARKNO"] = "IPSA";
 //$_REQUEST["VIPNM"] = "王大明";
 //$_REQUEST["SBIRTH"] = "2000/01/01";

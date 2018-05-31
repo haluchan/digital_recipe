@@ -8,7 +8,6 @@
 
 require_once('phpinit.php');
 require('psw.php');
-$UserID="innity54395064";
 $Markno = "IPSA";
 //
 //$_REQUEST["CUSTNO"]='1001';

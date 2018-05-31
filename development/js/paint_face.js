@@ -111,7 +111,19 @@ $(function() {
             $('#makeupRecipe div.btn[data="' + val + '"]').css('background-image', dImg);
             $('#makeupRecipe div.typeName[data="' + val + '"]').text(dTypeName);
 
-        })
+        });
+        if($('.typeName[data="brow"]').text() === "0"){
+            $('.typeName[data="brow"]').text("");
+            $('.btn[data="brow"]').css({'background-image':'url(img/makeup/03/paint_face/btn_eyebrows.png)','background-position':'left top' ,'background-repeat': 'no-repeat'});
+          }
+        if($('.typeName[data="eye"]').text() === "0"){
+            $('.typeName[data="eye"]').text("");
+            $('.btn[data="eye"]').css({'background-image':'url(img/makeup/03/paint_face/btn_eyes.png)','background-position':'left top' ,'background-repeat': 'no-repeat'});
+          }
+        if($('.typeName[data="lips"]').text() === "0"){
+            $('.typeName[data="lips"]').text("");
+            $('.btn[data="lips"]').css({'background-image':'url(img/makeup/03/paint_face/btn_lips.png)','background-position':'left top' ,'background-repeat': 'no-repeat'});
+          }
     }
 
     function getInitialImg(model) {

@@ -143,8 +143,8 @@ $('.Back2Log').on('click',function () {
 //nextPage
 $('.next').on('click',function(){
 
-        if($(window).scrollTop() !== 0){
-            alert("請收起鍵盤後，再按下一步");
+        if($(window).scrollTop() > 100){
+            alert("請確認鍵盤收起後，按下確認，再進行下一步");
             return false;
         }
 
@@ -465,13 +465,13 @@ function checkdata() {
     //     return false;
     // }
 
-    for (var i = 0; i < 8; i++) {
+    for (var i = 0; i < 9; i++) {
 
         var num = /^[0-9]+$/;
         var tmpNm =$("input")[i].name;
         var tmpData = document.querySelectorAll('input')[i].value;
 
-        // if($("input")[i].value === "" ){
+        // if($("input")[i].value === "" ){s
         //
         //     alert("請輸入"+ exchangeName(tmpNm) );
         //     return false;

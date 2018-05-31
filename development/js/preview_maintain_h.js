@@ -1006,7 +1006,7 @@ function sentData() {
         MAIL: sessionStorage.MAIL,
         VIPNM: sessionStorage.VIPNM,
         BCID: sessionStorage.BCID,
-        //CUSTNO: sessionStorage.CUSTNO, //尚未啟用
+        CUSTNO: sessionStorage.CUSTNO,
         DRY: sessionStorage.DRY,
         OIL: sessionStorage.OIL,
         PORES: sessionStorage.PORES,

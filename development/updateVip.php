@@ -7,7 +7,6 @@
  */
 require_once('phpinit.php');
 require('psw.php');
-$UserID="innity54395064";
 $_REQUEST["MARKNO"] = "IPSA";
 //$_REQUEST["VIPIDS"] = "8901010002";
 //$_REQUEST["CUSTNO"] = "1001";

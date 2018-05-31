@@ -9,7 +9,6 @@
 require_once('phpinit.php');
 error_reporting(E_ERROR | E_PARSE);
 require('psw.php');
-$UserID="innity54395064";
 $MARKNO = "IPSA";
 $data = json_decode(file_get_contents('php://input'), true);
 //echo file_get_contents('php://input');
@@ -33,7 +32,7 @@ function getName($data){
 
         $pdo = new PDO($dsn, $user, $password, $options);
         $pdo->beginTransaction();
-        $sql = "INSERT INTO ImgMackup (i_name , i_ext , i_c_a_no) VALUE(:name,:png,:admin)";
+        $sql = "INSERT INTO ImgMaintain (i_name , i_ext , i_c_a_no) VALUE(:name,:png,:admin)";
         $imgRow = $pdo->prepare( $sql );
         $imgRow->bindValue(":name", $data["VIPIDS"]);
         $imgRow->bindValue(":png", "png");
@@ -97,7 +96,7 @@ function getmackupImg($data,$last_id){
         file_put_contents("$thisyear.png", $img_data);
     }
 
-    return $fileName.".png";
+    return $fileName;
 
 }
 
@@ -135,7 +134,7 @@ function skinWaterImg($data,$last_id){
 
     }
 
-    return $fileName.".png";
+    return $fileName;
 
 }
 
@@ -193,7 +192,7 @@ if(isset($data)) {
                     "VIPIDS" => $data["VIPIDS"],
                     "DATE" => "",//系統自動帶入
                     "BCID" => $data["BCID"],
-//                    "CUSTNO" => $data["CUSTNO"],
+                    "CUSTNO" => $data["CUSTNO"],
                     "DRY" => $data["DRY"],
                     "OIL" => $data["OIL"],
                     "PORES" => $data["PORES"],

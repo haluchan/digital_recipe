@@ -11,7 +11,6 @@ require_once('phpinit.php');
 error_reporting(E_ERROR | E_PARSE);
 
 require('psw.php');
-$UserID="innity54395064";
 $MARKNO = "IPSA";
 $data = json_decode(file_get_contents('php://input'), true);
 //echo file_get_contents('php://input');
@@ -91,20 +90,16 @@ function getmackupImg($data,$last_id){
         mkdir($dirNext, 0777, TRUE);
         $dirNext= $dirNext.'/'.$fileName;
         file_put_contents("$dirNext.png", $img_data);
-        file_put_contents("$dirNext.png", $img_data);
-        file_put_contents("$dirNext.png", $img_data);
 
     }else{
         /**********產生目錄*********/
         $thisyear=$dir.'/'.$fileName;
 
         file_put_contents("$thisyear.png", $img_data);
-        file_put_contents("$thisyear.png", $img_data);
-        file_put_contents("$thisyear.png", $img_data);
     }
 
 
-    return $fileName.".png";
+    return $fileName;
 
 }
 
@@ -142,7 +137,7 @@ function skinImg($data,$last_id){
 
     }
 
-    return $fileName.".png";
+    return $fileName;
 
 }
 
@@ -181,7 +176,7 @@ function skinWaterImg($data,$last_id){
 
     }
 
-    return $fileName."png";
+    return $fileName;
 
 }
 
@@ -240,7 +235,7 @@ if(isset($data)) {
                     "VIPIDS" => $data["VIPIDS"],
                     "DATE" => "",//系統自動帶入
                     "BCID" => $data["BCID"],
-//                    "CUSTNO" => $data["CUSTNO"],
+                    "CUSTNO" => $data["CUSTNO"],
                     "DRY" => $data["DRY"],
                     "OIL" => $data["OIL"],
                     "PORES" => $data["PORES"],

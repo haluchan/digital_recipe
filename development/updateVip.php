@@ -137,12 +137,6 @@ if(isset($_REQUEST["TELM"])){
         if($RTNCODE === 0){
 
 
-//        $_SESSION['BCNAME'] = (string)$bcXml->RTNDATA1->ROW->BCNAME;
-//
-//        $_SESSION['CUSTNO'] = (string)$bcXml->RTNDATA2->ROW->CUSTNO;
-//
-//        $_SESSION['CMABNM'] = (string)$bcXml->RTNDATA2->ROW->CMABNM;
-
             header("content-type:text/xml");
 
             echo '<?xml version="1.0" encoding="utf-8"?>';

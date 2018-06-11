@@ -566,8 +566,8 @@ function updataVip(xmlDoc) {
     console.log(xmlDoc);
 
     if (xmlDoc.getElementsByTagName('RTNMSG')[0].textContent == null || xmlDoc.getElementsByTagName('RTNMSG')[0].textContent !== '更新成功。') {
-        console.log(toString(xmlDoc));
-        alert('輸入電話、信箱有誤，請重新確認');
+        console.log(xmlDoc.getElementsByTagName('RTNMSG')[0].textContent);
+        alert(xmlDoc.getElementsByTagName('RTNMSG')[0].textContent);
         return false;
     } else {
         alert('會員資料修改成功');

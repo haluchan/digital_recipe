@@ -5,15 +5,18 @@
  * Date: 西元2018/1/26
  * Time: 下午7:51
  */
-$pwd = 'SSD@74475666';
-$ip = 'https://210.208.107.109:80';
-$UserID="innity";
+require('psw.php');
+//$pwd = 'SSD@74475668';
+//$ip = 'https://210.208.107.109:80';
+//$UserID="innity";
 $MARKNO = "IPSA";
+header('Content-Type: application/json; charset=UTF-8');
+
 //
 //$_REQUEST["CUSTNO"]='1001';
-$_REQUEST["VIPNM"]='謝佳伶';
-$_REQUEST["SBIRTH"]='1993/10/22';
-$_REQUEST["MAIL"]='hua_rain@yahoo.com.tw';
+//$_REQUEST["VIPNM"]='謝佳伶';
+//$_REQUEST["SBIRTH"]='1993/10/22';
+//$_REQUEST["MAIL"]='hua_rain@yahoo.com.tw';
 //$_REQUEST["TELM"]='0912345693';
 
 
@@ -57,7 +60,7 @@ if(isset($_REQUEST["VIPNM"] , $_REQUEST["SBIRTH"] , $_REQUEST["MAIL"])){
             "LOGIN" => array(
                 "ROW" => array(
                     "VENIDS" => $UserID,
-                    "VENPWD" => 'SSD@74475666')),
+                    "VENPWD" => $Pwd)),
             "REQUEST" => array(
                 "ROW" => array(
                     "MARKNO" => "IPSA",
@@ -116,14 +119,14 @@ if(isset($_REQUEST["VIPNM"] , $_REQUEST["SBIRTH"] , $_REQUEST["MAIL"])){
 //    echo "<br>";
 //    echo("\nDumping request:\n");
 
-echo header("Content-Type:text/html; charset=utf-8");
-   var_dump(html_entity_decode($client->__getLastRequest(),ENT_QUOTES | ENT_XML1, 'UTF-8'));//解決括弧<>編碼
+//echo header("Content-Type:text/html; charset=utf-8");
+//   var_dump(html_entity_decode($client->__getLastRequest(),ENT_QUOTES | ENT_XML1, 'UTF-8'));//解決括弧<>編碼
 //    echo "<br>";
 //    echo("\nDumping response headers:\n");
 //    var_dump($client->__getLastResponseHeaders());
 //    echo "<br>";
 //    echo("\nDumping response:\n");
-   var_dump(html_entity_decode($client->__getLastResponse(),ENT_QUOTES | ENT_XML1, 'UTF-8'));
+//   var_dump(html_entity_decode($client->__getLastResponse(),ENT_QUOTES | ENT_XML1, 'UTF-8'));
 
 
 
@@ -131,7 +134,7 @@ echo header("Content-Type:text/html; charset=utf-8");
 
         $bcXml = simplexml_load_string($result->WS_GETVIPBASEResult);
 
-
+      echo json_encode($bcXml);
         
 
 

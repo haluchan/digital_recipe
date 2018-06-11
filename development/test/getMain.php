@@ -5,11 +5,12 @@
  * Date: 西元2018/2/28
  * Time: 下午3:38
  */
-$pwd = 'SSD@74475666';
+require('psw.php');
+//$pwd = 'SSD@74475668';
 $ip = 'https://210.208.107.109:80';
-$UserID="innity";
+//$UserID="innity";
 $MARKNO = "IPSA";
-$data = json_decode(file_get_contents('php://input'), true);
+header('Content-Type: application/json; charset=UTF-8');
 
 //陣列轉XML function
 function array2xml($data, $tag = ''){
@@ -43,7 +44,7 @@ function array2xml($data, $tag = ''){
     return $xml;
 }
 
-if(isset($MARKNO)){
+if(isset($_REQUEST["VIPIDS"])){
 
     $XmlData = array(
 
@@ -51,11 +52,11 @@ if(isset($MARKNO)){
             "LOGIN" => array(
                 "ROW" => array(
                     "VENIDS" => $UserID,
-                    "VENPWD" => 'SSD@74475666')),
+                    "VENPWD" => $Pwd)),
             "REQUEST" => array(
                 "ROW" => array(
                     "MARKNO" => "IPSA",
-                    "VIPIDS" => "8210220012",
+                    "VIPIDS" => $_REQUEST["VIPIDS"],
                     "TIMES" => "1"))
         )
     );
@@ -113,8 +114,8 @@ if(isset($MARKNO)){
 //    var_dump($client->__getLastResponseHeaders());
 //    echo "<br>";
 //    echo("\nDumping response:\n");
-    echo header("Content-Type:text/html; charset=utf-8");
-   var_dump(html_entity_decode($client->__getLastResponse(),ENT_QUOTES | ENT_XML1, 'UTF-8'));
+
+//   var_dump(html_entity_decode($client->__getLastResponse(),ENT_QUOTES | ENT_XML1, 'UTF-8'));
 
 
 
@@ -122,13 +123,9 @@ if(isset($MARKNO)){
 
         $bcXml = simplexml_load_string($result->WS_GETIPSASKINCAREResult);
 
-
-        header("content-type:text/xml");
-
         
-
-        echo $result->WS_GETBCSHCUSTNOResult;
-
+//        echo $result->WS_GETBCSHCUSTNOResult;
+      echo json_encode($bcXml);
 
     }catch(Exception $e){
 

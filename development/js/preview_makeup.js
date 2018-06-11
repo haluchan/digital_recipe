@@ -16,8 +16,6 @@ $(function(){
 
 
     //前一次資料
-
-
 });
 
 $('.next').on('click',function(){
@@ -25,8 +23,9 @@ $('.next').on('click',function(){
 
     // htmlToCanvas();
    // if(htmlToCanvas === true){
-        sentData();
 
+        sentData();
+        submit();
    // }
 
     $('.bg').css('display','block');
@@ -37,6 +36,21 @@ $('.next').on('click',function(){
 $('.prev').on('click',function(){
     window.open('makeup_04.html','_self');
 });
+
+//取消sunbimt
+function submit() {
+    var submitId=$('.next');
+    submitId.unbind("click");
+    console.log('offclick');
+    setTimeout(function(){
+      submitId.on('click',function () {
+        sentData();
+        submit();
+        $('.bg').css('display','block');
+      });
+      console.log('onclick');
+    },8000);
+}
 
 
 
@@ -489,27 +503,39 @@ function sentData() {
 
                 // $('#postData').text(xhr.responseXML.getElementsByTagName('MSG')[0].textContent); //php回傳內容
 
-                if(xhr.responseXML !== false){
-                    $('.bg').css('display','none');
-                }
-
                 if(xhr.responseXML.getElementsByTagName('MSG')[0].textContent === "新增成功，信件已送出"){
-
+                    $('.bg').css('display','none');
                     alert("新增成功，信件已送出");
                     sessionStorage.clear();
                     location.href = "login.html";
-                }
+                }else{
+                    $('.bg').css('display','none');
+                    alert(xhr.responseXML.getElementsByTagName('MSG')[0].textContent);
+              }
 
             }else{
-                alert( xhr.status );
+
+                if(xhr.status !== 0){
+                  $('.bg').css('display','none');
+                    alert("連線狀態:"+xhr.status);
+                }else{
+                    errorMsg();
+                }
+
             }
         }
     };
 
     var json_upload =  JSON.stringify(data);
     xhr.open("POST", "sentMakeup.php");
+    xhr.timeout = 60000;
+    // xhr.ontimeout = errorMsg();
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhr.send(json_upload);
+  function errorMsg(){
+    $('.bg').css('display','none');
+    alert("連線狀態:"+ xhr.status +"\n"+ "網路連線過慢，請稍後再試");
+  }
 
 }
 

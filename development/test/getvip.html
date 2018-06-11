@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,user-scalable=no">
+    <!-- 在手機裡全螢幕 -->
+    <script src="jquery-3.3.1.js"></script>
+    <title>getvip</title>
+</head>
+<body>
+<div>
+    <h1>查詢vip資料</h1>
+    <div>姓名<input type="text" name="VIPNM"></div>
+    <div>生日<input type="text" name="SBIRTH" placeholder="ex:1999/09/09"></div>
+    <div>電子信箱<input type="text" name="MAIL"></div>
+    <div><input class="btn1" type="submit"></div>
+    <div class="response1"></div>
+
+    <h1>查詢檢測資料</h1>
+    <h1>彩妝資料</h1>
+    <div>VIPIDS<input type="text" name="VIPIDS"></div>
+    <div><input class="btn2" type="submit"></div>
+    <div class="response2"></div>
+    <h1>保養資料</h1>
+    <div>VIPIDS<input type="text" name="VIPIDS2"></div>
+    <div><input class="btn3" type="submit"></div>
+    <div class="response3"></div>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $('.btn1').click(function () {
+      var vipnm =$('input[name="VIPNM"]').val();
+      var sb =$('input[name="SBIRTH"]').val();
+      var mail = $('input[name="MAIL"]').val();
+
+      $.ajax({
+        type:"POST",
+        url: "getvip.php",
+        async: true,
+        contentType: "application/x-www-form-urlencoded",
+        dataType: "json",
+        data: {
+          "VIPNM": vipnm,
+          "SBIRTH": sb,
+          "MAIL": mail
+          }
+      }).done(function (data) {
+        console.log(data);
+        $('.response1').text(JSON.stringify(data));
+      }).fail(function (xhr){
+        alert('Ajax request 發生錯誤' + xhr.status);
+      })
+    });
+
+
+    $('.btn2').click(function () {
+
+      $.ajax({
+        type:"POST",
+        url: "getMack.php",
+        async: true,
+        contentType: "application/x-www-form-urlencoded",
+        dataType: "json",
+        data: {
+          VIPIDS: $('input[name="VIPIDS"]').val(),
+          name:""
+        }
+      }).done(function (data) {
+        console.log(data);
+        $('.response2').text(JSON.stringify(data));
+      }).fail(function (xhr) {
+        alert('Ajax request 發生錯誤' + xhr.status);
+      });
+
+    });
+
+
+    $('.btn3').click(function () {
+      $.ajax({
+        type: "POST",
+        url: "getMain.php",
+        async: true,
+        contentType: "application/x-www-form-urlencoded",
+        dataType: "json",
+        data: {
+          "VIPIDS": $('input[name="VIPIDS2"]').val()
+        }
+      }).done(function (data) {
+        console.log(data);
+        $('.response3').text(JSON.stringify(data));
+
+      }).fail(function (xhr) {
+        alert('Ajax request 發生錯誤' + xhr.status);
+      })
+    });
+
+
+  });
+    
+    
+</script>
+</body>
+</html>

@@ -348,12 +348,6 @@ try{
     if($RTNCODE === 0){
 
 
-//        $_SESSION['BCNAME'] = (string)$bcXml->RTNDATA1->ROW->BCNAME;
-//
-//        $_SESSION['CUSTNO'] = (string)$bcXml->RTNDATA2->ROW->CUSTNO;
-//
-//        $_SESSION['CMABNM'] = (string)$bcXml->RTNDATA2->ROW->CMABNM;
-
         if(savePDFImg($data) === true){
 
             if(sendMail($data) === true){
@@ -372,7 +366,7 @@ try{
         }else{
 
             header("content-type:text/xml");
-            echo "<MSG>檔案無法存取</MSG>>";
+            echo "<MSG>PDF檔案無法存取</MSG>>";
 
         }
 

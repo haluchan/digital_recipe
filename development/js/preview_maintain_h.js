@@ -27,7 +27,7 @@ $('.next').on('click',function(){
 
    if(htmlToCanvas()){
         sentData();
-
+        submit();
     }
 
 
@@ -43,9 +43,22 @@ $('.prev').on('click',function(){
     location.href = "maintain_05.html";
 });
 
-
-
-
+//取消按鍵功能
+function submit() {
+  var submitId=$('.next');
+  submitId.unbind("click");
+  console.log('offclick');
+  setTimeout(function(){
+    submitId.on('click',function () {
+      if(htmlToCanvas()){
+        sentData();
+        submit();
+      }
+      $('.bg').css('display','block');
+    });
+    console.log('onclick');
+  },8000);
+}
 
 
 
@@ -893,9 +906,12 @@ function otherEx(tmp) {
             tmp = "急效抗壓馴荳精華";
             break;
         case "2903":
-            tmp = "身體馴荳噴霧EX";
+            tmp = "2步驟粉刺組";
             break;
         case "2904":
+            tmp = "身體馴荳噴霧EX";
+            break;
+        case "2905":
             tmp = "按摩水凝露N";
             break;
         case "3001":
@@ -1099,26 +1115,39 @@ function sentData() {
 
                 // $('#postData').text(xhr.responseXML.getElementsByTagName('MSG')[0].textContent); //php回傳內容
 
-                if(xhr.responseXML !== false){
-                    $('.bg').css('display','none');
-                }
-
                 if(xhr.responseXML.getElementsByTagName('MSG')[0].textContent === "新增成功，信件已送出"){
+                    $('.bg').css('display','none');
                     alert("新增成功，信件已送出");
                     sessionStorage.clear();
                     location.href = "login.html";
+                }else{
+                  $('.bg').css('display','none');
+                  alert(xhr.responseXML.getElementsByTagName('MSG')[0].textContent);
                 }
+
+
             }else{
-                alert( xhr.status );
+
+              if(xhr.status !== 0){
+                $('.bg').css('display','none');
+                alert("連線狀態:"+xhr.status);
+              }else{
+                errorMsg();
+              }
             }
         }
     };
-
     var json_upload =  JSON.stringify(data);
     xhr.open("POST", "sentMaintain.php");
+    xhr.timeout = 60000;
+    // xhr.ontimeout = errorMsg();
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhr.send(json_upload);
 
+  function errorMsg(){
+    $('.bg').css('display','none');
+    alert("連線狀態:"+ xhr.status +"\n"+ "網路連線過慢，請稍後再試");
+  }
 }
 
 function htmlToCanvas() {

@@ -365,7 +365,7 @@ body[page=post] {
       body[page=post] #step2 #main .maintain {
         display: none; }
         body[page=post] #step2 #main .maintain .L {
-          margin-left: 35px; }
+          width: 470px; }
           body[page=post] #step2 #main .maintain .L .adjust_basic {
             height: 37px;
             padding-left: 25px; }
@@ -375,9 +375,10 @@ body[page=post] {
               font-size: 0.925em; }
           body[page=post] #step2 #main .maintain .L .check_basic {
             height: 55px;
-            margin-top: 2px; }
+            margin-top: 2px;
+            font-size: 0.85em; }
             body[page=post] #step2 #main .maintain .L .check_basic li {
-              width: 370px;
+              width: 470px;
               margin-bottom: 2px; }
               body[page=post] #step2 #main .maintain .L .check_basic li input[type="checkbox"] {
                 width: 20px;
@@ -387,11 +388,11 @@ body[page=post] {
                 display: none; }
               body[page=post] #step2 #main .maintain .L .check_basic li input[type="checkbox"] + label, body[page=post] #step2 #main .maintain .L .check_basic li .name {
                 color: #333;
-                width: 117px;
+                width: 105px;
                 height: 25px;
                 line-height: 25px;
                 padding-left: 25px;
-                margin-right: 9px;
+                margin-right: 5px;
                 float: left; }
               body[page=post] #step2 #main .maintain .L .check_basic li input[type="checkbox"] + label span {
                 display: inline-block;
@@ -402,11 +403,11 @@ body[page=post] {
                 cursor: pointer;
                 border: 1px solid #333; }
               body[page=post] #step2 #main .maintain .L .check_basic li input[type="checkbox"]:checked + label span {
-                background: url("../img/check.png") 0 0 no-repeat;
+                background: url("../img/check.png") 0px 0px no-repeat;
                 background-size: 16px; }
               body[page=post] #step2 #main .maintain .L .check_basic li .dtl {
                 float: left;
-                width: 130px;
+                width: 205px;
                 height: 25px;
                 line-height: 25px;
                 background-color: #fffae9;
@@ -417,68 +418,68 @@ body[page=post] {
                 background: url("../img/arrow_gray.png") center center no-repeat;
                 background-size: 15px;
                 float: left;
-                margin: 0 7px; }
+                margin: 0 5px; }
               body[page=post] #step2 #main .maintain .L .check_basic li .recom {
                 float: left;
-                width: 80px;
+                width: 125px;
                 height: 25px;
                 line-height: 25px;
                 background-color: #fffae9;
                 padding: 0 7px; }
-          body[page=post] #step2 #main .maintain .L .ul_special li {
-            margin-bottom: 2px; }
-            body[page=post] #step2 #main .maintain .L .ul_special li:last-child {
-              margin: 0; }
-            body[page=post] #step2 #main .maintain .L .ul_special li input[type="checkbox"] {
-              width: 20px;
-              height: 20px;
-              vertical-align: sub;
-              margin-right: 15px;
-              display: none; }
-            body[page=post] #step2 #main .maintain .L .ul_special li input[type="checkbox"] + label {
-              color: #333;
-              float: left;
-              width: 117px;
-              height: 25px;
-              line-height: 25px;
-              margin-right: 9px; }
-            body[page=post] #step2 #main .maintain .L .ul_special li input[type="checkbox"] + label span {
-              display: inline-block;
-              width: 15px;
-              height: 15px;
-              margin: -2px 10px 0 0;
-              vertical-align: middle;
-              cursor: pointer;
-              border: 1px solid #333; }
-            body[page=post] #step2 #main .maintain .L .ul_special li input[type="checkbox"]:checked + label span {
-              background: url("../img/check.png") 0 0 no-repeat;
-              background-size: 16px; }
-            body[page=post] #step2 #main .maintain .L .ul_special li .dtl {
-              float: left;
-              width: 130px;
-              height: 25px;
-              line-height: 25px;
-              background-color: #fffae9;
-              padding: 0 7px; }
-            body[page=post] #step2 #main .maintain .L .ul_special li .arrow {
-              width: 20px;
-              height: 25px;
-              background: url("../img/arrow_gray.png") center center no-repeat;
-              background-size: 15px;
-              float: left;
-              margin: 0 7px; }
-            body[page=post] #step2 #main .maintain .L .ul_special li .recom {
-              float: left;
-              width: 80px;
-              height: 25px;
-              line-height: 25px;
-              background-color: #fffae9;
-              padding: 0 7px; }
-        body[page=post] #step2 #main .maintain .R {
-          margin-right: 35px; }
-          body[page=post] #step2 #main .maintain .R .maintain01 {
-            height: 185px;
-            margin: 10px 0; }
+          body[page=post] #step2 #main .maintain .L .ul_special {
+            font-size: 0.85em; }
+            body[page=post] #step2 #main .maintain .L .ul_special li {
+              margin-bottom: 2px; }
+              body[page=post] #step2 #main .maintain .L .ul_special li:last-child {
+                margin: 0; }
+              body[page=post] #step2 #main .maintain .L .ul_special li input[type="checkbox"] {
+                width: 20px;
+                height: 20px;
+                vertical-align: sub;
+                margin-right: 15px;
+                display: none; }
+              body[page=post] #step2 #main .maintain .L .ul_special li input[type="checkbox"] + label {
+                color: #333;
+                float: left;
+                width: 105px;
+                height: 25px;
+                line-height: 25px;
+                margin-right: 5px; }
+              body[page=post] #step2 #main .maintain .L .ul_special li input[type="checkbox"] + label span {
+                display: inline-block;
+                width: 15px;
+                height: 15px;
+                margin: -2px 10px 0 0;
+                vertical-align: middle;
+                cursor: pointer;
+                border: 1px solid #333; }
+              body[page=post] #step2 #main .maintain .L .ul_special li input[type="checkbox"]:checked + label span {
+                background: url("../img/check.png") 0px 0px no-repeat;
+                background-size: 16px; }
+              body[page=post] #step2 #main .maintain .L .ul_special li .dtl {
+                float: left;
+                width: 205px;
+                height: 25px;
+                line-height: 25px;
+                background-color: #fffae9;
+                padding: 0 5px; }
+              body[page=post] #step2 #main .maintain .L .ul_special li .arrow {
+                width: 20px;
+                height: 25px;
+                background: url("../img/arrow_gray.png") center center no-repeat;
+                background-size: 15px;
+                float: left;
+                margin: 0 5px; }
+              body[page=post] #step2 #main .maintain .L .ul_special li .recom {
+                float: left;
+                width: 125px;
+                height: 25px;
+                line-height: 25px;
+                background-color: #fffae9;
+                padding: 0 7px; }
+        body[page=post] #step2 #main .maintain .R .maintain01 {
+          height: 185px;
+          margin: 10px 0; }
       body[page=post] #step2 #main .makeup {
         display: none; }
         body[page=post] #step2 #main .makeup .L {

@@ -7,7 +7,6 @@
  */
 require('psw.php');
 //$pwd = 'SSD@74475668';
-$ip = 'https://210.208.107.109:80';
 //$UserID="innity";
 $MARKNO = "IPSA";
 header('Content-Type: application/json; charset=UTF-8');

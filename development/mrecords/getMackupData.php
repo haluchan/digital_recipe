@@ -2,14 +2,13 @@
 /**
  * Created by PhpStorm.
  * User: halu
- * Date: 西元2018/2/28
+ * Date: 西元2018/6/11
  * Time: 下午3:38
  */
+require_once('phpinit.php');
 require('psw.php');
-//$pwd = 'SSD@74475668';
-//$UserID="innity";
-$MARKNO = "IPSA";
-header('Content-Type: application/json; charset=UTF-8');
+$Markno = "IPSA";
+
 
 //陣列轉XML function
 function array2xml($data, $tag = ''){
@@ -54,9 +53,9 @@ if(isset($_REQUEST["VIPIDS"])){
                     "VENPWD" => $Pwd)),
             "REQUEST" => array(
                 "ROW" => array(
-                    "MARKNO" => "IPSA",
+                    "MARKNO" => $Markno,
                     "VIPIDS" => $_REQUEST["VIPIDS"],
-                    "TIMES" => "1"))
+                    "TIMES" => "3"))
         )
     );
 
@@ -121,14 +120,9 @@ if(isset($_REQUEST["VIPIDS"])){
 
         $bcXml = simplexml_load_string($result->WS_GETIPSAMACKUPResult);
 
-
         header("content-type:text/xml");
 
-        
-
-//        echo $result->WS_GETBCSHCUSTNOResult;
-
-      echo json_encode($bcXml);
+        echo json_encode($bcXml);
 
 
     }catch(Exception $e){
@@ -139,7 +133,7 @@ if(isset($_REQUEST["VIPIDS"])){
 
 }else{
 
-    echo '<?xml version="1.0" encoding="utf-8"?>';
+    header("content-type:text/xml");
 
     echo '<RTNCODE>1</RTNCODE>';
 }

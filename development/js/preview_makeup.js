@@ -534,7 +534,7 @@ function sentData() {
     xhr.send(json_upload);
   function errorMsg(){
     $('.bg').css('display','none');
-    console.log.("連線狀態:"+ xhr.status);
+    console.log("連線狀態:"+ xhr.status);
     alert("網路偵測不穩定，資料未送出，請再送一次！");
   }
 

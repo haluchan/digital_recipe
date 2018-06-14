@@ -31,7 +31,7 @@
         </header-->
     
         <nav>
-            <div class="attendant">服務人員：<span>茵芙莎</span></div>
+            <div class="attendant">服務人員：<span class="bcname"></span></div>
             <ul>
                 <li data="maintain" class="active"><span>保養處方箋</span></li>
                 <li data="makeup"><span>彩妝處方箋</span></li>
@@ -64,13 +64,13 @@
                         <li class="clearfix">
                             <input type="checkbox" disabled id="basic">
                             <label for="basic"><span></span>基礎保養</label>
-                            <div class="dtl sbasc_remover" data="text"></div>
+                            <div class="dtl sbasc_remover" data="skincare"></div>
                             <div class="arrow"></div>
-                            <div class="recom sbasc_clean" data="text"></div>
+                            <div class="recom sbasc_clean" data="skincare"></div>
                         </li>
                         <li class="clearfix">
                             <div class="name">ME濕潤平衡液</div>
-                            <div class="dtl sbasc_wet" data="text"></div>
+                            <div class="dtl sbasc_wet" data="skincare"></div>
                         </li>
                         
                     </ul>
@@ -80,44 +80,44 @@
                             <li class="clearfix">
                                 <input type="checkbox" disabled id="0">
                                 <label for="0"><span></span>角層保養</label>
-                                <div class="dtl shorny_c" data="text"></div>
+                                <div class="dtl shorny_c" data="skincare"></div>
                                 <div class="arrow"></div>
-                                <div class="recom shorny_t" data="text"></div>
+                                <div class="recom shorny_t" data="skincare"></div>
                             </li>
                             <li class="clearfix">
                                 <input type="checkbox" disabled id="2">
                                 <label for="2"><span></span>乾燥保養</label>
-                                <div class="dtl sdrying_c" data="text"></div>
+                                <div class="dtl sdrying_c" data="skincare"></div>
                                 <div class="arrow"></div>
-                                <div class="recom sdrying_t" data="text"></div>
+                                <div class="recom sdrying_t" data="skincare"></div>
                             </li>
                             <li class="clearfix">
                                 <input type="checkbox" disabled id="3">
                                 <label for="3"><span></span>美白保養</label>
-                                <div class="dtl swhitening_c" data="text"></div>
+                                <div class="dtl swhitening_c" data="skincare"></div>
                                 <div class="arrow"></div>
-                                <div class="recom swhitening_t" data="text"></div>
+                                <div class="recom swhitening_t" data="skincare"></div>
                             </li>
                             <li class="clearfix">
                                 <input type="checkbox" disabled id="4">
                                 <label for="4"><span></span>張力·彈力保養</label>
-                                <div class="dtl selasticity_c" data="text"></div>
+                                <div class="dtl selasticity_c" data="skincare"></div>
                                 <div class="arrow"></div>
-                                <div class="recom selasticity_t" data="text"></div>
+                                <div class="recom selasticity_t" data="skincare"></div>
                             </li>
                             <li class="clearfix">
                                 <input type="checkbox" disabled id="5">
                                 <label for="5"><span></span>紫外線保養</label>
-                                <div class="dtl suv_c" data="text"></div>
+                                <div class="dtl suv_c" data="skincare"></div>
                                 <div class="arrow"></div>
-                                <div class="recom suv_t" data="text"></div>
+                                <div class="recom suv_t" data="skincare"></div>
                             </li>
                             <li class="clearfix">
                                 <input type="checkbox" disabled id="6">
                                 <label for="6"><span></span>其他困擾保養</label>
-                                <div class="dtl sother_c" data="text"></div>
+                                <div class="dtl sother_c" data="skincare"></div>
                                 <div class="arrow"></div>
-                                <div class="recom sother_t" data="text"></div>
+                                <div class="recom sother_t" data="skincare"></div>
                             </li>                    
                         </ul>
                 
@@ -164,12 +164,15 @@
                             <td>50</td>
                             <td>
                                 <div class="clearfix" style="margin: 0 auto;">
-                                    <div class="floatL smoisture"></div>
-                                    <div class="floatL">/</div>
-                                    <div class="floatL ssebum" ></div>
+                                    <span class="smoisture" style="font-size: 14px"></span>
+                                    <span class="" style="float: none">&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                                    <span class="ssebum" style="font-size: 14px"></span>
                                 </div>
                             </td>
-                            <td>Price</td>
+                            <td >
+                                <span class="spmoisture" style="font-size: 14px"></span>
+                                <span>&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;</span>
+                                <span class="psebum" style="font-size: 14px"></span></td>
                         </tr>
                         <tr class="tension">
                             <td>張力/彈力</td>
@@ -182,10 +185,10 @@
                                 </div>
                             </td>
                             <td>
-                                <div>4</div>
+                                <div class="sptension"></div>
                                 <div class="clearfix">
-                                    <div class="floatL"><span>5</span></div>
-                                    <div class="floatL">(<span>6</span>)</div>
+                                    <div class="floatL"><span class="spelasticity"></span></div>
+                                    <div class="floatL">(<span class="spsg"></span>)</div>
                                 </div>
                             </td>
                         </tr>
@@ -198,8 +201,8 @@
                                 </div>
                             </td>
                             <td>
-                                <div><span>5</span></div>
-                                <div>(<span>4567</span>)
+                                <div><span class="sptransparency"></span></div>
+                                <div>(<span class="sptransparency_c"></span>)
                                 </div>
                             </td>
                         </tr>
@@ -210,7 +213,7 @@
                                 <div class="shorny"></div>
                             </td>
                             <td>
-                                <div>654</div>
+                                <div class="sphorny"></div>
                             </td>
                         </tr>
                         <tr class="level">
@@ -220,7 +223,7 @@
                                 <div class="sskin_level"></div>
                             </td>
                             <td>
-                                <div>654</div>
+                                <div class="spskin_level"></div>
                             </td>
                         </tr>
                     </table>
@@ -247,23 +250,22 @@
                     <div class="title bold">彩妝處方箋</div>
                     <div class="theme clearfix">
                         <div class="floatL">主題</div>
-                        <div class="theme_c floatL">123456</div>
+                        <div class="theme_c floatL msubject" ></div>
                     </div>
     
                     <div class="makeup03">
                         <div class="mL floatL">
-                            <div class="wrap">
-                                <div class="tip">兮兮兮</div>
+                            <div class="wrap txt">
                             </div>
                         </div>
     
-                        <div class="mR floatR">
-                            <img src="">
+                        <div class="mR floatR mskin_water_url">
+
                         </div>
                     </div>
     
                     <div class="step s3">其他建議</div>
-                    <div class="suggest">
+                    <div class="suggest mmakup_txt_c">
                         
                     </div>
                     
@@ -272,25 +274,25 @@
                     <div class="title bold">肌膚檢測結果</div>
     
                     <div class="makeup02 clearfix">
-                        <div class="mL floatL"></div>
-                        <div class="mR floatR"></div>
+                        <div class="mL floatL mmakeup_url"></div>
+                        <div class="mR floatR mskin_url"></div>
                     </div>
                     
                     <!--主題-->
                     <div class="theme clearfix">
                         <div class="floatL">原膚色</div>
                         <!--膚色-->
-                        <div class="floatL dtl" style="width:55px" name="skin_color_c">123</div>
+                        <div class="floatL dtl mskin_color_c" style="width:55px" name="skin_color_c"></div>
                         <div class="floatL" style="margin-left: 10px;">素肌透光度</div>
-                        <div class="floatL dtl" style="width:42px;" name="skin_light_c">P</div>
-                        <div class="floatL dtl" style="width:42px;">123</div>
+                        <div class="floatL dtl mskin_light_c" style="width:42px;" name="skin_light_c"></div>
+                        <div class="floatL dtl mskin_light_o" style="width:42px;"></div>
                     </div>
                     <div class="blank">
                         <!--頰部紅潤感-->
                         <table>
                             <tr>
                                 <td style="width: 87px;">頰部紅潤感</td>
-                                <td></td>
+                                <td class="mcheek_color"></td>
                             </tr>
                         </table>
                     </div>
@@ -299,10 +301,10 @@
                         <table>
                             <tr>
                                 <td style="width: 90px;">先天膚質</td>
-                                <td style="width:45px;">IV</td>
+                                <td class="mnatural_c" style="width:45px;"></td>
                                 <td></td>
                                 <td style="width: 90px;">後天肌膚狀態</td>
-                                <td style="width:45px;">D4</td>
+                                <td class="macquired_c" style="width:45px;"></td>
                             </tr>
                         </table>
                     </div>
@@ -326,28 +328,32 @@
                             <td>50</td>
                             <td>
                                 <div class="clearfix" style="margin: 0 auto;">
-                                    <div class="floatL">100</div>
-                                    <div class="floatL">/</div>
-                                    <div class="floatL">100</div>
+                                    <span class="mmoisture" style="font-size: 14px"></span>
+                                    <span class="" style="float: none">&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                                    <span class="msebum" style="font-size: 14px"></span>
                                 </div>
                             </td>
-                            <td>Price</td>
+                            <td>
+                                <span class="mpmoisture" style="font-size: 14px"></span>
+                                <span class="" style="float: none">&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                                <span class="mpsebum" style="font-size: 14px"></span>
+                            </td>
                         </tr>
                         <tr class="tension">
                             <td>張力/彈力</td>
                             <td>50</td>
                             <td>
-                                <div>4</div>
+                                <div class="mtension"></div>
                                 <div class="clearfix">
-                                    <div class="floatL"><span>5</span></div>
-                                    <div class="floatL">(<span>6</span>)</div>
+                                    <div class="floatL"><span class="melasticity"></span></div>
+                                    <div class="floatL">(<span class="msg"></span>)</div>
                                 </div>
                             </td>
                             <td>
-                                <div>4</div>
+                                <div class="mptension"></div>
                                 <div class="clearfix">
-                                    <div class="floatL"><span>5</span></div>
-                                    <div class="floatL">(<span>6</span>)</div>
+                                    <div class="floatL"><span class="mpelasticity"></span></div>
+                                    <div class="floatL">(<span class="mpsg"></span>)</div>
                                 </div>
                             </td>
                         </tr>
@@ -355,13 +361,13 @@
                             <td>透明感</td>
                             <td>50</td>
                             <td>
-                                <div><span>5</span></div>
-                                <div>(<span>適合的底妝類型ㄉㄉ</span>)
+                                <div><span class="mtransparency"></span></div>
+                                <div>(<span class="mtransparency_c"></span>)
                                 </div>
                             </td>
                             <td>
-                                <div><span>5</span></div>
-                                <div>(<span>4567</span>)
+                                <div><span class="mptransparency"></span></div>
+                                <div>(<span class="mptransparency_c"></span>)
                                 </div>
                             </td>
                         </tr>
@@ -369,20 +375,20 @@
                             <td>角層</td>
                             <td>50</td>
                             <td>
-                                <div>654</div>
+                                <div class="mhorny"></div>
                             </td>
                             <td>
-                                <div>654</div>
+                                <div class="mphorny"></div>
                             </td>
                         </tr>
                         <tr class="level">
                             <td>美肌等級</td>
                             <td>50</td>
                             <td>
-                                <div>654</div>
+                                <div class="mskin_level"></div>
                             </td>
                             <td>
-                                <div>654</div>
+                                <div class="mpskin_level"></div>
                             </td>
                         </tr>
                     </table>
@@ -390,24 +396,24 @@
     
                     <div class="title bold">適合的底妝類型</div>
                     <form class="check">
-                        <input type="checkbox" disabled id="make1" value="">
+                        <input class="cream_f" type="checkbox" disabled id="make1" data="mackup"  value="">
                         <label for="make1"><span></span>粉霜密</label>
-                        <input type="checkbox" disabled id="make2" value="">
+                        <input class="cosmetics_f" type="checkbox" disabled id="make2" data="mackup" value="">
                         <label for="make2"><span></span>彩妝蜜</label>
-                        <input type="checkbox" disabled id="make3" value="">
+                        <input class="water_f" type="checkbox" disabled id="make3" data="mackup" value="">
                         <label for="make3"><span></span>水粉蜜</label>
-                        <input type="checkbox" disabled id="make4" value="">
+                        <input class="powder_f" type="checkbox" disabled id="make4" data="mackup" value="">
                         <label for="make4"><span></span>粉餅</label>
-                        <input type="checkbox" disabled id="make5" value="">
+                        <input class="foundation_f" type="checkbox" disabled id="make5" data="mackup" value="">
                         <label for="make5"><span></span>輕粉露</label>
-                        <input type="checkbox" disabled id="make6" value="">
+                        <input class="pressed_f" type="checkbox" disabled id="make6" data="mackup" value="">
                         <label for="make6"><span></span>粉凝霜</label>
                     </form>
                 </div>
             </section>
         </div>
 
-        <footer class="clearfix">
+        <footer class="clearfix fdate">
             <div class="floatL">20180505</div>
             <div class="floatL">20180101</div>
             <div class="floatL">20170922</div>

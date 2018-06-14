@@ -42,7 +42,7 @@ function array2xml($data, $tag = ''){
     return $xml;
 }
 
-if(isset($_REQUEST["VIPIDS"])){
+if(isset($_REQUEST["BCID"])){
 
     $XmlData = array(
 
@@ -54,8 +54,7 @@ if(isset($_REQUEST["VIPIDS"])){
             "REQUEST" => array(
                 "ROW" => array(
                     "MARKNO" => $Markno,
-                    "VIPIDS" => $_REQUEST["VIPIDS"],
-                    "TIMES" => "4"))
+                    "BCID" => $_REQUEST["BCID"]))
         )
     );
 
@@ -92,7 +91,7 @@ if(isset($_REQUEST["VIPIDS"])){
 
         $client = new SoapClient($url,$options);
 
-        $result = $client->__soapCall("WS_GETIPSAMACKUP",
+        $result = $client->__soapCall("WS_GETBCSHCUSTNO",
 
             [array("XmlData"=>$requestString)]
 
@@ -118,7 +117,7 @@ if(isset($_REQUEST["VIPIDS"])){
 
 //    printf('Result = %s' , $result->WS_GETIPSAMACKUPResult);
 
-        $bcXml = simplexml_load_string($result->WS_GETIPSAMACKUPResult);
+        $bcXml = simplexml_load_string($result->WS_GETBCSHCUSTNOResult);
 
         header("content-type:text/xml");
 

@@ -1,6 +1,4 @@
 detectIE();
-// var mackupData , maintainData;
-
 
 $(document).ready(function(){
   $('#step1 li').click(function(){
@@ -48,18 +46,43 @@ $(document).ready(function(){
         if(response.WSTATUS.ROW.RTNCODE !== "0"){
           $('.empty').css("display","none");
         }else{
-          viewMaintainDate(response.RTNDATA.ROW[0]);
-          maintainData =function(response){
-            return response;
-          };
-          $('footer').empty();
-          var RDataLenth = response.RTNDATA.ROW.length;
 
-          for (var i = 0; i < RDataLenth; i++) {
-            var date = response.RTNDATA.ROW[i].DATE;
-            var tmp = date.split(" ", 1);
-            var fDate = tmp[0].replace(/\//g, "");
-            $('footer').append('<div class=\"floatL\" mainData="' + i + '">' + fDate + '</div>');
+          if(response.RTNDATA.ROW === "object") {
+
+            viewMaintainDate(response.RTNDATA.ROW[0], response.RTNDATA.ROW[1]);
+            maintainData = response;
+            $('.fdate').empty();
+            var RDataLenth = response.RTNDATA.ROW.length;
+
+            for (var i = 0; i < RDataLenth; i++) {
+              var date = response.RTNDATA.ROW[i].DATE;
+              var tmp = date.split(" ", 1);
+              var fDate = tmp[0].replace(/\//g, "");
+              $('footer').append('<div class=\"floatL\" maindata="' + i + '">' + fDate + '</div>');
+              if (i === 2) {
+                break;
+              }
+            }
+
+            $("div[maindata='0']").click(function () {
+              viewMaintainDate(maintainData.RTNDATA.ROW[0], maintainData.RTNDATA.ROW[1]);
+            });
+            $("div[maindata='1']").click(function () {
+              console.log("maintainData");
+              viewMaintainDate(maintainData.RTNDATA.ROW[1], maintainData.RTNDATA.ROW[2]);
+            });
+            $("div[maindata='2']").click(function () {
+              viewMaintainDate(maintainData.RTNDATA.ROW[2], maintainData.RTNDATA.ROW[3]);
+            });
+
+          }else{
+            var a = new Object();
+            viewMaintainDate(response.RTNDATA.ROW,a);
+            var sdate = response.RTNDATA.ROW.DATE;
+            var stmp = sdate.split(" ",1);
+            var sfDate = stmp[0].replace(/\//g,"");
+            $('.fdate').empty();
+            $('footer').append('<div class=\"floatL\" mackdata="' + 1 + '">' + sfDate + '</div>');
           }
         }
       }
@@ -92,21 +115,42 @@ $(document).ready(function(){
         if(response.WSTATUS.ROW.RTNCODE !== "0"){
           $('.empty').css("display","none");
         }else{
-          mackupData =function(response) {
-            return response;
-          };
-          $('footer').empty();
-          var RDataLenth = response.RTNDATA.ROW.length;
 
-          for (var i = 0; i < RDataLenth; i++) {
-            var date = response.RTNDATA.ROW[i].DATE;
-            var tmp = date.split(" ",1);
-            var fDate = tmp[0].replace(/\//g,"");
-            $('footer').append('<div class=\"floatL\" mackData="' + i + '">' + fDate + '</div>');
+          if(response.RTNDATA.ROW === "object"){
 
+            viewMackupDate(response.RTNDATA.ROW[0],response.RTNDATA.ROW[1]);
+            mackupData = response ;
+
+            $('.fdate').empty();
+            var RDataLenth = response.RTNDATA.ROW.length;
+
+            for (var i = 0; i < RDataLenth; i++) {
+              var date = response.RTNDATA.ROW[i].DATE;
+              var tmp = date.split(" ",1);
+              var fDate = tmp[0].replace(/\//g,"");
+              $('footer').append('<div class=\"floatL\" mackdata="' + i + '">' + fDate + '</div>');
+              if (i === 2) { break; }
+
+            }
+            $("div[mackdata='0']").click(function () {
+              viewMackupDate(mackupData.RTNDATA.ROW[0],mackupData.RTNDATA.ROW[1]);
+            });
+            $("div[mackdata='1']").click(function () {
+              console.log("mackupData");
+              viewMackupDate(mackupData.RTNDATA.ROW[1],mackupData.RTNDATA.ROW[2]);
+            });
+            $("div[mackdata='2']").click(function () {
+              viewMackupDate(mackupData.RTNDATA.ROW[2],mackupData.RTNDATA.ROW[3]);
+            });
+          }else{
+            var b = new Object();
+            viewMackupDate(response.RTNDATA.ROW,b);
+            var sdate = response.RTNDATA.ROW.DATE;
+            var stmp = sdate.split(" ",1);
+            var sfDate = stmp[0].replace(/\//g,"");
+            $('.fdate').empty();
+            $('footer').append('<div class=\"floatL\" mackdata="' + 1 + '">' + sfDate + '</div>');
           }
-
-
         }
       }
     });
@@ -114,8 +158,7 @@ $(document).ready(function(){
 
 
 
-
-  //vipid decode EX：8801010002 + 8649450111= 6440460113  //?vipids=6540460114
+  //vipid decode EX：8801010002 + 8649450111= 6440460113  //?vipids=6540460116  5940650165
   function getvipids() {
     var tmpUrl = window.location.search;
     if(tmpUrl ===""){
@@ -194,9 +237,13 @@ function detectIE() {
   return false;
 }
 
-function viewMaintainDate(data) {
+//skincare
+function viewMaintainDate(data,pdata) {
 
-  var result = new postMaintainData(data);
+  var result = new postMaintainData(data,pdata);
+
+  getbcName(result.bcid);
+
   $('.ssubject').text(result.subject);
   $('.sbasc_remover').text(result.basc_remover);
   $('.sbasc_clean').text(result.basc_clean);
@@ -215,9 +262,7 @@ function viewMaintainDate(data) {
   $('.sother_c').text(result.other_c);
   $('.sother_t').text(result.other_t);
 
-
-
-
+//檢測
   $('.snatural_c').text(result.natural_c);
   $('.sacquired_c').text(result.acquired_c);
   $('.smoisture').text(result.moisture);
@@ -234,60 +279,96 @@ function viewMaintainDate(data) {
   $('.sskin_light_c').text(result.skin_light_c);
   $('.sskin_light').text(result.skin_light);
 
-
+  $('.ssuggestion').empty();
   $('.ssuggestion').append('<span>' + result.suggestion.replace(/\n/g,'<br/>') + '<span>');
 
   var year = "";
   for (var i = 0; i < 4; i++) {
      year += result.skin_water_url[i];
   }
-
+  $('.maintain01').empty();
   $('.maintain01').append('<img style="width: 55%" src="../image/skincare/'+ year+'/'+result.skin_water_url+'.png">');
   // $('.maintain01').append('<image src="../image/skincare/'+ year+'/'+result.makeup_url+'.png">');
 
 
 
-  $("div[data='text']").each(function () {
+  $("div[data='skincare']").each(function () {
 
     if($(this).text() === ""){
       $(this).css("background-color","white");
       $(this).siblings(".arrow").removeClass();
+      $(this).siblings("label").children('span').css("background-image","none");
     }else{
+      $(this).css("background-color","#fffae9");
       $(this).siblings("label").children('span').css({"background-image":"url(../img/check.png)","background-repeat":"no-repeat","background-position": "0px 0px" ,"background-size":"16px"});
     }
 
   });
+
+
+  //前一次紀錄
+  $('.spmoisture').text(result.pmoisture);
+  $('.spsebum').text(result.psebum);
+  $('.sptension').text(result.ptension);
+  $('.spelasticity').text(result.pelasticity);
+  $('.spsg').text(result.psg);
+  $('.sptransparency').text(result.ptransparency);
+  $('.sptransparency_c').text(result.ptransparency_c);
+  $('.sphorny').text(result.phorny);
+  $('.spskin_level').text(result.pskin_level);
+
+
+}
+
+function getbcName(data) {
+  $.ajax({
+    type: "POST",
+    url: "getBcName.php",
+    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+    data: {
+      BCID: data
+    },
+    dataType: "json",
+    timeout: 3000,
+    error: function(xhr) {
+      if(xhr.status === 0){
+        alert( "Error CODE" + xhr.status + "\n" + "網路連線過慢，請稍後再試")
+      }else{
+        alert('Ajax request 發生錯誤' + "\n" + "Error CODE" + xhr.status);
+      }
+    },
+    success: function(response) {
+      var bcname = $('.bcname');
+      bcname.text();
+      bcname.text(response.RTNDATA1.ROW.BCNAME);
+    }
+  })
+
 }
 
 
 
-
-
-
-
-
-
-
-
-function postMaintainData(data) {
+function postMaintainData(data, pdata) {
   this.elasticity = elasticityEX(data.ELASTICITY);
   this.transparency_c = transparencyEX(data.TRANSPARENCY_C);
-  this.skinLevel = skinLevelEX(data.SKIN_LEVEL);
+  this.skin_level = skinLevelEX(data.SKIN_LEVEL);
   this.moisture = data.MOISTURE === "0" || data.MOISTURE === undefined ? "" : data.MOISTURE ;
   this.sebum = data.SEBUM === "0" || data.SEBUM === undefined ? "" : data.SEBUM ;
   this.tension = data.TENSION === "0" || data.TENSION === undefined ? "" : data.TENSION ;
   this.sg = data.SG === "0" || data.SG === undefined ? "" : data.SG ;
   this.transparency = data.TRANSPARENCY === "0" || data.TRANSPARENCY === undefined ? "" : data.TRANSPARENCY ;
   this.horny = data.HORNY === "0" || data.HORNY === undefined ? "" : data.HORNY ;
-  this.skin_color_c = data.SKIN_COLOR_C === "0" || data.SKIN_COLOR_C === undefined ? "" : data.SKIN_COLOR_C ;
+  this.skin_color_c = skin_color_cEX(data.SKIN_COLOR_C);
   this.skin_light_c = skin_light_cEX(data.SKIN_LIGHT_C);
   this.skin_light = data.SKIN_LIGHT === "0" || data.SKIN_LIGHT === undefined ? "" : data.SKIN_LIGHT ;
 
   this.natural_c = naturalEX(data.NATURAL_C);
   this.acquired_c = acquiredEX(data.ACQUIRED_C);
 
+  this.bcid = data.BCID;
 
-  this.subject = data.SUBJECT;
+
+  this.subject = typeof data.SUBJECT === "object" || data.SUBJECT === undefined ? "" : data.SUBJECT;
   this.basc = data.BASC;
   this.basc_remover = removeEx(data.BASC_REMOVER);
   this.basc_clean = cleanEx(data.BASC_CLEAN);
@@ -305,11 +386,21 @@ function postMaintainData(data) {
   this.other_c = specEx(data.OTHER_C);
   this.other_t = otherEx(data.OTHER_T);
 
-  this.suggestion = data.SUGGESTION;
+  this.suggestion = typeof data.SUGGESTION === "object" || data.SUGGESTION === undefined ? "" : data.SUGGESTION;
 
   this.makeup_url = data.MAKEUP_URL;
   this.skin_water_url = data.SKIN_WATER_URL;
 
+  //前一次紀錄
+  this.pelasticity = pdata.ELASTICITY ?  elasticityEX(pdata.ELASTICITY) : "無";
+  this.ptransparency_c = pdata.TRANSPARENCY_C ? transparencyEX(pdata.TRANSPARENCY_C) : "無選取" ;
+  this.pskin_level = pdata.SKIN_LEVEL ? skinLevelEX(pdata.SKIN_LEVEL) : "無選取";
+  this.pmoisture = pdata.MOISTURE === "0" || pdata.MOISTURE === undefined ? "" : pdata.MOISTURE ;
+  this.psebum = pdata.SEBUM === "0" || pdata.SEBUM === undefined ? "" : pdata.SEBUM ;
+  this.ptension = pdata.TENSION === "0" || pdata.TENSION === undefined ? "" : pdata.TENSION ;
+  this.psg = pdata.SG === "0" || pdata.SG === undefined ? "" : pdata.SG ;
+  this.ptransparency = pdata.TRANSPARENCY === "0" || pdata.TRANSPARENCY === undefined ? "" : pdata.TRANSPARENCY ;
+  this.phorny = pdata.HORNY === "0" || pdata.HORNY === undefined ? "" : pdata.HORNY ;
 }
 
 
@@ -1053,9 +1144,170 @@ function otherEx(tmp) {
     case "3505":
       tmp = "按摩水凝露N";
       break;
-
-
   }
 
   return(tmp);
+}
+
+
+//mackup
+function viewMackupDate(data,pdata) {
+
+  var result = new postMackupData(data, pdata);
+
+  getbcName(result.bcid);
+
+  $('.msubject').text(result.subject);
+
+  $('.txt').empty();
+
+  if (result.makeup_txt_1 !== "") {$('.txt').append("<div class='tip'>"+ result.makeup_txt_1 +"<div>");}
+  if (result.makeup_txt_2 !== "") {$('.txt').append("<div class='tip'>"+ result.makeup_txt_2 +"<div>");}
+  if (result.makeup_txt_3 !== "") {$('.txt').append("<div class='tip'>"+ result.makeup_txt_3 +"<div>");}
+  if (result.makeup_txt_4 !== "") {$('.txt').append("<div class='tip'>"+ result.makeup_txt_4 +"<div>");}
+  if (result.makeup_txt_5 !== "") {$('.txt').append("<div class='tip'>"+ result.makeup_txt_5 +"<div>");}
+  if (result.makeup_txt_6 !== "") {$('.txt').append("<div class='tip'>"+ result.makeup_txt_6 +"<div>");}
+  if (result.makeup_txt_7 !== "") {$('.txt').append("<div class='tip'>"+ result.makeup_txt_7 +"<div>");}
+  if (result.makeup_txt_8 !== "") {$('.txt').append("<div class='tip'>"+ result.makeup_txt_8 +"<div>");}
+  if (result.makeup_txt_9 !== "") {$('.txt').append("<div class='tip'>"+ result.makeup_txt_9 +"<div>");}
+  if (result.makeup_txt_10 !== "") {$('.txt').append("<div class='tip'>"+ result.makeup_txt_10 +"<div>");}
+
+
+
+
+  //檢測資料
+  $('.mskin_color_c').text(result.skin_color_c);
+  $('.mskin_light_c').text(result.skin_light_c);
+  $('.mskin_light_o').text(result.skin_light_o);
+
+  $('.mcheek_color').text(result.cheek_color);
+  $('.mnatural_c').text(result.natural_c);
+  $('.macquired_c').text(result.acquired_c);
+
+
+  $('.mmoisture').text(result.moisture);
+  $('.msebum').text(result.sebum);
+  $('.mtension').text(result.tension);
+  $('.melasticity').text(result.elasticity);
+  $('.msg').text(result.sg);
+  $('.mtransparency').text(result.transparency);
+  $('.mtransparency_c').text(result.transparency_c);
+  $('.mhorny').text(result.horny);
+  $('.mskin_level').text(result.skin_level);
+
+
+  $('.cream_f').val(result.cream_f);
+  $('.cosmetics_f').val(result.cosmetics_f);
+  $('.water_f').val(result.water_f);
+  $('.powder_f').val(result.powder_f);
+  $('.foundation_f').val(result.foundation_f);
+  $('.pressed_f').val(result.pressed_f);
+
+
+
+  $('.mmakup_txt_c').empty();
+  $('.mmakup_txt_c').append('<span>' + result.makup_txt_c.replace(/\n/g, '<br/>') + '<span>');
+
+  var year = "";
+  for (var i = 0; i < 4; i++) {
+    year += result.skin_water_url[i];
+  }
+  $('.mskin_water_url').empty();
+  $('.mskin_water_url').append('<img style="width: 110%" src="../image/mackup/' + year + '/' + result.skin_water_url + '.png">');
+
+  $('.mmakeup_url').empty();
+  $('.mmakeup_url').append('<img style="width: 124%" src="../image/mackup/' + year + '/' + result.makeup_url + '.png">');
+
+  $('.mskin_url').empty();
+  $('.mskin_url').append('<img style="width: 104%" src="../image/mackup/' + year + '/' + result.skin_url + '.png">');
+
+
+
+  $("input[data='mackup']").each(function(){
+
+    if($(this).val() === "1"){
+      $(this).next("label").children('span').css({"background-image":"url(../img/check.png)","background-repeat":"no-repeat","background-position": "0px 2px" ,"background-size":"12px"});
+    }else{
+      $(this).next("label").children('span').css("background-image","none");
+    }
+
+  });
+
+
+
+  //前一次資料
+  $('.mpmoisture').text(result.mpmoisture);
+  $('.mpsebum').text(result.mpsebum);
+  $('.mptension').text(result.mptension);
+  $('.mpelasticity').text(result.mpelasticity);
+  $('.mpsg').text(result.mpsg);
+  $('.mptransparency').text(result.mptransparency);
+  $('.mptransparency_c').text(result.mptransparency_c);
+  $('.mphorny').text(result.mphorny);
+  $('.mpskin_level').text(result.mpskin_level);
+
+}
+
+
+function postMackupData(data, pdata) {
+  this.skin_color_c = skin_color_cEX(data.SKIN_COLOR_C);
+  this.skin_light_c = skin_light_cEX(data.SKIN_LIGHT_C);
+  this.skin_light_o = data.SKIN_LIGHT_O === "0" || data.SKIN_LIGHT_O === undefined ? "" : data.SKIN_LIGHT_O ;
+
+  this.cheek_color = data.CHEEK_COLOR === "0" || data.CHEEK_COLOR === undefined ? "" : data.CHEEK_COLOR;
+  this.natural_c = naturalEX(data.NATURAL_C);
+  this.acquired_c = acquiredEX(data.ACQUIRED_C);
+
+  this.moisture = data.MOISTURE === "0" || data.MOISTURE === undefined ? "" : data.MOISTURE;
+  this.sebum = data.SEBUM === "0" || data.SEBUM === undefined ? "" : data.SEBUM;
+  this.tension = data.TENSION === "0" || data.TENSION === undefined ? "" : data.TENSION;
+  this.elasticity = elasticityEX(data.ELASTICITY);
+  this.sg = data.SG === "0" || data.SG === undefined ? "" : data.SG ;
+  this.transparency = data.TRANSPARENCY === "0" || data.TRANSPARENCY === undefined ? "" : data.TRANSPARENCY;
+  this.transparency_c = transparencyEX(data.TRANSPARENCY_C);
+  this.horny = data.HORNY === "0" || data.HORNY === undefined ? "" : data.HORNY ;
+  this.skin_level = skinLevelEX(data.SKIN_LEVEL);
+
+
+  this.bcid = data.BCID;
+
+
+  this.subject = typeof data.SUBJECT === "object" || data.SUBJECT === undefined ? "" : data.SUBJECT;
+
+
+  this.makeup_txt_1 = typeof data.MAKUP_TXT_1 === "object" || data.MAKUP_TXT_1 === undefined ? "" : data.MAKUP_TXT_1;
+  this.makeup_txt_2 = typeof data.MAKUP_TXT_2 === "object" || data.MAKUP_TXT_2 === undefined ? "" : data.MAKUP_TXT_2;
+  this.makeup_txt_3 = typeof data.MAKUP_TXT_3 === "object" || data.MAKUP_TXT_3 === undefined ? "" : data.MAKUP_TXT_3;
+  this.makeup_txt_4 = typeof data.MAKUP_TXT_4 === "object" || data.MAKUP_TXT_4 === undefined ? "" : data.MAKUP_TXT_4;
+  this.makeup_txt_5 = typeof data.MAKUP_TXT_5 === "object" || data.MAKUP_TXT_5 === undefined ? "" : data.MAKUP_TXT_5;
+  this.makeup_txt_6 = typeof data.MAKUP_TXT_6 === "object" || data.MAKUP_TXT_6 === undefined ? "" : data.MAKUP_TXT_6;
+  this.makeup_txt_7 = typeof data.MAKUP_TXT_7 === "object" || data.MAKUP_TXT_7 === undefined ? "" : data.MAKUP_TXT_7;
+  this.makeup_txt_8 = typeof data.MAKUP_TXT_8 === "object" || data.MAKUP_TXT_8 === undefined ? "" : data.MAKUP_TXT_8;
+  this.makeup_txt_9 = typeof data.MAKUP_TXT_9 === "object" || data.MAKUP_TXT_9 === undefined ? "" : data.MAKUP_TXT_9;
+  this.makeup_txt_10 = typeof data.MAKUP_TXT_10 === "object" || data.MAKUP_TXT_10 === undefined ? "" : data.MAKUP_TXT_10;
+
+  //底妝
+  this.makup_txt_c = typeof data.MAKUP_TXT_C === "object" || data.MAKUP_TXT_C === undefined ? "" : data.MAKUP_TXT_C;
+
+  this.makeup_url = data.MAKEUP_URL;
+  this.skin_water_url = data.SKIN_WATER_URL;
+  this.skin_url = data.SKIN_URL;
+
+  this.cream_f = data.CREAM_F === "0" || data.CREAM_F === undefined ? "0" : data.CREAM_F ;
+  this.cosmetics_f = data.COSMETICS_F === "0" || data.COSMETICS_F === undefined ? "0" : data.COSMETICS_F ;
+  this.water_f = data.WATER_F === "0" || data.WATER_F === undefined ? "0" : data.WATER_F ;
+  this.powder_f = data.POWDER_F === "0" || data.POWDER_F === undefined ? "0" : data.POWDER_F ;
+  this.foundation_f = data.FOUNDATION_F === "0" || data.FOUNDATION_F === undefined ? "0" : data.FOUNDATION_F ;
+  this.pressed_f = data.PRESSED_F === "0" || data.PRESSED_F === undefined ? "0" : data.PRESSED_F ;
+
+  //前一次紀錄
+  this.mpmoisture = pdata.MOISTURE === "0" || pdata.MOISTURE === undefined ? "" : pdata.MOISTURE;
+  this.mpsebum = pdata.SEBUM === "0" || pdata.SEBUM === undefined ? "" : pdata.SEBUM;
+  this.mptension = pdata.TENSION === "0" || pdata.TENSION === undefined ? "" : pdata.TENSION;
+  this.mpelasticity = pdata.ELASTICITY ? elasticityEX(pdata.ELASTICITY) : "無";
+  this.mpsg = pdata.SG === "0" || pdata.SG === undefined ? "" : pdata.SG ;
+  this.mptransparency = pdata.TRANSPARENCY === "0" || pdata.TRANSPARENCY === undefined ? "" : pdata.TRANSPARENCY;
+  this.mptransparency_c = pdata.TRANSPARENCY_C ? transparencyEX(pdata.TRANSPARENCY_C) : "無選取";
+  this.mphorny = pdata.HORNY === "0" || pdata.HORNY === undefined ? "" : pdata.HORNY ;
+  this.mpskin_level = pdata.SKIN_LEVEL ? skinLevelEX(pdata.SKIN_LEVEL) : "無選取";
 }

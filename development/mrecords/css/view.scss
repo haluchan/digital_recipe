@@ -409,7 +409,7 @@ body[page=post] {
 		
 						.tension{
 							td:nth-child(3), td:nth-child(4){
-								font-size: 16px;
+								font-size: 14px;
 								padding: 0;
 								>div:first-child{
 									width: 22px;
@@ -726,13 +726,15 @@ body[page=post] {
 						.mL{
 							width: 128px;
 							height: 85px;
-							background-color: lightskyblue;
+							padding-top: 10px;
+							//background-color: lightskyblue;
 						}
 		
 						.mR{
 							width: 160px;
 							height: 85px;
-							background-color: mistyrose;
+							padding-top: 10px;
+							//background-color: mistyrose;
 						}
 					}
 	

@@ -301,7 +301,7 @@ body[page=post] {
             width: 45%;
             margin-left: 0px; }
           body[page=post] #step2 #main section .R table.form .tension td:nth-child(3), body[page=post] #step2 #main section .R table.form .tension td:nth-child(4) {
-            font-size: 16px;
+            font-size: 14px;
             padding: 0; }
             body[page=post] #step2 #main section .R table.form .tension td:nth-child(3) > div:first-child, body[page=post] #step2 #main section .R table.form .tension td:nth-child(4) > div:first-child {
               width: 22px;
@@ -512,11 +512,11 @@ body[page=post] {
         body[page=post] #step2 #main .makeup .R .makeup02 .mL {
           width: 128px;
           height: 85px;
-          background-color: lightskyblue; }
+          padding-top: 10px; }
         body[page=post] #step2 #main .makeup .R .makeup02 .mR {
           width: 160px;
           height: 85px;
-          background-color: mistyrose; }
+          padding-top: 10px; }
         body[page=post] #step2 #main .makeup .R form {
           margin-top: 2px;
           padding-left: 5px; }

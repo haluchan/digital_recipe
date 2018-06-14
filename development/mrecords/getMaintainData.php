@@ -54,7 +54,7 @@ if(isset($_REQUEST["VIPIDS"])){
                 "ROW" => array(
                     "MARKNO" => $Markno,
                     "VIPIDS" => $_REQUEST["VIPIDS"],
-                    "TIMES" => "3"))
+                    "TIMES" => "4"))
         )
     );
 
@@ -121,7 +121,7 @@ if(isset($_REQUEST["VIPIDS"])){
         $bcXml = simplexml_load_string($result->WS_GETIPSASKINCAREResult);
 
 //        echo $result->WS_GETBCSHCUSTNOResult;
-        header("content-type:text/xml");
+        header("content-type:application/json");
 
         echo json_encode($bcXml);
 
@@ -133,7 +133,7 @@ if(isset($_REQUEST["VIPIDS"])){
 
 }else{
 
-    header("content-type:text/xml");
+    header("content-type:application/json");
 
     echo '<RTNCODE>1</RTNCODE>';
 }

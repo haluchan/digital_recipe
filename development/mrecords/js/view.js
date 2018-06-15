@@ -49,7 +49,7 @@ $(document).ready(function(){
         }else{
           $('.empty').css("display","none");
           $('.maintain').css("display","block");
-          if(typeof response.RTNDATA.ROW === "object") {
+          if(response.RTNDATA.ROW.hasOwnProperty("length")) {
 
             viewMaintainDate(response.RTNDATA.ROW[0], response.RTNDATA.ROW[1]);
             maintainData = response;
@@ -120,7 +120,7 @@ $(document).ready(function(){
         }else{
           $('.empty').css("display","none");
           $('.makeup').css("display","block");
-          if(typeof response.RTNDATA.ROW === "object"){
+          if(response.RTNDATA.ROW.hasOwnProperty("length")){
 
             viewMackupDate(response.RTNDATA.ROW[0],response.RTNDATA.ROW[1]);
             mackupData = response ;

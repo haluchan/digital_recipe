@@ -23,6 +23,7 @@ $(document).ready(function(){
 
   var vipid = getvipids();
   var mackupData , maintainData;
+  var obj = new Object();
 
   $('li[data="maintain"]').click(vipid,function () {
     $.ajax({
@@ -67,19 +68,31 @@ $(document).ready(function(){
             }
 
             $("div[maindata='0']").click(function () {
-              viewMaintainDate(maintainData.RTNDATA.ROW[0], maintainData.RTNDATA.ROW[1]);
+              if(maintainData.RTNDATA.ROW[1] === undefined){
+                viewMaintainDate(maintainData.RTNDATA.ROW[0], obj);
+              }else{
+                viewMaintainDate(maintainData.RTNDATA.ROW[0], maintainData.RTNDATA.ROW[1]);
+              }
             });
             $("div[maindata='1']").click(function () {
-              console.log("maintainData");
-              viewMaintainDate(maintainData.RTNDATA.ROW[1], maintainData.RTNDATA.ROW[2]);
+              if(maintainData.RTNDATA.ROW[2] === undefined){
+                viewMaintainDate(maintainData.RTNDATA.ROW[1], obj);
+              }else{
+                viewMaintainDate(maintainData.RTNDATA.ROW[1], maintainData.RTNDATA.ROW[2]);
+              }
             });
             $("div[maindata='2']").click(function () {
-              viewMaintainDate(maintainData.RTNDATA.ROW[2], maintainData.RTNDATA.ROW[3]);
+              if(maintainData.RTNDATA.ROW[3] === undefined){
+                viewMaintainDate(maintainData.RTNDATA.ROW[2], obj);
+              }else{
+                viewMaintainDate(maintainData.RTNDATA.ROW[2], maintainData.RTNDATA.ROW[3]);
+              }
+
             });
 
           }else{
-            var a = new Object();
-            viewMaintainDate(response.RTNDATA.ROW,a);
+
+            viewMaintainDate(response.RTNDATA.ROW,obj);
             var sdate = response.RTNDATA.ROW.DATE;
             var stmp = sdate.split(" ",1);
             var sfDate = stmp[0].replace(/\//g,"");
@@ -137,18 +150,30 @@ $(document).ready(function(){
 
             }
             $("div[mackdata='0']").click(function () {
-              viewMackupDate(mackupData.RTNDATA.ROW[0],mackupData.RTNDATA.ROW[1]);
+              if(mackupData.RTNDATA.ROW[1] === undefined){
+                viewMackupDate(mackupData.RTNDATA.ROW[0],obj);
+              }else{
+                viewMackupDate(mackupData.RTNDATA.ROW[0],mackupData.RTNDATA.ROW[1]);
+              }
             });
             $("div[mackdata='1']").click(function () {
-              console.log("mackupData");
-              viewMackupDate(mackupData.RTNDATA.ROW[1],mackupData.RTNDATA.ROW[2]);
+              if(mackupData.RTNDATA.ROW[2] === undefined){
+                viewMackupDate(mackupData.RTNDATA.ROW[1],obj);
+              }else{
+                viewMackupDate(mackupData.RTNDATA.ROW[1],mackupData.RTNDATA.ROW[2]);
+              }
+
             });
             $("div[mackdata='2']").click(function () {
-              viewMackupDate(mackupData.RTNDATA.ROW[2],mackupData.RTNDATA.ROW[3]);
+
+              if(mackupData.RTNDATA.ROW[3] === undefined){
+                viewMackupDate(mackupData.RTNDATA.ROW[2],obj);
+              }else{
+                viewMackupDate(mackupData.RTNDATA.ROW[2],mackupData.RTNDATA.ROW[3]);
+              }
             });
           }else{
-            var b = new Object();
-            viewMackupDate(response.RTNDATA.ROW,b);
+            viewMackupDate(response.RTNDATA.ROW,obj);
             var sdate = response.RTNDATA.ROW.DATE;
             var stmp = sdate.split(" ",1);
             var sfDate = stmp[0].replace(/\//g,"");
@@ -162,7 +187,7 @@ $(document).ready(function(){
 
 
 
-  //vipid decode EX：8801010002 + 8649450111= 6440460113  //?vipids=6540460117  5940650166
+  //vipid decode EX：8801010002 + 8649450111= 6440460113  //?vipids=6540460117  5940650166 5540460145
   function getvipids() {
     var tmpUrl = window.location.search;
     if(tmpUrl ===""){

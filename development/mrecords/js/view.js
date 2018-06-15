@@ -7,7 +7,7 @@ $(document).ready(function(){
     $('nav li').removeClass('active');
     $('nav li[data="'+page+'"]').addClass('active');
     $('#step2').show();
-    $('.'+page).show();
+    // $('.'+page).show();
   });
 
   $('nav li').click(function(){
@@ -16,7 +16,7 @@ $(document).ready(function(){
     page = $(this).attr('data');
     //console.log(page);
     $('section').hide();
-    $('.'+page).show();
+    // $('.'+page).show();
 
   });
 
@@ -43,11 +43,13 @@ $(document).ready(function(){
       },
       success: function(response) {
         console.log(response);
-        if(response.WSTATUS.ROW.RTNCODE !== "0"){
-          $('.empty').css("display","none");
+        if(!response.hasOwnProperty("RTNDATA")){
+          $('.maintain').css("display","none");
+          $('.empty').css("display","block");
         }else{
-
-          if(response.RTNDATA.ROW === "object") {
+          $('.empty').css("display","none");
+          $('.maintain').css("display","block");
+          if(typeof response.RTNDATA.ROW === "object") {
 
             viewMaintainDate(response.RTNDATA.ROW[0], response.RTNDATA.ROW[1]);
             maintainData = response;
@@ -112,11 +114,13 @@ $(document).ready(function(){
       },
       success: function(response) {
         console.log(response);
-        if(response.WSTATUS.ROW.RTNCODE !== "0"){
-          $('.empty').css("display","none");
+        if(!response.hasOwnProperty("RTNDATA")){
+          $('.makeup').css("display","none");
+          $('.empty').css("display","block");
         }else{
-
-          if(response.RTNDATA.ROW === "object"){
+          $('.empty').css("display","none");
+          $('.makeup').css("display","block");
+          if(typeof response.RTNDATA.ROW === "object"){
 
             viewMackupDate(response.RTNDATA.ROW[0],response.RTNDATA.ROW[1]);
             mackupData = response ;
@@ -158,7 +162,7 @@ $(document).ready(function(){
 
 
 
-  //vipid decode EX：8801010002 + 8649450111= 6440460113  //?vipids=6540460116  5940650165
+  //vipid decode EX：8801010002 + 8649450111= 6440460113  //?vipids=6540460117  5940650166
   function getvipids() {
     var tmpUrl = window.location.search;
     if(tmpUrl ===""){
@@ -297,9 +301,10 @@ function viewMaintainDate(data,pdata) {
     if($(this).text() === ""){
       $(this).css("background-color","white");
       $(this).siblings(".arrow").removeClass();
-      $(this).siblings("label").children('span').css("background-image","none");
+      $(this).prev("label").children('span').css("background-image","none");
     }else{
       $(this).css("background-color","#fffae9");
+      $(this).prev("label").children('span').css({"background-image":"url(../img/check.png)","background-repeat":"no-repeat","background-position": "0px 0px" ,"background-size":"16px"});
       $(this).siblings("label").children('span').css({"background-image":"url(../img/check.png)","background-repeat":"no-repeat","background-position": "0px 0px" ,"background-size":"16px"});
     }
 
@@ -392,15 +397,15 @@ function postMaintainData(data, pdata) {
   this.skin_water_url = data.SKIN_WATER_URL;
 
   //前一次紀錄
-  this.pelasticity = pdata.ELASTICITY ?  elasticityEX(pdata.ELASTICITY) : "無";
-  this.ptransparency_c = pdata.TRANSPARENCY_C ? transparencyEX(pdata.TRANSPARENCY_C) : "無選取" ;
-  this.pskin_level = pdata.SKIN_LEVEL ? skinLevelEX(pdata.SKIN_LEVEL) : "無選取";
   this.pmoisture = pdata.MOISTURE === "0" || pdata.MOISTURE === undefined ? "" : pdata.MOISTURE ;
   this.psebum = pdata.SEBUM === "0" || pdata.SEBUM === undefined ? "" : pdata.SEBUM ;
   this.ptension = pdata.TENSION === "0" || pdata.TENSION === undefined ? "" : pdata.TENSION ;
+  this.pelasticity = pdata.ELASTICITY ?  elasticityEX(pdata.ELASTICITY) : "無";
   this.psg = pdata.SG === "0" || pdata.SG === undefined ? "" : pdata.SG ;
   this.ptransparency = pdata.TRANSPARENCY === "0" || pdata.TRANSPARENCY === undefined ? "" : pdata.TRANSPARENCY ;
+  this.ptransparency_c = pdata.TRANSPARENCY_C ? transparencyEX(pdata.TRANSPARENCY_C) : "無選取" ;
   this.phorny = pdata.HORNY === "0" || pdata.HORNY === undefined ? "" : pdata.HORNY ;
+  this.pskin_level = pdata.SKIN_LEVEL ? skinLevelEX(pdata.SKIN_LEVEL) : "無選取";
 }
 
 
@@ -424,7 +429,6 @@ function elasticityEX(tmp) {
 
 
   }
-
   return(tmp);
 }
 
@@ -462,7 +466,6 @@ function skinLevelEX(tmp) {
   }
 
   return(tmp);
-
 }
 
 function transparencyEX(tmp) {
@@ -503,7 +506,6 @@ function transparencyEX(tmp) {
   }
 
   return(tmp);
-
 }
 
 function skin_color_cEX(tmp) {
@@ -533,8 +535,6 @@ function skin_color_cEX(tmp) {
   }
 
   return(tmp);
-
-
 }
 
 function skin_light_cEX(tmp) {
@@ -562,10 +562,7 @@ function skin_light_cEX(tmp) {
   }
 
   return(tmp);
-
-
 }
-
 
 function acquiredEX(tmp) {
 
@@ -733,7 +730,6 @@ function removeEx(tmp) {
   return(tmp);
 }
 
-
 function cleanEx(tmp){
 
   switch(tmp) {
@@ -755,8 +751,6 @@ function cleanEx(tmp){
 
   return(tmp);
 }
-
-
 
 function wetEx(tmp) {
 
@@ -819,8 +813,6 @@ function wetEx(tmp) {
   return(tmp);
 }
 
-
-
 function hornyEx(tmp) {
 
   switch(tmp) {
@@ -864,10 +856,6 @@ function hornyEx(tmp) {
 
 
 }
-
-
-
-
 
 function dryingEx(tmp) {
 
@@ -919,9 +907,6 @@ function dryingEx(tmp) {
 
 }
 
-
-
-
 function whiteningEx(tmp) {
 
   switch(tmp) {
@@ -953,8 +938,6 @@ function whiteningEx(tmp) {
 
 
 }
-
-
 
 function elasticityEx(tmp) {
 
@@ -1006,9 +989,6 @@ function elasticityEx(tmp) {
 
 }
 
-
-
-
 function uvEx(tmp) {
 
   switch(tmp) {
@@ -1030,8 +1010,6 @@ function uvEx(tmp) {
   return(tmp);
 
 }
-
-
 
 function otherEx(tmp) {
 
@@ -1171,9 +1149,6 @@ function viewMackupDate(data,pdata) {
   if (result.makeup_txt_8 !== "") {$('.txt').append("<div class='tip'>"+ result.makeup_txt_8 +"<div>");}
   if (result.makeup_txt_9 !== "") {$('.txt').append("<div class='tip'>"+ result.makeup_txt_9 +"<div>");}
   if (result.makeup_txt_10 !== "") {$('.txt').append("<div class='tip'>"+ result.makeup_txt_10 +"<div>");}
-
-
-
 
   //檢測資料
   $('.mskin_color_c').text(result.skin_color_c);

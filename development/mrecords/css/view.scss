@@ -43,21 +43,23 @@ body[page=post] {
 	font-family: 'Noto Sans TC', sans-serif;
 	position: relative;
 	width: 870px;
-	height: 670px;
-	padding: 40px 30px;
+	height: 590px;
+	padding: 0 30px;
 	background-color: #fef8e5;
 	font-weight: 300;
 	font-size: 14px;
+	overflow: hidden;
 
 	#step1{
+		position: relative;
+		padding-top: 14%;	
 		ul{
 			text-align: center;
-			position: absolute;
+			//position: absolute;
 			width: 100%;
-			top: 50%;
-			left: 50%;
-			-webkit-transform: translate(-50%,-50%);
-			        transform: translate(-50%,-50%);
+			// left: 50%;
+			// -webkit-transform: translate(-50%,-50%);
+			//         transform: translate(-50%,-50%);
 			li{
 				position: relative;
 				display: inline-block;
@@ -525,7 +527,7 @@ body[page=post] {
 							font-size: 0.925em;
 						}
 					}
-					
+
 					.check_basic{
 						height: 55px;
 						margin-top: 2px;

@@ -39,42 +39,41 @@ body[page=post] {
   font-family: 'Noto Sans TC', sans-serif;
   position: relative;
   width: 870px;
-  height: 670px;
-  padding: 40px 30px;
+  height: 590px;
+  padding: 0 30px;
   background-color: #fef8e5;
   font-weight: 300;
-  font-size: 14px; }
-  body[page=post] #step1 ul {
-    text-align: center;
-    position: absolute;
-    width: 100%;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); }
-    body[page=post] #step1 ul li {
-      position: relative;
-      display: inline-block;
-      cursor: pointer;
-      width: 370px;
-      height: 370px;
-      line-height: 350px;
-      font-size: 3em;
-      font-weight: 500;
-      border: 1px solid #666;
-      border-radius: 20px;
-      text-align: center; }
-      body[page=post] #step1 ul li:first-child {
-        margin-right: 20px; }
-      body[page=post] #step1 ul li span {
-        position: absolute;
-        line-height: 1.5;
-        width: 100%;
-        top: 55%;
-        left: 50%;
-        -webkit-transform: translateX(-50%);
-        transform: translateX(-50%);
-        font-size: 0.7em; }
+  font-size: 14px;
+  overflow: hidden; }
+  body[page=post] #step1 {
+    position: relative;
+    padding-top: 14%; }
+    body[page=post] #step1 ul {
+      text-align: center;
+      width: 100%; }
+      body[page=post] #step1 ul li {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        width: 370px;
+        height: 370px;
+        line-height: 350px;
+        font-size: 3em;
+        font-weight: 500;
+        border: 1px solid #666;
+        border-radius: 20px;
+        text-align: center; }
+        body[page=post] #step1 ul li:first-child {
+          margin-right: 20px; }
+        body[page=post] #step1 ul li span {
+          position: absolute;
+          line-height: 1.5;
+          width: 100%;
+          top: 55%;
+          left: 50%;
+          -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+          font-size: 0.7em; }
   body[page=post] #step2 {
     display: none; }
     body[page=post] #step2 header {

@@ -17,6 +17,7 @@ $(document).ready(function(){
     //console.log(page);
     $('section').hide();
     // $('.'+page).show();
+    $('.fdate').empty();
 
   });
 
@@ -187,7 +188,7 @@ $(document).ready(function(){
 
 
 
-  //vipid decode EX：8801010002 + 8649450111= 6440460113  //?vipids=6540460117  5940650166 5540460145
+  //vipid decode EX：8801010002 + 8649450111= 6540460113  //?vipids=6540460117  5940650166 5540460145
   function getvipids() {
     var tmpUrl = window.location.search;
     if(tmpUrl ===""){

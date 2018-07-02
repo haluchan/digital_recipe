@@ -198,7 +198,7 @@ $(document).ready(function(){
       var vipid = vipidPart[1];
       var vipcode = "86494501";
       var fullDate = new Date();
-      var today = fullDate.getDate();
+      var today = (fullDate.getDate()<10 ? '0' : '')+fullDate.getDate();
       var vipcodeDay = vipcode + today;
       var vipArry = [];
       var tmpArry =[];

@@ -47,11 +47,9 @@ function array2xml($data, $tag = '')
     return $xml;
 }
 
-if(isset($_REQUEST["TELM"])){
+if(isset($_REQUEST["TELM"] , $_REQUEST["MARKNO"] , $_REQUEST["CUSTNO"] , $_REQUEST["VIPIDS"] , $_REQUEST["MAIL"] , $_REQUEST["BCID"])){
 
     $XmlData = array(
-
-
 
         "COLLECTION" => array(
             "LOGIN" => array(
@@ -63,9 +61,9 @@ if(isset($_REQUEST["TELM"])){
                     "MARKNO" => $_REQUEST["MARKNO"],
                     "CUSTNO" => $_REQUEST["CUSTNO"],
                     "VIPIDS" => $_REQUEST["VIPIDS"],
-                    "BCID"=> $_REQUEST["BCID"],
-                    "TELM"=> $_REQUEST["TELM"],
-                    "MAIL" =>$_REQUEST["MAIL"]))
+                    "BCID" => $_REQUEST["BCID"],
+                    "TELM" => $_REQUEST["TELM"],
+                    "MAIL" => $_REQUEST["MAIL"]))
         )
     );
 
@@ -176,12 +174,35 @@ if(isset($_REQUEST["TELM"])){
 
 }else{
 
-    echo "請輸入電話";
+  if(!$_REQUEST["TELM"]){
 
+    echo "更新失敗，請輸入電話";
 
+  }else if(!$_REQUEST["MARKNO"]){
+
+    echo "更新失敗，請檢查品牌欄位";
+
+  }else if (!$_REQUEST["CUSTNO"]){
+
+    echo "更新失敗，請檢查櫃位欄位";
+
+  }else if(!$_REQUEST["VIPIDS"]){
+
+    echo "更新失敗，請檢查客戶編號";
+
+  }else if(!$_REQUEST["BCID"]){
+
+    echo "更新失敗，請檢查服務人員工號";
+
+  }else if(!$_REQUEST["MAIL"]){
+
+    echo "更新失敗，請檢查eMail欄位";
+
+  }
+
+  echo "更新失敗，請退回首頁重新輸入";
 
 }
-
 
 
 ?>

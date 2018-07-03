@@ -549,7 +549,7 @@ function nVip(xmlDoc) {
       sessionStorage.setItem('BCID', $('#bcid').val());
       sessionStorage.setItem('CUSTNO', $('#custno').val());
       sessionStorage.setItem('VIPCUSTNO', $('#custno').val());
-      sessionStorage.setItem("VIPIDS", $('#vipids').val());
+      sessionStorage.setItem("VIPIDS", vipids);
       sessionStorage.setItem("MAIL", $('#signMail').val());
       sessionStorage.setItem("VIPNM", $('#vipnm').val());
       sessionStorage.setItem("BCNM", $('#bcnm').text());
@@ -591,7 +591,8 @@ function updataInfo(Telm) {
     }else{
         var custno = $('#vipCustno').val();
     }
-    // var newTelm =$('#newTelm').val();
+
+
 
 
     var xhr = new XMLHttpRequest();

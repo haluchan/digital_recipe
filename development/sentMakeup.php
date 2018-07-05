@@ -373,16 +373,17 @@ try{
 
         if(savePDFImg($data) === true){
 
-            if(sendMail($data) === true){
+            if(sendMail($data) === "success"){
 
                 delFile($data);
                 header("content-type:text/xml");
                 echo "<MSG>新增成功，信件已送出</MSG>";
 
-            }else{
-                header("content-type:text/xml");
-                echo "<MSG>MAIL無法發送</MSG>";
             }
+//            else{
+//                header("content-type:text/xml");
+//                echo "<MSG>MAIL無法發送</MSG>";
+//            }
 
         }else{
             header("content-type:text/xml");
@@ -471,14 +472,18 @@ function sendMail($data){
     $message->setFrom("admin@ipsa.com.tw", "IPSA");
 
 //attachment(附件)
-    $attachment = Swift_Attachment::fromPath($pdf);
+    $attachment = Swift_Attachment::fromPath($pdf ,'application/pdf');
     $message->attach($attachment);
 
 // Send the email
     $mailer = Swift_Mailer::newInstance($transport);
+  try{
     $mailer->send($message);
-
-    return true;
+    return "success";
+  }catch (Swift_ConnectionException $e){
+    header("content-type:text/xml");
+    echo '<MSG>MAIL無法發送' . $e->getMessage() .'</MSG>';
+  }
 
 }
 

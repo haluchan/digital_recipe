@@ -44,7 +44,7 @@ $(document).ready(function(){
         }
       },
       success: function(response) {
-        console.log(response);
+        // console.log(response);
         if(!response.hasOwnProperty("RTNDATA")){
           $('.maintain').css("display","none");
           $('.empty').css("display","block");
@@ -127,7 +127,7 @@ $(document).ready(function(){
 
       },
       success: function(response) {
-        console.log(response);
+        // console.log(response);
         if(!response.hasOwnProperty("RTNDATA")){
           $('.makeup').css("display","none");
           $('.empty').css("display","block");
@@ -192,7 +192,7 @@ $(document).ready(function(){
   function getvipids() {
     var tmpUrl = window.location.search;
     if(tmpUrl ===""){
-      console.log("未輸入參數");
+      // console.log("未輸入參數");
     }else{
       var vipidPart = tmpUrl.split("vipids=",2);
       var vipid = vipidPart[1];
@@ -217,7 +217,7 @@ $(document).ready(function(){
       for(var j = 0; j < vipArry.length;j++){
         vipAnswer += vipArry[j];
       }
-      console.log(vipAnswer);
+      // console.log(vipAnswer);
       return vipAnswer;
     }
   }
@@ -236,7 +236,7 @@ function detectIE() {
   if (msie > 0) {
     // IE 10 or older => return version number
     ver = ua.substring(msie + 5, ua.indexOf('.', msie)), 10;
-    console.log('IE'+ver);
+    // console.log('IE'+ver);
     if(ver<=8){
       $('#step1 ul').remove();
       $('#step1').append('<div style="text-align:center;top:50%;display:block;position:absolute;width:100%;font-size:2em">請更新瀏覽器</div>')
@@ -252,7 +252,7 @@ function detectIE() {
     // IE 11 => return version number
     var rv = ua.indexOf('rv:');
     //alert('IE=11');
-    console.log('IE11');
+    // console.log('IE11');
     return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
 
   }

@@ -480,7 +480,7 @@ function sendMail($data){
   try{
     $mailer->send($message);
     return "success";
-  }catch (Swift_ConnectionException $e){
+  }catch (Swift_TransportException $e){
     header("content-type:text/xml");
     echo '<MSG>MAIL無法發送' . $e->getMessage() .'</MSG>';
   }

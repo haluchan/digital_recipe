@@ -379,11 +379,11 @@ try{
                 header("content-type:text/xml");
                 echo "<MSG>新增成功，信件已送出</MSG>";
 
-            }
-//            else{
+            }else{
+                  delFile($data);
 //                header("content-type:text/xml");
 //                echo "<MSG>MAIL無法發送</MSG>";
-//            }
+            }
 
         }else{
             header("content-type:text/xml");
@@ -456,7 +456,7 @@ function sendMail($data){
 // 使用SMTP的方式來發送gmail
     $transport = Swift_SmtpTransport::newInstance('smtp.hibox.biz', 25)
         ->setUsername('admin@ipsa.com.tw')
-        ->setPassword('27733766')
+        ->setPassword('Cd27733766')
     ;
 
 // 填寫email的主旨、內容、寄件者、收件者
@@ -483,6 +483,7 @@ function sendMail($data){
   }catch (Swift_TransportException $e){
     header("content-type:text/xml");
     echo '<MSG>MAIL無法發送' . $e->getMessage() .'</MSG>';
+    return "fail";
   }
 
 }

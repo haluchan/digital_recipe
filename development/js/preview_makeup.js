@@ -503,14 +503,22 @@ function sentData() {
 
                 // $('#postData').text(xhr.responseXML.getElementsByTagName('MSG')[0].textContent); //php回傳內容
 
-                if(xhr.responseXML.getElementsByTagName('MSG')[0].textContent === "新增成功，信件已送出"){
+                if(xhr.responseText === "新增成功，信件已送出"){
                     $('.bg').css('display','none');
                     alert("新增成功，信件已送出");
                     sessionStorage.clear();
                     location.href = "login.html";
                 }else{
                     $('.bg').css('display','none');
-                    alert(xhr.responseXML.getElementsByTagName('MSG')[0].textContent);
+                    if(xhr.responseText === "錯誤訊息:資料已存在。"){
+                        alert("此檢測資料已重覆，將不會再被寫入\n" +
+                          "按下確認後，頁面即將跳回首頁\n" +
+                          "請重新操作，謝謝 ");
+                        sessionStorage.clear();
+                        location.href = "login.html";
+                    }else{
+                        alert(xhr.responseText);
+                    }
               }
 
             }else{
@@ -535,7 +543,7 @@ function sentData() {
   function errorMsg(){
     $('.bg').css('display','none');
     console.log("連線狀態:"+ xhr.status);
-    alert("網路偵測不穩定，資料未送出，請再送一次！");
+    alert("偵測到偵測不穩定，資料未送出，請再送一次！");
   }
 
 }

@@ -107,14 +107,14 @@ $('.next').on('click',function(){
 
         if(sessionStorage.canvasFace_3 === undefined) {
 
-            setTimeout(htmlToCanvas(),300);
+            htmlToCanvas();
 
         }
 
 
             setTimeout(function () {
                 window.open('maintain_05.html','_self');
-            },800);
+            },300);
     }
 
 });

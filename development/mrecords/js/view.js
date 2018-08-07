@@ -312,12 +312,18 @@ function viewMaintainDate(data,pdata) {
   $('.ssuggestion').empty();
   $('.ssuggestion').append('<span>' + result.suggestion.replace(/\n/g,'<br/>') + '<span>');
 
-  var year = "";
+  var Myear = "";
+  var Mmonth = "";
   for (var i = 0; i < 4; i++) {
-     year += result.skin_water_url[i];
+     Myear += result.skin_water_url[i];
   }
+  for (var i = 4; i < 6 ; i++) {
+      Mmonth += result.skin_water_url[i];
+
+  }
+
   $('.maintain01').empty();
-  $('.maintain01').append('<img style="width: 55%" src="../image/skincare/'+ year+'/'+result.skin_water_url+'.png">');
+  $('.maintain01').append('<img style="width: 55%" src="../image/skincare/'+ Myear+'/'+Mmonth+'/'+result.skin_water_url+'.png">');
   // $('.maintain01').append('<image src="../image/skincare/'+ year+'/'+result.makeup_url+'.png">');
 
 
@@ -1210,17 +1216,22 @@ function viewMackupDate(data,pdata) {
   $('.mmakup_txt_c').append('<span>' + result.makup_txt_c.replace(/\n/g, '<br/>') + '<span>');
 
   var year = "";
+  var month = "";
   for (var i = 0; i < 4; i++) {
     year += result.skin_water_url[i];
   }
+  for (var i = 4; i < 6 ; i++) {
+    month += result.skin_water_url[i];
+
+  }
   $('.mskin_water_url').empty();
-  $('.mskin_water_url').append('<img style="width: 110%" src="../image/mackup/' + year + '/' + result.skin_water_url + '.png">');
+  $('.mskin_water_url').append('<img style="width: 110%" src="../image/mackup/' + year + '/'+ month + '/' + result.skin_water_url + '.png">');
 
   $('.mmakeup_url').empty();
-  $('.mmakeup_url').append('<img style="width: 124%" src="../image/mackup/' + year + '/' + result.makeup_url + '.png">');
+  $('.mmakeup_url').append('<img style="width: 124%" src="../image/mackup/' + year + '/'+ month + '/' + result.makeup_url + '.png">');
 
   $('.mskin_url').empty();
-  $('.mskin_url').append('<img style="width: 104%" src="../image/mackup/' + year + '/' + result.skin_url + '.png">');
+  $('.mskin_url').append('<img style="width: 104%" src="../image/mackup/' + year + '/'+ month + '/' + result.skin_url + '.png">');
 
 
 

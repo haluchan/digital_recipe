@@ -10,9 +10,9 @@
 $psn = 54395064;
 $psnString = $psn .''; //toString
 
-$ip = 'https://210.208.107.109:8080';
-//$UserID="innity";
-$UserID="innity54395064"; //測試環境用
+$ip = 'https://210.208.107.109:80';
+$UserID="innity";
+// $UserID="innity54395064"; //測試環境用
 $dayArry = array();
 $psnArry = array();
 $tmpArry = array();

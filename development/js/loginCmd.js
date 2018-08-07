@@ -737,7 +737,7 @@ function clearSession() {
 
     var ls =sessionStorage.length;
 
-    for (var i = 0; i < ls; i++) {
+    for (var i = ls; i >= 0; i--) {
 
         var lsName = sessionStorage.key(i);
 

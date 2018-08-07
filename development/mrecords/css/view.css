@@ -499,7 +499,8 @@ body[page=post] {
                   width: 100%;
                   position: absolute;
                   bottom: 0;
-                  left: 0; }
+                  left: 0;
+                  height: auto; }
                   body[page=post] .wrap #step2 #main .makeup .L .makeup03 .mL .wrap .tip {
                     width: 100%;
                     height: 28px;

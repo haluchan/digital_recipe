@@ -10,6 +10,7 @@ require_once('phpinit.php');
 error_reporting(E_ERROR | E_PARSE);
 require('psw.php');
 $MARKNO = "IPSA";
+$time = date("Y/m/d H:i:s");
 $data = json_decode(file_get_contents('php://input'), true);
 //echo file_get_contents('php://input');
 //echo $_POST['data'];
@@ -24,7 +25,7 @@ function getName($data){
     try{
 
 
-        $dsn = "mysql:host=203.69.42.12;dbname=DBL03612;port=3306;charset=utf8";
+        $dsn = "mysql:host=203.69.42.177;dbname=DBL03612;port=3306;charset=utf8";
         $user = "L89809816";
         $password = "27733766";
         $options = array( PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
@@ -74,26 +75,37 @@ function getmackupImg($data,$last_id){
     $ymd =  explode('-', date("Y-m-d"));
     $filedata = $ymd[0].$ymd[1] . $ymd[2];
     $year=$ymd[0];
+    $month = $ymd[1];
     $parh='image/skincare/';//圖片儲存路徑
     $dir='image/skincare/'.$year; //圖片儲存路徑
     $fileName=$filedata.$last_id."a";     //圖片檔名
-
+    $dirMonth = 'image/skincare/'.$year .'/'. $month;
 
     /**********產生目錄*********/
     if(!is_dir($dir)){
-//chmod($dir, 0777);
-        $yearInt = (int)$year;
-        $nextYear = $yearInt+1;
-        $dirNext = $parh.'/'.$nextYear;
-        mkdir($dirNext, 0777, TRUE);
-        $dirNext= $dirNext.'/'.$fileName;
-        file_put_contents("$dirNext.png", $img_data);
+  //chmod($dir, 0777);
+      $oldmask = umask(0);
+      mkdir($dir, 0777, TRUE);
+      mkdir($dirMonth, 0777, TRUE);
+      umask($oldmask);
+      $dirNextYearMonthPath= $dirMonth.'/'.$fileName;
+      file_put_contents("$dirNextYearMonthPath.png", $img_data);
 
     }else{
-        /**********產生目錄*********/
-        $thisyear=$dir.'/'.$fileName;
+      /**********產生目錄*********/
+        if(!is_dir($dirMonth)){
+          $oldmask = umask(0);
+          mkdir($dirMonth,0777,TRUE);
+          umask($oldmask);
+          $dirNextMonthName =  $dirMonth.'/'.$fileName;
+          file_put_contents("$dirNextMonthName.png", $img_data);
+        }else{
+          $thisYearMonth=$dir.'/'.$month.'/'.$fileName;
+          file_put_contents("$thisYearMonth.png", $img_data);
 
-        file_put_contents("$thisyear.png", $img_data);
+        }
+
+
     }
 
     return $fileName;
@@ -111,26 +123,40 @@ function skinWaterImg($data,$last_id){
     $ymd =  explode('-', date("Y-m-d"));
     $filedata = $ymd[0].$ymd[1] . $ymd[2];
     $year=$ymd[0];
+    $month = $ymd[1];
     $parh='image/skincare/';//圖片儲存路徑
     $dir='image/skincare/'.$year; //圖片儲存路徑
     $fileName=$filedata.$last_id."b";     //圖片檔名
+    $dirMonth = 'image/skincare/'.$year .'/'. $month;
 
 
     /**********產生目錄*********/
     if(!is_dir($dir)){
-//chmod($dir, 0777);
-        $yearInt = (int)$year;
-        $nextYear = $yearInt+1;
-        $dirNext = $parh.'/'.$nextYear;
-        mkdir($dirNext, 0777, TRUE);
-        $dirNext= $dirNext.'/'.$fileName;
-        file_put_contents("$dirNext.png", $img_data);
+  //chmod($dir, 0777);
+      $oldmask = umask(0);
+      mkdir($dir, 0777, TRUE);
+      mkdir($dirMonth, 0777, TRUE);
+      umask($oldmask);
+      $dirNextYearMonthPath= $dirMonth.'/'.$fileName;
+      file_put_contents("$dirNextYearMonthPath.png", $img_data);
+
 
     }else{
-        /**********產生目錄*********/
-        $thisyear=$dir.'/'.$fileName;
+      /**********產生目錄*********/
+        if(!is_dir($dirMonth)){
+          $oldmask = umask(0);
+          mkdir($dirMonth,0777,TRUE);
+          umask($oldmask);
+          $dirNextMonthName =  $dirMonth.'/'.$fileName;
+          file_put_contents("$dirNextMonthName.png", $img_data);
 
-        file_put_contents("$thisyear.png", $img_data);
+        }else{
+
+          $thisYearMonth=$dir.'/'.$month.'/'.$fileName;
+
+          file_put_contents("$thisYearMonth.png", $img_data);
+        }
+
 
     }
 
@@ -190,7 +216,7 @@ if(isset($data)) {
                 "ROW" => array(
                     "MARKNO" => $MARKNO,
                     "VIPIDS" => $data["VIPIDS"],
-                    "DATE" => "",//系統自動帶入
+                    "DATE" => $time,
                     "BCID" => $data["BCID"],
                     "CUSTNO" => $data["CUSTNO"],
                     "DRY" => $data["DRY"],
@@ -354,31 +380,24 @@ try{
 
                 delFile($data);
 
-                header("content-type:text/xml");
-                echo "<MSG>新增成功，信件已送出</MSG>";
+                echo "新增成功，信件已送出";
 
             }else{
                 delFile($data);
-//                header("content-type:text/xml");
-//                echo "<MSG>MAIL無法發送</MSG>";
+                echo "MAIL無法發送";
             }
 
         }else{
-
-            header("content-type:text/xml");
-            echo "<MSG>PDF檔案無法存取</MSG>>";
-
+            delFile($data);
+            echo "PDF檔案無法存取";
         }
 
     }else{
 
-            header("content-type:text/xml");
-
+            delFile($data);
             $xml = $bcXml->WSTATUS->ROW->RTNCODE;
             $msg = $bcXml->WSTATUS->ROW->RTNMSG;
-
-            echo "錯誤代碼".$xml;
-            echo "錯誤訊息".$msg;
+            echo "錯誤訊息:".$msg;
 
         }
 
@@ -463,7 +482,7 @@ function sendMail($data){
     return "success";
   }catch (Swift_TransportException $e){
     header("content-type:text/xml");
-    echo '<MSG>MAIL無法發送' . $e->getMessage() .'</MSG>';
+    echo '<MSG>MAIL發送發生問題，檢測紀錄已儲存，請至POS機上查詢<br>' . '錯誤訊息:' . $e->getMessage().'</MSG>';
     return "fail";
   }
 

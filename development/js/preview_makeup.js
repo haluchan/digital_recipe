@@ -158,7 +158,7 @@ function sessionData() {
     var len = sessionStorage.length;
 
     // for (var i = 0; i < len; i++) {
-        for (var j = 0; j < 10; j++) {
+        for (var j = 0; j < 9; j++) {
 
             // if (sessionStorage.key(i) === "MAKUP_TEXT_" + j) {
             if (sessionStorage.getItem("MAKUP_TEXT_" + j)){
@@ -170,6 +170,9 @@ function sessionData() {
             // }
         }
     // }
+
+    var makeText9Data = parseInt(sessionStorage.MAKUP_TEXT_9);
+    $("#makupText9").text(makupText9(makeText9Data));
 
     canvasImg();
 
@@ -402,6 +405,26 @@ function naturalEX(tmp) {
 }
 
 
+function makupText9(tmp) {
+
+  switch (tmp) {
+    case 0:
+      tmp = "無選取";
+      break;
+    case 1:
+      tmp = "自律循環光膜調製油(金箔光)";
+      break;
+    case 2:
+      tmp = "自律循環光膜調製油(輕霧光)";
+      break;
+    case 3:
+      tmp = "自律循環光膜調製油(金箔光+輕霧光)";
+      break;
+    default:
+      tmp = "無選取";
+  }
+  return(tmp);
+}
 
 function sentData() {
 

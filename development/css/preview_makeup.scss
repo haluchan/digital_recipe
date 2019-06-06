@@ -51,6 +51,19 @@ body[page=preview_makeup] {
 					height: inherit;
 					position: relative;
 
+					.k4oil{
+						//position: absolute;
+						background-color: rgba($color: #fef8e5, $alpha: 0.8);
+						top: 10px;
+						width: 250px;
+						height: 28px;
+						line-height: 28px;
+						padding: 0 7px;
+						border: 0;
+						font-size: 1em;
+
+					}
+
 					.wrap{
 						width: 100%;
 						position: absolute;

@@ -10,7 +10,7 @@ $(document).ready(function() {
         $('.brow-dis img').attr('src', 'img/makeup/03/brow/a' + value + '.png');
         $('div.btn[data="brow"]').css('background-image', 'url("img/makeup/03/paint_face/brow/a' + value + 'b.png")'); //add by robert
         $('div.typeName[data="brow"]').text(text);
-        
+
     });
     //edited by robert end
 
@@ -20,7 +20,7 @@ $(document).ready(function() {
         var value = $(this).val();
         $('.popmenu.eye .menu').hide();
         $('.popmenu.eye .menu.' + value).fadeIn(500);
-        
+
 
     });
     //edited by robert end
@@ -61,7 +61,7 @@ $(document).ready(function() {
         $(this).closest('.menu').find('.img img').attr('src', 'img/makeup/03/' + doc + '/eye-img-' + value + '.png');
         $('div.btn[data="eye"]').css('background-image', 'url("img/makeup/03/paint_face/' + doc + '/' + value + 'b.png")'); //add by robert
         $('div.typeName[data="eye"]').text(text);
-       
+
 
     });
     //edited by robert end

@@ -260,9 +260,17 @@ $(document).ready(function() {
 
                 }else {
 
-                    dataSession();
+                    if($('div.goto > span > span[data=makeup]').hasClass('active')){
 
-                    location.href = page + "_01.html";
+                      getMuckup()
+                    }
+
+
+                    if($('div.goto > span > span[data=maintain]').hasClass('active')){
+
+                      getMaintain();
+
+                    }
 
                 }
 
@@ -312,7 +320,7 @@ $(document).ready(function() {
                                     console.log(xhr.responseXML);
                                     var rtnText = xhr.responseXML.getElementsByTagName('RTNMSG')[0].textContent;
                                     if(rtnText === "VIP姓名 + 生日已存在。"){
-                                        
+
                                         alert("VIP姓名 + 生日已存在。\n" + "請回上一頁，在名字後方加入\"*-.+/等符號\"區別\n" +
                                             "**注意請服務人員務必在檢測後調整顧客正確名字")
                                     }else{
@@ -746,7 +754,7 @@ function clearSession() {
 
                 break;
             case "BCNM":
-                
+
                 break;
             case "BIRTHDAY":
 
@@ -777,5 +785,106 @@ function clearSession() {
         }
 
     }
+
+}
+
+function getMuckup(){
+
+    var fullDate = new Date();
+    var year = fullDate.getFullYear();
+    var month =((fullDate.getMonth()+1)<10 ? '0':'')+(fullDate.getMonth()+1);
+    var date =  year+'/'+ month+'/'+ fullDate.getDate();
+    var vipids = $('#vipids').val();
+    var bcid = $('#bcid').val();
+    var custno = $('#custno').val();
+    var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange=function (){
+        if( xhr.readyState == 4){
+          if( xhr.status == 200 ){
+            var xmlDoc = xhr.responseXML;
+            var RTNMSG = xmlDoc.getElementsByTagName('RTNMSG')[0].textContent;
+            if(RTNMSG !== "查無檢驗資料"){
+              var dataDate = xmlDoc.getElementsByTagName('DATE')[0].textContent;
+              var dateString = "";
+              for (var i = 0; i < 10; i++) {
+                dateString += dataDate[i];
+              }
+              var rVipids = xmlDoc.getElementsByTagName('VIPIDS')[0].textContent;
+              var rBcid = xmlDoc.getElementsByTagName('BCID')[0].textContent;
+              var rCustno = xmlDoc.getElementsByTagName('CUSTNO')[0].textContent;
+              if (vipids === rVipids && custno === rCustno && date === dateString) {
+                alert("此客戶今日已檢測過，將不會再被寫入\n" +
+                  "請重新操作，謝謝 ");
+              }else{
+                dataSession();
+                location.href = page + "_01.html";
+              }
+
+            }else{
+              dataSession();
+              location.href = page + "_01.html";
+            }
+
+          }else{
+            alert("伺服器回應有狀況");
+            console.log(xhr.status);
+          }
+        }
+      };
+
+  var url = 'getMackupData.php?VIPIDS='+ vipids;
+  xhr.open("POST", url, true);
+  xhr.send( null );
+
+}
+
+function getMaintain(){
+
+  var fullDate = new Date();
+  var year = fullDate.getFullYear();
+  var month =((fullDate.getMonth()+1)<10 ? '0':'')+(fullDate.getMonth()+1);
+  var date =  year+'/'+ month+'/'+ fullDate.getDate();
+  var vipids = $('#vipids').val();
+  var bcid = $('#bcid').val();
+  var custno = $('#custno').val();
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange=function (){
+    if( xhr.readyState == 4){
+      if( xhr.status == 200 ){
+        var xmlDoc = xhr.responseXML;
+
+        var RTNMSG = xmlDoc.getElementsByTagName('RTNMSG')[0].textContent;
+
+        if(RTNMSG !== "查無檢驗資料"){
+          var dataDate = xmlDoc.getElementsByTagName('DATE')[0].textContent;
+          var dateString = "";
+          for (var i = 0; i < 10; i++) {
+            dateString += dataDate[i];
+          }
+          var rVipids = xmlDoc.getElementsByTagName('VIPIDS')[0].textContent;
+          var rBcid = xmlDoc.getElementsByTagName('BCID')[0].textContent;
+          var rCustno = xmlDoc.getElementsByTagName('CUSTNO')[0].textContent;
+
+          if (vipids === rVipids && custno === rCustno && date === dateString) {
+            alert("此客戶今日已檢測過，將不會再被寫入\n" +
+              "請重新操作，謝謝 ");
+          }else{
+            dataSession();
+            location.href = page + "_01.html";
+          }
+        }else{
+          dataSession();
+          location.href = page + "_01.html";
+        }
+      }else{
+        alert("伺服器回應有狀況");
+        console.log(xhr.status);
+      }
+    }
+  };
+
+  var url = 'getMaintainData.php?VIPIDS='+ vipids;
+  xhr.open("POST", url, true);
+  xhr.send( null );
 
 }

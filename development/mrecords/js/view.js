@@ -978,7 +978,7 @@ function elasticityEx(tmp) {
       tmp ="";
       break;
     case "2401":
-      tmp = "逆齡再生無痕乳霜";
+      tmp = "逆齡再生無痕乳霜e";
       break;
     case "2402":
       tmp = "逆齡再生無痕眼膜霜";
@@ -987,7 +987,7 @@ function elasticityEx(tmp) {
       tmp = "肌能膜力緊緻精華";
       break;
     case "2404":
-      tmp = "肌能補充膠囊";
+      tmp = "緊緻集效賦活霜";
       break;
     case "2405":
       tmp = "緊緻集效霜";
@@ -996,7 +996,7 @@ function elasticityEx(tmp) {
       tmp = "抗皺集效霜";
       break;
     case "2501":
-      tmp = "逆齡再生無痕乳霜";
+      tmp = "逆齡再生無痕乳霜e";
       break;
     case "2502":
       tmp = "逆齡再生無痕眼膜霜";
@@ -1005,7 +1005,7 @@ function elasticityEx(tmp) {
       tmp = "肌能膜力緊緻精華";
       break;
     case "2504":
-      tmp = "肌能補充膠囊";
+      tmp = "緊緻集效賦活霜";
       break;
     case "2505":
       tmp = "緊緻集效霜";
@@ -1050,7 +1050,7 @@ function otherEx(tmp) {
       tmp ="";
       break;
     case "2901":
-      tmp = "粉刺敷面組合N";
+      tmp = "美膚溫感眼部精華";
       break;
     case "2902":
       tmp = "急效抗壓馴荳精華";
@@ -1065,7 +1065,7 @@ function otherEx(tmp) {
       tmp = "按摩水凝露N";
       break;
     case "3001":
-      tmp = "粉刺敷面組合N";
+      tmp = "美膚溫感眼部精華";
       break;
     case "3002":
       tmp = "急效抗壓馴荳精華";
@@ -1080,7 +1080,7 @@ function otherEx(tmp) {
       tmp = "按摩水凝露N";
       break;
     case "3101":
-      tmp = "粉刺敷面組合N";
+      tmp = "美膚溫感眼部精華";
       break;
     case "3102":
       tmp = "急效抗壓馴荳精華";
@@ -1095,7 +1095,7 @@ function otherEx(tmp) {
       tmp = "按摩水凝露N";
       break;
     case "3201":
-      tmp = "粉刺敷面組合N";
+      tmp = "美膚溫感眼部精華";
       break;
     case "3202":
       tmp = "急效抗壓馴荳精華";
@@ -1110,7 +1110,7 @@ function otherEx(tmp) {
       tmp = "按摩水凝露N";
       break;
     case "3301":
-      tmp = "粉刺敷面組合N";
+      tmp = "美膚溫感眼部精華";
       break;
     case "3302":
       tmp = "急效抗壓馴荳精華";
@@ -1125,7 +1125,7 @@ function otherEx(tmp) {
       tmp = "按摩水凝露N";
       break;
     case "3401":
-      tmp = "粉刺敷面組合N";
+      tmp = "美膚溫感眼部精華";
       break;
     case "3402":
       tmp = "急效抗壓馴荳精華";
@@ -1140,7 +1140,7 @@ function otherEx(tmp) {
       tmp = "按摩水凝露N";
       break;
     case "3501":
-      tmp = "粉刺敷面組合N";
+      tmp = "美膚溫感眼部精華";
       break;
     case "3502":
       tmp = "急效抗壓馴荳精華";
@@ -1158,6 +1158,26 @@ function otherEx(tmp) {
 
   return(tmp);
 }
+function makupText10(tmp) {
+
+  switch (tmp) {
+    case "0":
+      tmp = "無選取";
+      break;
+    case "1":
+      tmp = "自律循環光膜調製油(金箔光)";
+      break;
+    case "2":
+      tmp = "自律循環光膜調製油(輕霧光)";
+      break;
+    case "3":
+      tmp = "自律循環光膜調製油(金箔光+輕霧光)";
+      break;
+    default:
+      tmp = "無選取";
+  }
+  return(tmp);
+}
 
 
 //mackup
@@ -1170,6 +1190,7 @@ function viewMackupDate(data,pdata) {
   $('.msubject').text(result.subject);
 
   $('.txt').empty();
+  $('#makupText10').empty();
 
   if (result.makeup_txt_1 !== "") {$('.txt').append("<div class='tip'>"+ result.makeup_txt_1 +"<div>");}
   if (result.makeup_txt_2 !== "") {$('.txt').append("<div class='tip'>"+ result.makeup_txt_2 +"<div>");}
@@ -1180,7 +1201,9 @@ function viewMackupDate(data,pdata) {
   if (result.makeup_txt_7 !== "") {$('.txt').append("<div class='tip'>"+ result.makeup_txt_7 +"<div>");}
   if (result.makeup_txt_8 !== "") {$('.txt').append("<div class='tip'>"+ result.makeup_txt_8 +"<div>");}
   if (result.makeup_txt_9 !== "") {$('.txt').append("<div class='tip'>"+ result.makeup_txt_9 +"<div>");}
-  if (result.makeup_txt_10 !== "") {$('.txt').append("<div class='tip'>"+ result.makeup_txt_10 +"<div>");}
+
+  var text10 = result.makeup_txt_10;
+  $('#makupText10').append("<div class=''>"+ makupText10(text10) +"<div>");
 
   //檢測資料
   $('.mskin_color_c').text(result.skin_color_c);

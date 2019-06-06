@@ -25,7 +25,6 @@ function getName($data){
 
     try{
 
-
         $dsn = "mysql:host=203.69.42.177;dbname=DBL03612;port=3306;charset=utf8";
         $user = "L89809816";
         $password = "27733766";
@@ -46,9 +45,12 @@ function getName($data){
 //            echo $last_id,"\n";
 
         } else {
-            echo "Error: " . $sql . "<br>" . $pdo->error;
+            $error =  $pdo->errorInfo();
+            echo "Error: " . $sql . "<br>" . $error[2];
         }
 
+        $pdo = null; //結束與資料庫連線
+        return $last_table_id ;
 
     } catch (PDOException $e) {
         $pdo->rollBack();
@@ -56,8 +58,6 @@ function getName($data){
         echo "行號 : " , $e->getLine(),"<br>";
         //發生錯誤時顯示出錯誤訊息
     }
-
-    return $last_table_id ;
 }
 
 $last_id=getName($data);
@@ -429,9 +429,7 @@ try{
             delFile($data);
             $xml = $bcXml->WSTATUS->ROW->RTNCODE;
             $msg = $bcXml->WSTATUS->ROW->RTNMSG;
-
             echo "錯誤訊息:".$msg;
-
         }
 
 
@@ -485,7 +483,8 @@ function sendMail($data){
 // $transport = Swift_MailTransport::newInstance();
 
 // 使用SMTP的方式來發送gmail
-    $transport = Swift_SmtpTransport::newInstance('smtp.hibox.biz', 25)
+  $smtp_host_ip = gethostbyname('smtp.hibox.biz'); //修正ip6 擋smtp ip:210.71.195.30
+  $transport = Swift_SmtpTransport::newInstance($smtp_host_ip, 25,'tls')
         ->setUsername('admin@ipsa.com.tw')
         ->setPassword('Cd27733766')
     ;

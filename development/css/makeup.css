@@ -448,6 +448,21 @@ body[page=makeup_03] .makeup .border .note {
     outline: none;
     margin-left: 10px;
     display: inline-block; }
+body[page=makeup_03] .makeup .border .k4oil {
+  position: absolute;
+  background-color: rgba(254, 248, 229, 0.8);
+  left: 15px;
+  top: 60px;
+  width: 340px; }
+  body[page=makeup_03] .makeup .border .k4oil select {
+    background: url("../img/arrow.svg") right 7px center no-repeat;
+    background-size: 15px;
+    width: 100%;
+    height: 38px;
+    line-height: 38px;
+    padding: 0 7px;
+    border: 0;
+    font-size: 1em; }
 
 body[page=makeup_04] #content .makeup .border {
   background: url("../img/makeup/04/bg.png") center center no-repeat;

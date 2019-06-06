@@ -116,7 +116,7 @@ if(isset($_REQUEST["CUSTNO"] , $_REQUEST["VIPNM"] , $_REQUEST["SBIRTH"] , $_REQU
 //    var_dump($client->__getLastRequestHeaders());
 //    echo "<br>";
 //    echo("\nDumping request:\n");
-//    var_dump($client->__getLastRequest());
+//    var_dump(html_entity_decode($client->__getLastRequest(),ENT_QUOTES | ENT_XML1, 'UTF-8'));
 //    echo "<br>";
 //    echo("\nDumping response headers:\n");
 //    var_dump($client->__getLastResponseHeaders());

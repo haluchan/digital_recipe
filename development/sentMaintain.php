@@ -45,9 +45,13 @@ function getName($data){
 //            echo $last_id,"\n";
 
         } else {
-            echo "Error: " . $sql . "<br>" . $pdo->error;
+            $error =  $pdo->errorInfo();
+            echo "Error: " . $sql . "<br>" . $error[2];
+
         }
 
+        $pdo = null; //結束與資料庫連線
+        return $last_table_id ;
 
     } catch (PDOException $e) {
         $pdo->rollBack();
@@ -55,8 +59,6 @@ function getName($data){
         echo "行號 : " , $e->getLine(),"<br>";
         //發生錯誤時顯示出錯誤訊息
     }
-
-    return $last_table_id ;
 }
 
 $last_id=getName($data);
@@ -452,7 +454,8 @@ function sendMail($data){
 // $transport = Swift_MailTransport::newInstance();
 
 // 使用SMTP的方式來發送gmail
-    $transport = Swift_SmtpTransport::newInstance('smtp.hibox.biz', 25)
+  $smtp_host_ip = gethostbyname('smtp.hibox.biz'); //修正ip6 擋smtp  ip:210.71.195.30
+  $transport = Swift_SmtpTransport::newInstance($smtp_host_ip, 25,'tls')
         ->setUsername('admin@ipsa.com.tw')
         ->setPassword('Cd27733766')
     ;

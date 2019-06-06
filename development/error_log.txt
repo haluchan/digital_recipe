@@ -666,3 +666,117 @@ Stack trace:
 [18-Apr-2018 17:32:49 Asia/Taipei] PHP Stack trace:
 [18-Apr-2018 17:32:49 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/sentMakeup.php:0
 [18-Apr-2018 17:32:49 Asia/Taipei] PHP   2. getName() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/sentMakeup.php:64
+[13-Aug-2018 12:07:39 Asia/Taipei] PHP Fatal error:  Call to a member function rollBack() on a non-object in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/sentMakeup.php on line 54
+[13-Aug-2018 12:07:39 Asia/Taipei] PHP Stack trace:
+[13-Aug-2018 12:07:39 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/sentMakeup.php:0
+[13-Aug-2018 12:07:39 Asia/Taipei] PHP   2. getName() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/sentMakeup.php:63
+[17-Feb-2019 18:39:28 Asia/Taipei] PHP Notice:  Undefined variable: pdo in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/mailTest.php on line 74
+[17-Feb-2019 18:39:28 Asia/Taipei] PHP Stack trace:
+[17-Feb-2019 18:39:28 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/mailTest.php:0
+[17-Feb-2019 18:39:28 Asia/Taipei] PHP   2. getmackupImg() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/mailTest.php:114
+[17-Feb-2019 18:39:28 Asia/Taipei] PHP Fatal error:  Call to a member function rollBack() on a non-object in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/mailTest.php on line 74
+[17-Feb-2019 18:39:28 Asia/Taipei] PHP Stack trace:
+[17-Feb-2019 18:39:28 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/mailTest.php:0
+[17-Feb-2019 18:39:28 Asia/Taipei] PHP   2. getmackupImg() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/mailTest.php:114
+[17-Feb-2019 19:26:30 Asia/Taipei] PHP Fatal error:  Uncaught exception 'Swift_TransportException' with message 'Expected response code 220 but got code "", with message ""' in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/AbstractSmtpTransport.php:383
+Stack trace:
+#0 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/AbstractSmtpTransport.php(289): Swift_Transport_AbstractSmtpTransport->_assertResponseCode('', Array)
+#1 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/AbstractSmtpTransport.php(117): Swift_Transport_AbstractSmtpTransport->_readGreeting()
+#2 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Mailer.php(79): Swift_Transport_AbstractSmtpTransport->start()
+#3 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/mailTest.php(82): Swift_Mailer->send(Object(Swift_Message))
+#4 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/mailTest.php(104): sendMail( in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/AbstractSmtpTransport.php on line 383
+[17-Feb-2019 19:28:58 Asia/Taipei] PHP Fatal error:  Uncaught exception 'Swift_TransportException' with message 'Expected response code 220 but got code "", with message ""' in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/AbstractSmtpTransport.php:383
+Stack trace:
+#0 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/AbstractSmtpTransport.php(289): Swift_Transport_AbstractSmtpTransport->_assertResponseCode('', Array)
+#1 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/AbstractSmtpTransport.php(117): Swift_Transport_AbstractSmtpTransport->_readGreeting()
+#2 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Mailer.php(79): Swift_Transport_AbstractSmtpTransport->start()
+#3 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/mailTest.php(82): Swift_Mailer->send(Object(Swift_Message))
+#4 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/mailTest.php(104): sendMail( in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/AbstractSmtpTransport.php on line 383
+[18-Feb-2019 12:56:55 Asia/Taipei] PHP Fatal error:  Uncaught exception 'Swift_TransportException' with message 'Connection could not be established with host smtp.goolge.biz [php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known #0]' in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/StreamBuffer.php:268
+Stack trace:
+#0 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/StreamBuffer.php(62): Swift_Transport_StreamBuffer->_establishSocketConnection()
+#1 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/AbstractSmtpTransport.php(113): Swift_Transport_StreamBuffer->initialize(Array)
+#2 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Mailer.php(79): Swift_Transport_AbstractSmtpTransport->start()
+#3 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/mailTest.php(81): Swift_Mailer->send(Object(Swift_Message))
+#4 /Users/halu/IdeaProjects/ipsa in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/StreamBuffer.php on line 268
+[18-Feb-2019 13:26:49 Asia/Taipei] PHP Notice:  Use of undefined constant ssl - assumed 'ssl' in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/mailTest.php on line 61
+[18-Feb-2019 13:26:49 Asia/Taipei] PHP Stack trace:
+[18-Feb-2019 13:26:49 Asia/Taipei] PHP   1. {main}() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/mailTest.php:0
+[18-Feb-2019 13:26:49 Asia/Taipei] PHP   2. sendMail() /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/mailTest.php:105
+[18-Feb-2019 13:26:49 Asia/Taipei] PHP Fatal error:  Uncaught exception 'Swift_TransportException' with message 'Connection could not be established with host smtp.goolge.biz [php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known #0]' in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/StreamBuffer.php:268
+Stack trace:
+#0 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/StreamBuffer.php(62): Swift_Transport_StreamBuffer->_establishSocketConnection()
+#1 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/AbstractSmtpTransport.php(113): Swift_Transport_StreamBuffer->initialize(Array)
+#2 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Mailer.php(79): Swift_Transport_AbstractSmtpTransport->start()
+#3 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/mailTest.php(83): Swift_Mailer->send(Object(Swift_Message))
+#4 /Users/halu/IdeaProjects/ipsa in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/StreamBuffer.php on line 268
+[18-Feb-2019 13:27:35 Asia/Taipei] PHP Fatal error:  Uncaught exception 'Swift_TransportException' with message 'Connection could not be established with host smtp.goolge.biz [php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known #0]' in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/StreamBuffer.php:268
+Stack trace:
+#0 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/StreamBuffer.php(62): Swift_Transport_StreamBuffer->_establishSocketConnection()
+#1 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/AbstractSmtpTransport.php(113): Swift_Transport_StreamBuffer->initialize(Array)
+#2 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Mailer.php(79): Swift_Transport_AbstractSmtpTransport->start()
+#3 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/mailTest.php(83): Swift_Mailer->send(Object(Swift_Message))
+#4 /Users/halu/IdeaProjects/ipsa in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/StreamBuffer.php on line 268
+[18-Feb-2019 13:38:45 Asia/Taipei] PHP Fatal error:  Uncaught exception 'Swift_TransportException' with message 'Connection could not be established with host smtp.goolge.biz [php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known #0]' in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/StreamBuffer.php:268
+Stack trace:
+#0 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/StreamBuffer.php(62): Swift_Transport_StreamBuffer->_establishSocketConnection()
+#1 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/AbstractSmtpTransport.php(113): Swift_Transport_StreamBuffer->initialize(Array)
+#2 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Mailer.php(79): Swift_Transport_AbstractSmtpTransport->start()
+#3 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/mailTest.php(83): Swift_Mailer->send(Object(Swift_Message))
+#4 /Users/halu/IdeaProjects/ipsa in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/StreamBuffer.php on line 268
+[18-Feb-2019 13:46:04 Asia/Taipei] PHP Fatal error:  Uncaught exception 'Swift_TransportException' with message 'Connection could not be established with host smtp.goolge.biz [php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known #0]' in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/StreamBuffer.php:269
+Stack trace:
+#0 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/StreamBuffer.php(62): Swift_Transport_StreamBuffer->_establishSocketConnection()
+#1 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/AbstractSmtpTransport.php(113): Swift_Transport_StreamBuffer->initialize(Array)
+#2 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Mailer.php(79): Swift_Transport_AbstractSmtpTransport->start()
+#3 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/mailTest.php(83): Swift_Mailer->send(Object(Swift_Message))
+#4 /Users/halu/IdeaProjects/ipsa in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/StreamBuffer.php on line 269
+[18-Feb-2019 13:46:06 Asia/Taipei] PHP Fatal error:  Uncaught exception 'Swift_TransportException' with message 'Connection could not be established with host smtp.goolge.biz [php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known #0]' in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/StreamBuffer.php:269
+Stack trace:
+#0 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/StreamBuffer.php(62): Swift_Transport_StreamBuffer->_establishSocketConnection()
+#1 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/AbstractSmtpTransport.php(113): Swift_Transport_StreamBuffer->initialize(Array)
+#2 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Mailer.php(79): Swift_Transport_AbstractSmtpTransport->start()
+#3 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/mailTest.php(83): Swift_Mailer->send(Object(Swift_Message))
+#4 /Users/halu/IdeaProjects/ipsa in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/StreamBuffer.php on line 269
+[18-Feb-2019 13:46:15 Asia/Taipei] PHP Fatal error:  Uncaught exception 'Swift_TransportException' with message 'Connection could not be established with host smtp.goolge.biz [php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known #0]' in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/StreamBuffer.php:269
+Stack trace:
+#0 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/StreamBuffer.php(62): Swift_Transport_StreamBuffer->_establishSocketConnection()
+#1 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/AbstractSmtpTransport.php(113): Swift_Transport_StreamBuffer->initialize(Array)
+#2 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Mailer.php(79): Swift_Transport_AbstractSmtpTransport->start()
+#3 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/mailTest.php(83): Swift_Mailer->send(Object(Swift_Message))
+#4 /Users/halu/IdeaProjects/ipsa in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/StreamBuffer.php on line 269
+[18-Feb-2019 13:46:44 Asia/Taipei] PHP Fatal error:  Uncaught exception 'Swift_TransportException' with message 'Connection could not be established with host smtp.goolge.biz [php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known #0]' in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/StreamBuffer.php:269
+Stack trace:
+#0 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/StreamBuffer.php(62): Swift_Transport_StreamBuffer->_establishSocketConnection()
+#1 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/AbstractSmtpTransport.php(113): Swift_Transport_StreamBuffer->initialize(Array)
+#2 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Mailer.php(79): Swift_Transport_AbstractSmtpTransport->start()
+#3 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/mailTest.php(83): Swift_Mailer->send(Object(Swift_Message))
+#4 /Users/halu/IdeaProjects/ipsa in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/StreamBuffer.php on line 269
+[18-Feb-2019 13:46:45 Asia/Taipei] PHP Fatal error:  Uncaught exception 'Swift_TransportException' with message 'Connection could not be established with host smtp.goolge.biz [php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known #0]' in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/StreamBuffer.php:269
+Stack trace:
+#0 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/StreamBuffer.php(62): Swift_Transport_StreamBuffer->_establishSocketConnection()
+#1 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/AbstractSmtpTransport.php(113): Swift_Transport_StreamBuffer->initialize(Array)
+#2 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Mailer.php(79): Swift_Transport_AbstractSmtpTransport->start()
+#3 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/mailTest.php(83): Swift_Mailer->send(Object(Swift_Message))
+#4 /Users/halu/IdeaProjects/ipsa in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/StreamBuffer.php on line 269
+[18-Feb-2019 13:46:47 Asia/Taipei] PHP Fatal error:  Uncaught exception 'Swift_TransportException' with message 'Connection could not be established with host smtp.goolge.biz [php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known #0]' in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/StreamBuffer.php:269
+Stack trace:
+#0 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/StreamBuffer.php(62): Swift_Transport_StreamBuffer->_establishSocketConnection()
+#1 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/AbstractSmtpTransport.php(113): Swift_Transport_StreamBuffer->initialize(Array)
+#2 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Mailer.php(79): Swift_Transport_AbstractSmtpTransport->start()
+#3 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/mailTest.php(83): Swift_Mailer->send(Object(Swift_Message))
+#4 /Users/halu/IdeaProjects/ipsa in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/StreamBuffer.php on line 269
+[18-Feb-2019 13:46:56 Asia/Taipei] PHP Fatal error:  Uncaught exception 'Swift_TransportException' with message 'Connection could not be established with host smtp.goolge.biz [php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known #0]' in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/StreamBuffer.php:268
+Stack trace:
+#0 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/StreamBuffer.php(62): Swift_Transport_StreamBuffer->_establishSocketConnection()
+#1 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/AbstractSmtpTransport.php(113): Swift_Transport_StreamBuffer->initialize(Array)
+#2 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Mailer.php(79): Swift_Transport_AbstractSmtpTransport->start()
+#3 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/mailTest.php(83): Swift_Mailer->send(Object(Swift_Message))
+#4 /Users/halu/IdeaProjects/ipsa in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/StreamBuffer.php on line 268
+[18-Feb-2019 13:48:02 Asia/Taipei] PHP Fatal error:  Uncaught exception 'Swift_TransportException' with message 'Connection could not be established with host smtp.goolge.biz [php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known #0]' in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/StreamBuffer.php:268
+Stack trace:
+#0 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/StreamBuffer.php(62): Swift_Transport_StreamBuffer->_establishSocketConnection()
+#1 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/AbstractSmtpTransport.php(113): Swift_Transport_StreamBuffer->initialize(Array)
+#2 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Mailer.php(79): Swift_Transport_AbstractSmtpTransport->start()
+#3 /Users/halu/IdeaProjects/ipsa/digital_recipe/development/test/mailTest.php(83): Swift_Mailer->send(Object(Swift_Message))
+#4 /Users/halu/IdeaProjects/ipsa in /Users/halu/IdeaProjects/ipsa/digital_recipe/development/lib/swiftmailer/classes/Swift/Transport/StreamBuffer.php on line 268

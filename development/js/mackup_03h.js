@@ -107,23 +107,26 @@ $('.next').on('click',function() {
             }
             k++;
         }
+        var selectVale = $('#makupText9').val();
+        sessionStorage.setItem("MAKUP_TEXT_9",selectVale);
 
         if(!canvasMackup){
 
-            setTimeout(function () {
+            if(window.innerHeight<700){
+                alert("請把鍵盤收起，再進行下一步");
+              return false;
+            }else{
+              getdata();
+              setTimeout(function () {
                 htmlToCanvas();
-            },300);
+              },300);
 
-            getdata();
+            }
+        }else{
+          getdata();
+          gotoNextPage();
         }
-
-
-        setTimeout(function () {
-            window.open('makeup_04.html','_self');
-        },800);
-
     }
-
 
 });
 
@@ -157,6 +160,7 @@ function htmlToCanvas() {
             $('#previewImage').append("<img src="+canvas.toDataURL("image/png")+">");
             $('#previewImage > img').css('display','none');
             sessionStorage.setItem('canvasFace_2',canvas.toDataURL("image/png"));
+            gotoNextPage();
         }
     });
 
@@ -183,7 +187,7 @@ function tmpDate() {
 
     // for (var i = 0; i < len; i++) {
 
-        for (var j = 0; j < 10; j++) {
+        for (var j = 0; j < 9; j++) {
 
             if (sessionStorage.getItem("MAKUP_TEXT_" + j)) {
 
@@ -194,12 +198,12 @@ function tmpDate() {
                 var count ;
                 count = tmp.length;
 
-                if(count<10){
+                if(count<9){
 
                 $('#firstInput').remove();
 
                 $('.note').append('<div><input type="text" placeholder="請填寫圖片說明" maxlength="18" name="MAKUP_TEXT" value="'+sessionStorage.getItem(tmpName)+'" /><div class="remove">-</div></div>');
-                }else if(count === 10){
+                }else if(count === 9){
                     $('.note').append('<div><input type="text" placeholder="請填寫圖片說明" maxlength="18" name="MAKUP_TEXT" value="'+sessionStorage.getItem(tmpName)+'" /><div class="new" style="display: none">+</div></div>');
                 }
 
@@ -208,10 +212,12 @@ function tmpDate() {
     // }
 
 
-    if(count<10){
+    if(count<9){
         $('.note').append('<div><input type="text" placeholder="請填寫圖片說明" maxlength="18" name="MAKUP_TEXT" /><div class="new" >+</div></div>');
         count++;
     }
+
+    $('#makupText9').val(sessionStorage.getItem("MAKUP_TEXT_9"));
 
     return(count);
 
@@ -226,12 +232,11 @@ function setinput(count){
 
     if(count){
         n = count-1;
-        num = 10;
+        num = 9;
     }else{
         n = 0;
-        num = 10;
+        num = 9;
     }
-
 
 
     $(document).on("click touchstart", ".new", function() {
@@ -256,4 +261,7 @@ function setinput(count){
 
 }
 
+function gotoNextPage(){
+  window.open('makeup_04.html','_self');
+}
 

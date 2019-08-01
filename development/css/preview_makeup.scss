@@ -12,7 +12,7 @@ body{
 
 body[page=preview_makeup] {
 	#content .makeup .border{
-		padding: 15px;
+		padding: 8px 15px;
 		.L{
 			width: 500px;
 			//height: 448px;
@@ -94,22 +94,22 @@ body[page=preview_makeup] {
 
 			.suggest{
 				width: 100%;
-				height: 60px;
+				height: 71px;
 				border:1px solid #666;
 				padding: 7px;
 			}
 		}
 
 		.R{
-			width: 288px;
+			width: 302px;
 			//height: 448px;
 			//padding: 15px 15px 0px 0;
 
 			.theme{
-				width: 288px;
+				width: 302px;
 				height: 25px;
 				line-height: 25px;
-				margin: 0 auto 10px;
+				margin: 0 auto 4px;
 				font-size: 1em;
 				font-weight: bold;
 
@@ -130,7 +130,7 @@ body[page=preview_makeup] {
 			}
 
 			.makeup02{
-				margin-top: 11px;
+				margin-top: 5px;
 				.mL{
 					width: 128px;
 					height: 94px;
@@ -148,8 +148,8 @@ body[page=preview_makeup] {
 
 			.blank{
 				table{
-					margin:0 auto 10px;
-					width: 288px;
+					margin:0 auto 4px;
+					width: 302px;
 
 					tr{
 						td{
@@ -179,8 +179,8 @@ body[page=preview_makeup] {
 			}
 
 			table.form{
-				margin: 10px auto;
-				width: 288px;
+				margin: 4px auto;
+				width: 302px;
 				text-align: center;
 				colgroup{
 					col:nth-child(1){
@@ -290,13 +290,17 @@ body[page=preview_makeup] {
 				}
 
 				.opacity{
+					height: 33px;
 					td:nth-child(3), td:nth-child(4){
 						padding: 0;
 						>div:first-child{
 							//width: 34px;
-                            height: 13px; //border-right: 1px solid #333;
-                            line-height: 13px;
-                            vertical-align: middle;
+                            height: 11px; //border-right: 1px solid #333;
+                            line-height: 11px;
+                            vertical-align: top;
+														position: relative;
+														top: -4px
+
                             //float: left;
 
 						}
@@ -305,10 +309,11 @@ body[page=preview_makeup] {
                             height: 11px;
                             line-height: 11px;
                             vertical-align: top;
-                            //float: left;
+														position: relative;
+														top: -4px;
 
 							& :nth-child(1){ //select
-								//display: inline-block;
+								//display: inline-
                                 width: 75px;
                                 height: 11px;
                                 line-height: 11px;
@@ -317,6 +322,10 @@ body[page=preview_makeup] {
                                 font-size: 9px;
                                 //letter-spacing: -1px;
                                 //margin-left: -2px;
+							}
+							& :nth-child(1){
+								height: 11px;
+
 							}
 
 						}
@@ -331,6 +340,13 @@ body[page=preview_makeup] {
 							height: 24px;
 							line-height: 24px;
 						}
+					}
+				}
+				.season {
+					.c-season{
+						line-height: 12px;
+						width: 80px;
+						word-break: break-all
 					}
 				}
 
@@ -361,7 +377,7 @@ body[page=preview_makeup] {
                         color: #333;
                         height: 25px;
                         line-height: 25px;
-                        margin-right: 10px;
+                        margin-right: 5px;
                     }
 
                     input[type="checkbox"]+label span {

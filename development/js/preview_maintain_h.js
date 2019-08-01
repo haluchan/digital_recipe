@@ -71,6 +71,7 @@ function sessionData(){
     var skin_color_c = parseInt(sessionStorage.SKIN_COLOR_C);
     var skin_light_c = parseInt(sessionStorage.SKIN_LIGHT_C);
     var elasticity = parseInt(sessionStorage.ELASTICITY);
+    var accumulation = parseInt(sessionStorage.ACCUMULATION);
 
     var natural = parseInt(sessionStorage.NATURAL_C);
     var acquired = parseInt(sessionStorage.ACQUIRED_C);
@@ -104,8 +105,10 @@ function sessionData(){
     $("#SG").text(sessionStorage.SG);
     $("#TRANSPARENCY").text(sessionStorage.TRANSPARENCY);
     $("#TRANSPARENCY_C").text(transparencyEX(transparency));
+    $("#ACCUMULATION").text(accumulationEX(accumulation));
     $("#HORNY").text(sessionStorage.HORNY);
     $("#SKIN_LEVEL").text(skinLevelEX(skinLevel));
+    $("#SEASON").text(sessionStorage.SEASON);
 
     $('div[name="SKIN_COLOR_C"]').text(skin_color_cEX(skin_color_c));
     $('div[name="SKIN_LIGHT_C"]').text(skin_light_cEX(skin_light_c));
@@ -221,6 +224,21 @@ function sessionData(){
 
     }
 
+    if(sessionStorage.DETOXI_C !=="0"){
+
+        $('#7').attr('checked','checked');
+        $('#sDETOXI').text(specEx(sessionStorage.DETOXI_C));
+        $('#sDETOXI').css('display','block');
+
+        if(sessionStorage.DETOXI_T !== "0"){
+            $('#7').attr('checked','checked');
+            $('#pDETOXI').text(detoxiEx(sessionStorage.DETOXI_T));
+            $('#pDETOXI').siblings(".arrow").css('display','block');
+            $('#pDETOXI').css('display','block');
+        }
+
+    }
+
 
     if(sessionStorage.SUGGESTION !== undefined){
         var textCont = sessionStorage.SUGGESTION;
@@ -239,7 +257,7 @@ function canvasImg() {
 
 function getMaintainData(xmlDoc) {
 
-    var elasticity,transparency_c,skinLevel,moisture,sebum,tension,sg,transparency,horny,check;
+    var elasticity,transparency_c,skinLevel,moisture,sebum,tension,sg,transparency,horny,check,accumulation,season;
 
     if(xmlDoc.getElementsByTagName('ROW')[1] !== undefined){
 
@@ -253,8 +271,14 @@ function getMaintainData(xmlDoc) {
         transparency = parseInt(xmlDoc.getElementsByTagName('TRANSPARENCY')[0].textContent);
         horny = parseInt(xmlDoc.getElementsByTagName('HORNY')[0].textContent);
 
+        if(xmlDoc.getElementsByTagName('ACCUMULATION')[0]){
+            accumulation = parseInt(xmlDoc.getElementsByTagName('ACCUMULATION')[0].textContent);
+        }
+        if(xmlDoc.getElementsByTagName('SEASON')[0]){
+            season = xmlDoc.getElementsByTagName('SEASON')[0].textContent;
+        }
     }
-    check = new checkForm(elasticity, transparency_c, skinLevel, moisture, sebum, tension, sg, transparency, horny);
+    check = new checkForm(elasticity, transparency_c, skinLevel, moisture, sebum, tension, sg, transparency, horny, accumulation);
 
     $('#p-moisture').text(check.moisture);
     $('#p-sebum').text(check.sebum);
@@ -269,10 +293,14 @@ function getMaintainData(xmlDoc) {
 
     $('#p-skin_level').text(check.skinLevel);
 
+    $('#p-accumulation').text(check.accumulation);
+
+    $('#p-season').text(season);
+
     setTimeout(htmlToCanvas(),0);
 }
 
-function checkForm(elasticity, transparency_c, skinLevel, moisture, sebum, tension, sg, transparency, horny) {
+function checkForm(elasticity, transparency_c, skinLevel, moisture, sebum, tension, sg, transparency, horny, accumulation) {
     this.elasticity = elasticityEX(elasticity);
     this.transparency_c = transparencyEX(transparency_c);
     this.skinLevel = skinLevelEX(skinLevel);
@@ -282,6 +310,7 @@ function checkForm(elasticity, transparency_c, skinLevel, moisture, sebum, tensi
     this.sg = sg === 0 || sg === undefined ? "" : sg ;
     this.transparency = transparency === 0 || transparency === undefined ? "" : transparency ;
     this.horny = horny === 0 || horny === undefined ? "" : horny ;
+    this.accumulation = accumulationEX(accumulation);
 }
 
 
@@ -506,6 +535,35 @@ function naturalEX(tmp) {
 
 }
 
+function accumulationEX(tmp){
+
+    switch(tmp) {
+        case 0:
+            tmp = "無選取";
+            break;
+        case 1:
+            tmp = "LV.1";
+            break;
+        case 2:
+            tmp = "LV.2";
+            break;
+        case 3:
+            tmp = "LV.3";
+            break;
+        case 4:
+            tmp = "LV.4";
+            break;
+        case 5:
+            tmp = "LV.5";
+            break;
+        default:
+            tmp = "無選取";
+
+    }
+
+    return(tmp);
+}
+
 function specEx(tmp) {
 
     switch (tmp) {
@@ -576,6 +634,15 @@ function specEx(tmp) {
             tmp = "敏感:提升肌膚防禦力";
             break;
         case '36':
+            tmp = "其他";
+            break;
+        case '37':
+            tmp = "加強代謝老廢蛋白質、多餘水分";
+            break;
+        case '38':
+            tmp = "消除浮腫";
+            break;
+        case '39':
             tmp = "其他";
             break;
         default:
@@ -717,6 +784,9 @@ function hornyEx(tmp) {
         case "1405":
             tmp = "冰點淨白水慕斯";
             break;
+        case "1406":
+            tmp = "泥狀美體按摩霜";
+            break;
         case "1501":
             tmp = "泥狀角質按摩霜e";
             break;
@@ -731,6 +801,9 @@ function hornyEx(tmp) {
             break;
         case "1505":
             tmp = "冰點淨白水慕斯";
+            break;
+        case "1506":
+            tmp = "泥狀美體按摩霜";
             break;
 
     }
@@ -887,6 +960,9 @@ function uvEx(tmp) {
         case "2703":
             tmp = "全身抗痕防護乳";
             break;
+        case "2704":
+            tmp = "冰點防曬身體水慕斯";
+            break;
 
     }
 
@@ -1011,6 +1087,22 @@ function otherEx(tmp) {
     return(tmp);
 }
 
+function detoxiEx(tmp) {
+
+    switch(tmp) {
+        case "3701":
+            tmp = "淨化歸０前導精萃";
+            break;
+        case "3801":
+            tmp = "淨化歸０前導精萃";
+            break;
+
+    }
+
+    return(tmp);
+
+
+}
 
 
 function sentData() {
@@ -1082,7 +1174,9 @@ function sentData() {
         TRANSPARENCY: sessionStorage.TRANSPARENCY,
         TRANSPARENCY_C: sessionStorage.TRANSPARENCY_C,
         HORNY: sessionStorage.HORNY,
+        ACCUMULATION: sessionStorage.ACCUMULATION,
         SKIN_LEVEL: sessionStorage.SKIN_LEVEL,
+        SEASON: sessionStorage.SEASON,
         SKIN_COLOR_C: sessionStorage.SKIN_COLOR_C,
         SKIN_LIGHT: sessionStorage.SKIN_LIGHT_O,
         SKIN_LIGHT_C: sessionStorage.SKIN_LIGHT_C,
@@ -1102,6 +1196,8 @@ function sentData() {
         UV_T: sessionStorage.UV_T,
         OTHER_C: sessionStorage.OTHER_C,
         OTHER_T: sessionStorage.OTHER_T,
+        DETOXI_C: sessionStorage.DETOXI_C,
+        DETOXI_T: sessionStorage.DETOXI_T,
         SUGGESTION: sessionStorage.SUGGESTION,
         MAKEUP_URL: sessionStorage.canvasFace_2,
         SKIN_WATER_URL: sessionStorage.canvasFace_3,

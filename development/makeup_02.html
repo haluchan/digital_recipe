@@ -90,7 +90,7 @@
                 </div>
                 <div class="R floatR">
                     <div class="title">主題<input name="SUBJECT" type="text" placeholder="請輸入處方箋主題" style="width:359px;" maxlength="19">
-                        
+
                     </div>
                     <!--主題-->
                     <div class="title">原膚色
@@ -135,7 +135,7 @@
                     </div>
 
                     <!--肌膚檢測結果-->
-                    <table class="form">                        
+                    <table class="form">
                         <colgroup>
                             <col span="1">
                             <col span="1">
@@ -154,7 +154,7 @@
                             <td>
                                 <div>
                                     <input type="tel" pattern="[0-9]*" name="MOISTURE" placeholder="輸入" maxlength="2" />/<input type="tel" pattern="[0-9]*" name="SEBUM" placeholder="輸入" maxlength="2" />
-                                    
+
                                 </div>
                             </td>
                             <td><span id="p-moisture"></span>/<span id="p-sebum"></span></td>
@@ -207,6 +207,21 @@
                             </td>
                             <td><span id="p-horny"></span></td>
                         </tr>
+                        <tr class="corneum">
+                            <td>累積程度</td>
+                            <td>-</td>
+                            <td>
+                                <select name="ACCUMULATION">
+                                    <option value="">請選擇</option>
+                                    <option value="1">&nbsp;&nbsp;LV.1</option>
+                                    <option value="2">&nbsp;&nbsp;LV.2</option>
+                                    <option value="3">&nbsp;&nbsp;LV.3</option>
+                                    <option value="4">&nbsp;&nbsp;LV.4</option>
+                                    <option value="5">&nbsp;&nbsp;LV.5</option>
+                                </select>
+                            </td>
+                            <td><span id="p-accumulation"></span></td>
+                        </tr>
                         <tr class="level">
                             <td>美肌等級</td>
                             <td>-</td>
@@ -217,18 +232,28 @@
                             </td>
                             <td><span id="p-skin_level"></span></td>
                         </tr>
+                        <tr class="SEASON">
+                            <td>季節檢測</td>
+                            <td>-</td>
+                            <td>
+                                <textarea id="season" rows="2" cols="18" name="SEASON" maxlength="18" required></textarea>
+                            </td>
+                            <td>
+                                <textarea  id="p-season" rows="2" cols="18" readonly></textarea>
+
+                        </tr>
                     </table>
                     <!--end 肌膚檢測結果-->
                 </div>
                 <div class="B floatL clearfix">
                     <div class="title floatL">適合的底妝類型</div>
                     <form class="check floatR">
-                        <input type="checkbox" id="1" name="CREAM_F" value="0"><label for="1"><span></span>粉霜蜜</label>
-                        <input type="checkbox" id="2" name="COSMETICS_F" value="0"><label for="2"><span></span>彩妝蜜</label>
-                        <input type="checkbox" id="3" name="WATER_F" value="0"><label for="3"><span></span>水粉蜜</label>
-                        <input type="checkbox" id="4" name="POWDER_F" value="0"><label for="4"><span></span>粉餅</label>
-                        <input type="checkbox" id="5" name="FOUNDATION_F" value="0"><label for="5"><span></span>輕粉露</label>
-                        <input type="checkbox" id="6" name="PRESSED_F" value="0"><label for="6"><span></span>粉凝霜</label>
+                        <input type="checkbox" id="1" name="CREAM_F" value="0"><label for="1"><span></span>霜狀粉底</label>
+                        <input type="checkbox" id="2" name="COSMETICS_F" value="0"><label for="2"><span></span>液態粉底</label>
+                        <input type="checkbox" id="4" name="POWDER_F" value="0"><label for="4"><span></span>餅&nbsp;狀</label>
+                        <input type="checkbox" id="3" name="WATER_F" value="0"><label for="3"><span></span>蜜&nbsp;粉</label>
+<!--                        <input type="checkbox" id="5" name="FOUNDATION_F" value="0"><label for="5"><span></span>輕粉露</label>-->
+<!--                        <input type="checkbox" id="6" name="PRESSED_F" value="0"><label for="6"><span></span>粉凝霜</label>-->
                     </form>
                 </div>
             </div>

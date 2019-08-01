@@ -77,7 +77,7 @@ body[page=maintain_02] {
         background: url('../img/maintain/02/bg.png') center top no-repeat;
         background-size: 100%;
 
-        .L{         
+        .L{
             width: 460px;
             height: inherit;
             padding: 15px;
@@ -135,11 +135,11 @@ body[page=maintain_02] {
                     }
                 }
             }
-            
+
 
         }
 
-        
+
     }
 }
 
@@ -149,7 +149,7 @@ body[page=maintain_02] {
 body[page=maintain_03] {
     #content .maintain .border{
 
-        .L{         
+        .L{
             width: 360px;
             height: inherit;
             padding: 15px;
@@ -203,7 +203,7 @@ body[page=maintain_03] {
 
                 }
             }
-            
+
 
         }
 
@@ -301,7 +301,7 @@ body[page=maintain_03] {
 
                         &::-webkit-input-placeholder { /* WebKit browsers */
                             color: #ccc;
-                        }                       
+                        }
                     }
 
 
@@ -338,13 +338,13 @@ body[page=maintain_04] {
         .R {
             width: 432px;
             height: 499px;
-            padding: 60px 15px 0px 0;
+            padding: 14px 15px 0px 0;
 
             .title {
                 width: 411px;
                 height: 34px;
                 line-height: 34px;
-                margin: 0 auto 15px;
+                margin: 0 auto 14px;
                 font-size: 1em;
                 font-weight: bold;
                 input {
@@ -369,7 +369,7 @@ body[page=maintain_04] {
 
             .blank {
                 table {
-                    margin: 0 auto 15px;
+                    margin: 0px auto 6px;
                     width: 411px;
 
                     tr {
@@ -408,7 +408,7 @@ body[page=maintain_04] {
             }
 
             table.form {
-                margin: 14px auto;
+                margin: 8px auto 4px;
                 width: 411px;
                 text-align: center;
                 colgroup {
@@ -436,7 +436,7 @@ body[page=maintain_04] {
 
                     td {
                         border: 1px solid #333;
-                        padding: 0 7px;
+                        padding: 0 5px;
                         vertical-align: middle;
                         &:first-child {
                             font-weight: bold;
@@ -457,6 +457,15 @@ body[page=maintain_04] {
                             appearance: none;
                             background: url('../img/arrow.svg') right center no-repeat;
                             background-size: 15px;
+                        }
+                        textarea {
+                            width: 120px;
+                            height: 40px;
+                            border: none;
+                            margin: auto;
+                            resize: none;
+                            overflow:hidden;
+                            vertical-align: top;
                         }
                     }
                 }
@@ -609,7 +618,7 @@ body[page=maintain_05] {
                 position: absolute;
                 right:10px;
             } */
-            
+
 
             .step{
                 position: relative;
@@ -629,7 +638,7 @@ body[page=maintain_05] {
             }
 
             .step:before{
-                text-align: center;             
+                text-align: center;
                 font-size: 1em;
                 border:1px solid #333;
                 width: 18px;
@@ -693,7 +702,7 @@ body[page=maintain_05] {
             .basic{
                 height: 38px;
                 line-height: 38px;
-                margin: 9px 0;
+                margin: 4px 0;
 
                 input[type="checkbox"]{
                     width: 20px;
@@ -729,7 +738,7 @@ body[page=maintain_05] {
                 .sub{
                     display: none;
 
-                    select{                        
+                    select{
                         height: 38px;
                         float: left;
                         padding: 0 10px;
@@ -756,14 +765,14 @@ body[page=maintain_05] {
                         width: 133px;
                         text-align: center;
                     }
-                
+
                 }
             }
 
             ul.special{
                 li{
-                    height: 37px;
-                    line-height: 37px;
+                    height: 32px;
+                    line-height: 32px;
                     margin-bottom: 4px;
                     &:last-child{
                         margin: 0;
@@ -780,8 +789,8 @@ body[page=maintain_05] {
                         color:#333;
                         float:left;
                         width: 156px;
-                        height: 37px;
-                        line-height: 37px;
+                        height: 32px;
+                        line-height: 32px;
                     }
 
                     input[type="checkbox"] + label span {
@@ -805,7 +814,7 @@ body[page=maintain_05] {
 
                         select{
                             width: 307px;
-                            height: 37px;
+                            height: 32px;
                             float: left;
                             padding: 0 10px;
                             border: 0;
@@ -821,15 +830,15 @@ body[page=maintain_05] {
                             display: none;
                             float: left;
                             width: 29px;
-                            height: 37px;
+                            height: 32px;
                             background: url('../img/arrow_gray.png') center center no-repeat;
                             background-size: 19px;
                         }
 
                         input[type=text]{
                             width: 320px;
-                            height: 37px;
-                            line-height: 37px;
+                            height: 32px;
+                            line-height: 32px;
                             float:right;
                             outline: 0;
                             border:0;
@@ -840,13 +849,13 @@ body[page=maintain_05] {
 
                             &::-webkit-input-placeholder { /* WebKit browsers */
                                 color: #aaa;
-                            }          
+                            }
                         }
 
                         >div select{
                             display: none;
                             width: 320px;
-                            height: 37px;
+                            height: 32px;
                             float: right;
                             padding: 0 10px;
                             border: 0;
@@ -856,10 +865,10 @@ body[page=maintain_05] {
                             option{
                                 background-color: #fff;
                             }
-                            
+
                         }
 
-                        
+
                     }
 
 
@@ -867,6 +876,6 @@ body[page=maintain_05] {
 
                 }
             }
-        
+
     }
 }

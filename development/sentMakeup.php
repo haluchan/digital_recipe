@@ -311,7 +311,9 @@ if(isset($data)) {
                     "TRANSPARENCY" => $data["TRANSPARENCY"],
                     "TRANSPARENCY_C" => $data["TRANSPARENCY_C"],
                     "HORNY" => $data["HORNY"],
+                    "ACCUMULATION" => $data["ACCUMULATION"],
                     "SKIN_LEVEL" => $data["SKIN_LEVEL"],
+                    "SEASON" => $data["SEASON"],
                     "EYEBROW_TC" => $data["EYEBROW_TC"],
                     "SHADOW" => $data["SHADOW"],
                     "SHADOW_S" => $data["SHADOW_S"],
@@ -420,7 +422,7 @@ try{
 
         }else{
             delFile($data);
-            echo "PDF檔案無法存取";
+            echo "處方籤資料已紀錄，預覽圖檔上傳失敗，PDF檔案無法輸出";
 
         }
 
@@ -449,23 +451,30 @@ function savePDFImg($data){
 
     require('fpdf/fpdf.php');
     $img_data = $data["PDFImage"];
+
+
     $pdfimg = explode(',', $img_data);
     $encodedImg = $pdfimg[1];
     $decodedImg = base64_decode($encodedImg);
+    if(empty($decodedImg)){
+      return false;
+    }else{
+      $parh='image/mackup/pdf/';//pdf儲存路徑
+      $vipids =$data["VIPIDS"];
+      $fileName=$parh. $vipids;     //pdf檔名
+      if(file_put_contents("$fileName.png",$decodedImg)){
+        //  Save image to a temporary location
 
-    $parh='image/mackup/pdf/';//pdf儲存路徑
-    $vipids =$data["VIPIDS"];
-    $fileName=$parh. $vipids;     //pdf檔名
-    file_put_contents("$fileName.png",$decodedImg);
-    //  Save image to a temporary location
-
-    //  Open new PDF document and print image
-    $pdf = new FPDF('L','pt',array(574.56,481.32));
-    $pdf->AddPage();
-    $pdf->Image("$fileName.png",0,0,574.56,481.32,'png');
-    $pdf->Output($fileName.".pdf",'F');
-
-    return true;
+        //  Open new PDF document and print image
+        $pdf = new FPDF('L','pt',array(574.56,481.32));
+        $pdf->AddPage();
+        $pdf->Image("$fileName.png",0,0,574.56,481.32,'png');
+        $pdf->Output($fileName.".pdf",'F');
+        return true;
+      }else{
+        return false;
+      }
+    }
 }
 
 
@@ -531,8 +540,5 @@ function delFile($data){
 //savePDFImg($data);
 //sendMail($data);
 //delFile($data);
-
-
-
 
 ?>

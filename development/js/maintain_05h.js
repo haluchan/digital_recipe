@@ -114,6 +114,10 @@ function saveData() {
                 var otherValue = $('input:text')[5].value;
                 sessionStorage.setItem('OTHER_T',otherValue);
             }
+            if($('select')[i].value === "39"){
+                var detoxiValue = $('input:text')[6].value;
+                sessionStorage.setItem('DETOXI_T',detoxiValue);
+            }
 
     }
 
@@ -135,11 +139,15 @@ function saveData() {
     if(sessionStorage.getItem("OTHER_T") === null){
         sessionStorage.setItem("OTHER_T","0")
     }
+    if(sessionStorage.getItem("DETOXI_T") === null){
+        sessionStorage.setItem("DETOXI_T","0")
+    }
 
 
     var textare = $('textarea')[0].name;
     var textUare = textare.toUpperCase();
     var textareValue = $('#textarea').val();
+
 
     sessionStorage.setItem(textUare,textareValue);
 
@@ -182,12 +190,14 @@ function sessionData() {
     var elasticity_t = sessionStorage.getItem("ELASTICITY_T");
     var uv_t = sessionStorage.getItem("UV_T");
     var other_t = sessionStorage.getItem("OTHER_T");
+    var detoxi_t = sessionStorage.getItem("DETOXI_T");
     var horny_c = sessionStorage.getItem("HORNY_C");
     var drying_c = sessionStorage.getItem("DRYING_C");
     var whitening_c = sessionStorage.getItem("WHITENING_C");
     var elasticity_c = sessionStorage.getItem("ELASTICITY_C");
     var uv_c = sessionStorage.getItem("UV_C");
     var other_c = sessionStorage.getItem("OTHER_C");
+    var detoxi_c = sessionStorage.getItem("DETOXI_C");
 
     if (horny_c !== null) {
 
@@ -504,6 +514,47 @@ function sessionData() {
         $('#' + other + '').css('display', 'inline-block');
     }
 
+    if (detoxi_c !== null) {
+
+        var detoxi = detoxi_c;
+
+        switch (detoxi) {
+            case '37':
+
+                $('.detoxi_sub').append('<select id="' + data[6].option[1].value + '" name="detoxi_t"></select>');
+
+                var len = data[6].option[1].option.length;
+
+                for (i = 0; i < len; i++) {
+
+                    $('.detoxi_sub select[id="37"]').append('<option value="' + data[6].option[1].option[i].value + '">' + data[6].option[1].option[i].name + '</option>')///
+                }
+
+                $('#detoxi_t').val('');
+                break;
+            case '38':
+
+                $('.detoxi_sub').append('<select id="' + data[6].option[2].value + '" name="detoxi_t"></select>');
+
+                var len = data[6].option[2].option.length;
+
+                for (i = 0; i < len; i++) {
+
+                    $('.detoxi_sub select[id="38"]').append('<option value="' + data[6].option[2].option[i].value + '">' + data[6].option[2].option[i].name + '</option>')///
+                }
+
+                $('#detoxi_t').val('');
+                break;
+            case '0':
+                break;
+            default:
+                $('#detoxi_t').css('display', 'inline-block');
+                $('#detoxi_t').val(detoxi_t);
+        }
+        $('#' + detoxi + '').val(detoxi_t);
+        $('#' + detoxi + '').css('display', 'inline-block');
+    }
+
 
     var sessionLen = sessionStorage.length;
 
@@ -545,6 +596,7 @@ function sessionData() {
 
 function checkdata(){
 
+    var flag = false;
 
     if($('#basic')[0].checked === true){
 
@@ -559,7 +611,7 @@ function checkdata(){
 
         var checkNum = 0 ;
 
-        for (var i = 1; i < 7; i++) {
+        for (var i = 1; i < 8; i++) {
 
             if($("input:checkbox")[i].checked === true){
 
@@ -696,6 +748,40 @@ function checkdata(){
             }
         }
 
+    }
+    if ($('input:checkbox')[7].checked === true) {
+
+        if ($('#detoxi_c').val() === "0") {
+
+            alert('請選擇排毒保養內容');
+
+            return false;
+
+        }else{
+
+            if($('select[name="detoxi_t"]').val() === "0" && $('#detoxi_t').val() === ""){
+
+                alert('請選擇排毒保養內容');
+
+                return false;
+
+            }
+        }
+
+    }
+    var textareVal= $('#textarea').val();
+    var regex = /[＆：]/gm;
+    var m;
+
+    if ((m = regex.exec(textareVal)) !== null) {
+        if (m.index === regex.lastIndex) {
+            regex.lastIndex++;
+
+        }
+        m.forEach(function(match) {
+            alert('請勿使用'+ match +'字元');
+        });
+        return false;
     }
     return true;
 }

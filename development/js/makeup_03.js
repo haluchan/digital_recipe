@@ -100,6 +100,10 @@ $(document).ready(function() {
     for (i = 0; i < lips_c.length; i++) {
         $('.lips .menu.c ul').append('<li data="' + lips_c[i] + '"><div><img src="img/makeup/03/lips_c/' + lips_c[i] + '.png"></div><div class="bt_num">' + lips_c[i] + '</div></li>');
     }
+    var lips_d = ["01", "02", "03", "04", "05", "06", "07","08", "09", "10", "11", "12"];
+    for (i = 0; i < lips_d.length; i++) {
+        $('.lips .menu.d ul').append('<li data="' + lips_d[i] + '"><div><img src="img/makeup/03/lips_d/' + lips_d[i] + '.png"></div><div class="bt_num">' + lips_d[i] + '</div></li>');
+    }
     //edited by robert start
     $('.lips .list li').click(function() {
         doc = $(this).closest('.menu').attr('data');

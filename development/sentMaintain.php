@@ -33,7 +33,7 @@ function getName($data){
 
         $pdo = new PDO($dsn, $user, $password, $options);
         $pdo->beginTransaction();
-        $sql = "INSERT INTO ImgMaintain (i_name , i_ext , i_c_a_no) VALUE(:name,:png,:admin)";
+        $sql = "INSERT INTO ImgMaintainTest (i_name , i_ext , i_c_a_no) VALUE(:name,:png,:admin)";
         $imgRow = $pdo->prepare( $sql );
         $imgRow->bindValue(":name", $data["VIPIDS"]);
         $imgRow->bindValue(":png", "png");
@@ -280,7 +280,9 @@ if(isset($data)) {
                     "TRANSPARENCY" => $data["TRANSPARENCY"],
                     "TRANSPARENCY_C" => $data["TRANSPARENCY_C"],
                     "HORNY" => $data["HORNY"],
+                    "ACCUMULATION" => $data["ACCUMULATION"],
                     "SKIN_LEVEL" => $data["SKIN_LEVEL"],
+                    "SEASON" => $data["SEASON"],
                     "SKIN_COLOR_C" => $data["SKIN_COLOR_C"],
                     "SKIN_LIGHT" => $data["SKIN_LIGHT"],
                     "SKIN_LIGHT_C" => $data["SKIN_LIGHT_C"],
@@ -300,6 +302,8 @@ if(isset($data)) {
                     "UV_T" => $data["UV_T"],
                     "OTHER_C" => $data["OTHER_C"],
                     "OTHER_T" => $data["OTHER_T"],
+                    "DETOXI_C" => $data["DETOXI_C"],
+                    "DETOXI_T" => $data["DETOXI_T"],
                     "SUGGESTION" => $data["SUGGESTION"],
                     "MAKEUP_URL" => $makeupName,
                     "SKIN_WATER_URL" => $skinWaterName
@@ -353,12 +357,14 @@ try{
 //    var_dump($client->__getLastRequestHeaders());
 //    echo "<br>";
 //    echo("\nDumping request:\n");
+//  echo "送入資料";
 //    var_dump(html_entity_decode($client->__getLastRequest(),ENT_QUOTES | ENT_XML1, 'UTF-8'));
 //    echo "<br>";
 //    echo("\nDumping response headers:\n");
 //    var_dump($client->__getLastResponseHeaders());
 //    echo "<br>";
 //    echo("\nDumping response:\n");
+//  echo "回傳資料";
 //    var_dump(html_entity_decode($client->__getLastResponse(),ENT_QUOTES | ENT_XML1, 'UTF-8'));
 
 
@@ -391,7 +397,7 @@ try{
 
         }else{
             delFile($data);
-            echo "PDF檔案無法存取";
+            echo "處方籤資料已紀錄，預覽圖檔上傳失敗，PDF檔案無法輸出";
         }
 
     }else{
@@ -423,20 +429,28 @@ function savePDFImg($data){
     $pdfimg = explode(',', $img_data);
     $encodedImg = $pdfimg[1];
     $decodedImg = base64_decode($encodedImg);
+    if(empty($decodedImg)){
+      return false;
+    }else{
+      $parh='image/skincare/pdf/';//pdf儲存路徑
+      $vipids =$data["VIPIDS"];
+      $fileName=$parh. $vipids;     //pdf檔名
+      if(file_put_contents("$fileName.png",$decodedImg)){
+        //  Save image to a temporary location
 
-    $parh='image/skincare/pdf/';//pdf儲存路徑
-    $vipids =$data["VIPIDS"];
-    $fileName=$parh. $vipids;     //pdf檔名
-    file_put_contents("$fileName.png",$decodedImg);
-    //  Save image to a temporary location
+        //  Open new PDF document and print image
+        $pdf = new FPDF('L','pt',array(574.56,481.32));
+        $pdf->AddPage();
+        $pdf->Image("$fileName.png",0,0,574.56,481.32,'png');
+        $pdf->Output($fileName.".pdf",'F');
+        return true;
+      }else{
+        return false;
+      }
+    }
 
-    //  Open new PDF document and print image
-    $pdf = new FPDF('L','pt',array(574.56,481.32));
-    $pdf->AddPage();
-    $pdf->Image("$fileName.png",0,0,574.56,481.32,'png');
-    $pdf->Output($fileName.".pdf",'F');
 
-    return true;
+
 }
 
 
@@ -505,8 +519,5 @@ function delFile($data){
 //savePDFImg($data);
 //sendMail($data);
 //delFile($data);
-
-
-
 
 ?>

@@ -44,8 +44,10 @@ $(document).ready(function(){
         }
       },
       success: function(response) {
-        // console.log(response);
-        if(!response.hasOwnProperty("RTNDATA")){
+        console.log(response);
+        if(response.hasOwnProperty("RTNMSG")){
+          alert(response.RTNMSG[0])
+        } else if(!response.hasOwnProperty("RTNDATA")){
           $('.maintain').css("display","none");
           $('.empty').css("display","block");
         }else{
@@ -291,6 +293,8 @@ function viewMaintainDate(data,pdata) {
   $('.suv_t').text(result.uv_t);
   $('.sother_c').text(result.other_c);
   $('.sother_t').text(result.other_t);
+  $('.sdetoxi_c').text(result.detoxi_c);
+  $('.sdetoxi_t').text(result.detoxi_t);
 
 //檢測
   $('.snatural_c').text(result.natural_c);
@@ -303,7 +307,9 @@ function viewMaintainDate(data,pdata) {
   $('.stransparency').text(result.transparency);
   $('.stransparency_c').text(result.transparency_c);
   $('.shorny').text(result.horny);
+  $('.saccumulation').text(result.accumulation);
   $('.sskin_level').text(result.skin_level);
+  $('.sseason').text(result.season);
 
   $('.sskin_color_c').text(result.skin_color_c);
   $('.sskin_light_c').text(result.skin_light_c);
@@ -323,7 +329,7 @@ function viewMaintainDate(data,pdata) {
   }
 
   $('.maintain01').empty();
-  $('.maintain01').append('<img style="width: 55%" src="../image/skincare/'+ Myear+'/'+Mmonth+'/'+result.skin_water_url+'.png">');
+  $('.maintain01').append('<img style="width: 47%" src="../image/skincare/'+ Myear+'/'+Mmonth+'/'+result.skin_water_url+'.png">');
   // $('.maintain01').append('<image src="../image/skincare/'+ year+'/'+result.makeup_url+'.png">');
 
 
@@ -353,8 +359,8 @@ function viewMaintainDate(data,pdata) {
   $('.sptransparency_c').text(result.ptransparency_c);
   $('.sphorny').text(result.phorny);
   $('.spskin_level').text(result.pskin_level);
-
-
+  $('.spaccumulation').text(result.paccumulation);
+  $('.spseason').text(result.pseason);
 }
 
 function getbcName(data) {
@@ -395,6 +401,8 @@ function postMaintainData(data, pdata) {
   this.sg = data.SG === "0" || data.SG === undefined ? "" : data.SG ;
   this.transparency = data.TRANSPARENCY === "0" || data.TRANSPARENCY === undefined ? "" : data.TRANSPARENCY ;
   this.horny = data.HORNY === "0" || data.HORNY === undefined ? "" : data.HORNY ;
+  this.accumulation = accumulationEX(data.ACCUMULATION);
+  this.season = typeof data.SEASON === "object" || data.SEASON === undefined ? "" : data.SEASON ;
   this.skin_color_c = skin_color_cEX(data.SKIN_COLOR_C);
   this.skin_light_c = skin_light_cEX(data.SKIN_LIGHT_C);
   this.skin_light = data.SKIN_LIGHT === "0" || data.SKIN_LIGHT === undefined ? "" : data.SKIN_LIGHT ;
@@ -422,6 +430,10 @@ function postMaintainData(data, pdata) {
   this.uv_t = uvEx(data.UV_T);
   this.other_c = specEx(data.OTHER_C);
   this.other_t = otherEx(data.OTHER_T);
+  this.detoxi_c = specEx(data.DETOXI_C);
+  this.detoxi_t = detoxiEx(data.DETOXI_T);
+
+
 
   this.suggestion = typeof data.SUGGESTION === "object" || data.SUGGESTION === undefined ? "" : data.SUGGESTION;
 
@@ -438,6 +450,8 @@ function postMaintainData(data, pdata) {
   this.ptransparency_c = pdata.TRANSPARENCY_C ? transparencyEX(pdata.TRANSPARENCY_C) : "無選取" ;
   this.phorny = pdata.HORNY === "0" || pdata.HORNY === undefined ? "" : pdata.HORNY ;
   this.pskin_level = pdata.SKIN_LEVEL ? skinLevelEX(pdata.SKIN_LEVEL) : "無選取";
+  this.paccumulation = pdata.ACCUMULATION ? accumulationEX(pdata.ACCUMULATION) : "無選取";
+  this.pseason = typeof pdata.SEASON === "object" || pdata.SEASON === undefined  ? "" : pdata.SEASON ;
 }
 
 
@@ -729,6 +743,15 @@ function specEx(tmp) {
     case '36':
       tmp = "其他";
       break;
+    case '37':
+      tmp = "加強代謝老廢蛋白質、多餘水分";
+      break;
+    case '38':
+      tmp = "消除浮腫";
+      break;
+    case '39':
+      tmp = "其他";
+      break;
     default:
       tmp = "無選取";
   }
@@ -866,6 +889,9 @@ function hornyEx(tmp) {
     case "1405":
       tmp = "冰點淨白水慕斯";
       break;
+    case "1406":
+      tmp = "泥狀美體按摩霜";
+      break;
     case "1501":
       tmp = "泥狀角質按摩霜e";
       break;
@@ -880,6 +906,9 @@ function hornyEx(tmp) {
       break;
     case "1505":
       tmp = "冰點淨白水慕斯";
+      break;
+    case "1506":
+      tmp = "泥狀美體按摩霜";
       break;
 
   }
@@ -1036,6 +1065,9 @@ function uvEx(tmp) {
     case "2703":
       tmp = "全身抗痕防護乳";
       break;
+    case "2704":
+      tmp = "冰點防曬身體水慕斯";
+      break;
 
   }
 
@@ -1158,6 +1190,27 @@ function otherEx(tmp) {
 
   return(tmp);
 }
+
+function detoxiEx(tmp) {
+
+  switch(tmp) {
+    case "0":
+      tmp = "";
+      break;
+    case "3701":
+      tmp = "淨化歸０前導精萃";
+      break;
+    case "3801":
+      tmp = "淨化歸０前導精萃";
+      break;
+    default:
+        tmp = "";
+
+  }
+
+  return(tmp);
+}
+
 function makupText10(tmp) {
 
   switch (tmp) {
@@ -1179,6 +1232,35 @@ function makupText10(tmp) {
   return(tmp);
 }
 
+
+function accumulationEX(tmp){
+
+  switch(tmp) {
+    case "0":
+      tmp = "無選取";
+      break;
+    case "1":
+      tmp = "LV.1";
+      break;
+    case "2":
+      tmp = "LV.2";
+      break;
+    case "3":
+      tmp = "LV.3";
+      break;
+    case "4":
+      tmp = "LV.4";
+      break;
+    case "5":
+      tmp = "LV.5";
+      break;
+    default:
+      tmp = "無選取";
+
+  }
+
+  return(tmp);
+}
 
 //mackup
 function viewMackupDate(data,pdata) {
@@ -1223,15 +1305,19 @@ function viewMackupDate(data,pdata) {
   $('.mtransparency').text(result.transparency);
   $('.mtransparency_c').text(result.transparency_c);
   $('.mhorny').text(result.horny);
+  $('.maccumulation').text(result.accumulation);
   $('.mskin_level').text(result.skin_level);
+  $('.mseason').text(result.season);
 
 
   $('.cream_f').val(result.cream_f);
   $('.cosmetics_f').val(result.cosmetics_f);
   $('.water_f').val(result.water_f);
   $('.powder_f').val(result.powder_f);
-  $('.foundation_f').val(result.foundation_f);
-  $('.pressed_f').val(result.pressed_f);
+
+  //2019/8/01 棄用
+  // $('.foundation_f').val(result.foundation_f);
+  // $('.pressed_f').val(result.pressed_f);
 
 
 
@@ -1280,7 +1366,8 @@ function viewMackupDate(data,pdata) {
   $('.mptransparency_c').text(result.mptransparency_c);
   $('.mphorny').text(result.mphorny);
   $('.mpskin_level').text(result.mpskin_level);
-
+  $('.mpaccumulation').text(result.mpaccumulation);
+  $('.mpseason').text(result.mpseason)
 }
 
 
@@ -1302,7 +1389,8 @@ function postMackupData(data, pdata) {
   this.transparency_c = transparencyEX(data.TRANSPARENCY_C);
   this.horny = data.HORNY === "0" || data.HORNY === undefined ? "" : data.HORNY ;
   this.skin_level = skinLevelEX(data.SKIN_LEVEL);
-
+  this.accumulation = data.ACCUMULATION ? accumulationEX(data.ACCUMULATION) : "無選取";
+  this.season = typeof data.SEASON === "object" || data.SEASON === undefined ? "" : data.SEASON ;
 
   this.bcid = data.BCID;
 
@@ -1330,7 +1418,7 @@ function postMackupData(data, pdata) {
 
   this.cream_f = data.CREAM_F === "0" || data.CREAM_F === undefined ? "0" : data.CREAM_F ;
   this.cosmetics_f = data.COSMETICS_F === "0" || data.COSMETICS_F === undefined ? "0" : data.COSMETICS_F ;
-  this.water_f = data.WATER_F === "0" || data.WATER_F === undefined ? "0" : data.WATER_F ;
+  this.water_f = data.WATER_F === "0" || data.WATER_F === undefined ? "0" : "1"; //2019/08/01後，代碼更改為2 ， 0＝否，1=水粉蜜，2=蜜粉，預設0，1為2019/08/01 前使用
   this.powder_f = data.POWDER_F === "0" || data.POWDER_F === undefined ? "0" : data.POWDER_F ;
   this.foundation_f = data.FOUNDATION_F === "0" || data.FOUNDATION_F === undefined ? "0" : data.FOUNDATION_F ;
   this.pressed_f = data.PRESSED_F === "0" || data.PRESSED_F === undefined ? "0" : data.PRESSED_F ;
@@ -1345,4 +1433,6 @@ function postMackupData(data, pdata) {
   this.mptransparency_c = pdata.TRANSPARENCY_C ? transparencyEX(pdata.TRANSPARENCY_C) : "無選取";
   this.mphorny = pdata.HORNY === "0" || pdata.HORNY === undefined ? "" : pdata.HORNY ;
   this.mpskin_level = pdata.SKIN_LEVEL ? skinLevelEX(pdata.SKIN_LEVEL) : "無選取";
+  this.mpaccumulation = pdata.ACCUMULATION ? accumulationEX(pdata.ACCUMULATION) : "無選取";
+  this.mpseason = typeof pdata.SEASON === "object" || pdata.SEASON === undefined ? "" : pdata.SEASON ;
 }

@@ -24,7 +24,7 @@ $(function(){
                         getMackupData(xhr.responseXML)
                     // }
                 }else{
-                    alert( xhr.status );
+                    alert( "網路發生異常，請重新整理或是稍後再試。錯誤代碼："+ xhr.status );
                 }
             }
         };
@@ -179,7 +179,7 @@ $('.prev').on('click',function(){
 
 function getMackupData(xmlDoc){
 
-    var elasticity,transparency_c,skinLevel,moisture,sebum,tension,sg,transparency,horny,check;
+    var elasticity,transparency_c,skinLevel,moisture,sebum,tension,sg,transparency,horny,check,accumulation,season;
 
     if(xmlDoc.getElementsByTagName('ROW')[1] !== undefined){
 
@@ -192,10 +192,16 @@ function getMackupData(xmlDoc){
      sg = parseInt(xmlDoc.getElementsByTagName('SG')[0].textContent);
      transparency = parseInt(xmlDoc.getElementsByTagName('TRANSPARENCY')[0].textContent);
      horny = parseInt(xmlDoc.getElementsByTagName('HORNY')[0].textContent);
+    if(xmlDoc.getElementsByTagName('ACCUMULATION')[0]){
+        accumulation = parseInt(xmlDoc.getElementsByTagName('ACCUMULATION')[0].textContent);
+    }
+    if(xmlDoc.getElementsByTagName('SEASON')[0]){
+        season = xmlDoc.getElementsByTagName('SEASON')[0].textContent;
+    }
 
     }
 
-    check = new checkForm(elasticity, transparency_c, skinLevel, moisture, sebum, tension, sg, transparency, horny);
+    check = new checkForm(elasticity, transparency_c, skinLevel, moisture, sebum, tension, sg, transparency, horny, accumulation);
 
     $('#p-moisture').text(check.moisture);
     $('#p-sebum').text(check.sebum);
@@ -210,9 +216,13 @@ function getMackupData(xmlDoc){
 
     $('#p-skin_level').text(check.skinLevel);
 
+    $('#p-accumulation').text(check.accumulation);
+
+    $('#p-season').text(season);
+
 }
 
-function checkForm(elasticity, transparency_c, skinLevel, moisture, sebum, tension, sg, transparency, horny) {
+function checkForm(elasticity, transparency_c, skinLevel, moisture, sebum, tension, sg, transparency, horny, accumulation) {
     this.elasticity = elasticityEX(elasticity);
     this.transparency_c = transparencyEX(transparency_c);
     this.skinLevel = skinLevelEX(skinLevel);
@@ -222,6 +232,7 @@ function checkForm(elasticity, transparency_c, skinLevel, moisture, sebum, tensi
     this.sg = sg === 0 || sg === undefined ? "" : sg ;
     this.transparency = transparency === 0 || transparency === undefined ? "" : transparency ;
     this.horny = horny === 0 || horny === undefined ? "" : horny ;
+    this.accumulation = accumulationEX(accumulation);
 }
 
 
@@ -246,7 +257,8 @@ function saveData() {
         }
 
     }
-
+    var seasonVal =  $('#season').val();
+    sessionStorage.setItem("SEASON",seasonVal);
 
 }
 
@@ -449,6 +461,34 @@ function natural_c(tmp) {
     return(tmp);
 
 }
+function accumulationEX(tmp){
+
+    switch(tmp) {
+        case 0:
+            tmp = "無選取";
+            break;
+        case 1:
+            tmp = "LV.1";
+            break;
+        case 2:
+            tmp = "LV.2";
+            break;
+        case 3:
+            tmp = "LV.3";
+            break;
+        case 4:
+            tmp = "LV.4";
+            break;
+        case 5:
+            tmp = "LV.5";
+            break;
+        default:
+            tmp = "無選取";
+
+    }
+
+    return(tmp);
+}
 
 
 
@@ -513,7 +553,7 @@ function checkdata() {
 
         var num = 0;
 
-        for (var i = 0; i < 6; i++) {
+        for (var i = 0; i < 4; i++) {
 
             if($("input[type*='checkbox']")[i].value === "1"){
 
@@ -565,7 +605,7 @@ function sessionData() {
 
     var len =  document.querySelectorAll('input');
 
-    for (var i = 0; i < len.length-6; i++) {
+    for (var i = 0; i < len.length-4; i++) {
 
 
         var tmpInputData = sessionStorage.getItem(len[i].name);
@@ -576,6 +616,7 @@ function sessionData() {
     }
 
     var subVal = sessionStorage.getItem("SUBJECT");
+    var seasonVal = sessionStorage.getItem("SEASON");
 
     $("input[type*='text']")[0].value = subVal;
 
@@ -590,6 +631,6 @@ function sessionData() {
 
     }
 
-
+    $('#season').val(seasonVal);
 
 }

@@ -7,7 +7,7 @@
  */
 require('psw.php');
 //$pwd = 'SSD@74475668';
-//$ip = 'https://210.208.107.109:80';
+$ip = 'https://203.67.100.36:80';
 //$UserID="innity";
 $MARKNO = "IPSA";
 header('Content-Type: application/json; charset=UTF-8');
@@ -135,7 +135,7 @@ if(isset($_REQUEST["VIPNM"] , $_REQUEST["SBIRTH"] , $_REQUEST["MAIL"])){
         $bcXml = simplexml_load_string($result->WS_GETVIPBASEResult);
 
       echo json_encode($bcXml);
-        
+
 
 
     }catch(Exception $e){
@@ -146,7 +146,7 @@ if(isset($_REQUEST["VIPNM"] , $_REQUEST["SBIRTH"] , $_REQUEST["MAIL"])){
 
 }else{
 
-    
+
 }
 
 

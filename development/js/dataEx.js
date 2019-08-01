@@ -8,14 +8,16 @@ function skinProdSelect() {
                                 {value:"1402", name:"逆齡再生修復精露"},
                                 {value:"1403", name:"角質發光液EX 1"},
                                 {value:"1404", name:"角質發光液EX 2"},
-                                {value:"1405", name:"冰點淨白水慕斯"}]},
+                                {value:"1405", name:"冰點淨白水慕斯"},
+                                {value:"1406", name:"泥狀美體按摩霜"}]},
                         {value:'15' , name:'提升角層濕潤度', option:[
                                 {value:"0", name:"請選擇"},
                                 {value:"1501", name:"泥狀角質按摩霜e"},
                                 {value:"1502", name:"逆齡再生修復精露"},
                                 {value:"1503", name:"角質發光液EX 1"},
                                 {value:"1504", name:"角質發光液EX 2"},
-                                {value:"1505", name:"冰點淨白水慕斯"}]},
+                                {value:"1505", name:"冰點淨白水慕斯"},
+                                {value:"1506", name:"泥狀美體按摩霜"}]},
 
                         {value:'16' , name:'其他'}]
                 },
@@ -84,7 +86,8 @@ function skinProdSelect() {
                                 {value:"0", name:"請選擇"},
                                 {value:"2701", name:"舒緩隔光霜EX"},
                                 {value:"2702", name:"臉部抗痕防護乳EX"},
-                                {value:"2703", name:"全身抗痕防護乳"}]},
+                                {value:"2703", name:"全身抗痕防護乳"},
+                                {value:"2704", name:"冰點防曬身體水慕斯"}]},
                         {value:'28' , name:'其他'}]
                 },
 
@@ -140,7 +143,17 @@ function skinProdSelect() {
                                 {value:"3504", name:"身體馴荳噴霧EX"},
                                 {value:"3505", name:"按摩水凝露N"}]},
                         {value:'36' , name:'其他'}]
-                }
+                },
+                {id:'detoxi_' , name:'排毒' , option : [
+                    {value:'0'  , name:'請選擇建議', option:[]},
+                    {value:'37' , name:'加強代謝老廢蛋白質、多餘水分', option:[
+                        {value:"0", name:"請選擇"},
+                        {value:"3701", name:"淨化歸０前導精萃"}]},
+                    {value:'38' , name:'消除浮腫', option:[
+                        {value:"0", name:"請選擇"},
+                        {value:"3801", name:"淨化歸０前導精萃"}]},
+                    {value:'39' , name:'其他'}]
+                },
             ];
 
         return special ;

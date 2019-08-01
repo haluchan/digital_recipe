@@ -343,6 +343,47 @@ var special = skinProdSelect();
         }
 
     });
+    $("#detoxi_c").change([data],function (){
+
+        var selectHorny =$("#detoxi_c").find(':selected').val();
+        if($('select[name="detoxi_t"]').length !== 0){
+            $('select[name="detoxi_t"]').remove();
+        }
+
+        switch(selectHorny){
+            case '37':
+
+                $('.detoxi_sub').append('<select id="'+data[6].option[1].value+'" name="detoxi_t"></select>');
+
+                var len=data[6].option[1].option.length;
+
+                for (i=0 ; i<len ; i++) {
+
+                    $('.detoxi_sub select[id="37"]').append('<option value="'+data[6].option[1].option[i].value+'">'+data[6].option[1].option[i].name+'</option>')
+                }
+
+                $('#detoxi_t').val('');
+                break;
+            case '38':
+
+                $('.detoxi_sub').append('<select id="'+data[6].option[2].value+'" name="detoxi_t"></select>');
+
+                var len=data[6].option[2].option.length;
+
+                for (i=0 ; i<len ; i++) {
+
+                    $('.detoxi_sub select[id="38"]').append('<option value="'+data[6].option[2].option[i].value+'">'+data[6].option[2].option[i].name+'</option>')
+                }
+
+                $('#detoxi_t').val('');
+                break;
+            case '39':
+
+                break;
+            default:
+        }
+
+    });
 
     var remove = removeVal();
     var clean = cleanVal();
@@ -361,13 +402,13 @@ var special = skinProdSelect();
 
 
 
-	
+
 
 	//check box
 	$(document).on('click','label',function(){
 		if($(this).siblings('input[type="checkbox"]').prop('checked')){
 			$(this).siblings('.sub').fadeOut(500);
-			
+
 		}else{
 			$(this).siblings('.sub').fadeIn(500);
 			console.log($(this).siblings('.sub').children('select').find(":selected").text()+','+$(this).siblings('.sub').children('select').val());
@@ -378,7 +419,7 @@ var special = skinProdSelect();
 	$(document).on('change','select',function(){
 		val = $(this).val();
 		$(this).siblings('span').fadeIn(500);
-		
+
 		if($(this).find(":selected").text() == '其他'){
 			$(this).siblings('.third_sub').children('select').css('display','none');
 			$(this).siblings('input[type="text"]').css('display','none');

@@ -224,12 +224,12 @@ body[page=maintain_04] #content .maintain .border .L {
 body[page=maintain_04] #content .maintain .border .R {
   width: 432px;
   height: 499px;
-  padding: 60px 15px 0px 0; }
+  padding: 14px 15px 0px 0; }
   body[page=maintain_04] #content .maintain .border .R .title {
     width: 411px;
     height: 34px;
     line-height: 34px;
-    margin: 0 auto 15px;
+    margin: 0 auto 14px;
     font-size: 1em;
     font-weight: bold; }
     body[page=maintain_04] #content .maintain .border .R .title input {
@@ -249,7 +249,7 @@ body[page=maintain_04] #content .maintain .border .R {
       background: url("../img/arrow.svg") right center no-repeat;
       background-size: 15px; }
   body[page=maintain_04] #content .maintain .border .R .blank table {
-    margin: 0 auto 15px;
+    margin: 0px auto 6px;
     width: 411px; }
     body[page=maintain_04] #content .maintain .border .R .blank table tr td {
       border: 1px solid #666;
@@ -273,7 +273,7 @@ body[page=maintain_04] #content .maintain .border .R {
         background: url("../img/arrow.svg") right center no-repeat;
         background-size: 15px; }
   body[page=maintain_04] #content .maintain .border .R table.form {
-    margin: 14px auto;
+    margin: 8px auto 4px;
     width: 411px;
     text-align: center; }
     body[page=maintain_04] #content .maintain .border .R table.form colgroup col:nth-child(1) {
@@ -291,7 +291,7 @@ body[page=maintain_04] #content .maintain .border .R {
         font-weight: bold; }
       body[page=maintain_04] #content .maintain .border .R table.form tr td {
         border: 1px solid #333;
-        padding: 0 7px;
+        padding: 0 5px;
         vertical-align: middle; }
         body[page=maintain_04] #content .maintain .border .R table.form tr td:first-child {
           font-weight: bold;
@@ -308,6 +308,14 @@ body[page=maintain_04] #content .maintain .border .R {
           appearance: none;
           background: url("../img/arrow.svg") right center no-repeat;
           background-size: 15px; }
+        body[page=maintain_04] #content .maintain .border .R table.form tr td textarea {
+          width: 120px;
+          height: 40px;
+          border: none;
+          margin: auto;
+          resize: none;
+          overflow: hidden;
+          vertical-align: top; }
     body[page=maintain_04] #content .maintain .border .R table.form .water input {
       text-align: center;
       width: 46%;
@@ -479,7 +487,7 @@ body[page=maintain_05] #content .maintain .border {
   body[page=maintain_05] #content .maintain .border .basic {
     height: 38px;
     line-height: 38px;
-    margin: 9px 0; }
+    margin: 4px 0; }
     body[page=maintain_05] #content .maintain .border .basic input[type="checkbox"] {
       width: 20px;
       height: 20px;
@@ -527,8 +535,8 @@ body[page=maintain_05] #content .maintain .border {
         width: 133px;
         text-align: center; }
   body[page=maintain_05] #content .maintain .border ul.special li {
-    height: 37px;
-    line-height: 37px;
+    height: 32px;
+    line-height: 32px;
     margin-bottom: 4px; }
     body[page=maintain_05] #content .maintain .border ul.special li:last-child {
       margin: 0; }
@@ -542,8 +550,8 @@ body[page=maintain_05] #content .maintain .border {
       color: #333;
       float: left;
       width: 156px;
-      height: 37px;
-      line-height: 37px; }
+      height: 32px;
+      line-height: 32px; }
     body[page=maintain_05] #content .maintain .border ul.special li input[type="checkbox"] + label span {
       display: inline-block;
       width: 20px;
@@ -559,7 +567,7 @@ body[page=maintain_05] #content .maintain .border {
       display: none; }
       body[page=maintain_05] #content .maintain .border ul.special li .sub select {
         width: 307px;
-        height: 37px;
+        height: 32px;
         float: left;
         padding: 0 10px;
         border: 0;
@@ -572,13 +580,13 @@ body[page=maintain_05] #content .maintain .border {
         display: none;
         float: left;
         width: 29px;
-        height: 37px;
+        height: 32px;
         background: url("../img/arrow_gray.png") center center no-repeat;
         background-size: 19px; }
       body[page=maintain_05] #content .maintain .border ul.special li .sub input[type=text] {
         width: 320px;
-        height: 37px;
-        line-height: 37px;
+        height: 32px;
+        line-height: 32px;
         float: right;
         outline: 0;
         border: 0;
@@ -592,7 +600,7 @@ body[page=maintain_05] #content .maintain .border {
       body[page=maintain_05] #content .maintain .border ul.special li .sub > div select {
         display: none;
         width: 320px;
-        height: 37px;
+        height: 32px;
         float: right;
         padding: 0 10px;
         border: 0;

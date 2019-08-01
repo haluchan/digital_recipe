@@ -53,6 +53,18 @@ $('.Back2Log').on('click',function () {
 $('.next').on('click',function() {
 
     var textVal = $('textarea')[0].value;
+    var regex = /[＆：]/gm;
+    var m;
+    if ((m = regex.exec(textVal)) !== null) {
+      if (m.index === regex.lastIndex) {
+        regex.lastIndex++;
+
+      }
+      m.forEach(function(match) {
+        alert('請勿使用'+ match +'字元');
+      });
+      return false;
+    }
     sessionStorage.setItem('MAKUP_TXT_C',textVal);
 
     setTimeout(function () {

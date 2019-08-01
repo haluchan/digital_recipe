@@ -126,17 +126,20 @@ function savePDFImg($data){
     $parh='image/skincare/pdf/';//pdf儲存路徑
     $vipids =$data["VIPIDS"];
     $fileName=$parh. $vipids;     //pdf檔名
-    file_put_contents("$fileName.png",$decodedImg);
-    //  Save image to a temporary location
+    if(file_put_contents("$fileName.png",$decodedImg)){
+      //  Save image to a temporary location
 
-        //  Open new PDF document and print image
-        $pdf = new FPDF('L','pt',array(574.56,481.32));
-        $pdf->AddPage();
-        $pdf->Image("$fileName.png",0,0,574.56,481.32,'png');
-        $pdf->Output($fileName.".pdf",'F');
+      //  Open new PDF document and print image
+      $pdf = new FPDF('L','pt',array(574.56,481.32));
+      $pdf->AddPage();
+      $pdf->Image("$fileName.png",0,0,574.56,481.32,'png');
+      $pdf->Output($fileName.".pdf",'F');
 
+      return true;
+    }else{
 
-    return true;
+      return false;
+    }
 
 }
 

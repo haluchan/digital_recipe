@@ -122,7 +122,7 @@ if(isset($_REQUEST["VIPIDS"])){
 
         $bcXml = simplexml_load_string($result->WS_GETIPSASKINCAREResult);
 
-        
+
 //        echo $result->WS_GETBCSHCUSTNOResult;
       echo json_encode($bcXml);
 

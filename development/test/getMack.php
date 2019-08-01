@@ -124,7 +124,7 @@ if(isset($_REQUEST["VIPIDS"])){
 
         header("content-type:text/xml");
 
-        
+
 
 //        echo $result->WS_GETBCSHCUSTNOResult;
 

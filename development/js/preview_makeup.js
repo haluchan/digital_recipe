@@ -57,7 +57,7 @@ function submit() {
 function getMackupData(xmlDoc){
 
 
-    var elasticity,transparency_c,skinLevel,moisture,sebum,tension,sg,transparency,horny,check;
+    var elasticity,transparency_c,skinLevel,moisture,sebum,tension,sg,transparency,horny,check,accumulation,season;
 
     if(xmlDoc.getElementsByTagName('ROW')[1] !== undefined){
 
@@ -70,9 +70,15 @@ function getMackupData(xmlDoc){
         sg = parseInt(xmlDoc.getElementsByTagName('SG')[0].textContent);
         transparency = parseInt(xmlDoc.getElementsByTagName('TRANSPARENCY')[0].textContent);
         horny = parseInt(xmlDoc.getElementsByTagName('HORNY')[0].textContent);
+        if(xmlDoc.getElementsByTagName('ACCUMULATION')[0]){
+            accumulation = parseInt(xmlDoc.getElementsByTagName('ACCUMULATION')[0].textContent);
+        }
+        if(xmlDoc.getElementsByTagName('SEASON')[0]){
+            season = xmlDoc.getElementsByTagName('SEASON')[0].textContent;
+        }
 
       }
-    check = new checkForm(elasticity, transparency_c, skinLevel, moisture, sebum, tension, sg, transparency, horny);
+    check = new checkForm(elasticity, transparency_c, skinLevel, moisture, sebum, tension, sg, transparency, horny, accumulation);
 
     $('#p-moisture').text(check.moisture);
     $('#p-sebum').text(check.sebum);
@@ -87,13 +93,15 @@ function getMackupData(xmlDoc){
 
     $('#p-skin_level').text(check.skinLevel);
 
+    $('#p-accumulation').text(check.accumulation);
 
+    $('#p-season').text(season);
 
   setTimeout(htmlToCanvas(),0);
 
 }
 
-function checkForm(elasticity, transparency_c, skinLevel, moisture, sebum, tension, sg, transparency, horny) {
+function checkForm(elasticity, transparency_c, skinLevel, moisture, sebum, tension, sg, transparency, horny, accumulation) {
     this.elasticity = elasticityEX(elasticity);
     this.transparency_c = transparencyEX(transparency_c);
     this.skinLevel = skinLevelEX(skinLevel);
@@ -103,6 +111,7 @@ function checkForm(elasticity, transparency_c, skinLevel, moisture, sebum, tensi
     this.sg = sg === 0 || sg === undefined ? "" : sg ;
     this.transparency = transparency === 0 || transparency === undefined ? "" : transparency ;
     this.horny = horny === 0 || horny === undefined ? "" : horny ;
+    this.accumulation = accumulationEX(accumulation);
 }
 
 function sessionData() {
@@ -115,7 +124,7 @@ function sessionData() {
     var elasticity = parseInt(sessionStorage.ELASTICITY);
     var natural = parseInt(sessionStorage.NATURAL_C);
     var acquired = parseInt(sessionStorage.ACQUIRED_C);
-
+    var accumulation = parseInt(sessionStorage.ACCUMULATION);
 
     $('.theme_c').text(sessionStorage.SUBJECT);
     if(sessionStorage.SUGGESTION !== undefined){
@@ -133,7 +142,9 @@ function sessionData() {
     $("#TRANSPARENCY").text(sessionStorage.TRANSPARENCY);
     $("#TRANSPARENCY_C").text(transparencyEX(transparency));
     $("#HORNY").text(sessionStorage.HORNY);
+    $("#ACCUMULATION").text(accumulationEX(accumulation));
     $("#SKIN_LEVEL").text(skinLevelEX(skinLevel));
+    $("#SEASON").text(sessionStorage.SEASON);
 
     $('div[name="SKIN_COLOR_C"]').text(skin_color_cEX(skin_color_c));
     $('div[name="SKIN_LIGHT_C"]').text(skin_light_cEX(skin_light_c));
@@ -145,10 +156,10 @@ function sessionData() {
     $("input[name*='COSMETICS_F']").val(sessionStorage.COSMETICS_F);
     $("input[name*='WATER_F']").val(sessionStorage.WATER_F);
     $("input[name*='POWDER_F']").val(sessionStorage.POWDER_F);
-    $("input[name*='FOUNDATION_F']").val(sessionStorage.FOUNDATION_F);
-    $("input[name*='PRESSED_F']").val(sessionStorage.PRESSED_F);
+    // $("input[name*='FOUNDATION_F']").val(sessionStorage.FOUNDATION_F);
+    // $("input[name*='PRESSED_F']").val(sessionStorage.PRESSED_F);
 
-    for (var i = 0; i < 6; i++) {
+    for (var i = 0; i < 4; i++) {
        if( $('input')[i].value === "1"){
            $('input')[i].setAttribute('checked','checked');
        }
@@ -404,6 +415,35 @@ function naturalEX(tmp) {
 
 }
 
+function accumulationEX(tmp){
+
+    switch(tmp) {
+        case 0:
+            tmp = "無選取";
+            break;
+        case 1:
+            tmp = "LV.1";
+            break;
+        case 2:
+            tmp = "LV.2";
+            break;
+        case 3:
+            tmp = "LV.3";
+            break;
+        case 4:
+            tmp = "LV.4";
+            break;
+        case 5:
+            tmp = "LV.5";
+            break;
+        default:
+            tmp = "無選取";
+
+    }
+
+    return(tmp);
+}
+
 
 function makupText9(tmp) {
 
@@ -494,7 +534,9 @@ function sentData() {
         TRANSPARENCY: sessionStorage.TRANSPARENCY,
         TRANSPARENCY_C: sessionStorage.TRANSPARENCY_C,
         HORNY: sessionStorage.HORNY,
+        ACCUMULATION : sessionStorage.ACCUMULATION,
         SKIN_LEVEL: sessionStorage.SKIN_LEVEL,
+        SEASON: sessionStorage.SEASON,
         EYEBROW_TC: sessionStorage.EYEBROW_TC,
         SHADOW: sessionStorage.SHADOW,
         SHADOW_S: sessionStorage.SHADOW_S,
@@ -518,6 +560,10 @@ function sentData() {
         SKIN_WATER_URL: sessionStorage.canvasFace_2,
         PDFImage:sessionStorage.PDFImage
     };
+    //2019/08/01後，代碼更改為2 ， 0＝否，1=水粉蜜，2=蜜粉，預設0，1為2019/08/01 前使用
+    if(data.WATER_F === "1"){
+        data.WATER_F = "2"
+    }
 
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange=function (){
